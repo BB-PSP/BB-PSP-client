@@ -1,15 +1,14 @@
 import type { AppProps } from 'next/app';
-import GlobalStyle from '../styles/globalStyles';
+import GlobalStyle from '../styles/global-styles';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../styles/theme';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <GlobalStyle />
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-      </ThemeProvider>
+      {/* <ThemeProvider theme={breakpoints}> */}
+      <Component {...pageProps} />
+      {/* </ThemeProvider> */}
     </>
   );
 }

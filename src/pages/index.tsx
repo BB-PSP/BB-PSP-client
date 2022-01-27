@@ -1,25 +1,21 @@
 import type { NextPage } from 'next';
-import Link from 'next/link';
 import styled from 'styled-components';
-import { theme } from '../styles/theme';
+import { breakpoints } from '../styles/media';
 
 const TestDiv = styled.div`
-  @media ${(props) => props.theme.tablet} {
-    width: 100%;
-    height: 300px;
-    margin: 0 auto;
-    background: #333;
+  ${breakpoints.large} {
+    font-size: 50px;
   }
-  @media ${(props) => props.theme.mobile} {
-    width: 100%;
-    height: 300px;
-    margin: 0 auto;
-    background: #123456;
+  ${breakpoints.medium} {
+    font-size: 30px;
+  }
+  ${breakpoints.small} {
+    font-size: 10px;
   }
 `;
 
 const Home: NextPage = () => {
-  return <TestDiv></TestDiv>;
+  return <TestDiv>test</TestDiv>;
 };
 
 export default Home;
