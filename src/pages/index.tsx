@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { breakpoints } from '../styles/media';
 
 const Background = styled.div`
-  position: relative;
   overflow: hidden;
   height: 100vh;
   padding-top: 8vh;
@@ -22,74 +21,80 @@ const Background = styled.div`
 const Title = styled.p`
   font-family: 'PlayfairDisplayBold';
   ${breakpoints.large} {
-    font-size: 1.6rem;
-    line-height: 2.13rem;
+    font-size: 4.8rem;
   }
-  /* ${breakpoints.medium} {
-  } */
-  ${breakpoints.small} {
+  ${breakpoints.medium} {
     font-size: 3.2rem;
-    line-height: 4.27rem;
+  }
+  ${breakpoints.small} {
+    font-size: 2.4rem;
   }
   color: #b70000;
 `;
 
 const SubTitle = styled.p`
-  font-family: 'PlayfairDisplayRegular';
+  font-family: 'RobotoMonoRegular';
   color: #e8e8e8;
   ${breakpoints.large} {
-    font-size: 0.6rem;
-    padding-top: 6.75vh;
+    font-size: 2.4rem;
+    padding-top: 8rem;
   }
-  /* ${breakpoints.medium} {
-    padding-top: 6.75vh;
-  } */
-  ${breakpoints.small} {
+  ${breakpoints.medium} {
     font-size: 1.6rem;
     padding-top: 5.33rem;
+  }
+  ${breakpoints.small} {
+    font-size: 1.2rem;
+    padding-top: 2.66rem;
   }
 `;
 
 const DescriptionBox = styled.div`
   margin: 0 auto;
   ${breakpoints.large} {
-    padding-top: 1.33rem;
-    width: 13.33rem;
+    width: 40rem;
+    padding-top: 4rem;
   }
-  /* ${breakpoints.medium} {
-    width: 25.8vw;
-  } */
+  ${breakpoints.medium} {
+    width: 30rem;
+    padding-top: 3rem;
+  }
   ${breakpoints.small} {
-    padding-top: 2.66rem;
-    width: 26.66rem;
+    width: 20rem;
+    padding-top: 2rem;
   }
 `;
 
 const Description = styled.p`
-  font-family: 'PlayfairDisplayRegular';
+  font-family: 'RobotoMonoRegular';
+  color: #bebebe;
   ${breakpoints.large} {
-    font-size: 0.66rem;
-    line-height: 0.89rem;
+    font-size: 2rem;
+    line-height: 2.66rem;
+  }
+  ${breakpoints.medium} {
+    font-size: 1.8rem;
+    line-height: 2.44rem;
   }
   ${breakpoints.small} {
-    font-size: 1.33rem;
+    font-size: 1.15rem;
     line-height: 1.77rem;
   }
-  color: #bebebe;
 `;
 
 const HomeImageBox = styled.div`
-  height: 100%;
-  padding: 0 9.14vw;
-  opacity: 50%;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
   ${breakpoints.large} {
-    margin-top: 5.3vh;
+    width: 104rem;
+    margin-top: 6.4rem;
   }
   ${breakpoints.medium} {
-    margin-top: 27vh;
+    margin-top: 5rem;
   }
   ${breakpoints.small} {
-    margin-top: 53vh;
+    margin-top: 4rem;
   }
 `;
 
@@ -109,9 +114,9 @@ const Home: NextPage = () => {
           industry. Lorem Ipsum has been the industry's
         </Description>
       </DescriptionBox>
-      <HomeImageBox>
-        <HomeImage src="image/home.png" />
-      </HomeImageBox>
+      {/* <HomeImageBox>
+        <HomeImage src="image/baseball_gradationmask.png" />
+      </HomeImageBox> */}
     </Background>
   );
 };
