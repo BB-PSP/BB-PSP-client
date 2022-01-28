@@ -34,21 +34,6 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     height: 100%;
   }
-  ${breakpoints.small} {
-    html {
-      font-size: 15px;
-    }
-  }
-  ${breakpoints.medium} {
-    html {
-      font-size: 20px;
-    }
-  }
-  ${breakpoints.large} {
-    html {
-      font-size: 30px;
-    }
-  }
 `;
 
 export default GlobalStyle;
