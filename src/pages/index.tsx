@@ -28,8 +28,17 @@ const Background = styled.div`
   }
 `;
 
+const Test = styled.span`
+  font-family: 'PlayfairDisplayRegular';
+`;
+
 const Home: NextPage = () => {
-  return <Background></Background>;
+  return (
+    <Background>
+      <Test>test</Test>
+      <span>test</span>
+    </Background>
+  );
 };
 
 export default Home;
