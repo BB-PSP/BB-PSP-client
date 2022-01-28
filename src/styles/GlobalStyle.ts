@@ -1,8 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
+import { breakpoints } from './media';
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
+  html{
+    font-size: 10px;
+  }
   * {
     box-sizing: border-box;
   }
@@ -29,6 +33,21 @@ const GlobalStyle = createGlobalStyle`
     display: block;
     width: 100%;
     height: 100%;
+  }
+  ${breakpoints.small} {
+    html {
+      font-size: 15px;
+    }
+  }
+  ${breakpoints.medium} {
+    html {
+      font-size: 20px;
+    }
+  }
+  ${breakpoints.large} {
+    html {
+      font-size: 30px;
+    }
   }
 `;
 
