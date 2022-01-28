@@ -10,4 +10,8 @@ export default createGlobalStyle`
         font-family: "PlayfairDisplayBold";
         src: url('/fonts/PlayfairDisplay-Bold.woff') format('woff'); 
     }
+    @font-face {
+        font-family: "RobotoMonoRegular";
+        src: url('/fonts/RobotoMono-Regular.woff') format('woff'); 
+    }
 `;
