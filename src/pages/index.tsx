@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import Link from 'next/link';
 import styled from 'styled-components';
 import { breakpoints } from '../styles/media';
 
@@ -7,19 +8,14 @@ const Background = styled.div`
   height: 100vh;
   padding-top: 8vh;
   text-align: center;
-  width: 66.66vw;
   margin: 0 auto;
-  background: linear-gradient(
-    360deg,
-    rgba(0, 0, 0, 0.37) -6.53%,
-    rgba(25, 25, 25, 0.186927) 63.21%,
-    rgba(51, 51, 51, 0) 94.15%
-  );
-  backdrop-filter: blur(6px);
 `;
 
-const Title = styled.p`
+const Title = styled.h1`
   font-family: 'PlayfairDisplayBold';
+  ${breakpoints.largest} {
+    font-size: 4.8rem;
+  }
   ${breakpoints.large} {
     font-size: 4.8rem;
   }
@@ -32,9 +28,13 @@ const Title = styled.p`
   color: #b70000;
 `;
 
-const SubTitle = styled.p`
+const SubTitle = styled.h2`
   font-family: 'RobotoMonoRegular';
-  color: #e8e8e8;
+  color: #000;
+  ${breakpoints.largest} {
+    font-size: 2.4rem;
+    padding-top: 8rem;
+  }
   ${breakpoints.large} {
     font-size: 2.4rem;
     padding-top: 8rem;
@@ -44,13 +44,17 @@ const SubTitle = styled.p`
     padding-top: 5.33rem;
   }
   ${breakpoints.small} {
-    font-size: 1.2rem;
+    font-size: 1.04rem;
     padding-top: 2.66rem;
   }
 `;
 
 const DescriptionBox = styled.div`
   margin: 0 auto;
+  ${breakpoints.largest} {
+    width: 47rem;
+    padding-top: 4rem;
+  }
   ${breakpoints.large} {
     width: 40rem;
     padding-top: 4rem;
@@ -67,7 +71,11 @@ const DescriptionBox = styled.div`
 
 const Description = styled.p`
   font-family: 'RobotoMonoRegular';
-  color: #bebebe;
+  color: #565656;
+  ${breakpoints.largest} {
+    font-size: 2rem;
+    line-height: 2.66rem;
+  }
   ${breakpoints.large} {
     font-size: 2rem;
     line-height: 2.66rem;
@@ -83,24 +91,130 @@ const Description = styled.p`
 `;
 
 const HomeImageBox = styled.div`
-  position: fixed;
+  background-size: cover;
+  position: absolute;
+  bottom: 0;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, 0%);
+  ${breakpoints.largest} {
+    height: 58rem;
+    width: auto;
+  }
   ${breakpoints.large} {
-    width: 104rem;
-    margin-top: 6.4rem;
+    height: 35rem;
+    width: auto;
   }
   ${breakpoints.medium} {
-    margin-top: 5rem;
+    width: auto;
   }
   ${breakpoints.small} {
-    margin-top: 4rem;
+    width: auto;
   }
 `;
 
-const HomeImage = styled.img`
-  max-width: 100%;
-  height: auto;
+const HomeImage = styled.img``;
+
+const ButtonConatiner = styled.div`
+  position: relative;
+  display: flex;
+  z-index: 99;
+  margin: 0 auto;
+  ${breakpoints.largest} {
+    margin-top: 45rem;
+    width: 98rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  ${breakpoints.large} {
+    margin-top: 15rem;
+    width: 78rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  ${breakpoints.medium} {
+    margin-top: 15rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  ${breakpoints.small} {
+    margin-top: 8rem;
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+const ProButtonBox = styled.div`
+  flex-direction: column;
+`;
+
+const CustomButtonBox = styled.div`
+  flex-direction: column;
+  ${breakpoints.medium} {
+    padding-top: 10rem;
+  }
+  ${breakpoints.small} {
+    padding-top: 5rem;
+  }
+`;
+
+const ProButton = styled.h3`
+  color: #b70000;
+  font-family: 'RobotoMono-Regular';
+  ${breakpoints.largest} {
+    font-size: 2.8rem;
+  }
+  ${breakpoints.large} {
+    font-size: 2.5rem;
+  }
+  ${breakpoints.medium} {
+    font-size: 2.5rem;
+  }
+  ${breakpoints.small} {
+    font-size: 1.5rem;
+  }
+`;
+
+const CustomButton = styled.h3`
+  color: #b70000;
+  font-family: 'RobotoMono-Regular';
+  ${breakpoints.largest} {
+    font-size: 2.8rem;
+  }
+  ${breakpoints.large} {
+    font-size: 2.5rem;
+  }
+  ${breakpoints.medium} {
+    font-size: 2.5rem;
+  }
+  ${breakpoints.small} {
+    font-size: 1.5rem;
+  }
+`;
+
+const ArrowImg = styled.img`
+  &:hover {
+    cursor: pointer;
+  }
+  ${breakpoints.largest} {
+    margin-top: 1.6rem;
+    width: 7rem;
+    height: auto;
+  }
+  ${breakpoints.large} {
+    margin-top: 1.6rem;
+    width: 7rem;
+    height: auto;
+  }
+  ${breakpoints.medium} {
+    margin-top: 1.6rem;
+    width: 4rem;
+    height: auto;
+  }
+  ${breakpoints.small} {
+    margin-top: 1rem;
+    width: 4rem;
+    height: auto;
+  }
 `;
 
 const Home: NextPage = () => {
@@ -114,9 +228,26 @@ const Home: NextPage = () => {
           industry. Lorem Ipsum has been the industry's
         </Description>
       </DescriptionBox>
-      {/* <HomeImageBox>
-        <HomeImage src="image/baseball_gradationmask.png" />
-      </HomeImageBox> */}
+      <HomeImageBox>
+        <HomeImage src="image/home.png" />
+      </HomeImageBox>
+      <ButtonConatiner>
+        <Link href="/kbo">
+          <ProButtonBox>
+            <ProButton>Professional team</ProButton>
+            <ArrowImg
+              onClick={() => console.log('pro')}
+              src="image/arrow.png"
+            ></ArrowImg>
+          </ProButtonBox>
+        </Link>
+        <Link href="/custom">
+          <CustomButtonBox>
+            <CustomButton>Choose it yourself</CustomButton>
+            <ArrowImg src="image/arrow.png" />
+          </CustomButtonBox>
+        </Link>
+      </ButtonConatiner>
     </Background>
   );
 };

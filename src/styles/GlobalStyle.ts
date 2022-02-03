@@ -11,7 +11,10 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   body{
-    background-color: #333;
+    background-color: #ccc;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
     font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   }
   a {
