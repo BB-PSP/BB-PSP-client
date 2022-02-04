@@ -15,5 +15,6 @@ BB: PSP의 Client Repository 입니다.
   <img src="https://img.shields.io/badge/Prettier-2.5.1-F7B93E?style=flat&logo=prettier" />
   <img src="https://img.shields.io/badge/styled_components-5.3.3-DB7093?style=flat&logo=styled-components" />
   <img src="https://img.shields.io/badge/Recoil-0.5.2-1877F2?style=flat&logo=Facebook" />
+  <img src="https://img.shields.io/badge/react_query-6.2.3-FF4B4B?style=flat&logo=react-query" />
   <img src="https://img.shields.io/badge/framer_motion-6.2.3-0055FF?style=flat&logo=Framer" />
 </div>
