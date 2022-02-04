@@ -4,6 +4,9 @@ import Image from 'next/image';
 import home from '../../public/image/home.png';
 import styled from 'styled-components';
 import { breakpoints } from '../styles/media';
+import Layout from '../components/layout';
+import { Children } from 'react';
+import type { ReactElement } from 'react';
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -176,33 +179,37 @@ const ArrowImg = styled.img`
   }
 `;
 
-const Home: NextPage = () => {
+export default function Home() {
   return (
-    <Wrapper>
-      <Title>BB:PSP</Title>
-      <SubTitle>BB:PSP(Baseball: Player Stats Prediction)</SubTitle>
-      <DescriptionBox>
-        <Description>Predict KBO Players' stats</Description>
-      </DescriptionBox>
-      {/* <HomeImageBox>
+    <Layout>
+      <Wrapper>
+        <Title>BB:PSP</Title>
+        <SubTitle>BB:PSP(Baseball: Player Stats Prediction)</SubTitle>
+        <DescriptionBox>
+          <Description>Predict KBO Players' stats</Description>
+        </DescriptionBox>
+        {/* <HomeImageBox>
         <HomeImage src={home} alt="BB:PSP HomePage" />
       </HomeImageBox> */}
-      <ButtonConatiner>
-        <ProButtonBox>
-          <ProButton>Professional team</ProButton>
-          <Link href="/kbo">
-            <ArrowImg src="image/arrow.png" />
-          </Link>
-        </ProButtonBox>
-        <CustomButtonBox>
-          <CustomButton>Choose it yourself</CustomButton>
-          <Link href="/custom">
-            <ArrowImg src="image/arrow.png" />
-          </Link>
-        </CustomButtonBox>
-      </ButtonConatiner>
-    </Wrapper>
+        <ButtonConatiner>
+          <ProButtonBox>
+            <ProButton>Professional team</ProButton>
+            <Link href="/kbo">
+              <ArrowImg src="image/arrow.png" />
+            </Link>
+          </ProButtonBox>
+          <CustomButtonBox>
+            <CustomButton>Choose it yourself</CustomButton>
+            <Link href="/custom">
+              <ArrowImg src="image/arrow.png" />
+            </Link>
+          </CustomButtonBox>
+        </ButtonConatiner>
+      </Wrapper>
+    </Layout>
   );
-};
+}
 
-export default Home;
+Home.getLayout = function getLayout(page: ReactElement) {
+  return <Layout>{page}</Layout>;
+};
