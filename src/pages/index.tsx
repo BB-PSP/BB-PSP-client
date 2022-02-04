@@ -1,29 +1,37 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
+import home from '../../public/image/home.png';
 import styled from 'styled-components';
 import { breakpoints } from '../styles/media';
 
-const Background = styled.div`
-  overflow: hidden;
+const Wrapper = styled.div`
   height: 100vh;
-  padding-top: 8vh;
+  /* background-color: #333; */
   text-align: center;
   margin: 0 auto;
+  padding-top: 6.3rem;
+  ${breakpoints.large} {
+    width: 1080px;
+  }
+  ${breakpoints.medium} {
+    width: 680px;
+  }
+  ${breakpoints.small} {
+    width: 100vw;
+  }
 `;
 
 const Title = styled.h1`
   font-family: 'PlayfairDisplayBold';
-  ${breakpoints.largest} {
-    font-size: 4.8rem;
-  }
   ${breakpoints.large} {
     font-size: 4.8rem;
   }
   ${breakpoints.medium} {
-    font-size: 3.2rem;
+    font-size: 4.8rem;
   }
   ${breakpoints.small} {
-    font-size: 2.4rem;
+    font-size: 4rem;
   }
   color: #b70000;
 `;
@@ -31,30 +39,22 @@ const Title = styled.h1`
 const SubTitle = styled.h2`
   font-family: 'RobotoMonoRegular';
   color: #000;
-  ${breakpoints.largest} {
-    font-size: 2.4rem;
-    padding-top: 8rem;
-  }
   ${breakpoints.large} {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     padding-top: 8rem;
   }
   ${breakpoints.medium} {
-    font-size: 1.6rem;
+    font-size: 2.2rem;
     padding-top: 5.33rem;
   }
   ${breakpoints.small} {
-    font-size: 1.04rem;
+    font-size: 1.3rem;
     padding-top: 2.66rem;
   }
 `;
 
 const DescriptionBox = styled.div`
   margin: 0 auto;
-  ${breakpoints.largest} {
-    width: 47rem;
-    padding-top: 4rem;
-  }
   ${breakpoints.large} {
     width: 40rem;
     padding-top: 4rem;
@@ -72,16 +72,12 @@ const DescriptionBox = styled.div`
 const Description = styled.p`
   font-family: 'RobotoMonoRegular';
   color: #565656;
-  ${breakpoints.largest} {
-    font-size: 2rem;
-    line-height: 2.66rem;
-  }
   ${breakpoints.large} {
-    font-size: 2rem;
+    font-size: 1.6rem;
     line-height: 2.66rem;
   }
   ${breakpoints.medium} {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     line-height: 2.44rem;
   }
   ${breakpoints.small} {
@@ -90,41 +86,15 @@ const Description = styled.p`
   }
 `;
 
-const HomeImageBox = styled.div`
-  background-size: cover;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 0%);
-  ${breakpoints.largest} {
-    height: 58rem;
-    width: auto;
-  }
-  ${breakpoints.large} {
-    height: 35rem;
-    width: auto;
-  }
-  ${breakpoints.medium} {
-    width: auto;
-  }
-  ${breakpoints.small} {
-    width: auto;
-  }
-`;
+const HomeImageBox = styled.div``;
 
-const HomeImage = styled.img``;
+const HomeImage = styled(Image)``;
 
 const ButtonConatiner = styled.div`
   position: relative;
   display: flex;
   z-index: 99;
   margin: 0 auto;
-  ${breakpoints.largest} {
-    margin-top: 45rem;
-    width: 98rem;
-    flex-direction: row;
-    justify-content: space-between;
-  }
   ${breakpoints.large} {
     margin-top: 15rem;
     width: 78rem;
@@ -160,9 +130,6 @@ const CustomButtonBox = styled.div`
 const ProButton = styled.h3`
   color: #b70000;
   font-family: 'RobotoMono-Regular';
-  ${breakpoints.largest} {
-    font-size: 2.8rem;
-  }
   ${breakpoints.large} {
     font-size: 2.5rem;
   }
@@ -177,9 +144,6 @@ const ProButton = styled.h3`
 const CustomButton = styled.h3`
   color: #b70000;
   font-family: 'RobotoMono-Regular';
-  ${breakpoints.largest} {
-    font-size: 2.8rem;
-  }
   ${breakpoints.large} {
     font-size: 2.5rem;
   }
@@ -194,11 +158,6 @@ const CustomButton = styled.h3`
 const ArrowImg = styled.img`
   &:hover {
     cursor: pointer;
-  }
-  ${breakpoints.largest} {
-    margin-top: 1.6rem;
-    width: 7rem;
-    height: auto;
   }
   ${breakpoints.large} {
     margin-top: 1.6rem;
@@ -219,36 +178,30 @@ const ArrowImg = styled.img`
 
 const Home: NextPage = () => {
   return (
-    <Background>
+    <Wrapper>
       <Title>BB:PSP</Title>
       <SubTitle>BB:PSP(Baseball: Player Stats Prediction)</SubTitle>
       <DescriptionBox>
-        <Description>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's
-        </Description>
+        <Description>Predict KBO Players' stats</Description>
       </DescriptionBox>
-      <HomeImageBox>
-        <HomeImage src="image/home.png" />
-      </HomeImageBox>
+      {/* <HomeImageBox>
+        <HomeImage src={home} alt="BB:PSP HomePage" />
+      </HomeImageBox> */}
       <ButtonConatiner>
-        <Link href="/kbo">
-          <ProButtonBox>
-            <ProButton>Professional team</ProButton>
-            <ArrowImg
-              onClick={() => console.log('pro')}
-              src="image/arrow.png"
-            ></ArrowImg>
-          </ProButtonBox>
-        </Link>
-        <Link href="/custom">
-          <CustomButtonBox>
-            <CustomButton>Choose it yourself</CustomButton>
+        <ProButtonBox>
+          <ProButton>Professional team</ProButton>
+          <Link href="/kbo">
             <ArrowImg src="image/arrow.png" />
-          </CustomButtonBox>
-        </Link>
+          </Link>
+        </ProButtonBox>
+        <CustomButtonBox>
+          <CustomButton>Choose it yourself</CustomButton>
+          <Link href="/custom">
+            <ArrowImg src="image/arrow.png" />
+          </Link>
+        </CustomButtonBox>
       </ButtonConatiner>
-    </Background>
+    </Wrapper>
   );
 };
 
