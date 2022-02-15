@@ -1,30 +1,49 @@
-// {
-//   "extends": "next/core-web-vitals"
-// }
 {
-  "extends": ["react-app", "prettier/prettier"],
-  "plugins": ["react-hooks", "simple-import-sort", "prettier"],
+  "parser": "@typescript-eslint/parser", // typescript 전용 parser로 지정
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "sourceType": "module"
+  },
+  "env": {
+    "node": true, // node 사용 OK
+    "browser": true, // browser 인식 Ok
+    "es6": true // es6 버전사용 OK
+  },
+  "plugins": ["@typescript-eslint"],
+  // react, react-hooks 가 있으면 Error Cannot get result from ~ 이 나옴.
+  "extends": [
+    "plugin:react/recommended", //recommended 붙여져 있는건 preset을 사용하겠다는 의미
+    "prettier", // 8.0.0 버젼이상은 모두 prettier로 통합됨.
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  //plugin과 extends로 적용된 규칙에 덮어씌워져서 강제 설정할 수 있는 부분
   "rules": {
+    "no-console": "off", // console.log(사용하는 것 금지)
     "prettier/prettier": "error",
-    "react-hooks/rules-of-hooks": "error",
-    "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error",
-    "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
-    "comma-dangle": ["error", "always-multiline"],
-    "object-curly-spacing": ["error", "always"],
-    "space-in-parens": ["error", "never"],
-    "computed-property-spacing": ["error", "never"],
-    "comma-spacing": ["error", { "before": false, "after": true }],
-    "eol-last": ["error", "always"],
-    "quotes": ["error", "single"],
-    "no-tabs": "error",
-    "semi": ["error", "never"],
-    "import/no-anonymous-default-export": 0,
-    "object-shorthand": "error",
-    "padding-line-between-statements": [
-      "error",
-      { "blankLine": "always", "prev": "*", "next": "return" }
-    ],
-    "@typescript-eslint/no-redeclare": 0
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "off",
+    "react/react-in-jsx-scope": "off",
+    "no-unused-expressions": 0,
+    "import/extensions": ["off"],
+    "import/no-unresolved": "off",
+    "import/prefer-default-export": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off", //values returned from a module are of the expected type.
+    "no-nested-ternary": "off",
+    // 삼항연산안에 또 삼항연산 하는 것을 방지
+    "react/jsx-filename-extension": "off", // <> </>쓰는 것 방지
+    "spaced-comment": "off", // 주석 쓰는 것 방지
+    "no-unused-variable": "off",
+    "@typescript-eslint/no-non-null-assertion": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx", ".js"]
+    }
   }
 }
