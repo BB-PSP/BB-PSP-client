@@ -4,16 +4,16 @@ import reset from 'styled-reset';
 const GlobalStyle = createGlobalStyle`
   ${reset}
   html{
-    font-size: 10px;
+    font-size: 62.5%; // 10px이 아닌 62.5%로 설정한 이유. 웹 접근성 취지에 어긋남.
   }
   * {
     box-sizing: border-box;
   }
   body{
     background-color: #ccc;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
     font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   }
   a {
