@@ -1,21 +1,23 @@
+/* eslint-disable react/no-unescaped-entities */
 import type { NextPage } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import home from '../../public/image/home.png';
+import baseball_gradationmask from '../../public/image/baseball_gradationmask.png';
 import styled from 'styled-components';
 import { breakpoints } from '../styles/media';
 import Layout from '../components/layout';
 import { Children } from 'react';
 import type { ReactElement } from 'react';
 
-const Wrapper = styled.div`
+const Wrapper = styled.main`
   height: 100vh;
-  /* background-color: #333; */
+  background-color: #333;
   text-align: center;
   margin: 0 auto;
-  padding-top: 6.3rem;
+  padding-top: 9.4rem;
   ${breakpoints.large} {
-    width: 1080px;
+    width: 127.6rem;
   }
   ${breakpoints.medium} {
     width: 680px;
@@ -56,7 +58,7 @@ const SubTitle = styled.h2`
   }
 `;
 
-const DescriptionBox = styled.div`
+const DescriptionBox = styled.section`
   margin: 0 auto;
   ${breakpoints.large} {
     width: 40rem;
@@ -89,20 +91,18 @@ const Description = styled.p`
   }
 `;
 
-const HomeImageBox = styled.div``;
+const HomeImageBox = styled.div`
+  padding-top: 7.7rem;
+`;
 
 const HomeImage = styled(Image)``;
 
-const ButtonConatiner = styled.div`
-  position: relative;
+const ButtonConatiner = styled.nav`
   display: flex;
-  z-index: 99;
-  margin: 0 auto;
+  justify-content: space-between;
   ${breakpoints.large} {
-    margin-top: 15rem;
-    width: 78rem;
+    margin-top: 45rem;
     flex-direction: row;
-    justify-content: space-between;
   }
   ${breakpoints.medium} {
     margin-top: 15rem;
@@ -183,14 +183,14 @@ export default function Home() {
   return (
     <Layout>
       <Wrapper>
-        <Title>BB:PSP</Title>
+        <Title>bb:</Title>
         <SubTitle>BB:PSP(Baseball: Player Stats Prediction)</SubTitle>
         <DescriptionBox>
           <Description>Predict KBO Players' stats</Description>
         </DescriptionBox>
         {/* <HomeImageBox>
-        <HomeImage src={home} alt="BB:PSP HomePage" />
-      </HomeImageBox> */}
+          <HomeImage src={baseball_gradationmask} alt="BB:PSP HomePage" />
+        </HomeImageBox> */}
         <ButtonConatiner>
           <ProButtonBox>
             <ProButton>Professional team</ProButton>
