@@ -1,14 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
-import type { NextPage } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
-import home from '../../public/image/home.png';
 import styled from 'styled-components';
 import { breakpoints } from '../styles/media';
 import Layout from '../components/layout/Layout';
-import { Children } from 'react';
 import type { ReactElement } from 'react';
-import Footer from '../components/layout/Footer';
 
 const Wrapper = styled.main`
   display: flex;
@@ -16,14 +11,16 @@ const Wrapper = styled.main`
   height: 100%;
   text-align: center;
   margin: 0 auto;
-  padding-top: 9.4rem;
   ${breakpoints.large} {
+    padding-top: 9.4rem;
     width: 127.6rem;
   }
   ${breakpoints.medium} {
-    width: 680px;
+    padding-top: 9.4rem;
+    width: 68rem;
   }
   ${breakpoints.small} {
+    padding-top: 4rem;
     width: 100vw;
   }
 `;
@@ -51,7 +48,7 @@ const SubTitle = styled.h2`
   }
   ${breakpoints.medium} {
     font-size: 2.2rem;
-    padding-top: 5.33rem;
+    padding-top: 8rem;
   }
   ${breakpoints.small} {
     font-size: 1.3rem;
@@ -67,7 +64,7 @@ const DescriptionBox = styled.section`
   }
   ${breakpoints.medium} {
     width: 30rem;
-    padding-top: 3rem;
+    padding-top: 4rem;
   }
   ${breakpoints.small} {
     width: 20rem;
@@ -93,20 +90,22 @@ const Description = styled.p`
 `;
 
 const ButtonConatiner = styled.nav`
-  margin-top: auto;
   display: flex;
   justify-content: space-between;
   ${breakpoints.large} {
     flex-direction: row;
+    margin-top: auto;
     margin-bottom: 16.5rem;
   }
   ${breakpoints.medium} {
     flex-direction: column;
     align-items: center;
+    margin-top: 10.5rem;
   }
   ${breakpoints.small} {
     flex-direction: column;
     align-items: center;
+    margin-top: 10rem;
   }
 `;
 
