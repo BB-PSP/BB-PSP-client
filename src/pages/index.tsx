@@ -3,16 +3,17 @@ import type { NextPage } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import home from '../../public/image/home.png';
-import baseball_gradationmask from '../../public/image/baseball_gradationmask.png';
 import styled from 'styled-components';
 import { breakpoints } from '../styles/media';
-import Layout from '../components/layout';
+import Layout from '../components/layout/Layout';
 import { Children } from 'react';
 import type { ReactElement } from 'react';
+import Footer from '../components/layout/Footer';
 
 const Wrapper = styled.main`
-  height: 100vh;
-  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   text-align: center;
   margin: 0 auto;
   padding-top: 9.4rem;
@@ -91,26 +92,19 @@ const Description = styled.p`
   }
 `;
 
-const HomeImageBox = styled.div`
-  padding-top: 7.7rem;
-`;
-
-const HomeImage = styled(Image)``;
-
 const ButtonConatiner = styled.nav`
+  margin-top: auto;
   display: flex;
   justify-content: space-between;
   ${breakpoints.large} {
-    margin-top: 45rem;
     flex-direction: row;
+    margin-bottom: 16.5rem;
   }
   ${breakpoints.medium} {
-    margin-top: 15rem;
     flex-direction: column;
     align-items: center;
   }
   ${breakpoints.small} {
-    margin-top: 8rem;
     flex-direction: column;
     align-items: center;
   }
@@ -132,9 +126,9 @@ const CustomButtonBox = styled.div`
 
 const ProButton = styled.h3`
   color: #b70000;
-  font-family: 'RobotoMono-Regular';
+  font-family: 'RobotoMonoRegular';
   ${breakpoints.large} {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
   ${breakpoints.medium} {
     font-size: 2.5rem;
@@ -146,9 +140,9 @@ const ProButton = styled.h3`
 
 const CustomButton = styled.h3`
   color: #b70000;
-  font-family: 'RobotoMono-Regular';
+  font-family: 'RobotoMonoRegular';
   ${breakpoints.large} {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
   ${breakpoints.medium} {
     font-size: 2.5rem;
@@ -181,32 +175,27 @@ const ArrowImg = styled.img`
 
 export default function Home() {
   return (
-    <Layout>
-      <Wrapper>
-        <Title>bb:</Title>
-        <SubTitle>BB:PSP(Baseball: Player Stats Prediction)</SubTitle>
-        <DescriptionBox>
-          <Description>Predict KBO Players' stats</Description>
-        </DescriptionBox>
-        {/* <HomeImageBox>
-          <HomeImage src={baseball_gradationmask} alt="BB:PSP HomePage" />
-        </HomeImageBox> */}
-        <ButtonConatiner>
-          <ProButtonBox>
-            <ProButton>Professional team</ProButton>
-            <Link href="/kbo">
-              <ArrowImg src="image/arrow.png" />
-            </Link>
-          </ProButtonBox>
-          <CustomButtonBox>
-            <CustomButton>Choose it yourself</CustomButton>
-            <Link href="/custom">
-              <ArrowImg src="image/arrow.png" />
-            </Link>
-          </CustomButtonBox>
-        </ButtonConatiner>
-      </Wrapper>
-    </Layout>
+    <Wrapper>
+      <Title>bb:</Title>
+      <SubTitle>BB:PSP(Baseball: Player Stats Prediction)</SubTitle>
+      <DescriptionBox>
+        <Description>Predict KBO Players' stats</Description>
+      </DescriptionBox>
+      <ButtonConatiner>
+        <ProButtonBox>
+          <ProButton>Professional team</ProButton>
+          <Link href="/kbo">
+            <ArrowImg src="image/arrow.png" />
+          </Link>
+        </ProButtonBox>
+        <CustomButtonBox>
+          <CustomButton>Choose it yourself</CustomButton>
+          <Link href="/custom">
+            <ArrowImg src="image/arrow.png" />
+          </Link>
+        </CustomButtonBox>
+      </ButtonConatiner>
+    </Wrapper>
   );
 }
 
