@@ -11,8 +11,6 @@ const GlobalStyle = createGlobalStyle`
   }
   body{
     background-color: #ccc;
-    width: 100vw;
-    height: 100vh;
     overflow-x: hidden;
     font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   }
