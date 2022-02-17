@@ -10,15 +10,16 @@ const handleResize = () => {
 const Container = styled.div`
   position: relative;
   width: 100vw;
-  min-height: 100vh;
   ${breakpoints.large} {
+    min-height: 100vh;
     height: 108rem;
   }
   ${breakpoints.medium} {
+    min-height: 100vh;
     height: 108rem;
   }
   ${breakpoints.small} {
-    min-height: calc() (var(--vh) * 100);
+    min-height: calc(var(--vh, 1vh) * 100);
   }
 `;
 
@@ -37,8 +38,8 @@ const BackImage = styled.img`
     height: fit-content;
   }
   ${breakpoints.small} {
-    width: 35rem;
-    height: auto;
+    width: 30rem;
+    height: fit-content;
   }
 `;
 

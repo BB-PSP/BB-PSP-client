@@ -13,6 +13,8 @@ const GlobalStyle = createGlobalStyle`
   body{
     background-color: #ccc;
     overflow-x: hidden;
+    ${breakpoints.small} {
+    }
     font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   }
   a {
