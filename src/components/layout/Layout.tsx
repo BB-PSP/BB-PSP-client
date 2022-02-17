@@ -20,6 +20,8 @@ const Container = styled.div`
     }
     height: 100%;
     overflow: hidden;
+    position: fixed;
+    touch-action: none;
   }
 `;
 
