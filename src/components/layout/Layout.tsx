@@ -15,6 +15,9 @@ const Container = styled.div`
   }
   ${breakpoints.small} {
     min-height: 100vh;
+    @supports (-webkit-touch-callout: none) and (stroke-color: transparent) {
+      min-height: -webkit-fill-available;
+    }
     height: 100%;
   }
 `;

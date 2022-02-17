@@ -13,12 +13,7 @@ const GlobalStyle = createGlobalStyle`
   body{
     background-color: #ccc;
     overflow-x: hidden;
-    ${breakpoints.small} {
-      @supports (-webkit-touch-callout: none) {
-        height: -webkit-fill-available;
-      }
-      /* overflow: hidden; */
-    }
+    
     font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   }
   a {
