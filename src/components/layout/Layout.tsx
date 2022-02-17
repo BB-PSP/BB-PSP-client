@@ -17,10 +17,10 @@ const Container = styled.div`
     min-height: 100vh;
     @supports (-webkit-touch-callout: none) and (stroke-color: transparent) {
       min-height: -webkit-fill-available;
+      touch-action: none;
+      position: fixed;
     }
     height: 100%;
-    position: fixed;
-    touch-action: none;
   }
 `;
 
