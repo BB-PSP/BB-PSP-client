@@ -14,7 +14,6 @@ const GlobalStyle = createGlobalStyle`
     background-color: #ccc;
     overflow-x: hidden;
     ${breakpoints.small} {
-      height: 100%;
       overflow-y: hidden;
     }
     font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
