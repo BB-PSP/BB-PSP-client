@@ -1,11 +1,6 @@
-import { ReactNode, useEffect } from 'react';
+import { ReactNode } from 'react';
 import styled from 'styled-components';
 import { breakpoints } from '../../styles/media';
-
-const handleResize = () => {
-  const vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-};
 
 const Container = styled.div`
   position: relative;
@@ -34,7 +29,7 @@ const BackImage = styled.img`
     object-fit: contain;
   }
   ${breakpoints.medium} {
-    width: 80rem;
+    width: 104.6rem;
     height: fit-content;
     object-fit: contain;
   }
@@ -56,12 +51,6 @@ interface IProps {
 }
 
 export default function Layout({ children }: IProps) {
-  useEffect(() => {
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
   return (
     <Container>
       <BackImage src="/image/home.png" alt="home" />
