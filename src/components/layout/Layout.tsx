@@ -1,6 +1,11 @@
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 import styled from 'styled-components';
 import { breakpoints } from '../../styles/media';
+
+const handleResize = () => {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+};
 
 const Container = styled.div`
   position: relative;
@@ -13,7 +18,7 @@ const Container = styled.div`
     height: 108rem;
   }
   ${breakpoints.small} {
-    height: 74.4rem;
+    min-height: calc() (var(--vh) * 100);
   }
 `;
 
@@ -46,6 +51,13 @@ const Wrapper = styled.div`
 interface IProps {
   children: ReactNode;
 }
+
+useEffect(() => {
+  handleResize();
+  window.addEventListener('resize', handleResize);
+
+  return () => window.removeEventListener('resize', handleResize);
+}, []);
 
 export default function Layout({ children }: IProps) {
   return (
