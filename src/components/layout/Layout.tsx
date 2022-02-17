@@ -13,7 +13,7 @@ const Container = styled.div`
     height: 108rem;
   }
   ${breakpoints.small} {
-    height: 68rem;
+    height: 100vh;
   }
 `;
 
