@@ -99,7 +99,7 @@ const ButtonConatiner = styled.nav`
     margin-bottom: 16.5rem;
   }
   ${breakpoints.medium} {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     margin-top: 10.5rem;
   }
