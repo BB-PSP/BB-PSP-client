@@ -17,12 +17,6 @@ const Container = styled.div`
   }
 `;
 
-const Wrapper = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-`;
-
 const BackImage = styled.img`
   position: absolute;
   left: 50%;
@@ -38,7 +32,15 @@ const BackImage = styled.img`
     height: fit-content;
   }
   ${breakpoints.small} {
+    width: 70rem;
+    height: fit-content;
   }
+`;
+
+const Wrapper = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
 `;
 
 interface IProps {

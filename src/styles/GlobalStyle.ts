@@ -2,13 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 import { breakpoints } from './media';
 
-function setScreenSize() {
-  const vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-}
-setScreenSize();
-window.addEventListener('resize', setScreenSize);
-
 const GlobalStyle = createGlobalStyle`
   ${reset}
   html{
@@ -20,11 +13,6 @@ const GlobalStyle = createGlobalStyle`
   body{
     background-color: #ccc;
     overflow-x: hidden;
-    ${breakpoints.small} {
-      height: calc(var(--vh, 1vh) * 100);
-      overflow-y: hidden;
-      position: fixed;
-    }
     font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   }
   a {
