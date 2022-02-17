@@ -19,8 +19,6 @@ const Container = styled.div`
       min-height: -webkit-fill-available;
     }
     height: 100%;
-    position: fixed;
-    touch-action: none;
   }
 `;
 
