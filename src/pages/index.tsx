@@ -116,9 +116,6 @@ const ProButtonBox = styled.div`
 
 const CustomButtonBox = styled.div`
   flex-direction: column;
-  ${breakpoints.medium} {
-    padding-top: 10rem;
-  }
   ${breakpoints.small} {
     padding-top: 5rem;
   }
