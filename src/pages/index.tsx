@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { breakpoints } from '../styles/media';
 import Layout from '../components/layout/Layout';
 import type { ReactElement } from 'react';
+import { motion } from 'framer-motion';
 
 const Wrapper = styled.main`
   display: flex;
@@ -25,7 +26,7 @@ const Wrapper = styled.main`
   }
 `;
 
-const Title = styled.h1`
+const Title = styled(motion.h1)`
   font-family: 'PlayfairDisplayBold';
   ${breakpoints.large} {
     font-size: 4.8rem;
@@ -172,10 +173,23 @@ const ArrowImg = styled.img`
   }
 `;
 
+const testVariants = {
+  hidden: { opacity: 0, x: -200, y: 0 },
+  enter: { opacity: 1, x: 0, y: 0 },
+  exit: { opacity: 0, x: 0, y: -100 },
+};
+
 export default function Home() {
   return (
     <Wrapper>
-      <Title>bb:</Title>
+      <Title
+        variants={testVariants}
+        initial="hidden"
+        animate="enter"
+        exit="exit"
+      >
+        bb:
+      </Title>
       <SubTitle>BB:PSP(Baseball: Player Stats Prediction)</SubTitle>
       <DescriptionBox>
         <Description>Predict KBO Players' stats</Description>
