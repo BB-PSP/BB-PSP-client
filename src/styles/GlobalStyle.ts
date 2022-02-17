@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
   }
   body{
     background-color: #ccc;
+    height: 100%;
     overflow-x: hidden;
     ${breakpoints.small} {
       overflow-y: hidden;
