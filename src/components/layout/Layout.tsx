@@ -52,14 +52,13 @@ interface IProps {
   children: ReactNode;
 }
 
-useEffect(() => {
-  handleResize();
-  window.addEventListener('resize', handleResize);
-
-  return () => window.removeEventListener('resize', handleResize);
-}, []);
-
 export default function Layout({ children }: IProps) {
+  useEffect(() => {
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   return (
     <Container>
       <BackImage src="/image/home.png" alt="home" />
