@@ -6,6 +6,8 @@ import Layout from '../components/layout/Layout';
 import type { ReactElement } from 'react';
 import { motion } from 'framer-motion';
 
+const testDiv = styled.div``;
+
 const Wrapper = styled.main`
   display: flex;
   flex-direction: column;
