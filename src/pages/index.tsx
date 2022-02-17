@@ -22,7 +22,7 @@ const Wrapper = styled.main`
   }
   ${breakpoints.small} {
     padding-top: 4rem;
-    width: 100vw;
+    width: 30rem;
   }
 `;
 
