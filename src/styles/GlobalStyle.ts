@@ -15,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
     ${breakpoints.small} {
       overflow-y: hidden;
+      position: fixed;
     }
     font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   }
