@@ -13,7 +13,7 @@ const Container = styled.div`
     height: 108rem;
   }
   ${breakpoints.small} {
-    height: 20rem;
+    height: 84rem;
   }
 `;
 
@@ -38,8 +38,8 @@ const BackImage = styled.img`
     height: fit-content;
   }
   ${breakpoints.small} {
-    width: 100%;
-    height: auto;
+    width: 30rem;
+    height: fit-content;
   }
 `;
 
