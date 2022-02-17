@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
+import { breakpoints } from './media';
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -12,6 +13,9 @@ const GlobalStyle = createGlobalStyle`
   body{
     background-color: #ccc;
     overflow-x: hidden;
+    ${breakpoints.small} {
+      position: fixed;
+    }
     font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   }
   a {
