@@ -35,7 +35,7 @@ const BackImage = styled.img`
   }
   ${breakpoints.small} {
     width: 30rem;
-    height: fit-content;
+    height: auto;
     object-fit: contain;
   }
 `;
