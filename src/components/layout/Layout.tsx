@@ -14,8 +14,8 @@ const Container = styled.div`
     height: 108rem;
   }
   ${breakpoints.small} {
-    height: 10rem;
-    min-height: calc(var(--vh, 1vh) * 100);
+    height: 80rem;
+    min-height: 100vh;
   }
 `;
 
