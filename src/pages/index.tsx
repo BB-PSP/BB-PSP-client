@@ -170,23 +170,16 @@ const ArrowImg = styled.img`
   }
 `;
 
-const testVariants = {
-  hidden: { opacity: 0, x: -200, y: 0 },
-  enter: { opacity: 1, x: 0, y: 0 },
-  exit: { opacity: 0, x: 0, y: -100 },
-};
+// const testVariants = {
+//   hidden: { opacity: 0, x: -200, y: 0 },
+//   enter: { opacity: 1, x: 0, y: 0 },
+//   exit: { opacity: 0, x: 0, y: -100 },
+// };
 
 export default function Home() {
   return (
     <Wrapper>
-      <Title
-        variants={testVariants}
-        initial="hidden"
-        animate="enter"
-        exit="exit"
-      >
-        bb:
-      </Title>
+      <Title>bb:</Title>
       <SubTitle>BB:PSP(Baseball: Player Stats Prediction)</SubTitle>
       <DescriptionBox>
         <Description>Predict KBO Players' stats</Description>
