@@ -3,7 +3,8 @@ import styled from 'styled-components';
 
 const CardContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  padding-top: 200px;
 `;
 
 export default function Kbo() {
