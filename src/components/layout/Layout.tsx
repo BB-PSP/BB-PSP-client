@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import styled from 'styled-components';
 import { breakpoints } from '../../styles/media';
+import Header from './Header';
 
 const Container = styled.div`
   position: relative;
@@ -26,6 +27,7 @@ const Container = styled.div`
 
 const BackImage = styled.img`
   position: absolute;
+  z-index: -99;
   left: 50%;
   bottom: 0;
   transform: translate3d(-50%, 0, 0);
@@ -61,6 +63,7 @@ export default function Layout({ children }: IProps) {
     <Container>
       <BackImage src="/image/home.png" alt="home" />
       <Wrapper>{children}</Wrapper>
+      <Header />
     </Container>
   );
 }
