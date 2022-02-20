@@ -26,20 +26,6 @@ const Wrapper = styled.main`
   }
 `;
 
-const Title = styled(motion.h1)`
-  font-family: 'PlayfairDisplayBold';
-  ${breakpoints.large} {
-    font-size: 4.8rem;
-  }
-  ${breakpoints.medium} {
-    font-size: 4.8rem;
-  }
-  ${breakpoints.small} {
-    font-size: 4rem;
-  }
-  color: #b70000;
-`;
-
 const SubTitle = styled.h2`
   font-family: 'RobotoMonoRegular';
   color: #000;
@@ -170,16 +156,9 @@ const ArrowImg = styled.img`
   }
 `;
 
-// const testVariants = {
-//   hidden: { opacity: 0, x: -200, y: 0 },
-//   enter: { opacity: 1, x: 0, y: 0 },
-//   exit: { opacity: 0, x: 0, y: -100 },
-// };
-
 export default function Home() {
   return (
     <Wrapper>
-      <Title>bb:</Title>
       <SubTitle>BB:PSP(Baseball: Player Stats Prediction)</SubTitle>
       <DescriptionBox>
         <Description>Predict KBO Players' stats</Description>

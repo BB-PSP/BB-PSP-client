@@ -27,7 +27,7 @@ const LogoBoxBackground = styled.div`
 const ContentsBox = styled.div`
   width: 100%;
   height: 33.8rem;
-  background-color: #272727;
+  background-color: rgba(39, 39, 39, 0.87);
   padding-top: 1.8rem;
   padding-left: 2.4rem;
   position: relative;
@@ -68,7 +68,7 @@ const Content = styled.p`
   padding-top: 0.4rem;
 `;
 
-export default function TeamCard() {
+export default function TeamCard({ team }) {
   return (
     <Wrapper>
       <LogoBox>
@@ -76,7 +76,7 @@ export default function TeamCard() {
       </LogoBox>
       <ContentsBox>
         <Order>1</Order>
-        <TeamName>KIWOOM HEROES</TeamName>
+        <TeamName>{team.name}</TeamName>
         <Box>
           <Category>Last season</Category>
           <Content>5</Content>
