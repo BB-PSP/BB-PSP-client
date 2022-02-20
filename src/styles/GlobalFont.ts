@@ -14,4 +14,8 @@ export default createGlobalStyle`
         font-family: "RobotoMonoRegular";
         src: url('/fonts/RobotoMono-Regular.woff') format('woff'); 
     }
+    @font-face {
+        font-family: "RobotoMonoLight";
+        src: url('/fonts/RobotoMono-Light.woff') format('woff'); 
+    }
 `;
