@@ -1,24 +1,27 @@
-import Image from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
-import kiwoom from '../../../public/image/teamLogo/kiwoom.png';
 
 const Wrapper = styled.div`
   width: 25rem;
   height: 48.4rem;
+  display: flex;
+  flex-direction: column;
 `;
 
 const LogoBox = styled.div`
   width: 100%;
   height: 14.6rem;
+  background-image: url(/image/teamLogo/kiwoom.png);
+  background-repeat: no-repeat;
+  background-position: center top;
 `;
 
-const LogoBackground = styled.div`
-  position: relative;
-  /* margin-top: 1.6rem; */
-  width: 100%;
-  height: 13rem;
+const LogoBoxBackground = styled.div`
   background-color: #505050;
+  position: relative;
+  top: 1.6rem;
+  height: 13rem;
+  z-index: -1;
 `;
 
 const ContentsBox = styled.div`
@@ -27,17 +30,19 @@ const ContentsBox = styled.div`
   background-color: #272727;
   padding-top: 1.8rem;
   padding-left: 2.4rem;
+  position: relative;
+  z-index: 99;
 `;
 
 const Order = styled.h2`
-  font-family: 'NotoSansCJK-Regular';
+  font-family: 'NotoSansCJK-Regular'; // font 수정할것
   font-size: 3.2rem;
   line-height: 4.736rem;
   color: #fff;
 `;
 
 const TeamName = styled.h2`
-  font-family: 'RobotoMono-Regular';
+  font-family: 'RobotoMonoLight';
   font-size: 2.4rem;
   line-height: 3.165rem;
   color: #fff;
@@ -49,32 +54,25 @@ const Box = styled.div`
 `;
 
 const Category = styled.p`
-  font-family: 'RobotoMono-Regular';
+  font-family: 'RobotoMonoRegular';
   font-size: 1.4rem;
   line-height: 1.846rem;
   color: #c5c5c5;
 `;
 
 const Content = styled.p`
-  font-family: 'RobotoMono-Regular';
+  font-family: 'RobotoMonoRegular';
   font-size: 1.6rem;
   line-height: 2.4rem;
   color: #fff;
   padding-top: 0.4rem;
 `;
 
-const LogoImage = styled.img`
-  position: absolute;
-  bottom: 0;
-`;
-
 export default function TeamCard() {
   return (
     <Wrapper>
       <LogoBox>
-        <LogoBackground>
-          <LogoImage src="/image/teamLogo/kiwoom.png" alt="키움" />
-        </LogoBackground>
+        <LogoBoxBackground />
       </LogoBox>
       <ContentsBox>
         <Order>1</Order>
