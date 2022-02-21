@@ -1,7 +1,12 @@
 import TeamCard from '../../components/kbo/TeamCard';
 import styled from 'styled-components';
 import { breakpoints } from '../../styles/media';
-import { motion, AnimatePresence } from 'framer-motion';
+import {
+  motion,
+  AnimatePresence,
+  useMotionValue,
+  useTransform,
+} from 'framer-motion';
 import { useRef } from 'react';
 
 const Wrapper = styled.div`
@@ -21,16 +26,18 @@ const Subtitle = styled.h2`
   }
 `;
 
-const Slider = styled.div`
+const Slider = styled(motion.div)``;
+
+const TeamSlider = styled.div`
   position: relative;
   margin-top: 5.3rem;
   height: 72.2rem;
   width: 133rem;
   overflow: hidden;
-  cursor: grab;
 `;
 
 const Row = styled(motion.div)`
+  cursor: grab;
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(10, 1fr);
@@ -40,7 +47,6 @@ const Row = styled(motion.div)`
 `;
 
 const SlideBarContainer = styled(motion.div)`
-  cursor: grab;
   margin-top: 5rem;
   width: 131rem;
   height: 0.2rem;
@@ -49,38 +55,38 @@ const SlideBarContainer = styled(motion.div)`
 
 const SlideBar = styled(motion.div)`
   width: 69rem;
-  height: 100%;
+  height: 0.2rem;
   background-color: #3d3d3d;
+  position: relative;
 `;
 
 export default function Kbo() {
-  const slideConstraintsRef = useRef<HTMLDivElement>(null);
   const slideBarConstraintsRef = useRef<HTMLDivElement>(null);
+  const x = useMotionValue(0);
+  const slide = useTransform(x, [0, -1350], [0, 620]);
   return (
     <Wrapper>
       <Subtitle>choose professional team</Subtitle>
-      <Slider ref={slideConstraintsRef}>
-        <AnimatePresence>
-          <Row
-            drag
-            dragConstraints={{ top: 0, bottom: 0, left: -1350, right: 0 }}
-            dragElastic={0.01}
-            dragMomentum={false}
-          >
-            {Team.map((team) => (
-              <TeamCard key={team.id} team={team}></TeamCard>
-            ))}
-          </Row>
-        </AnimatePresence>
+      <Slider>
+        <TeamSlider>
+          <AnimatePresence>
+            <Row
+              style={{ x }}
+              drag="x"
+              dragConstraints={{ left: -1350, right: 0 }}
+              dragElastic={0.01}
+              dragMomentum={true}
+            >
+              {Team.map((team) => (
+                <TeamCard key={team.id} team={team}></TeamCard>
+              ))}
+            </Row>
+          </AnimatePresence>
+        </TeamSlider>
+        <SlideBarContainer ref={slideBarConstraintsRef}>
+          <SlideBar style={{ x: slide }} />
+        </SlideBarContainer>
       </Slider>
-      <SlideBarContainer ref={slideBarConstraintsRef}>
-        <SlideBar
-          drag
-          dragConstraints={slideBarConstraintsRef}
-          dragElastic={0}
-          dragMomentum={false}
-        />
-      </SlideBarContainer>
     </Wrapper>
   );
 }
