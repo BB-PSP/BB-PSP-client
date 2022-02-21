@@ -78,7 +78,7 @@ export default function Kbo() {
               dragMomentum={true}
             >
               {Team.map((team) => (
-                <TeamCard key={team.id} team={team}></TeamCard>
+                <TeamCard key={team.id} team={team} />
               ))}
             </Row>
           </AnimatePresence>
