@@ -24,37 +24,75 @@ const Subtitle = styled.h2`
     line-height: 1.846rem;
     padding-top: 16.7rem;
   }
+  ${breakpoints.medium} {
+  }
+  ${breakpoints.small} {
+    font-size: 1.4rem;
+    line-height: 1.846rem;
+    padding-top: 10.7rem;
+  }
 `;
 
-const Slider = styled(motion.div)``;
+const Slider = styled.div``;
 
 const TeamSlider = styled.div`
   position: relative;
-  margin-top: 5.3rem;
-  height: 72.2rem;
-  width: 133rem;
+  ${breakpoints.large} {
+    margin-top: 5.3rem;
+    height: 72.2rem;
+    width: 133rem;
+  }
+  ${breakpoints.medium} {
+  }
+  ${breakpoints.small} {
+    margin-top: 5.3rem;
+    height: 40.2rem;
+    width: 133rem;
+  }
   overflow: hidden;
 `;
 
 const Row = styled(motion.div)`
   cursor: grab;
   display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(10, 1fr);
+  ${breakpoints.large} {
+    gap: 2rem;
+    grid-template-columns: repeat(10, 1fr);
+  }
+  ${breakpoints.medium} {
+  }
+  ${breakpoints.small} {
+    gap: 2rem;
+    grid-template-columns: repeat(10, 1fr);
+  }
   position: absolute;
   bottom: 0;
   width: 200%;
 `;
 
 const SlideBarContainer = styled(motion.div)`
-  margin-top: 5rem;
-  width: 131rem;
+  ${breakpoints.large} {
+    margin-top: 5rem;
+    width: 131rem;
+  }
+  ${breakpoints.medium} {
+  }
+  ${breakpoints.small} {
+    margin-top: 5rem;
+  }
   height: 0.2rem;
   background-color: #fff;
 `;
 
 const SlideBar = styled(motion.div)`
-  width: 69rem;
+  ${breakpoints.large} {
+    width: 69rem;
+  }
+  ${breakpoints.medium} {
+  }
+  ${breakpoints.small} {
+    width: 10rem;
+  }
   height: 0.2rem;
   background-color: #3d3d3d;
   position: relative;

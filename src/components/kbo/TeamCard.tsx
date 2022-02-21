@@ -1,20 +1,35 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
+import { breakpoints } from '../../styles/media';
 
 const Wrapper = styled(motion.div)`
-  width: 25rem;
-  height: 48.4rem;
   display: flex;
   flex-direction: column;
+  width: 25rem;
+  ${breakpoints.large} {
+    height: 48.4rem;
+  }
+  ${breakpoints.medium} {
+  }
+  ${breakpoints.small} {
+    height: 40rem;
+  }
 `;
 
 const LogoBox = styled.div`
-  width: 100%;
-  height: 14.6rem;
   background-image: url(/image/teamLogo_b/lg_b.png);
   background-repeat: no-repeat;
   background-position: center top;
+  width: 100%;
+  ${breakpoints.large} {
+    height: 14.6rem;
+  }
+  ${breakpoints.medium} {
+  }
+  ${breakpoints.small} {
+    height: 14.6rem;
+  }
 `;
 
 const LogoBoxBackground = styled.div`
@@ -33,6 +48,11 @@ const ContentsBox = styled.div`
   padding-left: 2.4rem;
   position: relative;
   z-index: 99;
+  ${breakpoints.small} {
+    height: 25rem;
+    padding-top: 1rem;
+    padding-left: 2.4rem;
+  }
 `;
 
 const Order = styled.h2`
@@ -40,6 +60,10 @@ const Order = styled.h2`
   font-size: 3.2rem;
   line-height: 4.736rem;
   color: #fff;
+  ${breakpoints.small} {
+    font-size: 2.2rem;
+    line-height: 2.736rem;
+  }
 `;
 
 const TeamName = styled.h2`
@@ -48,17 +72,39 @@ const TeamName = styled.h2`
   line-height: 3.165rem;
   color: #fff;
   padding-top: 0.8rem;
+  ${breakpoints.small} {
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
 `;
 
 const Box = styled.div`
-  padding-top: 2rem;
+  ${breakpoints.large} {
+    padding-top: 2rem;
+  }
+  ${breakpoints.medium} {
+    padding-top: 2rem;
+  }
+  ${breakpoints.small} {
+    padding-top: 1.4rem;
+  }
 `;
 
 const Category = styled.p`
   font-family: 'RobotoMonoRegular';
-  font-size: 1.4rem;
-  line-height: 1.846rem;
   color: #c5c5c5;
+  ${breakpoints.large} {
+    font-size: 1.4rem;
+    line-height: 1.846rem;
+  }
+  ${breakpoints.medium} {
+    font-size: 1.4rem;
+    line-height: 1.846rem;
+  }
+  ${breakpoints.small} {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
 `;
 
 const Content = styled.p`
