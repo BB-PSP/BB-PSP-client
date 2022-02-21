@@ -1,7 +1,8 @@
+import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   width: 25rem;
   height: 48.4rem;
   display: flex;
