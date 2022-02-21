@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { breakpoints } from '../styles/media';
 import Layout from '../components/layout/Layout';
 import type { ReactElement } from 'react';
-import { motion } from 'framer-motion';
 
 const Wrapper = styled.main`
   display: flex;
@@ -21,7 +20,7 @@ const Wrapper = styled.main`
     width: 68rem;
   }
   ${breakpoints.small} {
-    padding-top: 4rem;
+    padding-top: 8.4rem;
     width: 35rem;
   }
 `;
