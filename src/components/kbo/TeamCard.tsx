@@ -69,7 +69,7 @@ const Content = styled.p`
   padding-top: 0.4rem;
 `;
 
-export default function TeamCard({ team }) {
+export default function TeamCard() {
   return (
     <Wrapper>
       <LogoBox>
@@ -77,7 +77,7 @@ export default function TeamCard({ team }) {
       </LogoBox>
       <ContentsBox>
         <Order>1</Order>
-        <TeamName>{team.name}</TeamName>
+        <TeamName>LG Twins</TeamName>
         <Box>
           <Category>Last season</Category>
           <Content>5</Content>
