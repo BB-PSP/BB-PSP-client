@@ -12,7 +12,7 @@ const Wrapper = styled(motion.div)`
 const LogoBox = styled.div`
   width: 100%;
   height: 14.6rem;
-  background-image: url(/image/teamLogo/kiwoom.png);
+  background-image: url(/image/teamLogo_b/lg_b.png);
   background-repeat: no-repeat;
   background-position: center top;
 `;
