@@ -11,6 +11,7 @@ const Wrapper = styled(motion.div)`
     height: 48.4rem;
   }
   ${breakpoints.medium} {
+    height: 48.4rem;
   }
   ${breakpoints.small} {
     height: 40rem;
@@ -26,6 +27,7 @@ const LogoBox = styled.div`
     height: 14.6rem;
   }
   ${breakpoints.medium} {
+    height: 14.6rem;
   }
   ${breakpoints.small} {
     height: 14.6rem;
@@ -42,12 +44,19 @@ const LogoBoxBackground = styled.div`
 
 const ContentsBox = styled.div`
   width: 100%;
-  height: 33.8rem;
   background-color: rgba(39, 39, 39, 0.87);
-  padding-top: 1.8rem;
-  padding-left: 2.4rem;
   position: relative;
   z-index: 99;
+  ${breakpoints.large} {
+    height: 33.8rem;
+    padding-top: 1.8rem;
+    padding-left: 2.4rem;
+  }
+  ${breakpoints.medium} {
+    height: 33.8rem;
+    padding-top: 1.8rem;
+    padding-left: 2.4rem;
+  }
   ${breakpoints.small} {
     height: 25rem;
     padding-top: 1rem;
@@ -57,9 +66,15 @@ const ContentsBox = styled.div`
 
 const Order = styled.h2`
   font-family: 'NotoSansCJK-Regular'; // font 수정할것
-  font-size: 3.2rem;
-  line-height: 4.736rem;
   color: #fff;
+  ${breakpoints.large} {
+    font-size: 3.2rem;
+    line-height: 4.736rem;
+  }
+  ${breakpoints.medium} {
+    font-size: 3.2rem;
+    line-height: 4.736rem;
+  }
   ${breakpoints.small} {
     font-size: 2.2rem;
     line-height: 2.736rem;
@@ -68,12 +83,18 @@ const Order = styled.h2`
 
 const TeamName = styled.h2`
   font-family: 'RobotoMonoLight';
-  font-size: 2.4rem;
-  line-height: 3.165rem;
   color: #fff;
   padding-top: 0.8rem;
+  ${breakpoints.large} {
+    font-size: 2.4rem;
+    line-height: 3.165rem;
+  }
+  ${breakpoints.medium} {
+    font-size: 2.4rem;
+    line-height: 3.165rem;
+  }
   ${breakpoints.small} {
-    font-size: 1.6rem;
+    font-size: 2rem;
     line-height: 2rem;
   }
 `;
