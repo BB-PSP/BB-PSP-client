@@ -96,7 +96,6 @@ const SlideBarContainer = styled(motion.div)`
     width: 131rem;
   }
   ${breakpoints.small} {
-    margin: 0 auto;
     margin-top: 5rem;
     width: 30rem;
   }
@@ -110,7 +109,7 @@ const SlideBar = styled(motion.div)`
     width: 69rem;
   }
   ${breakpoints.small} {
-    width: 10rem;
+    width: 5rem;
   }
   height: 0.2rem;
   background-color: #3d3d3d;
@@ -118,17 +117,16 @@ const SlideBar = styled(motion.div)`
 `;
 
 export default function Kbo() {
-  const slideBarConstraintsRef = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const largeSlide = useTransform(x, [0, -1350], [0, 620]);
-  const smallSlide = useTransform(x, [0, -350], [0, 620]);
+  const smallSlide = useTransform(x, [0, -2350], [0, 250]);
   return (
     <Wrapper>
       <Subtitle>choose professional team</Subtitle>
       <Slider>
         <TeamSlider>
-          <AnimatePresence>
-            <Large>
+          <Large>
+            <AnimatePresence>
               <Row
                 style={{ x }}
                 drag="x"
@@ -140,8 +138,10 @@ export default function Kbo() {
                   <TeamCard key={team.id} />
                 ))}
               </Row>
-            </Large>
-            <Medium>
+            </AnimatePresence>
+          </Large>
+          <Medium>
+            <AnimatePresence>
               <Row
                 style={{ x }}
                 drag="x"
@@ -153,12 +153,14 @@ export default function Kbo() {
                   <TeamCard key={team.id} />
                 ))}
               </Row>
-            </Medium>
-            <Small>
+            </AnimatePresence>
+          </Medium>
+          <Small>
+            <AnimatePresence>
               <Row
                 style={{ x }}
                 drag="x"
-                dragConstraints={{ left: -1850, right: 475 }}
+                dragConstraints={{ left: -2425, right: 0 }}
                 dragElastic={0.01}
                 dragMomentum={true}
               >
@@ -166,12 +168,24 @@ export default function Kbo() {
                   <TeamCard key={team.id} />
                 ))}
               </Row>
-            </Small>
-          </AnimatePresence>
+            </AnimatePresence>
+          </Small>
         </TeamSlider>
-        <SlideBarContainer ref={slideBarConstraintsRef}>
-          <SlideBar style={{ x: largeSlide }} />
-        </SlideBarContainer>
+        <Large>
+          <SlideBarContainer>
+            <SlideBar style={{ x: largeSlide }} />
+          </SlideBarContainer>
+        </Large>
+        <Medium>
+          <SlideBarContainer>
+            <SlideBar style={{ x: 300 }} />
+          </SlideBarContainer>
+        </Medium>
+        <Small>
+          <SlideBarContainer>
+            <SlideBar style={{ x: smallSlide }} />
+          </SlideBarContainer>
+        </Small>
       </Slider>
     </Wrapper>
   );
