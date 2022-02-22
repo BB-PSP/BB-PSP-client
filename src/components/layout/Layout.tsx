@@ -12,7 +12,7 @@ const Container = styled.div`
   }
   ${breakpoints.medium} {
     min-height: 100vh;
-    height: 108rem;
+    height: 88rem;
   }
   ${breakpoints.small} {
     min-height: 100vh;
