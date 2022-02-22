@@ -12,6 +12,8 @@ import TeamCard from './TeamCard';
 
 const TeamSliderContainer = styled.div`
   position: relative;
+  justify-content: center;
+  align-items: center;
   ${breakpoints.large} {
     margin-top: 5.3rem;
     height: 72.2rem;
@@ -21,7 +23,7 @@ const TeamSliderContainer = styled.div`
   ${breakpoints.medium} {
     margin-top: 5.3rem;
     height: 52.2rem;
-    width: 80rem;
+    width: 78rem;
     overflow: hidden;
   }
   ${breakpoints.small} {
