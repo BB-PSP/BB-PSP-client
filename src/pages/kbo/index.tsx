@@ -57,7 +57,7 @@ const TeamSlider = styled.div`
     margin-top: 5.3rem;
     height: 40.2rem;
     width: 100%;
-    overflow: visible;
+    overflow: hidden;
   }
 `;
 
@@ -121,7 +121,7 @@ export default function Kbo() {
   const slideBarConstraintsRef = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const largeSlide = useTransform(x, [0, -1350], [0, 620]);
-  const smallSlide = useTransform(x, [0, -1350], [0, 620]);
+  const smallSlide = useTransform(x, [0, -350], [0, 620]);
   return (
     <Wrapper>
       <Subtitle>choose professional team</Subtitle>
