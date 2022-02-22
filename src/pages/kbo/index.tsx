@@ -7,7 +7,6 @@ import {
   useMotionValue,
   useTransform,
 } from 'framer-motion';
-import { useRef } from 'react';
 import { Large, Medium, Small } from '../../styles/MediaQuery';
 
 const Wrapper = styled.div`
