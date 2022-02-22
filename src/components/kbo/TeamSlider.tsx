@@ -21,7 +21,7 @@ const TeamSliderContainer = styled.div`
   ${breakpoints.medium} {
     margin-top: 5.3rem;
     height: 72.2rem;
-    width: 133rem;
+    width: 78rem;
     overflow: hidden;
   }
   ${breakpoints.small} {
@@ -58,13 +58,15 @@ const Row = styled(motion.div)`
 const SlideBarContainer = styled(motion.div)`
   height: 0.2rem;
   background-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
   ${breakpoints.large} {
     margin-top: 5rem;
     width: 131rem;
   }
   ${breakpoints.medium} {
     margin-top: 5rem;
-    width: 131rem;
+    width: 70rem;
   }
   ${breakpoints.small} {
     margin-top: 5rem;
@@ -77,7 +79,7 @@ const SlideBar = styled(motion.div)`
     width: 69rem;
   }
   ${breakpoints.medium} {
-    width: 69rem;
+    width: 20rem;
   }
   ${breakpoints.small} {
     width: 5rem;
@@ -90,6 +92,7 @@ const SlideBar = styled(motion.div)`
 export default function TeamSlider() {
   const x = useMotionValue(0);
   const largeSlide = useTransform(x, [0, -1350], [0, 620]);
+  const mediumSlide = useTransform(x, [0, -1900], [0, 500]);
   const smallSlide = useTransform(x, [0, -2350], [0, 250]);
   return (
     <>
@@ -114,7 +117,7 @@ export default function TeamSlider() {
             <Row
               style={{ x }}
               drag="x"
-              dragConstraints={{ left: -1350, right: 0 }}
+              dragConstraints={{ left: -1900, right: 0 }}
               dragElastic={0.01}
               dragMomentum={true}
             >
@@ -147,7 +150,7 @@ export default function TeamSlider() {
       </Large>
       <Medium>
         <SlideBarContainer>
-          <SlideBar style={{ x: 300 }} />
+          <SlideBar style={{ x: mediumSlide }} />
         </SlideBarContainer>
       </Medium>
       <Small>
