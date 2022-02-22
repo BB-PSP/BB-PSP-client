@@ -45,18 +45,20 @@ const TeamSlider = styled.div`
     margin-top: 5.3rem;
     height: 72.2rem;
     width: 133rem;
+    overflow: hidden;
   }
   ${breakpoints.medium} {
     margin-top: 5.3rem;
     height: 72.2rem;
     width: 133rem;
+    overflow: hidden;
   }
   ${breakpoints.small} {
     margin-top: 5.3rem;
     height: 40.2rem;
-    width: 120rem;
+    width: 100%;
+    overflow: visible;
   }
-  overflow: hidden;
 `;
 
 const Row = styled(motion.div)`
@@ -78,6 +80,7 @@ const Row = styled(motion.div)`
     gap: 2rem;
     grid-template-columns: repeat(10, 1fr);
     width: 200%;
+    margin-left: 2.5rem;
   }
 `;
 
