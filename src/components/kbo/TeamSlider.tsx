@@ -21,7 +21,7 @@ const TeamSliderContainer = styled.div`
   ${breakpoints.medium} {
     margin-top: 5.3rem;
     height: 52.2rem;
-    width: 78rem;
+    width: 80rem;
     overflow: hidden;
   }
   ${breakpoints.small} {
