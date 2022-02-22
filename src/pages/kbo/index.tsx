@@ -8,12 +8,16 @@ import {
   useTransform,
 } from 'framer-motion';
 import { useRef } from 'react';
+import { Large, Medium, Small } from '../../styles/mediaQuery';
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  ${breakpoints.small} {
+    align-items: flex-start;
+  }
 `;
 
 const Subtitle = styled.h2`
@@ -25,8 +29,12 @@ const Subtitle = styled.h2`
     padding-top: 16.7rem;
   }
   ${breakpoints.medium} {
+    font-size: 1.4rem;
+    line-height: 1.846rem;
+    padding-top: 16.7rem;
   }
   ${breakpoints.small} {
+    margin: 0 auto;
     font-size: 1.4rem;
     line-height: 1.846rem;
     padding-top: 10.7rem;
@@ -43,8 +51,12 @@ const TeamSlider = styled.div`
     width: 133rem;
   }
   ${breakpoints.medium} {
+    margin-top: 5.3rem;
+    height: 72.2rem;
+    width: 133rem;
   }
   ${breakpoints.small} {
+    left: 7rem;
     margin-top: 5.3rem;
     height: 40.2rem;
     width: 133rem;
@@ -55,19 +67,23 @@ const TeamSlider = styled.div`
 const Row = styled(motion.div)`
   cursor: grab;
   display: grid;
+  position: absolute;
+  bottom: 0;
   ${breakpoints.large} {
     gap: 2rem;
     grid-template-columns: repeat(10, 1fr);
+    width: 200%;
   }
   ${breakpoints.medium} {
+    gap: 2rem;
+    grid-template-columns: repeat(10, 1fr);
+    width: 200%;
   }
   ${breakpoints.small} {
     gap: 2rem;
     grid-template-columns: repeat(10, 1fr);
+    width: 100%;
   }
-  position: absolute;
-  bottom: 0;
-  width: 200%;
 `;
 
 const SlideBarContainer = styled(motion.div)`
@@ -76,6 +92,8 @@ const SlideBarContainer = styled(motion.div)`
     width: 131rem;
   }
   ${breakpoints.medium} {
+    margin-top: 5rem;
+    width: 131rem;
   }
   ${breakpoints.small} {
     margin-top: 5rem;
@@ -89,6 +107,7 @@ const SlideBar = styled(motion.div)`
     width: 69rem;
   }
   ${breakpoints.medium} {
+    width: 69rem;
   }
   ${breakpoints.small} {
     width: 10rem;
@@ -101,28 +120,57 @@ const SlideBar = styled(motion.div)`
 export default function Kbo() {
   const slideBarConstraintsRef = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
-  const slide = useTransform(x, [0, -1350], [0, 620]);
+  const largeSlide = useTransform(x, [0, -1350], [0, 620]);
+  // const smallSlide = useTransform(x)
   return (
     <Wrapper>
       <Subtitle>choose professional team</Subtitle>
       <Slider>
         <TeamSlider>
           <AnimatePresence>
-            <Row
-              style={{ x }}
-              drag="x"
-              dragConstraints={{ left: -1350, right: 0 }}
-              dragElastic={0.01}
-              dragMomentum={true}
-            >
-              {Team.map((team) => (
-                <TeamCard key={team.id} />
-              ))}
-            </Row>
+            <Large>
+              <Row
+                style={{ x }}
+                drag="x"
+                dragConstraints={{ left: -1350, right: 0 }}
+                dragElastic={0.01}
+                dragMomentum={true}
+              >
+                {Team.map((team) => (
+                  <TeamCard key={team.id} />
+                ))}
+              </Row>
+            </Large>
+            <Medium>
+              <Row
+                style={{ x }}
+                drag="x"
+                dragConstraints={{ left: -1350, right: 0 }}
+                dragElastic={0.01}
+                dragMomentum={true}
+              >
+                {Team.map((team) => (
+                  <TeamCard key={team.id} />
+                ))}
+              </Row>
+            </Medium>
+            <Small>
+              <Row
+                style={{ x }}
+                drag="x"
+                dragConstraints={{ left: -1850, right: 475 }}
+                dragElastic={0.01}
+                dragMomentum={true}
+              >
+                {Team.map((team) => (
+                  <TeamCard key={team.id} />
+                ))}
+              </Row>
+            </Small>
           </AnimatePresence>
         </TeamSlider>
         <SlideBarContainer ref={slideBarConstraintsRef}>
-          <SlideBar style={{ x: slide }} />
+          <SlideBar style={{ x: largeSlide }} />
         </SlideBarContainer>
       </Slider>
     </Wrapper>
