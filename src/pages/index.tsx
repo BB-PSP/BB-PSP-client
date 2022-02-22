@@ -89,8 +89,9 @@ const ButtonConatiner = styled.nav`
     margin-top: 10.5rem;
   }
   ${breakpoints.small} {
+    margin: 0 auto;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     margin-top: 5rem;
   }
 `;
@@ -107,6 +108,9 @@ const CustomButtonBox = styled.div`
 `;
 
 const ProButton = styled.h3`
+  &:hover {
+    cursor: pointer;
+  }
   color: #b70000;
   font-family: 'RobotoMonoRegular';
   ${breakpoints.large} {
@@ -121,6 +125,9 @@ const ProButton = styled.h3`
 `;
 
 const CustomButton = styled.h3`
+  &:hover {
+    cursor: pointer;
+  }
   color: #b70000;
   font-family: 'RobotoMonoRegular';
   ${breakpoints.large} {
@@ -135,22 +142,19 @@ const CustomButton = styled.h3`
 `;
 
 const ArrowImg = styled.img`
-  &:hover {
-    cursor: pointer;
-  }
   ${breakpoints.large} {
     margin-top: 1.6rem;
-    width: 7rem;
+    width: 10.35rem;
     height: auto;
   }
   ${breakpoints.medium} {
     margin-top: 1.6rem;
-    width: 4rem;
+    width: 10.35rem;
     height: auto;
   }
   ${breakpoints.small} {
     margin-top: 1rem;
-    width: 4rem;
+    width: 6rem;
     height: auto;
   }
 `;
@@ -164,15 +168,19 @@ export default function Home() {
       </DescriptionBox>
       <ButtonConatiner>
         <ProButtonBox>
-          <ProButton>Professional team</ProButton>
           <Link href="/kbo">
-            <ArrowImg src="image/arrow.png" />
+            <ProButton>
+              Professional team
+              <ArrowImg src="image/arrow.png" />
+            </ProButton>
           </Link>
         </ProButtonBox>
         <CustomButtonBox>
-          <CustomButton>Choose it yourself</CustomButton>
           <Link href="/custom">
-            <ArrowImg src="image/arrow.png" />
+            <CustomButton>
+              Choose it yourself
+              <ArrowImg src="image/arrow.png" />
+            </CustomButton>
           </Link>
         </CustomButtonBox>
       </ButtonConatiner>
