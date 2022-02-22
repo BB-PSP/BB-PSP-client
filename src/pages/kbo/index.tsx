@@ -15,9 +15,6 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  ${breakpoints.small} {
-    align-items: flex-start;
-  }
 `;
 
 const Subtitle = styled.h2`
@@ -34,7 +31,6 @@ const Subtitle = styled.h2`
     padding-top: 16.7rem;
   }
   ${breakpoints.small} {
-    margin: 0 auto;
     font-size: 1.4rem;
     line-height: 1.846rem;
     padding-top: 10.7rem;
@@ -56,10 +52,9 @@ const TeamSlider = styled.div`
     width: 133rem;
   }
   ${breakpoints.small} {
-    left: 7rem;
     margin-top: 5.3rem;
     height: 40.2rem;
-    width: 133rem;
+    width: 120rem;
   }
   overflow: hidden;
 `;
@@ -82,11 +77,13 @@ const Row = styled(motion.div)`
   ${breakpoints.small} {
     gap: 2rem;
     grid-template-columns: repeat(10, 1fr);
-    width: 100%;
+    width: 200%;
   }
 `;
 
 const SlideBarContainer = styled(motion.div)`
+  height: 0.2rem;
+  background-color: #fff;
   ${breakpoints.large} {
     margin-top: 5rem;
     width: 131rem;
@@ -96,10 +93,10 @@ const SlideBarContainer = styled(motion.div)`
     width: 131rem;
   }
   ${breakpoints.small} {
+    margin: 0 auto;
     margin-top: 5rem;
+    width: 30rem;
   }
-  height: 0.2rem;
-  background-color: #fff;
 `;
 
 const SlideBar = styled(motion.div)`
@@ -121,7 +118,7 @@ export default function Kbo() {
   const slideBarConstraintsRef = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const largeSlide = useTransform(x, [0, -1350], [0, 620]);
-  // const smallSlide = useTransform(x)
+  const smallSlide = useTransform(x, [0, -1350], [0, 620]);
   return (
     <Wrapper>
       <Subtitle>choose professional team</Subtitle>
