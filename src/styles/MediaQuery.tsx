@@ -10,7 +10,7 @@ const Small: React.FC = ({ children }) => {
 
 const Medium: React.FC = ({ children }) => {
   const isTablet = useMediaQuery({
-    query: '(max-width: 1279px)',
+    query: '(max-width: 1279px) and (min-width: 640px)',
   });
   return <React.Fragment>{isTablet && children}</React.Fragment>;
 };
