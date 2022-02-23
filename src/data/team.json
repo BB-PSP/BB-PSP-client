@@ -1,0 +1,44 @@
+{
+  "teamDTOList": [
+    {
+      "name": "Hanwha Eagles",
+      "colourLogo": "/image/teamLogo/hanhwa.png"
+    },
+    {
+      "name": "LG Twins",
+      "colourLogo": "/image/teamLogo/lg.png"
+    },
+    {
+      "name": "Doosan Bears",
+      "colourLogo": "/image/teamLogo/doosan.png"
+    },
+    {
+      "name": "Samsung Lions",
+      "colourLogo": "/image/teamLogo/samsung.png"
+    },
+    {
+      "name": "Lottes Giants",
+      "colourLogo": "/image/teamLogo/lotte.png"
+    },
+    {
+      "name": "Kiwoom Heroes",
+      "colourLogo": "/image/teamLogo/kiwoom.png"
+    },
+    {
+      "name": "NC Dinos",
+      "colourLogo": "/image/teamLogo/nc.png"
+    },
+    {
+      "name": "KT Wiz",
+      "colourLogo": "/image/teamLogo/kt.png"
+    },
+    {
+      "name": "KIA Tigers",
+      "colourLogo": "/image/teamLogo/kia.png"
+    },
+    {
+      "name": "SSG Landers",
+      "colourLogo": "/image/teamLogo/ssg.png"
+    }
+  ]
+}
