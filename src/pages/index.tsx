@@ -13,7 +13,7 @@ const Wrapper = styled.main`
   margin: 0 auto;
   ${breakpoints.large} {
     padding-top: 9.4rem;
-    width: 127.6rem;
+    width: 128rem;
   }
   ${breakpoints.medium} {
     padding-top: 9.4rem;
