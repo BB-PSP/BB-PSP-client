@@ -1,5 +1,8 @@
+import { motion } from 'framer-motion';
 import React from 'react';
+import { useQuery } from 'react-query';
 import styled from 'styled-components';
+import { ITeam } from '../../store/Types';
 import { breakpoints } from '../../styles/media';
 
 const Wrapper = styled.div`
@@ -64,10 +67,11 @@ const GridContainer = styled.div`
   }
 `;
 
-const TeamCard = styled.div`
+const TeamCard = styled(motion.div)<ITeam>`
+  cursor: grab;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url(/image/teamLogo_b/nc_b.png);
+  background-image: url(${(props) => props.colourLogo});
   background-position: center;
   ${breakpoints.large} {
     width: 21.7rem;
@@ -83,13 +87,33 @@ const TeamCard = styled.div`
   }
 `;
 
+const cardVariants = {
+  unHovered: {
+    scale: 1,
+  },
+  hovered: {
+    scale: 1.1,
+  },
+};
+
 export default function Custom() {
+  const { isLoading, error, data } = useQuery('teamData', () =>
+    fetch('/api/team').then((res) => res.json()),
+  );
+  const teams = data?.teamDTOList;
   return (
     <Wrapper>
       <SubTitle>BB:PSP(Baseball: Player Stats Prediction)</SubTitle>
       <GridContainer>
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((team) => (
-          <TeamCard key={team} />
+        {teams?.map((team: ITeam) => (
+          <TeamCard
+            variants={cardVariants}
+            initial="unHovered"
+            whileHover="hovered"
+            key={team.name}
+            name={team.name}
+            colourLogo={team.colourLogo}
+          />
         ))}
       </GridContainer>
     </Wrapper>
