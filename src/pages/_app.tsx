@@ -1,4 +1,5 @@
 import React from 'react';
+import { RecoilRoot } from 'recoil';
 import Layout from '../components/layout/Layout';
 import GlobalFont from '../styles/GlobalFont';
 import GlobalStyle from '../styles/GlobalStyle';
@@ -12,9 +13,11 @@ function App({ Component }: AppProps) {
     <>
       <GlobalStyle />
       <GlobalFont />
-      <Layout>
-        <Component />
-      </Layout>
+      <RecoilRoot>
+        <Layout>
+          <Component />
+        </Layout>
+      </RecoilRoot>
     </>
   );
 }
