@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
 import { breakpoints } from '../../styles/media';
@@ -35,9 +36,9 @@ const SubTitle = styled.h2`
     padding-bottom: 21.2rem;
   }
   ${breakpoints.small} {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     line-height: 1.846rem;
-    padding-top: 10.7rem;
+    padding-top: 8.7rem;
     padding-bottom: 2.2rem;
   }
 `;
@@ -59,12 +60,12 @@ const GridContainer = styled.div`
   ${breakpoints.small} {
     grid-template-columns: repeat(2, 1fr);
     height: 39.8rem;
-    column-gap: 4.9rem;
+    column-gap: 2.9rem;
     row-gap: 3.8rem;
   }
 `;
 
-const TeamCard = styled.div`
+const TeamCard = styled(motion.div)`
   background-size: contain;
   background-repeat: no-repeat;
   background-image: url(/image/teamLogo_b/nc_b.png);
@@ -78,18 +79,36 @@ const TeamCard = styled.div`
     height: 14.5rem;
   }
   ${breakpoints.small} {
-    width: 11.7rem;
-    height: 5.5rem;
+    width: 15.7rem;
+    height: 6.5rem;
   }
 `;
 
+const cardVariants = {
+  unHovered: {
+    scale: 1,
+  },
+  hovered: {
+    scale: 1.1,
+  },
+};
+
 export default function Custom() {
+  const onCardClicked = (team: number) => {
+    console.log(team);
+  };
   return (
     <Wrapper>
       <SubTitle>BB:PSP(Baseball: Player Stats Prediction)</SubTitle>
       <GridContainer>
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((team) => (
-          <TeamCard key={team} />
+          <TeamCard
+            key={team}
+            variants={cardVariants}
+            initial="unHovered"
+            whileHover="hovered"
+            onClick={() => onCardClicked(team)}
+          />
         ))}
       </GridContainer>
     </Wrapper>
