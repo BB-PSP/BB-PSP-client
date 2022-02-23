@@ -38,9 +38,9 @@ const SubTitle = styled.h2`
     padding-bottom: 21.2rem;
   }
   ${breakpoints.small} {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     line-height: 1.846rem;
-    padding-top: 10.7rem;
+    padding-top: 8.7rem;
     padding-bottom: 2.2rem;
   }
 `;
@@ -62,7 +62,7 @@ const GridContainer = styled.div`
   ${breakpoints.small} {
     grid-template-columns: repeat(2, 1fr);
     height: 39.8rem;
-    column-gap: 4.9rem;
+    column-gap: 2.9rem;
     row-gap: 3.8rem;
   }
 `;
@@ -82,8 +82,8 @@ const TeamCard = styled(motion.div)<ITeam>`
     height: 14.5rem;
   }
   ${breakpoints.small} {
-    width: 11.7rem;
-    height: 5.5rem;
+    width: 15.7rem;
+    height: 6.5rem;
   }
 `;
 
@@ -101,6 +101,9 @@ export default function Custom() {
     fetch('/api/team').then((res) => res.json()),
   );
   const teams = data?.teamDTOList;
+  const onCardClicked = (team: number) => {
+    console.log(team);
+  };
   return (
     <Wrapper>
       <SubTitle>BB:PSP(Baseball: Player Stats Prediction)</SubTitle>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { RecoilRoot } from 'recoil';
 import Layout from '../components/layout/Layout';
 import initMockAPI from '../mocks';
 import GlobalFont from '../styles/GlobalFont';
