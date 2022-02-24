@@ -73,8 +73,10 @@ const TeamCard = styled(motion.div)<ITeam & { clicked: boolean }>`
   cursor: grab;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url(${(props) =>
-    props.clicked ? props.colourLogo : props.blackLogo});
+  ${(props) =>
+    props.clicked
+      ? `background-image: url(${props.colourLogo});`
+      : `background-image: url(${props.blackLogo});`}
   background-position: center;
   ${breakpoints.large} {
     width: 21.7rem;
@@ -104,40 +106,34 @@ export default function Custom() {
   // if (isLoading) return <div>Loading</div>;
   // if (error) return 'An error has occurred: ' + error?.message;
   const teams = data?.teamDTOList;
-  // const [selectedName, setSelectedName] = useState<string>('');
-  const selectedTeam: Array<string> = new Array<string>();
+  const [selectedName, setSelectedName] = React.useState<string[]>([]);
 
   return (
     <Wrapper>
-      <SubTitle>BB:PSP(Baseball: Player Stats Prediction)</SubTitle>
+      <SubTitle>BB:PSP(Baseball: Player Stats P rediction)</SubTitle>
       <GridContainer>
-        {teams?.map((team: ITeam) => (
-          <TeamCard
-            variants={cardVariants}
-            initial="unHovered"
-            whileHover="hovered"
-            onClick={() => {
-              if (selectedTeam.includes(team.name)) {
-                for (let i = 0; i < selectedTeam.length; i++) {
-                  if (selectedTeam[i] === team.name) {
-                    selectedTeam.splice(i, 1);
-                    i--;
-                  }
+        {teams?.map((team: ITeam) => {
+          const isClicked = selectedName.includes(team.name);
+          return (
+            <TeamCard
+              variants={cardVariants}
+              initial="unHovered"
+              whileHover="hovered"
+              onClick={() => {
+                if (selectedName.includes(team.name)) {
+                  setSelectedName(selectedName.filter((v) => v !== team.name));
+                } else {
+                  setSelectedName((prev) => [...prev, team.name]);
                 }
-              } else {
-                selectedTeam.push(team.name);
-              }
-              console.log(selectedTeam);
-            }}
-            clicked={selectedTeam.includes(team.name)}
-            // onClick={() => setSelectedName(team.name)}
-            // clicked={selectedName === team.name}
-            key={team.name}
-            name={team.name}
-            colourLogo={team.colourLogo}
-            blackLogo={team.blackLogo}
-          />
-        ))}
+              }}
+              clicked={isClicked}
+              key={team.name}
+              name={team.name}
+              colourLogo={team.colourLogo}
+              blackLogo={team.blackLogo}
+            />
+          );
+        })}
       </GridContainer>
     </Wrapper>
   );
