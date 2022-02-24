@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { GetStaticProps } from 'next';
-import React from 'react';
+import React, { useState } from 'react';
 import { dehydrate, QueryClient, useQuery } from 'react-query';
 import styled from 'styled-components';
 import { fetchTeams } from '../../hooks/api/useTeams';
@@ -69,11 +69,11 @@ const GridContainer = styled.div`
   }
 `;
 
-const TeamCard = styled(motion.div)<ITeam>`
+const TeamCard = styled(motion.div)<Team>`
   cursor: grab;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url(${(props) => props.colourLogo});
+  background-image: url(${(props) => props.blackLogo});
   background-position: center;
   ${breakpoints.large} {
     width: 21.7rem;
@@ -98,24 +98,32 @@ const cardVariants = {
   },
 };
 
+interface Team extends ITeam {
+  clicked: boolean;
+}
+
 export default function Custom() {
   const { data } = useQuery('teamData', () => fetchTeams());
   // if (isLoading) return <div>Loading</div>;
   // if (error) return 'An error has occurred: ' + error?.message;
   const teams = data?.teamDTOList;
+  const [clicked, setClicked] = useState(false);
 
   return (
     <Wrapper>
       <SubTitle>BB:PSP(Baseball: Player Stats Prediction)</SubTitle>
       <GridContainer>
-        {teams?.map((team: ITeam) => (
+        {teams?.map((team: Team) => (
           <TeamCard
             variants={cardVariants}
             initial="unHovered"
             whileHover="hovered"
+            onClick={() => setClicked((prev) => !prev)}
+            clicked={clicked}
             key={team.name}
             name={team.name}
             colourLogo={team.colourLogo}
+            blackLogo={team.blackLogo}
           />
         ))}
       </GridContainer>
