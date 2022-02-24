@@ -2,44 +2,54 @@
   "teamDTOList": [
     {
       "name": "Hanwha Eagles",
-      "colourLogo": "/image/teamLogo/hanhwa.png"
+      "colourLogo": "/image/teamLogo/hanhwa.png",
+      "blackLogo": "/image/teamLogo_b/hanhwa_b.png"
     },
     {
       "name": "LG Twins",
-      "colourLogo": "/image/teamLogo/lg.png"
+      "colourLogo": "/image/teamLogo/lg.png",
+      "blackLogo": "/image/teamLogo_b/lg_b.png"
     },
 
     {
       "name": "Samsung Lions",
-      "colourLogo": "/image/teamLogo/samsung.png"
+      "colourLogo": "/image/teamLogo/samsung.png",
+      "blackLogo": "/image/teamLogo_b/samsung_b.png"
     },
     {
       "name": "Lottes Giants",
-      "colourLogo": "/image/teamLogo/lotte.png"
+      "colourLogo": "/image/teamLogo/lotte.png",
+      "blackLogo": "/image/teamLogo_b/lotte_b.png"
     },
     {
       "name": "Kiwoom Heroes",
-      "colourLogo": "/image/teamLogo/kiwoom.png"
+      "colourLogo": "/image/teamLogo/kiwoom.png",
+      "blackLogo": "/image/teamLogo_b/kiwoom_b.png"
     },
     {
       "name": "NC Dinos",
-      "colourLogo": "/image/teamLogo/nc.png"
+      "colourLogo": "/image/teamLogo/nc.png",
+      "blackLogo": "/image/teamLogo_b/nc_b.png"
     },
     {
       "name": "KT Wiz",
-      "colourLogo": "/image/teamLogo/kt.png"
+      "colourLogo": "/image/teamLogo/kt.png",
+      "blackLogo": "/image/teamLogo_b/kt_b.png"
     },
     {
       "name": "KIA Tigers",
-      "colourLogo": "/image/teamLogo/kia.png"
+      "colourLogo": "/image/teamLogo/kia.png",
+      "blackLogo": "/image/teamLogo_b/kia_b.png"
     },
     {
       "name": "SSG Landers",
-      "colourLogo": "/image/teamLogo/ssg.png"
+      "colourLogo": "/image/teamLogo/ssg.png",
+      "blackLogo": "/image/teamLogo_b/ssg_b.png"
     },
     {
       "name": "Doosan Bears",
-      "colourLogo": "/image/teamLogo/doosan.png"
+      "colourLogo": "/image/teamLogo/doosan.png",
+      "blackLogo": "/image/teamLogo_b/doosan_b.png"
     }
   ]
 }
