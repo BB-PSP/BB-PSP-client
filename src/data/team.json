@@ -8,10 +8,7 @@
       "name": "LG Twins",
       "colourLogo": "/image/teamLogo/lg.png"
     },
-    {
-      "name": "Doosan Bears",
-      "colourLogo": "/image/teamLogo/doosan.png"
-    },
+
     {
       "name": "Samsung Lions",
       "colourLogo": "/image/teamLogo/samsung.png"
@@ -39,6 +36,10 @@
     {
       "name": "SSG Landers",
       "colourLogo": "/image/teamLogo/ssg.png"
+    },
+    {
+      "name": "Doosan Bears",
+      "colourLogo": "/image/teamLogo/doosan.png"
     }
   ]
 }
