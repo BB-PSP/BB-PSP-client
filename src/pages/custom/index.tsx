@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
+import { GetStaticProps } from 'next';
 import React from 'react';
-import { useQuery } from 'react-query';
+import { dehydrate, QueryClient, useQuery } from 'react-query';
 import styled from 'styled-components';
+import { fetchTeams } from '../../hooks/api/useTeams';
 import { ITeam } from '../../store/Types';
 import { breakpoints } from '../../styles/media';
 
@@ -97,13 +99,11 @@ const cardVariants = {
 };
 
 export default function Custom() {
-  const { isLoading, error, data } = useQuery('teamData', () =>
-    fetch('/api/team').then((res) => res.json()),
-  );
+  const { data } = useQuery('teamData', () => fetchTeams());
+  // if (isLoading) return <div>Loading</div>;
+  // if (error) return 'An error has occurred: ' + error?.message;
   const teams = data?.teamDTOList;
-  const onCardClicked = (team: number) => {
-    console.log(team);
-  };
+
   return (
     <Wrapper>
       <SubTitle>BB:PSP(Baseball: Player Stats Prediction)</SubTitle>
@@ -122,3 +122,15 @@ export default function Custom() {
     </Wrapper>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchQuery('teamData', () => fetchTeams());
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  };
+};
