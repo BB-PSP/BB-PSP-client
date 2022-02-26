@@ -9,50 +9,50 @@
     {
       "id": 1,
       "name": "catcher",
-      "colourLogo": "/image/positionLogo/pitcher_r.png",
-      "blackLogo": "/image/positionLogo_b/pictcher_line_b.png"
+      "colourLogo": "/image/positionLogo/catcher_r.png",
+      "blackLogo": "/image/positionLogo_b/catcher_r_line_b.png"
     },
     {
       "id": 1,
       "name": "first baseman",
-      "colourLogo": "/image/positionLogo/pitcher_r.png",
-      "blackLogo": "/image/positionLogo_b/pictcher_line_b.png"
+      "colourLogo": "/image/positionLogo/firstbaseman_r.png",
+      "blackLogo": "/image/positionLogo_b/firstbaseman_line_b.png"
     },
     {
       "id": 1,
       "name": "second baseman",
-      "colourLogo": "/image/positionLogo/pitcher_r.png",
-      "blackLogo": "/image/positionLogo_b/pictcher_line_b.png"
+      "colourLogo": "/image/positionLogo/secondbaseman_r.png",
+      "blackLogo": "/image/positionLogo_b/secondbaseman_line_b.png"
     },
     {
       "id": 1,
       "name": "shortstop",
-      "colourLogo": "/image/positionLogo/pitcher_r.png",
-      "blackLogo": "/image/positionLogo_b/pictcher_line_b.png"
+      "colourLogo": "/image/positionLogo/shortstop_r.png",
+      "blackLogo": "/image/positionLogo_b/shortstop_line_b.png"
     },
     {
       "id": 1,
       "name": "third baseman",
-      "colourLogo": "/image/positionLogo/pitcher_r.png",
-      "blackLogo": "/image/positionLogo_b/pictcher_line_b.png"
+      "colourLogo": "/image/positionLogo/thirdbaseman_r.png",
+      "blackLogo": "/image/positionLogo_b/thirdbaseman_line_b.png"
     },
     {
       "id": 1,
       "name": "left fielder",
-      "colourLogo": "/image/positionLogo/pitcher_r.png",
-      "blackLogo": "/image/positionLogo_b/pictcher_line_b.png"
+      "colourLogo": "/image/positionLogo/leftfielder_r.png",
+      "blackLogo": "/image/positionLogo_b/leftfielder_line_b.png"
     },
     {
       "id": 1,
       "name": "center fielder",
-      "colourLogo": "/image/positionLogo/pitcher_r.png",
-      "blackLogo": "/image/positionLogo_b/pictcher_line_b.png"
+      "colourLogo": "/image/positionLogo/centerfielder_r.png",
+      "blackLogo": "/image/positionLogo_b/centerfielder_line_b.png"
     },
     {
       "id": 1,
       "name": "right fielder",
-      "colourLogo": "/image/positionLogo/pitcher_r.png",
-      "blackLogo": "/image/positionLogo_b/pictcher_line_b.png"
+      "colourLogo": "/image/positionLogo/rightfielder_r.png",
+      "blackLogo": "/image/positionLogo_b/rightfielder_line_b.png"
     }
   ]
 }

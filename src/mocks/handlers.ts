@@ -1,5 +1,6 @@
 import { rest } from 'msw';
 import team from '../data/team.json';
+import position from '../data/position.json';
 
 export const handlers = [
   rest.get('/api/team', (req, res, ctx) => {
