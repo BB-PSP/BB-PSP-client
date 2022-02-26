@@ -38,7 +38,7 @@ const SubTitle = styled.h2`
     font-size: 1.4rem;
     line-height: 1.846rem;
     padding-top: 16.7rem;
-    padding-bottom: 21.2rem;
+    padding-bottom: 5.2rem;
   }
   ${breakpoints.small} {
     font-size: 1.1rem;
@@ -58,14 +58,14 @@ const GridContainer = styled.div`
   }
   ${breakpoints.medium} {
     grid-template-columns: repeat(3, 1fr);
-    height: 39.8rem;
-    column-gap: 4.9rem;
-    row-gap: 10.8rem;
+    height: 50.4rem;
+    column-gap: 2rem;
+    row-gap: 3.8rem;
   }
   ${breakpoints.small} {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     height: 39.8rem;
-    column-gap: 2.9rem;
+    column-gap: 2rem;
     row-gap: 3.8rem;
   }
 `;
@@ -86,8 +86,8 @@ const PositionCard = styled(motion.div)<IPosition & { clicked: boolean }>`
     height: 12rem;
   }
   ${breakpoints.medium} {
-    width: 40rem;
-    height: 12rem;
+    width: 20rem;
+    height: 10rem;
   }
   ${breakpoints.small} {
     width: 15.7rem;
@@ -97,24 +97,53 @@ const PositionCard = styled(motion.div)<IPosition & { clicked: boolean }>`
 
 const PositionName = styled.h2`
   font-family: 'RobotoMonoRegular';
-  font-size: 3.4rem;
   color: #fff;
   margin: 0 auto;
+  ${breakpoints.large} {
+    font-size: 3.4rem;
+  }
+  ${breakpoints.medium} {
+    font-size: 2rem;
+  }
+  ${breakpoints.small} {
+    font-size: 1.6rem;
+  }
 `;
 
-const NextButtonContainer = styled.div`
-  cursor: grab;
+const ButtonContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  margin-left: 117rem;
-  margin-top: 5.4rem;
+  flex-direction: row;
+  justify-content: space-between;
+  ${breakpoints.large} {
+    margin-top: 5.4rem;
+  }
+  ${breakpoints.medium} {
+    margin-top: 5.4rem;
+  }
+  ${breakpoints.small} {
+    margin-top: 8rem;
+  }
 `;
 
 const NextButtonText = styled.h3`
+  cursor: grab;
   font-family: 'RobotoMonoRegular';
-  font-size: 2.2rem;
-  line-height: 2.9rem;
   color: #b70000;
+  ${breakpoints.large} {
+    font-size: 2.2rem;
+    line-height: 2.9rem;
+    margin-left: 106.5rem;
+  }
+  ${breakpoints.medium} {
+    font-size: 2.2rem;
+    line-height: 2.9rem;
+    margin-left: 46.5rem;
+  }
+  ${breakpoints.small} {
+    font-size: 1.6rem;
+    line-height: 2.9rem;
+    margin-left: 20.5rem;
+  }
 `;
 
 const ArrowImg = styled.img`
@@ -125,7 +154,45 @@ const ArrowImg = styled.img`
   }
   ${breakpoints.medium} {
     margin-top: -0.6rem;
-    width: 5.35rem;
+    width: 8.35rem;
+    height: auto;
+  }
+  ${breakpoints.small} {
+    margin-top: -0.6rem;
+    width: 6rem;
+    height: auto;
+  }
+`;
+
+const PrevButtonText = styled.h3`
+  cursor: grab;
+  font-family: 'RobotoMonoRegular';
+  color: #b70000;
+  text-align: right;
+  ${breakpoints.large} {
+    font-size: 2.2rem;
+    line-height: 2.9rem;
+  }
+  ${breakpoints.medium} {
+    font-size: 2.2rem;
+    line-height: 2.9rem;
+  }
+  ${breakpoints.small} {
+    font-size: 1.6rem;
+    line-height: 2.9rem;
+  }
+`;
+
+const ReversedArrowImg = styled.img`
+  transform: scaleX(-1);
+  ${breakpoints.large} {
+    margin-top: -0.6rem;
+    width: 10.35rem;
+    height: auto;
+  }
+  ${breakpoints.medium} {
+    margin-top: -0.6rem;
+    width: 8.35rem;
     height: auto;
   }
   ${breakpoints.small} {
@@ -167,14 +234,20 @@ export default function Position() {
           );
         })}
       </GridContainer>
-      <NextButtonContainer>
+      <ButtonContainer>
+        <Link href="/custom/team">
+          <PrevButtonText>
+            prev
+            <ReversedArrowImg src="/image/Arrow.png" alt="화살표" />
+          </PrevButtonText>
+        </Link>
         <Link href="/custom/position">
           <NextButtonText>
             next
             <ArrowImg src="/image/Arrow.png" alt="화살표" />
           </NextButtonText>
         </Link>
-      </NextButtonContainer>
+      </ButtonContainer>
     </Wrapper>
   );
 }
