@@ -6,7 +6,7 @@ export interface ITeam {
 }
 
 export interface IPosition {
-  position: string;
+  name: string;
   colourLogo: string;
   blackLogo: string;
 }
