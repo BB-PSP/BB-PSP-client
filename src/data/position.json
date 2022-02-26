@@ -1,0 +1,58 @@
+{
+  "positionList": [
+    {
+      "id": 1,
+      "name": "pitcher",
+      "colourLogo": "/image/positionLogo/pitcher_r.png",
+      "blackLogo": "/image/positionLogo_b/pictcher_line_b.png"
+    },
+    {
+      "id": 1,
+      "name": "catcher",
+      "colourLogo": "/image/positionLogo/pitcher_r.png",
+      "blackLogo": "/image/positionLogo_b/pictcher_line_b.png"
+    },
+    {
+      "id": 1,
+      "name": "first baseman",
+      "colourLogo": "/image/positionLogo/pitcher_r.png",
+      "blackLogo": "/image/positionLogo_b/pictcher_line_b.png"
+    },
+    {
+      "id": 1,
+      "name": "second baseman",
+      "colourLogo": "/image/positionLogo/pitcher_r.png",
+      "blackLogo": "/image/positionLogo_b/pictcher_line_b.png"
+    },
+    {
+      "id": 1,
+      "name": "shortstop",
+      "colourLogo": "/image/positionLogo/pitcher_r.png",
+      "blackLogo": "/image/positionLogo_b/pictcher_line_b.png"
+    },
+    {
+      "id": 1,
+      "name": "third baseman",
+      "colourLogo": "/image/positionLogo/pitcher_r.png",
+      "blackLogo": "/image/positionLogo_b/pictcher_line_b.png"
+    },
+    {
+      "id": 1,
+      "name": "left fielder",
+      "colourLogo": "/image/positionLogo/pitcher_r.png",
+      "blackLogo": "/image/positionLogo_b/pictcher_line_b.png"
+    },
+    {
+      "id": 1,
+      "name": "center fielder",
+      "colourLogo": "/image/positionLogo/pitcher_r.png",
+      "blackLogo": "/image/positionLogo_b/pictcher_line_b.png"
+    },
+    {
+      "id": 1,
+      "name": "right fielder",
+      "colourLogo": "/image/positionLogo/pitcher_r.png",
+      "blackLogo": "/image/positionLogo_b/pictcher_line_b.png"
+    }
+  ]
+}
