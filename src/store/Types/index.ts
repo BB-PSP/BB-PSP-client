@@ -4,3 +4,9 @@ export interface ITeam {
   colourLogo: string;
   blackLogo: string;
 }
+
+export interface IPosition {
+  position: string;
+  colourLogo: string;
+  blackLogo: string;
+}
