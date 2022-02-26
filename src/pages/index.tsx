@@ -176,7 +176,7 @@ export default function Home() {
           </Link>
         </ProButtonBox>
         <CustomButtonBox>
-          <Link href="/custom">
+          <Link href="/custom/team">
             <CustomButton>
               Choose it yourself
               <ArrowImg src="image/arrow.png" />

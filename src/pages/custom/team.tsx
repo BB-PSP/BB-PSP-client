@@ -94,6 +94,7 @@ const TeamCard = styled(motion.div)<ITeam & { clicked: boolean }>`
 `;
 
 const NextButtonContainer = styled.div`
+  cursor: grab;
   display: flex;
   flex-direction: column;
   padding-left: 117rem;
@@ -143,7 +144,7 @@ export default function Custom() {
 
   return (
     <Wrapper>
-      <SubTitle>BB:PSP(Baseball: Player Stats P rediction)</SubTitle>
+      <SubTitle>BB:PSP(Baseball: Player Stats Prediction)</SubTitle>
       <GridContainer>
         {teams?.map((team: ITeam) => {
           const isClicked = selectedName.includes(team.name);
@@ -169,10 +170,10 @@ export default function Custom() {
         })}
       </GridContainer>
       <NextButtonContainer>
-        <Link href="/">
+        <Link href="/custom/position">
           <NextButtonText>
             next
-            <ArrowImg src="image/arrow.png" />
+            <ArrowImg src="/image/Arrow.png" alt="화살표" />
           </NextButtonText>
         </Link>
       </NextButtonContainer>
