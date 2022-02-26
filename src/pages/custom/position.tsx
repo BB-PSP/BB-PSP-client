@@ -1,4 +1,6 @@
+import { GetStaticProps } from 'next';
 import React from 'react';
+import { dehydrate, QueryClient } from 'react-query';
 import styled from 'styled-components';
 import { breakpoints } from '../../styles/media';
 
@@ -72,3 +74,15 @@ export default function position() {
     </Wrapper>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchQuery('teamData', () => fetchTeams());
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  };
+};
