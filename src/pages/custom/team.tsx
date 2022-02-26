@@ -93,19 +93,32 @@ const TeamCard = styled(motion.div)<ITeam & { clicked: boolean }>`
   }
 `;
 
-const NextButtonContainer = styled.div`
+const ButtonContainer = styled.div`
   cursor: grab;
   display: flex;
-  flex-direction: column;
-  margin-left: 117rem;
+  flex-direction: row;
   margin-top: 16rem;
 `;
 
 const NextButtonText = styled.h3`
   font-family: 'RobotoMonoRegular';
   font-size: 2.2rem;
-  line-height: 2.9rem;
   color: #b70000;
+  ${breakpoints.large} {
+    font-size: 2.2rem;
+    line-height: 2.9rem;
+    margin-left: 106.5rem;
+  }
+  ${breakpoints.medium} {
+    font-size: 2.2rem;
+    line-height: 2.9rem;
+    margin-left: 46.5rem;
+  }
+  ${breakpoints.small} {
+    font-size: 1.6rem;
+    line-height: 2.9rem;
+    margin-left: 20.5rem;
+  }
 `;
 
 const ArrowImg = styled.img`
@@ -117,6 +130,44 @@ const ArrowImg = styled.img`
   ${breakpoints.medium} {
     margin-top: -0.6rem;
     width: 10.35rem;
+    height: auto;
+  }
+  ${breakpoints.small} {
+    margin-top: -0.6rem;
+    width: 6rem;
+    height: auto;
+  }
+`;
+
+const PrevButtonText = styled.h3`
+  cursor: grab;
+  font-family: 'RobotoMonoRegular';
+  color: #b70000;
+  text-align: right;
+  ${breakpoints.large} {
+    font-size: 2.2rem;
+    line-height: 2.9rem;
+  }
+  ${breakpoints.medium} {
+    font-size: 2.2rem;
+    line-height: 2.9rem;
+  }
+  ${breakpoints.small} {
+    font-size: 1.6rem;
+    line-height: 2.9rem;
+  }
+`;
+
+const ReversedArrowImg = styled.img`
+  transform: scaleX(-1);
+  ${breakpoints.large} {
+    margin-top: -0.6rem;
+    width: 10.35rem;
+    height: auto;
+  }
+  ${breakpoints.medium} {
+    margin-top: -0.6rem;
+    width: 8.35rem;
     height: auto;
   }
   ${breakpoints.small} {
@@ -169,14 +220,20 @@ export default function Team() {
           );
         })}
       </GridContainer>
-      <NextButtonContainer>
+      <ButtonContainer>
+        <Link href="/">
+          <PrevButtonText>
+            prev
+            <ReversedArrowImg src="/image/Arrow.png" alt="화살표" />
+          </PrevButtonText>
+        </Link>
         <Link href="/custom/position">
           <NextButtonText>
             next
             <ArrowImg src="/image/Arrow.png" alt="화살표" />
           </NextButtonText>
         </Link>
-      </NextButtonContainer>
+      </ButtonContainer>
     </Wrapper>
   );
 }
