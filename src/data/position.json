@@ -4,13 +4,13 @@
       "id": 1,
       "name": "pitcher",
       "colourLogo": "/image/positionLogo/pitcher_r.png",
-      "blackLogo": "/image/positionLogo_b/pictcher_line_b.png"
+      "blackLogo": "/image/positionLogo_b/pitcher_line_b.png"
     },
     {
       "id": 1,
       "name": "catcher",
       "colourLogo": "/image/positionLogo/catcher_r.png",
-      "blackLogo": "/image/positionLogo_b/catcher_r_line_b.png"
+      "blackLogo": "/image/positionLogo_b/catcher_line_b.png"
     },
     {
       "id": 1,
