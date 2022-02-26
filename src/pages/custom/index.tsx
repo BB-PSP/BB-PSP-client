@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { GetStaticProps } from 'next';
+import Link from 'next/link';
 import React from 'react';
 import { dehydrate, QueryClient, useQuery } from 'react-query';
 import styled from 'styled-components';
@@ -92,6 +93,38 @@ const TeamCard = styled(motion.div)<ITeam & { clicked: boolean }>`
   }
 `;
 
+const NextButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-left: 117rem;
+  padding-top: 16rem;
+`;
+
+const NextButtonText = styled.h3`
+  font-family: 'RobotoMonoRegular';
+  font-size: 2.2rem;
+  line-height: 2.9rem;
+  color: #b70000;
+`;
+
+const ArrowImg = styled.img`
+  ${breakpoints.large} {
+    margin-top: -0.6rem;
+    width: 10.35rem;
+    height: auto;
+  }
+  ${breakpoints.medium} {
+    margin-top: -0.6rem;
+    width: 10.35rem;
+    height: auto;
+  }
+  ${breakpoints.small} {
+    margin-top: -0.6rem;
+    width: 6rem;
+    height: auto;
+  }
+`;
+
 const cardVariants = {
   unHovered: {
     scale: 1,
@@ -135,6 +168,14 @@ export default function Custom() {
           );
         })}
       </GridContainer>
+      <NextButtonContainer>
+        <Link href="/">
+          <NextButtonText>
+            next
+            <ArrowImg src="image/arrow.png" />
+          </NextButtonText>
+        </Link>
+      </NextButtonContainer>
     </Wrapper>
   );
 }
