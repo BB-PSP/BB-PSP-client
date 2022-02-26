@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import { dehydrate, QueryClient, useQuery } from 'react-query';
 import styled from 'styled-components';
 import { fetchTeams } from '../../hooks/api/useTeams';
@@ -97,8 +97,8 @@ const NextButtonContainer = styled.div`
   cursor: grab;
   display: flex;
   flex-direction: column;
-  padding-left: 117rem;
-  padding-top: 16rem;
+  margin-left: 117rem;
+  margin-top: 16rem;
 `;
 
 const NextButtonText = styled.h3`
@@ -135,12 +135,12 @@ const cardVariants = {
   },
 };
 
-export default function Custom() {
+export default function Team() {
   const { data } = useQuery('teamData', () => fetchTeams());
   // if (isLoading) return <div>Loading</div>;
   // if (error) return 'An error has occurred: ' + error?.message;
   const teams = data?.teamDTOList;
-  const [selectedName, setSelectedName] = React.useState<string[]>([]);
+  const [selectedName, setSelectedName] = useState<string[]>([]);
 
   return (
     <Wrapper>
