@@ -94,13 +94,13 @@ const TeamCard = styled(motion.div)<ITeam & { clicked: boolean }>`
 `;
 
 const ButtonContainer = styled.div`
-  cursor: grab;
   display: flex;
   flex-direction: row;
   margin-top: 16rem;
 `;
 
 const NextButtonText = styled.h3`
+  cursor: grab;
   font-family: 'RobotoMonoRegular';
   font-size: 2.2rem;
   color: #b70000;
@@ -188,8 +188,6 @@ const cardVariants = {
 
 export default function Team() {
   const { data } = useQuery('teamData', () => fetchTeams());
-  // if (isLoading) return <div>Loading</div>;
-  // if (error) return 'An error has occurred: ' + error?.message;
   const teams = data?.teamDTOList;
   const [selectedName, setSelectedName] = useState<string[]>([]);
 
@@ -213,9 +211,7 @@ export default function Team() {
               }}
               clicked={isClicked}
               key={team.name}
-              name={team.name}
-              colourLogo={team.colourLogo}
-              blackLogo={team.blackLogo}
+              {...team}
             />
           );
         })}
