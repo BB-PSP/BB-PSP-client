@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
+import { ITeam } from '../../store/Types';
 import { breakpoints } from '../../styles/media';
 
 const Wrapper = styled(motion.div)`
@@ -18,8 +19,8 @@ const Wrapper = styled(motion.div)`
   }
 `;
 
-const LogoBox = styled.div`
-  background-image: url(/image/teamLogo_b/lg_b.png);
+const LogoBox = styled.div<ITeam>`
+  background-image: url(${(props) => props.colourLogo});
   background-repeat: no-repeat;
   background-position: center top;
   width: 100%;
@@ -136,26 +137,26 @@ const Content = styled.p`
   padding-top: 0.4rem;
 `;
 
-export default function TeamCard() {
+export default function TeamCard(team: ITeam) {
   return (
     <Wrapper>
-      <LogoBox>
+      <LogoBox {...team}>
         <LogoBoxBackground />
       </LogoBox>
       <ContentsBox>
         <Order>1</Order>
-        <TeamName>LG Twins</TeamName>
+        <TeamName>{team.name}</TeamName>
         <Box>
           <Category>Last season</Category>
-          <Content>5</Content>
+          <Content>{team.lastSeason}</Content>
         </Box>
         <Box>
           <Category>Wins</Category>
-          <Content>8</Content>
+          <Content>{team.champCount}</Content>
         </Box>
         <Box>
           <Category>Foundation year</Category>
-          <Content>1979</Content>
+          <Content>{team.foundedAt}</Content>
         </Box>
       </ContentsBox>
     </Wrapper>

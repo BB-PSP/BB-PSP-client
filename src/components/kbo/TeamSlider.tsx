@@ -9,6 +9,7 @@ import {
   useTransform,
 } from 'framer-motion';
 import TeamCard from './TeamCard';
+import { ITeamSliderProps } from '../../pages/kbo';
 
 const TeamSliderContainer = styled.div`
   position: relative;
@@ -91,8 +92,9 @@ const SlideBar = styled(motion.div)`
   position: relative;
 `;
 
-export default function TeamSlider() {
+export default function TeamSlider(teams: ITeamSliderProps) {
   const x = useMotionValue(0);
+  const teamArr = Object.values(teams);
   const largeSlide = useTransform(x, [0, -1350], [0, 620]);
   const mediumSlide = useTransform(x, [0, -1900], [0, 500]);
   const smallSlide = useTransform(x, [0, -2350], [0, 250]);
@@ -108,8 +110,8 @@ export default function TeamSlider() {
               dragElastic={0.01}
               dragMomentum={true}
             >
-              {Team.map((team) => (
-                <TeamCard key={team.id} />
+              {teamArr.map((team) => (
+                <TeamCard key={team.name} {...team} />
               ))}
             </Row>
           </AnimatePresence>
@@ -123,8 +125,8 @@ export default function TeamSlider() {
               dragElastic={0.01}
               dragMomentum={true}
             >
-              {Team.map((team) => (
-                <TeamCard key={team.id} />
+              {teamArr.map((team) => (
+                <TeamCard key={team.name} {...team} />
               ))}
             </Row>
           </AnimatePresence>
@@ -138,8 +140,8 @@ export default function TeamSlider() {
               dragElastic={0.01}
               dragMomentum={true}
             >
-              {Team.map((team) => (
-                <TeamCard key={team.id} />
+              {teamArr.map((team) => (
+                <TeamCard key={team.name} {...team} />
               ))}
             </Row>
           </AnimatePresence>
@@ -163,46 +165,3 @@ export default function TeamSlider() {
     </>
   );
 }
-
-const Team = [
-  {
-    id: 1,
-    name: 'samsung lions',
-  },
-  {
-    id: 2,
-    name: 'kiwoom heroes',
-  },
-  {
-    id: 3,
-    name: 'lg twins',
-  },
-  {
-    id: 4,
-    name: 'kia tigers',
-  },
-  {
-    id: 5,
-    name: 'doosan bears',
-  },
-  {
-    id: 6,
-    name: 'hanhwa eagles',
-  },
-  {
-    id: 7,
-    name: 'ssg landers',
-  },
-  {
-    id: 8,
-    name: 'kt wiz',
-  },
-  {
-    id: 9,
-    name: 'nc dinos',
-  },
-  {
-    id: 10,
-    name: 'lotte giants',
-  },
-];

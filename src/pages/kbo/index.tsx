@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import { breakpoints } from '../../styles/media';
 import TeamSlider from '../../components/kbo/TeamSlider';
+import { GetStaticProps } from 'next';
+import { dehydrate, QueryClient, useQuery } from 'react-query';
+import { fetchTeams } from '../../hooks/api/useTeams';
 
 const Wrapper = styled.div`
   display: flex;
@@ -31,13 +34,39 @@ const Subtitle = styled.h2`
 
 const Slider = styled.div``;
 
+export interface ITeamSliderProps {
+  teams: {
+    name: string;
+    colourLogo: string;
+    blackLogo: string;
+    teamColour: string;
+    foundedAt: number;
+    champCount: number;
+    lastSeason: number;
+  };
+}
+
 export default function Kbo() {
+  const { data } = useQuery('teamData', () => fetchTeams());
+  const teams = data?.teamDTOList;
   return (
     <Wrapper>
       <Subtitle>choose professional team</Subtitle>
       <Slider>
-        <TeamSlider />
+        <TeamSlider {...teams} />
       </Slider>
     </Wrapper>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchQuery('teamData', () => fetchTeams());
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  };
+};
