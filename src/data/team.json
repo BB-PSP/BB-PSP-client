@@ -1,7 +1,6 @@
 {
   "teamDTOList": [
     {
-      "id": 7,
       "name": "KT Wiz",
       "colourLogo": "/image/teamLogo/kt.png",
       "blackLogo": "/image/teamLogo_b/kt_b.png",
@@ -11,7 +10,6 @@
       "lastSeason": 1
     },
     {
-      "id": 10,
       "name": "Doosan Bears",
       "colourLogo": "/image/teamLogo/doosan.png",
       "blackLogo": "/image/teamLogo_b/doosan_b.png",
@@ -21,7 +19,6 @@
       "lastSeason": 2
     },
     {
-      "id": 3,
       "name": "Samsung Lions",
       "colourLogo": "/image/teamLogo/samsung.png",
       "blackLogo": "/image/teamLogo_b/samsung_b.png",
@@ -31,7 +28,6 @@
       "lastSeason": 3
     },
     {
-      "id": 2,
       "name": "LG Twins",
       "colourLogo": "/image/teamLogo/lg.png",
       "blackLogo": "/image/teamLogo_b/lg_b.png",
@@ -41,7 +37,6 @@
       "lastSeason": 4
     },
     {
-      "id": 5,
       "name": "Kiwoom Heroes",
       "colourLogo": "/image/teamLogo/kiwoom.png",
       "blackLogo": "/image/teamLogo_b/kiwoom_b.png",
@@ -51,7 +46,6 @@
       "lastSeason": 5
     },
     {
-      "id": 9,
       "name": "SSG Landers",
       "colourLogo": "/image/teamLogo/ssg.png",
       "blackLogo": "/image/teamLogo_b/ssg_b.png",
@@ -61,7 +55,6 @@
       "lastSeason": 6
     },
     {
-      "id": 6,
       "name": "NC Dinos",
       "colourLogo": "/image/teamLogo/nc.png",
       "blackLogo": "/image/teamLogo_b/nc_b.png",
@@ -71,7 +64,6 @@
       "lastSeason": 7
     },
     {
-      "id": 4,
       "name": "Lottes Giants",
       "colourLogo": "/image/teamLogo/lotte.png",
       "blackLogo": "/image/teamLogo_b/lotte_b.png",
@@ -81,7 +73,6 @@
       "lastSeason": 8
     },
     {
-      "id": 8,
       "name": "KIA Tigers",
       "colourLogo": "/image/teamLogo/kia.png",
       "blackLogo": "/image/teamLogo_b/kia_b.png",
@@ -91,7 +82,6 @@
       "lastSeason": 9
     },
     {
-      "id": 1,
       "name": "Hanwha Eagles",
       "colourLogo": "/image/teamLogo/hanhwa.png",
       "blackLogo": "/image/teamLogo_b/hanhwa_b.png",
