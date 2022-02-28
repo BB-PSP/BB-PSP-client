@@ -9,7 +9,6 @@ import {
   useTransform,
 } from 'framer-motion';
 import TeamCard from './TeamCard';
-import { ITeamSliderProps } from '../../pages/kbo';
 
 const TeamSliderContainer = styled.div`
   position: relative;
@@ -92,6 +91,18 @@ const SlideBar = styled(motion.div)`
   position: relative;
 `;
 
+export interface ITeamSliderProps {
+  teams: {
+    name: string;
+    colourLogo: string;
+    blackLogo: string;
+    teamColour: string;
+    foundedAt: number;
+    champCount: number;
+    lastSeason: number;
+  };
+}
+
 export default function TeamSlider(teams: ITeamSliderProps) {
   const x = useMotionValue(0);
   const teamArr = Object.values(teams);
@@ -110,9 +121,9 @@ export default function TeamSlider(teams: ITeamSliderProps) {
               dragElastic={0.01}
               dragMomentum={true}
             >
-              {teamArr.map((team) => (
-                <TeamCard key={team.name} {...team} />
-              ))}
+              {teamArr.map((team) => {
+                return <TeamCard key={team.name} team={team} />;
+              })}
             </Row>
           </AnimatePresence>
         </Large>
@@ -126,7 +137,7 @@ export default function TeamSlider(teams: ITeamSliderProps) {
               dragMomentum={true}
             >
               {teamArr.map((team) => (
-                <TeamCard key={team.name} {...team} />
+                <TeamCard key={team.name} team={team} />
               ))}
             </Row>
           </AnimatePresence>
@@ -141,7 +152,7 @@ export default function TeamSlider(teams: ITeamSliderProps) {
               dragMomentum={true}
             >
               {teamArr.map((team) => (
-                <TeamCard key={team.name} {...team} />
+                <TeamCard key={team.name} team={team} />
               ))}
             </Row>
           </AnimatePresence>
