@@ -214,6 +214,7 @@ export default function Position() {
           const isClicked = selectedPosition.includes(position.name);
           return (
             <PositionCard
+              whileHover={{ scale: 1.05 }}
               onClick={() => {
                 if (selectedPosition.includes(position.name)) {
                   setSelectedPosition(
