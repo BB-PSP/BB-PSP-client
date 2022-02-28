@@ -3,6 +3,7 @@ export interface ITeam {
   colourLogo: string;
   blackLogo: string;
   teamColour: string;
+  linearGradient: string;
   foundedAt: number;
   champCount: number;
   lastSeason: number;
