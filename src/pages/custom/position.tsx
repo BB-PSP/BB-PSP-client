@@ -241,7 +241,7 @@ export default function Position() {
             <ReversedArrowImg src="/image/Arrow.png" alt="화살표" />
           </PrevButtonText>
         </Link>
-        <Link href="/custom/position">
+        <Link href="/custom/result">
           <NextButtonText>
             next
             <ArrowImg src="/image/Arrow.png" alt="화살표" />
