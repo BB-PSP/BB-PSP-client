@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import HoveredTeamCard from './HoveredTeamCard';
 import UnhoveredTeamCard from './UnhoveredTeamCard';
+import styled from 'styled-components';
+import { Large, Medium, Small } from '../../styles/MediaQuery';
+
+const Wrapper = styled.div``;
 
 interface ITeamCardProps {
   team: {
@@ -8,6 +12,7 @@ interface ITeamCardProps {
     colourLogo: string;
     blackLogo: string;
     teamColour: string;
+    linearGradient: string;
     foundedAt: number;
     champCount: number;
     lastSeason: number;
@@ -23,15 +28,23 @@ export default function TeamCard({ team }: ITeamCardProps) {
     setHoverIndex(-1);
   };
   return (
-    <div
+    <Wrapper
       onMouseEnter={() => showCardHover(0)}
       onMouseLeave={() => hiddenCardHover()}
     >
-      {hoverIndex === -1 ? (
-        <UnhoveredTeamCard team={team} />
-      ) : (
+      <Large>
+        {hoverIndex === -1 ? (
+          <UnhoveredTeamCard team={team} />
+        ) : (
+          <HoveredTeamCard team={team} />
+        )}
+      </Large>
+      <Medium>
         <HoveredTeamCard team={team} />
-      )}
-    </div>
+      </Medium>
+      <Small>
+        <HoveredTeamCard team={team} />
+      </Small>
+    </Wrapper>
   );
 }

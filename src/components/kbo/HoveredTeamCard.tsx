@@ -12,7 +12,7 @@ const Wrapper = styled(motion.div)<ITeamCardProps>`
     height: 72.2rem;
   }
   ${breakpoints.medium} {
-    height: 48.4rem;
+    height: 52.2rem;
   }
   ${breakpoints.small} {
     height: 40rem;
@@ -21,30 +21,64 @@ const Wrapper = styled(motion.div)<ITeamCardProps>`
 
 const Background = styled.div`
   z-index: -99;
-  width: 25rem;
-  height: 57.2rem;
   position: absolute;
-  bottom: 0;
   background: linear-gradient(
     180deg,
     rgba(39, 39, 39, 0) 0%,
     rgba(39, 39, 39, 0.59) 52.08%,
     rgba(39, 39, 39, 0.87) 100%
   );
+  ${breakpoints.large} {
+    width: 25rem;
+    height: 57.2rem;
+    bottom: 0;
+  }
+  ${breakpoints.medium} {
+    width: 25rem;
+    height: 37.2rem;
+    bottom: 0;
+  }
+  ${breakpoints.small} {
+    width: 25rem;
+    height: 57.2rem;
+    bottom: 0;
+  }
 `;
 
 const LogoContainer = styled.div<ITeamCardProps>`
-  height: 29.6rem;
-  width: 100%;
   background-image: url(${(props) => props.team.colourLogo});
   background-repeat: no-repeat;
   background-position: center;
+  ${breakpoints.large} {
+    height: 29.6rem;
+    width: 100%;
+  }
+  ${breakpoints.medium} {
+    height: 21.3rem;
+    width: 100%;
+  }
+  ${breakpoints.small} {
+    height: 29.6rem;
+    width: 100%;
+  }
 `;
 
 const ContentsContainer = styled.div`
-  width: 19.5rem;
-  height: 28.5rem;
-  margin-left: 2.4rem;
+  ${breakpoints.large} {
+    width: 19.5rem;
+    height: 28.5rem;
+    margin-left: 2.4rem;
+  }
+  ${breakpoints.medium} {
+    width: 19.5rem;
+    height: 30.9rem;
+    margin-left: 2.4rem;
+  }
+  ${breakpoints.small} {
+    width: 19.5rem;
+    height: 28.5rem;
+    margin-left: 2.4rem;
+  }
 `;
 
 const Order = styled.h2`
