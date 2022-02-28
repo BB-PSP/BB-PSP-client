@@ -3,15 +3,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { breakpoints } from '../../styles/media';
 
-const Wrapper = styled(motion.div)`
+const Wrapper = styled(motion.div)<ITeamCardProps>`
   display: flex;
   flex-direction: column;
-  background: linear-gradient(
-    180deg,
-    #000000 3.12%,
-    rgba(0, 0, 0, 0.9) 53.65%,
-    rgba(0, 0, 0, 0) 92.19%
-  );
+  ${(props) => `background: linear-gradient(${props.team.linearGradient});`}
   width: 25rem;
   ${breakpoints.large} {
     height: 72.2rem;
@@ -38,10 +33,10 @@ const Background = styled.div`
   );
 `;
 
-const LogoContainer = styled.div`
+const LogoContainer = styled.div<ITeamCardProps>`
   height: 29.6rem;
   width: 100%;
-  background-image: url('/image/teamLogo/kt.png');
+  background-image: url(${(props) => props.team.colourLogo});
   background-repeat: no-repeat;
   background-position: center;
 `;
@@ -130,6 +125,7 @@ interface ITeamCardProps {
     colourLogo: string;
     blackLogo: string;
     teamColour: string;
+    linearGradient: string;
     foundedAt: number;
     champCount: number;
     lastSeason: number;
@@ -138,8 +134,8 @@ interface ITeamCardProps {
 
 export default function HoveredTeamCard({ team }: ITeamCardProps) {
   return (
-    <Wrapper>
-      <LogoContainer></LogoContainer>
+    <Wrapper team={team}>
+      <LogoContainer team={team} />
       <ContentsContainer>
         <Order>1</Order>
         <TeamName>{team?.name}</TeamName>
