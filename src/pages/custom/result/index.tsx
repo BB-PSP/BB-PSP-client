@@ -33,13 +33,14 @@ const SubTitle = styled.h2`
 `;
 
 const GridContainer = styled.div`
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 4rem;
   row-gap: 7rem;
-  width: 135.3rem;
+  width: 135.5rem;
   height: 62.6rem;
-  padding-right: 4rem;
+  padding-right: 7.3rem;
   overflow-x: hidden;
   &::-webkit-scrollbar {
     width: 0.2rem;
