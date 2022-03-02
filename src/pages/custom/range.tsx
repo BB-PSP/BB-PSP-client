@@ -49,26 +49,11 @@ const ContentsContainer = styled.div`
   flex-direction: column;
 `;
 
-const SalaryContainer = styled.div``;
-
-const SalaryTitle = styled.h3`
-  font-family: 'RobotoMonoRegular';
-  font-size: 2.2rem;
-  line-height: 2.9rem;
-  color: #b70000;
-`;
-
-const SalaryBar = styled.div``;
-
 export default function Range() {
   return (
     <Wrapper>
       <SubTitle>BB:PSP(Baseball: Player Stats Prediction)</SubTitle>
-      <ContentsContainer>
-        <SalaryContainer>
-          <SalaryTitle>salary</SalaryTitle>
-        </SalaryContainer>
-      </ContentsContainer>
+      <ContentsContainer></ContentsContainer>
     </Wrapper>
   );
 }
