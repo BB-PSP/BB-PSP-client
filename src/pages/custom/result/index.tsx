@@ -3,13 +3,23 @@ import PlayerCard from '../../../components/custom/PlayerCard';
 import { breakpoints } from '../../../styles/media';
 
 const Wrapper = styled.div`
-  width: 128rem;
-  margin: 0 auto;
-  padding-top: 16.7rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 0 auto;
+  ${breakpoints.large} {
+    width: 128rem;
+    padding-top: 16.7rem;
+  }
+  ${breakpoints.medium} {
+    width: 68rem;
+    padding-top: 16.7rem;
+  }
+  ${breakpoints.small} {
+    width: 35rem;
+    padding-top: 10.7rem;
+  }
 `;
 
 const SubTitle = styled.h2`
@@ -32,22 +42,48 @@ const SubTitle = styled.h2`
   }
 `;
 
-const GridContainer = styled.div`
+const Container = styled.div`
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: 4rem;
-  row-gap: 7rem;
-  width: 135.5rem;
-  height: 62.6rem;
-  padding-right: 7.3rem;
-  overflow-x: hidden;
-  &::-webkit-scrollbar {
-    width: 0.2rem;
-    background-color: white;
+  ${breakpoints.large} {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 4rem;
+    row-gap: 7rem;
+    width: 135.5rem;
+    height: 62.6rem;
+    padding-right: 7.3rem;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+      width: 0.2rem;
+      background-color: white;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: black;
+    }
   }
-  &::-webkit-scrollbar-thumb {
-    background-color: black;
+  ${breakpoints.medium} {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    row-gap: 4rem;
+    width: 80.5rem;
+    height: 55.6rem;
+    padding-right: 7.3rem;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+      width: 0.2rem;
+      background-color: white;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: black;
+    }
+  }
+  ${breakpoints.small} {
+    display: flex;
+    flex-direction: column;
+    height: 45rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
   }
 `;
 
@@ -55,11 +91,11 @@ export default function Result() {
   return (
     <Wrapper>
       <SubTitle>BB:PSP(Baseball: Player Stats Prediction)</SubTitle>
-      <GridContainer>
+      <Container>
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((i) => {
           return <PlayerCard key={i} />;
         })}
-      </GridContainer>
+      </Container>
     </Wrapper>
   );
 }

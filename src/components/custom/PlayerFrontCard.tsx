@@ -1,18 +1,29 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
+import { breakpoints } from '../../styles/media';
 
 const Wrapper = styled(motion.div)`
   position: absolute;
   z-index: 1;
   backface-visibility: hidden;
   transform: rotateY(0deg);
-  width: 29rem;
-  height: 16.2rem;
   display: flex;
   flex-direction: row;
   border-radius: 0.4rem;
   box-shadow: 0.2rem 0.4rem 0.8rem rgba(0, 0, 0.25);
+  ${breakpoints.large} {
+    width: 29rem;
+    height: 16.2rem;
+  }
+  ${breakpoints.medium} {
+    width: 29rem;
+    height: 16.2rem;
+  }
+  ${breakpoints.small} {
+    width: 29rem;
+    height: 16.2rem;
+  }
 `;
 
 const PhotoBox = styled.div`
@@ -28,7 +39,6 @@ const ContentsBox = styled.div`
   height: 100%;
   border-top-right-radius: 0.4rem;
   border-bottom-right-radius: 0.4rem;
-  /* background-color: #3d3d3d; */
   background-color: rgba(39, 39, 39, 0.87);
 `;
 

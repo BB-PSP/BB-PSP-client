@@ -1,20 +1,49 @@
 import React from 'react';
 import styled from 'styled-components';
+import { breakpoints } from '../../styles/media';
 
 const Wrapper = styled.div`
-  position: absolute;
-  z-index: 2;
-  backface-visibility: hidden;
-  transform: rotateY(180deg);
-  width: 29rem;
-  height: 16.2rem;
-  display: flex;
-  flex-direction: column;
-  border-radius: 0.4rem;
-  background-color: #97334a;
-  box-shadow: 0.2rem 0.4rem 0.8rem rgba(0, 0, 0, 0.25);
-  padding-top: 1.5rem;
-  padding-bottom: 2.048rem;
+  ${breakpoints.large} {
+    position: absolute;
+    z-index: 2;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    width: 29rem;
+    height: 16.2rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.4rem;
+    background-color: #97334a;
+    box-shadow: 0.2rem 0.4rem 0.8rem rgba(0, 0, 0, 0.25);
+    padding-top: 1.5rem;
+    padding-bottom: 2.048rem;
+  }
+  ${breakpoints.medium} {
+    position: absolute;
+    z-index: 2;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    width: 29rem;
+    height: 16.2rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.4rem;
+    background-color: #97334a;
+    box-shadow: 0.2rem 0.4rem 0.8rem rgba(0, 0, 0, 0.25);
+    padding-top: 1.5rem;
+    padding-bottom: 2.048rem;
+  }
+  ${breakpoints.small} {
+    width: 29rem;
+    height: 16.2rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.4rem;
+    background-color: #97334a;
+    box-shadow: 0.2rem 0.4rem 0.8rem rgba(0, 0, 0, 0.25);
+    padding-top: 1.5rem;
+    padding-bottom: 2.048rem;
+  }
 `;
 
 const LogoBox = styled.div`
