@@ -15,7 +15,7 @@ const Wrapper = styled(motion.div)<ITeamCardProps>`
     height: 52.2rem;
   }
   ${breakpoints.small} {
-    height: 40rem;
+    height: 45.2rem;
   }
 `;
 
@@ -40,7 +40,7 @@ const Background = styled.div`
   }
   ${breakpoints.small} {
     width: 25rem;
-    height: 57.2rem;
+    height: 30.2rem;
     bottom: 0;
   }
 `;
@@ -58,7 +58,7 @@ const LogoContainer = styled.div<ITeamCardProps>`
     width: 100%;
   }
   ${breakpoints.small} {
-    height: 29.6rem;
+    height: 21.3rem;
     width: 100%;
   }
 `;

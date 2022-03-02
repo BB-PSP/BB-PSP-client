@@ -96,7 +96,16 @@ const TeamCard = styled(motion.div)<ITeam & { clicked: boolean }>`
 const ButtonContainer = styled.div`
   display: flex;
   flex-direction: row;
-  margin-top: 16rem;
+  justify-content: space-between;
+  ${breakpoints.large} {
+    margin-top: 5.4rem;
+  }
+  ${breakpoints.medium} {
+    margin-top: 5.4rem;
+  }
+  ${breakpoints.small} {
+    margin-top: 8rem;
+  }
 `;
 
 const NextButtonText = styled.h3`
