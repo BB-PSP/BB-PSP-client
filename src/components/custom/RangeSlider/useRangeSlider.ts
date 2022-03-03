@@ -1,4 +1,4 @@
-import { MouseEvent, useCallback, useRef } from 'react';
+import { MouseEvent, TouchEvent, useCallback, useRef } from 'react';
 
 export const useRangeSlider = (props: {
   value: number[];
@@ -76,8 +76,56 @@ export const useRangeSlider = (props: {
     [railRef, minThumbRef, maxThumbRef, value, min, max, onChange],
   );
 
+  const onThumbTouchStart = useCallback(
+    (type: 'min' | 'max') => (e: TouchEvent) => {
+      const rail = railRef.current;
+      const minThumb = minThumbRef.current;
+      const maxThumb = maxThumbRef.current;
+
+      if (!rail || !minThumb || !maxThumb) return;
+
+      const shiftX: number =
+        type === 'min'
+          ? e.touches[0].clientX - minThumb.getBoundingClientRect().left
+          : e.touches[0].clientX - maxThumb.getBoundingClientRect().left;
+
+      const onThumbTouchMove = (e: globalThis.TouchEvent) => {
+        let newLeft =
+          e.touches[0].clientX - shiftX - rail.getBoundingClientRect().left;
+
+        const [leftEdge, rightEdge] =
+          type === 'min'
+            ? [0, value2Pixel(value[1] - 1)]
+            : [value2Pixel(value[0] + 1), rail.offsetWidth];
+        if (newLeft < leftEdge) {
+          newLeft = leftEdge;
+        }
+
+        if (newLeft > rightEdge) {
+          newLeft = rightEdge;
+        }
+
+        onChange(
+          type === 'min'
+            ? [Math.floor(pixel2Value(newLeft)), value[1]]
+            : [value[0], Math.floor(pixel2Value(newLeft))],
+        );
+      };
+
+      const onThumbTouchEnd = () => {
+        document.removeEventListener('touchmove', onThumbTouchMove);
+        document.removeEventListener('touchend', onThumbTouchEnd);
+      };
+
+      document.addEventListener('touchmove', onThumbTouchMove);
+      document.addEventListener('touchend', onThumbTouchEnd);
+    },
+    [railRef, minThumbRef, maxThumbRef, value, min, max, onChange],
+  );
+
   return {
     onThumbMouseDown,
+    onThumbTouchStart,
     railRef,
     minThumbRef,
     maxThumbRef,

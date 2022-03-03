@@ -72,8 +72,13 @@ export default function AgeRangeSlider({
   value,
   onChange,
 }: AgeRangeSliderProps) {
-  const { railRef, minThumbRef, maxThumbRef, onThumbMouseDown } =
-    useRangeSlider({ value, min, max, onChange });
+  const {
+    railRef,
+    minThumbRef,
+    maxThumbRef,
+    onThumbMouseDown,
+    onThumbTouchStart,
+  } = useRangeSlider({ value, min, max, onChange });
 
   const renderGraduation = () => {
     return Array(max - min + 1)
@@ -107,12 +112,14 @@ export default function AgeRangeSlider({
           left={value2Percent(value[0] - min)}
           value={value[0]}
           onMouseDown={onThumbMouseDown('min')}
+          onTouchStart={onThumbTouchStart('min')}
         />
         <RangeSliderThumb
           ref={maxThumbRef}
           left={value2Percent(value[1] - min)}
           value={value[1]}
           onMouseDown={onThumbMouseDown('max')}
+          onTouchStart={onThumbTouchStart('max')}
         />
       </Rail>
       <GraduationWrapper>{renderGraduation()}</GraduationWrapper>

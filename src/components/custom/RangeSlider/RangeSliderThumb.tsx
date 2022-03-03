@@ -1,4 +1,4 @@
-import { ForwardedRef, forwardRef, MouseEvent } from 'react';
+import { ForwardedRef, forwardRef, MouseEvent, TouchEvent } from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div<{ left: string }>`
@@ -23,10 +23,11 @@ type RangeSliderThumbProps = {
   value: string | number;
   left: string;
   onMouseDown: (e: MouseEvent) => void;
+  onTouchStart: (e: TouchEvent) => void;
 };
 
 function RangeSliderThumb(
-  { value, left, onMouseDown }: RangeSliderThumbProps,
+  { value, left, onMouseDown, onTouchStart }: RangeSliderThumbProps,
   ref: ForwardedRef<HTMLDivElement>,
 ) {
   return (
@@ -34,6 +35,7 @@ function RangeSliderThumb(
       ref={ref}
       left={left}
       onMouseDown={onMouseDown}
+      onTouchStart={onTouchStart}
       onDragStart={() => null}
     >
       <p>{value}</p>
