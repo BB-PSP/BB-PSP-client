@@ -1,7 +1,7 @@
-import { useRef, MouseEvent } from 'react';
 import styled from 'styled-components';
 
 import RangeSliderThumb from './RangeSliderThumb';
+import { useRangeSlider } from './useRangeSlider';
 
 const Wrapper = styled.div`
   display: flex;
@@ -64,62 +64,8 @@ export default function SalaryRangeSlider({
   value,
   onChange,
 }: SalaryRangeSliderProps) {
-  const railRef = useRef<HTMLDivElement>(null);
-  const minThumbRef = useRef<HTMLDivElement>(null);
-  const maxThumbRef = useRef<HTMLDivElement>(null);
-
-  const handleThumbMouseDown = (type: 'min' | 'max') => (e: MouseEvent) => {
-    e.preventDefault();
-
-    const rail = railRef.current;
-    const minThumb = minThumbRef.current;
-    const maxThumb = maxThumbRef.current;
-
-    if (!rail || !minThumb || !maxThumb) return;
-
-    const pixel2Value = (pixel: number): number => {
-      return (pixel * (max - min)) / rail.offsetWidth + min;
-    };
-
-    const value2Pixel = (v: number): number => {
-      return ((v - min) * rail.offsetWidth) / (max - min);
-    };
-
-    const shiftX: number =
-      type === 'min'
-        ? e.clientX - minThumb.getBoundingClientRect().left
-        : e.clientX - maxThumb.getBoundingClientRect().left;
-
-    const handleThumbMouseMove = (e: globalThis.MouseEvent) => {
-      let newLeft = e.clientX - shiftX - rail.getBoundingClientRect().left;
-
-      const [leftEdge, rightEdge] =
-        type === 'min'
-          ? [0, value2Pixel(value[1] - 1)]
-          : [value2Pixel(value[0] + 1), rail.offsetWidth];
-      if (newLeft < leftEdge) {
-        newLeft = leftEdge;
-      }
-
-      if (newLeft > rightEdge) {
-        newLeft = rightEdge;
-      }
-
-      onChange(
-        type === 'min'
-          ? [Math.floor(pixel2Value(newLeft)), value[1]]
-          : [value[0], Math.floor(pixel2Value(newLeft))],
-      );
-    };
-
-    const handleThumbMouseUp = () => {
-      document.removeEventListener('mouseup', handleThumbMouseUp);
-      document.removeEventListener('mousemove', handleThumbMouseMove);
-    };
-
-    document.addEventListener('mousemove', handleThumbMouseMove);
-    document.addEventListener('mouseup', handleThumbMouseUp);
-  };
+  const { railRef, minThumbRef, maxThumbRef, onThumbMouseDown } =
+    useRangeSlider({ value, min, max, onChange });
 
   const renderGraduation = () => {
     return Array(max - min + 1)
@@ -152,13 +98,13 @@ export default function SalaryRangeSlider({
           ref={minThumbRef}
           left={value2Percent(value[0] - min)}
           value={'$' + value[0]}
-          onMouseDown={handleThumbMouseDown('min')}
+          onMouseDown={onThumbMouseDown('min')}
         />
         <RangeSliderThumb
           ref={maxThumbRef}
           left={value2Percent(value[1] - min)}
           value={'$' + value[1]}
-          onMouseDown={handleThumbMouseDown('max')}
+          onMouseDown={onThumbMouseDown('max')}
         />
       </Rail>
     </Wrapper>
