@@ -233,13 +233,7 @@ export default function Team() {
             <ReversedArrowImg src="/image/Arrow.png" alt="화살표" />
           </PrevButtonText>
         </Link>
-        <Link
-          href={{
-            pathname: '/custom/position',
-            query: { teams: JSON.stringify(selectedTeam) },
-          }}
-          as={`/custom/position`}
-        >
+        <Link href="/custom/position">
           <NextButtonText>
             next
             <ArrowImg src="/image/Arrow.png" alt="화살표" />
