@@ -6,6 +6,7 @@ import GlobalStyle from '../styles/GlobalStyle';
 import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import type { AppProps } from 'next/app';
+import { RecoilRoot } from 'recoil';
 
 if (process.env.NODE_ENV === 'development') {
   initMockAPI();
@@ -20,14 +21,16 @@ function App({ Component, pageProps }: AppProps) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Hydrate state={pageProps.dehydratedState}>
-        <GlobalStyle />
-        <GlobalFont />
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </Hydrate>
-      <ReactQueryDevtools />
+      <RecoilRoot>
+        <Hydrate state={pageProps.dehydratedState}>
+          <GlobalStyle />
+          <GlobalFont />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </Hydrate>
+        <ReactQueryDevtools />
+      </RecoilRoot>
     </QueryClientProvider>
   );
 }

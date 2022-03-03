@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React from 'react';
 import { dehydrate, QueryClient, useQuery } from 'react-query';
+import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
 import { fetchPositions } from '../../hooks/api/usePositions';
+import { selectedPositionState } from '../../store/Data/atom';
 import { IPosition } from '../../store/Types';
 import { breakpoints } from '../../styles/media';
 
@@ -205,7 +207,9 @@ const ReversedArrowImg = styled.img`
 export default function Position() {
   const { data } = useQuery('positionData', () => fetchPositions());
   const positions = data?.positionList;
-  const [selectedPosition, setSelectedPosition] = useState<string[]>([]);
+  const [selectedPosition, setSelectedPosition] = useRecoilState<string[]>(
+    selectedPositionState,
+  );
   return (
     <Wrapper>
       <SubTitle>BB:PSP(Baseball: Player Stats Prediction)</SubTitle>
@@ -226,9 +230,7 @@ export default function Position() {
               }}
               clicked={isClicked}
               key={position.name}
-              name={position.name}
-              colourLogo={position.colourLogo}
-              blackLogo={position.blackLogo}
+              {...position}
             >
               <PositionName>{position?.name}</PositionName>
             </PositionCard>
@@ -242,7 +244,7 @@ export default function Position() {
             <ReversedArrowImg src="/image/Arrow.png" alt="화살표" />
           </PrevButtonText>
         </Link>
-        <Link href="/custom/range">
+        <Link href="/custom/result">
           <NextButtonText>
             next
             <ArrowImg src="/image/Arrow.png" alt="화살표" />
