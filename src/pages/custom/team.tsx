@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
-import React, { useState } from 'react';
 import { dehydrate, QueryClient, useQuery } from 'react-query';
+import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
 import { fetchTeams } from '../../hooks/api/useTeams';
+import { selectedTeamState } from '../../store/Data/atom';
 import { ITeam } from '../../store/Types';
 import { breakpoints } from '../../styles/media';
 
@@ -198,24 +199,24 @@ const cardVariants = {
 export default function Team() {
   const { data } = useQuery('teamData', () => fetchTeams());
   const teams = data?.teamDTOList;
-  const [selectedName, setSelectedName] = useState<string[]>([]);
-
+  const [selectedTeam, setSelectedTeam] =
+    useRecoilState<string[]>(selectedTeamState);
   return (
     <Wrapper>
       <SubTitle>BB:PSP(Baseball: Player Stats Prediction)</SubTitle>
       <GridContainer>
         {teams?.map((team: ITeam) => {
-          const isClicked = selectedName.includes(team.name);
+          const isClicked = selectedTeam.includes(team.name);
           return (
             <TeamCard
               variants={cardVariants}
               initial="unHovered"
               whileHover="hovered"
               onClick={() => {
-                if (selectedName.includes(team.name)) {
-                  setSelectedName(selectedName.filter((v) => v !== team.name));
+                if (selectedTeam.includes(team.name)) {
+                  setSelectedTeam(selectedTeam.filter((v) => v !== team.name));
                 } else {
-                  setSelectedName((prev) => [...prev, team.name]);
+                  setSelectedTeam((prev) => [...prev, team.name]);
                 }
               }}
               clicked={isClicked}
@@ -232,7 +233,13 @@ export default function Team() {
             <ReversedArrowImg src="/image/Arrow.png" alt="화살표" />
           </PrevButtonText>
         </Link>
-        <Link href="/custom/position">
+        <Link
+          href={{
+            pathname: '/custom/position',
+            query: { teams: JSON.stringify(selectedTeam) },
+          }}
+          as={`/custom/position`}
+        >
           <NextButtonText>
             next
             <ArrowImg src="/image/Arrow.png" alt="화살표" />
