@@ -4,13 +4,11 @@ import styled from 'styled-components';
 import { breakpoints } from '../../styles/media';
 
 const Wrapper = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%); */
   ${breakpoints.large} {
     padding-top: 9.4rem;
   }
