@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { breakpoints } from '../../styles/media';
-import Header from './Header';
+import IndexHeader from './IndexHeader';
 
 const Container = styled.div`
   position: relative;
@@ -53,16 +53,16 @@ const Wrapper = styled.div`
   height: 100%;
 `;
 
-interface IProps {
-  children: ReactNode;
-}
-
-export default function Layout({ children }: IProps) {
+export default function IndexLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <Container>
       <BackImage src="/image/home.png" alt="home" />
       <Wrapper>{children}</Wrapper>
-      <Header />
+      <IndexHeader />
     </Container>
   );
 }

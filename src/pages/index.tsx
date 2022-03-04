@@ -2,8 +2,7 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import { breakpoints } from '../styles/media';
-import Layout from '../components/layout/Layout';
-import type { ReactElement } from 'react';
+import IndexLayout from '../components/layout/IndexLayout';
 
 const Wrapper = styled.main`
   display: flex;
@@ -159,35 +158,37 @@ const ArrowImg = styled.img`
   }
 `;
 
-export default function Home() {
+function Home() {
   return (
-    <Wrapper>
-      <SubTitle>BB:PSP(Baseball: Player Stats Prediction)</SubTitle>
-      <DescriptionBox>
-        <Description>Predict KBO Players' stats</Description>
-      </DescriptionBox>
-      <ButtonConatiner>
-        <ProButtonBox>
-          <Link href="/kbo">
-            <ProButton>
-              Professional team
-              <ArrowImg src="image/arrow.png" />
-            </ProButton>
-          </Link>
-        </ProButtonBox>
-        <CustomButtonBox>
-          <Link href="/custom/team">
-            <CustomButton>
-              Choose it yourself
-              <ArrowImg src="image/arrow.png" />
-            </CustomButton>
-          </Link>
-        </CustomButtonBox>
-      </ButtonConatiner>
-    </Wrapper>
+    <>
+      <Wrapper>
+        <SubTitle>BB:PSP(Baseball: Player Stats Prediction)</SubTitle>
+        <DescriptionBox>
+          <Description>Predict KBO Players' stats</Description>
+        </DescriptionBox>
+        <ButtonConatiner>
+          <ProButtonBox>
+            <Link href="/kbo">
+              <ProButton>
+                Professional team
+                <ArrowImg src="image/arrow.png" />
+              </ProButton>
+            </Link>
+          </ProButtonBox>
+          <CustomButtonBox>
+            <Link href="/custom/team">
+              <CustomButton>
+                Choose it yourself
+                <ArrowImg src="image/arrow.png" />
+              </CustomButton>
+            </Link>
+          </CustomButtonBox>
+        </ButtonConatiner>
+      </Wrapper>
+    </>
   );
 }
 
-Home.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
-};
+Home.PageLayout = IndexLayout;
+
+export default Home;

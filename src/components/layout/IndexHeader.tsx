@@ -33,7 +33,7 @@ const Title = styled.h1`
   color: #b70000;
 `;
 
-export default function Header() {
+export default function IndexHeader() {
   return (
     <Wrapper>
       <Link href="/">

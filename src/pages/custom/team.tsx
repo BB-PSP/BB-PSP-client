@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { dehydrate, QueryClient, useQuery } from 'react-query';
 import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
+import CommonLayout from '../../components/layout/CommonLayout';
 import { fetchTeams } from '../../hooks/api/useTeams';
 import { selectedTeamState } from '../../store/Data/atom';
 import { ITeam } from '../../store/Types';
@@ -17,35 +18,15 @@ const Wrapper = styled.div`
   margin: 0 auto;
   ${breakpoints.large} {
     width: 128rem;
+    margin-top: 39.6rem;
   }
   ${breakpoints.medium} {
     width: 68rem;
+    margin-top: 29.6rem;
   }
   ${breakpoints.small} {
     width: 35rem;
-  }
-`;
-
-const SubTitle = styled.h2`
-  font-family: 'RobotoMonoRegular';
-  color: #b70000;
-  ${breakpoints.large} {
-    font-size: 1.4rem;
-    line-height: 1.846rem;
-    padding-top: 16.7rem;
-    padding-bottom: 21.2rem;
-  }
-  ${breakpoints.medium} {
-    font-size: 1.4rem;
-    line-height: 1.846rem;
-    padding-top: 16.7rem;
-    padding-bottom: 21.2rem;
-  }
-  ${breakpoints.small} {
-    font-size: 1.1rem;
-    line-height: 1.846rem;
-    padding-top: 8.7rem;
-    padding-bottom: 2.2rem;
+    margin-top: 12.8rem;
   }
 `;
 
@@ -60,8 +41,8 @@ const GridContainer = styled.div`
   ${breakpoints.medium} {
     grid-template-columns: repeat(5, 1fr);
     height: 39.8rem;
-    column-gap: 4.9rem;
-    row-gap: 10.8rem;
+    column-gap: 3.9rem;
+    row-gap: 5.8rem;
   }
   ${breakpoints.small} {
     grid-template-columns: repeat(2, 1fr);
@@ -85,7 +66,7 @@ const TeamCard = styled(motion.div)<ITeam & { clicked: boolean }>`
     height: 14.5rem;
   }
   ${breakpoints.medium} {
-    width: 15.7rem;
+    width: 10rem;
     height: 14.5rem;
   }
   ${breakpoints.small} {
@@ -196,14 +177,13 @@ const cardVariants = {
   },
 };
 
-export default function Team() {
+function Team() {
   const { data } = useQuery('teamData', () => fetchTeams());
   const teams = data?.teamDTOList;
   const [selectedTeam, setSelectedTeam] =
     useRecoilState<string[]>(selectedTeamState);
   return (
     <Wrapper>
-      <SubTitle>BB:PSP(Baseball: Player Stats Prediction)</SubTitle>
       <GridContainer>
         {teams?.map((team: ITeam) => {
           const isClicked = selectedTeam.includes(team.name);
@@ -255,3 +235,7 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   };
 };
+
+Team.PageLayout = CommonLayout;
+
+export default Team;

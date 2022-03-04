@@ -1,0 +1,69 @@
+import Link from 'next/link';
+import React from 'react';
+import styled from 'styled-components';
+import { breakpoints } from '../../styles/media';
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  ${breakpoints.large} {
+    padding-top: 9.4rem;
+  }
+  ${breakpoints.medium} {
+    padding-top: 9.4rem;
+  }
+  ${breakpoints.small} {
+    padding-top: 4rem;
+  }
+`;
+
+const Title = styled.h1`
+  cursor: grab;
+  font-family: 'PlayfairDisplayBold';
+  ${breakpoints.large} {
+    font-size: 4.8rem;
+  }
+  ${breakpoints.medium} {
+    font-size: 4.8rem;
+  }
+  ${breakpoints.small} {
+    font-size: 4rem;
+  }
+  color: #b70000;
+`;
+
+const SubTitle = styled.h2`
+  font-family: 'RobotoMonoRegular';
+  color: #b70000;
+  ${breakpoints.large} {
+    font-size: 1.4rem;
+    line-height: 1.846rem;
+    padding-top: 0.8rem;
+  }
+  ${breakpoints.medium} {
+    font-size: 1.4rem;
+    line-height: 1.846rem;
+    padding-top: 0.8rem;
+  }
+  ${breakpoints.small} {
+    font-size: 1.1rem;
+    line-height: 1.846rem;
+    padding-top: 0.8rem;
+  }
+`;
+
+export default function CommonHeader() {
+  return (
+    <Wrapper>
+      <Link href="/">
+        <Title>bb:</Title>
+      </Link>
+      <SubTitle>BB:PSP(Baseball: Player Stats Prediction)</SubTitle>
+    </Wrapper>
+  );
+}

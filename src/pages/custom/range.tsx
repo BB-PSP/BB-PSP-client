@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import { breakpoints } from '../../styles/media';
@@ -60,6 +60,7 @@ const SalaryRangeSlider = styled(_SalaryRangeSlider)`
 export default function Range() {
   const [salaryRange, setSalaryRange] = useState<number[]>([30, 70]);
   const [ageRange, setAgeRange] = useState<number[]>([25, 35]);
+  useEffect(() => console.log('렌더링'));
 
   return (
     <Wrapper>

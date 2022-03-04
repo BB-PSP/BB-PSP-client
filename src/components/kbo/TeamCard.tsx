@@ -3,6 +3,7 @@ import HoveredTeamCard from './HoveredTeamCard';
 import UnhoveredTeamCard from './UnhoveredTeamCard';
 import styled from 'styled-components';
 import { Large, Medium, Small } from '../../styles/MediaQuery';
+import Link from 'next/link';
 
 const Wrapper = styled.div``;
 
@@ -28,23 +29,31 @@ export default function TeamCard({ team }: ITeamCardProps) {
     setHoverIndex(-1);
   };
   return (
-    <Wrapper
-      onMouseEnter={() => showCardHover(0)}
-      onMouseLeave={() => hiddenCardHover()}
+    <Link
+      href={{
+        pathname: '/kbo/[team]',
+        query: { team: team.name },
+      }}
     >
-      <Large>
-        {hoverIndex === -1 ? (
-          <UnhoveredTeamCard team={team} />
-        ) : (
+      <Wrapper
+        onClick={() => console.log(team)}
+        onMouseEnter={() => showCardHover(0)}
+        onMouseLeave={() => hiddenCardHover()}
+      >
+        <Large>
+          {hoverIndex === -1 ? (
+            <UnhoveredTeamCard team={team} />
+          ) : (
+            <HoveredTeamCard team={team} />
+          )}
+        </Large>
+        <Medium>
           <HoveredTeamCard team={team} />
-        )}
-      </Large>
-      <Medium>
-        <HoveredTeamCard team={team} />
-      </Medium>
-      <Small>
-        <HoveredTeamCard team={team} />
-      </Small>
-    </Wrapper>
+        </Medium>
+        <Small>
+          <HoveredTeamCard team={team} />
+        </Small>
+      </Wrapper>
+    </Link>
   );
 }
