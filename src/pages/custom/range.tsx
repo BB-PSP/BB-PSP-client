@@ -5,6 +5,7 @@ import { breakpoints } from '../../styles/media';
 
 import AgeRangeSlider from '../../components/custom/RangeSlider/AgeRangeSlider';
 import _SalaryRangeSlider from '../../components/custom/RangeSlider/SalaryRangeSlider';
+import CommonLayout from '../../components/layout/CommonLayout';
 
 const Wrapper = styled.div`
   display: flex;
@@ -14,35 +15,13 @@ const Wrapper = styled.div`
   margin: 0 auto;
   ${breakpoints.large} {
     width: 128rem;
+    padding-top: 33.2rem;
   }
   ${breakpoints.medium} {
     width: 68rem;
   }
   ${breakpoints.small} {
     width: 35rem;
-  }
-`;
-
-const SubTitle = styled.h2`
-  font-family: 'RobotoMonoRegular';
-  color: #b70000;
-  ${breakpoints.large} {
-    font-size: 1.4rem;
-    line-height: 1.846rem;
-    padding-top: 16.7rem;
-    padding-bottom: 9.7rem;
-  }
-  ${breakpoints.medium} {
-    font-size: 1.4rem;
-    line-height: 1.846rem;
-    padding-top: 16.7rem;
-    padding-bottom: 9.7rem;
-  }
-  ${breakpoints.small} {
-    font-size: 1.1rem;
-    line-height: 1.846rem;
-    padding-top: 8.7rem;
-    padding-bottom: 2.2rem;
   }
 `;
 
@@ -57,14 +36,13 @@ const SalaryRangeSlider = styled(_SalaryRangeSlider)`
   margin-bottom: 6rem;
 `;
 
-export default function Range() {
+function Range() {
   const [salaryRange, setSalaryRange] = useState<number[]>([30, 70]);
   const [ageRange, setAgeRange] = useState<number[]>([25, 35]);
   useEffect(() => console.log('렌더링'));
 
   return (
     <Wrapper>
-      <SubTitle>BB:PSP(Baseball: Player Stats Prediction)</SubTitle>
       <ContentsContainer>
         <SalaryRangeSlider
           label="salary"
@@ -84,3 +62,7 @@ export default function Range() {
     </Wrapper>
   );
 }
+
+Range.PageLayout = CommonLayout;
+
+export default Range;
