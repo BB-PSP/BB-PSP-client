@@ -5,6 +5,7 @@ import React from 'react';
 import { dehydrate, QueryClient, useQuery } from 'react-query';
 import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
+import CommonLayout from '../../components/layout/CommonLayout';
 import { fetchPositions } from '../../hooks/api/usePositions';
 import { selectedPositionState } from '../../store/Data/atom';
 import { IPosition } from '../../store/Types';
@@ -18,35 +19,15 @@ const Wrapper = styled.div`
   margin: 0 auto;
   ${breakpoints.large} {
     width: 128rem;
+    padding-top: 39.6rem;
   }
   ${breakpoints.medium} {
     width: 68rem;
+    padding-top: 24.6rem;
   }
   ${breakpoints.small} {
     width: 35rem;
-  }
-`;
-
-const SubTitle = styled.h2`
-  font-family: 'RobotoMonoRegular';
-  color: #b70000;
-  ${breakpoints.large} {
-    font-size: 1.4rem;
-    line-height: 1.846rem;
-    padding-top: 16.7rem;
-    padding-bottom: 21.2rem;
-  }
-  ${breakpoints.medium} {
-    font-size: 1.4rem;
-    line-height: 1.846rem;
-    padding-top: 16.7rem;
-    padding-bottom: 5.2rem;
-  }
-  ${breakpoints.small} {
-    font-size: 1.1rem;
-    line-height: 1.846rem;
-    padding-top: 8.7rem;
-    padding-bottom: 2.2rem;
+    padding-top: 12.8rem;
   }
 `;
 
@@ -116,14 +97,15 @@ const ButtonContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  position: absolute;
   ${breakpoints.large} {
-    margin-top: 5.4rem;
+    bottom: 7.1rem;
   }
   ${breakpoints.medium} {
-    margin-top: 5.4rem;
+    bottom: 3.1rem;
   }
   ${breakpoints.small} {
-    margin-top: 8rem;
+    bottom: 1rem;
   }
 `;
 
@@ -156,7 +138,7 @@ const ArrowImg = styled.img`
   }
   ${breakpoints.medium} {
     margin-top: -0.6rem;
-    width: 8.35rem;
+    width: 10.35rem;
     height: auto;
   }
   ${breakpoints.small} {
@@ -194,7 +176,7 @@ const ReversedArrowImg = styled.img`
   }
   ${breakpoints.medium} {
     margin-top: -0.6rem;
-    width: 8.35rem;
+    width: 10.35rem;
     height: auto;
   }
   ${breakpoints.small} {
@@ -204,54 +186,55 @@ const ReversedArrowImg = styled.img`
   }
 `;
 
-export default function Position() {
+function Position() {
   const { data } = useQuery('positionData', () => fetchPositions());
   const positions = data?.positionList;
   const [selectedPosition, setSelectedPosition] = useRecoilState<string[]>(
     selectedPositionState,
   );
   return (
-    <Wrapper>
-      <SubTitle>BB:PSP(Baseball: Player Stats Prediction)</SubTitle>
-      <GridContainer>
-        {positions?.map((position: IPosition) => {
-          const isClicked = selectedPosition.includes(position.name);
-          return (
-            <PositionCard
-              whileHover={{ scale: 1.05 }}
-              onClick={() => {
-                if (selectedPosition.includes(position.name)) {
-                  setSelectedPosition(
-                    selectedPosition.filter((v) => v !== position.name),
-                  );
-                } else {
-                  setSelectedPosition((prev) => [...prev, position.name]);
-                }
-              }}
-              clicked={isClicked}
-              key={position.name}
-              {...position}
-            >
-              <PositionName>{position?.name}</PositionName>
-            </PositionCard>
-          );
-        })}
-      </GridContainer>
-      <ButtonContainer>
-        <Link href="/custom/team">
-          <PrevButtonText>
-            prev
-            <ReversedArrowImg src="/image/Arrow.png" alt="화살표" />
-          </PrevButtonText>
-        </Link>
-        <Link href="/custom/result">
-          <NextButtonText>
-            next
-            <ArrowImg src="/image/Arrow.png" alt="화살표" />
-          </NextButtonText>
-        </Link>
-      </ButtonContainer>
-    </Wrapper>
+    <>
+      <Wrapper>
+        <GridContainer>
+          {positions?.map((position: IPosition) => {
+            const isClicked = selectedPosition.includes(position.name);
+            return (
+              <PositionCard
+                whileHover={{ scale: 1.05 }}
+                onClick={() => {
+                  if (selectedPosition.includes(position.name)) {
+                    setSelectedPosition(
+                      selectedPosition.filter((v) => v !== position.name),
+                    );
+                  } else {
+                    setSelectedPosition((prev) => [...prev, position.name]);
+                  }
+                }}
+                clicked={isClicked}
+                key={position.name}
+                {...position}
+              >
+                <PositionName>{position?.name}</PositionName>
+              </PositionCard>
+            );
+          })}
+        </GridContainer>
+        <ButtonContainer>
+          <Link href="/custom/team">
+            <PrevButtonText>
+              prev
+              <ReversedArrowImg src="/image/Arrow.png" alt="화살표" />
+            </PrevButtonText>
+          </Link>
+          <Link href="/custom/result">
+            <NextButtonText>
+              next
+              <ArrowImg src="/image/Arrow.png" alt="화살표" />
+            </NextButtonText>
+          </Link>
+        </ButtonContainer>
+      </Wrapper>
+    </>
   );
 }
 
@@ -266,3 +249,7 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   };
 };
+
+Position.PageLayout = CommonLayout;
+
+export default Position;

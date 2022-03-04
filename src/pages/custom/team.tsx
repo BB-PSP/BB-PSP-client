@@ -22,7 +22,7 @@ const Wrapper = styled.div`
   }
   ${breakpoints.medium} {
     width: 68rem;
-    margin-top: 29.6rem;
+    margin-top: 24.6rem;
   }
   ${breakpoints.small} {
     width: 35rem;
@@ -79,14 +79,15 @@ const ButtonContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  position: absolute;
   ${breakpoints.large} {
-    margin-top: 5.4rem;
+    bottom: 7.1rem;
   }
   ${breakpoints.medium} {
-    margin-top: 5.4rem;
+    bottom: 3.1rem;
   }
   ${breakpoints.small} {
-    margin-top: 8rem;
+    bottom: 1rem;
   }
 `;
 
@@ -158,7 +159,7 @@ const ReversedArrowImg = styled.img`
   }
   ${breakpoints.medium} {
     margin-top: -0.6rem;
-    width: 8.35rem;
+    width: 10.35rem;
     height: auto;
   }
   ${breakpoints.small} {
