@@ -15,19 +15,16 @@ const TeamSliderContainer = styled.div`
   justify-content: center;
   align-items: center;
   ${breakpoints.large} {
-    margin-top: 5.3rem;
     height: 72.2rem;
     width: 133rem;
     overflow: hidden;
   }
   ${breakpoints.medium} {
-    margin-top: 5.3rem;
     height: 52.2rem;
     width: 78rem;
     overflow: hidden;
   }
   ${breakpoints.small} {
-    margin-top: 5.3rem;
     height: 45.2rem;
     width: 100%;
     overflow: hidden;
