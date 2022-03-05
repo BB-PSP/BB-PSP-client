@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { breakpoints } from '../../../styles/media';
 
 import RangeSliderThumb from './RangeSliderThumb';
 import { useRangeSlider } from './useRangeSlider';
@@ -13,11 +14,26 @@ const Wrapper = styled.div`
 
 const Label = styled.label`
   font-family: 'RobotoMonoRegular';
-  font-size: 2.2rem;
-  line-height: 2.9rem;
-  padding-right: 4.7rem;
-  padding-top: 5.8rem;
   color: #b70000;
+  ${breakpoints.large} {
+    font-size: 2.2rem;
+    line-height: 2.9rem;
+    padding-right: 4.7rem;
+    padding-top: 5.8rem;
+  }
+  ${breakpoints.medium} {
+    font-size: 2.2rem;
+    line-height: 2.9rem;
+    padding-right: 4.7rem;
+    padding-top: 5.8rem;
+  }
+  ${breakpoints.small} {
+    font-size: 1.2rem;
+    line-height: 2.9rem;
+    padding-right: 1.7rem;
+    padding-top: 5.8rem;
+    width: 6.7rem;
+  }
 `;
 
 const Rail = styled.div`
