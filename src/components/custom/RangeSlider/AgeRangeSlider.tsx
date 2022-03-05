@@ -5,13 +5,17 @@ import { useRangeSlider } from './useRangeSlider';
 
 const Wrapper = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%;
 `;
 
 const Label = styled.label`
+  font-family: 'RobotoMonoRegular';
+  font-size: 2.2rem;
+  line-height: 2.9rem;
+  padding-right: 8.7rem;
+  padding-top: 5.8rem;
   color: #b70000;
-  font-size: 1.3rem;
 `;
 
 const Rail = styled.div`
@@ -39,6 +43,12 @@ const GraduationWrapper = styled.div`
 
 const LineWrapper = styled.div`
   position: relative;
+`;
+
+const SliderWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 `;
 
 const Line = styled.div<{ isHighlighted?: boolean }>`
@@ -102,27 +112,29 @@ export default function AgeRangeSlider({
   return (
     <Wrapper className={className}>
       <Label>{label}</Label>
-      <Rail ref={railRef}>
-        <Track
-          left={value2Percent(value[0] - min)}
-          width={value2Percent(value[1] - value[0])}
-        />
-        <RangeSliderThumb
-          ref={minThumbRef}
-          left={value2Percent(value[0] - min)}
-          value={value[0]}
-          onMouseDown={onThumbMouseDown('min')}
-          onTouchStart={onThumbTouchStart('min')}
-        />
-        <RangeSliderThumb
-          ref={maxThumbRef}
-          left={value2Percent(value[1] - min)}
-          value={value[1]}
-          onMouseDown={onThumbMouseDown('max')}
-          onTouchStart={onThumbTouchStart('max')}
-        />
-      </Rail>
-      <GraduationWrapper>{renderGraduation()}</GraduationWrapper>
+      <SliderWrapper>
+        <Rail ref={railRef}>
+          <Track
+            left={value2Percent(value[0] - min)}
+            width={value2Percent(value[1] - value[0])}
+          />
+          <RangeSliderThumb
+            ref={minThumbRef}
+            left={value2Percent(value[0] - min)}
+            value={value[0]}
+            onMouseDown={onThumbMouseDown('min')}
+            onTouchStart={onThumbTouchStart('min')}
+          />
+          <RangeSliderThumb
+            ref={maxThumbRef}
+            left={value2Percent(value[1] - min)}
+            value={value[1]}
+            onMouseDown={onThumbMouseDown('max')}
+            onTouchStart={onThumbTouchStart('max')}
+          />
+        </Rail>
+        <GraduationWrapper>{renderGraduation()}</GraduationWrapper>
+      </SliderWrapper>
     </Wrapper>
   );
 }

@@ -5,13 +5,19 @@ import { useRangeSlider } from './useRangeSlider';
 
 const Wrapper = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   width: 100%;
 `;
 
 const Label = styled.label`
+  font-family: 'RobotoMonoRegular';
+  font-size: 2.2rem;
+  line-height: 2.9rem;
+  padding-right: 4.7rem;
+  padding-top: 5.8rem;
   color: #b70000;
-  font-size: 1.3rem;
 `;
 
 const Rail = styled.div`
