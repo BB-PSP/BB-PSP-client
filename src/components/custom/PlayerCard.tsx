@@ -3,6 +3,8 @@ import PlayerFrontCard from './PlayerFrontCard';
 import styled from 'styled-components';
 import { breakpoints } from '../../styles/media';
 import { Large, Medium, Small } from '../../styles/MediaQuery';
+import Link from 'next/link';
+import { IPlayer } from '../../store/Types';
 
 const Card = styled.div`
   ${breakpoints.large} {
@@ -26,26 +28,33 @@ const Card = styled.div`
   }
 `;
 
-export default function PlayerCard() {
+export default function PlayerCard({ name }: IPlayer) {
   return (
-    <>
-      <Large>
-        <Card>
-          <PlayerFrontCard />
-          <PlayerBackCard />
-        </Card>
-      </Large>
-      <Medium>
-        <Card>
-          <PlayerFrontCard />
-          <PlayerBackCard />
-        </Card>
-      </Medium>
-      <Small>
-        <Card>
-          <PlayerBackCard />
-        </Card>
-      </Small>
-    </>
+    <Link
+      href={{
+        pathname: 'custom/result/[player]',
+        query: { player: name },
+      }}
+    >
+      <>
+        <Large>
+          <Card>
+            <PlayerFrontCard />
+            <PlayerBackCard />
+          </Card>
+        </Large>
+        <Medium>
+          <Card>
+            <PlayerFrontCard />
+            <PlayerBackCard />
+          </Card>
+        </Medium>
+        <Small>
+          <Card>
+            <PlayerBackCard />
+          </Card>
+        </Small>
+      </>
+    </Link>
   );
 }

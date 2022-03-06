@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import PlayerCard from '../../../components/custom/PlayerCard';
 import CommonLayout from '../../../components/layout/CommonLayout';
+import { IPlayer } from '../../../store/Types';
 import { breakpoints } from '../../../styles/media';
 
 const Wrapper = styled.div`
@@ -68,12 +69,12 @@ const Container = styled.div`
   }
 `;
 
-function Result() {
+function Result(player: IPlayer) {
   return (
     <Wrapper>
       <Container>
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((i) => {
-          return <PlayerCard key={i} />;
+          return <PlayerCard key={i} {...player} />;
         })}
       </Container>
     </Wrapper>

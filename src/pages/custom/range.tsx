@@ -161,7 +161,7 @@ function Range() {
             <ReversedArrowImg src="/image/Arrow.png" alt="화살표" />
           </PrevButtonText>
         </Link>
-        <Link href="/custom/result">
+        <Link href="/custom/result/player">
           <NextButtonText>
             next
             <ArrowImg src="/image/Arrow.png" alt="화살표" />
