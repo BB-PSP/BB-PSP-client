@@ -14,3 +14,7 @@ export interface IPosition {
   colourLogo: string;
   blackLogo: string;
 }
+
+export interface IPlayer {
+  name: string;
+}
