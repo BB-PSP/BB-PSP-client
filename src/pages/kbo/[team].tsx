@@ -71,11 +71,11 @@ const Container = styled.div`
 function Team() {
   return (
     <Wrapper>
-      <Container>
+      {/* <Container>
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((i) => {
           return <PlayerCard key={i} />;
         })}
-      </Container>
+      </Container> */}
     </Wrapper>
   );
 }
