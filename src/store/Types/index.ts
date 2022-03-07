@@ -19,3 +19,8 @@ export interface IPlayer {
   name: string;
   team: string;
 }
+
+export interface IButton {
+  prev: string;
+  next: string;
+}
