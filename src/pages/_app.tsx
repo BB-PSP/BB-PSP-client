@@ -1,6 +1,5 @@
 import React from 'react';
 import initMockAPI from '../mocks';
-import GlobalFont from '../styles/GlobalFont';
 import GlobalStyle from '../styles/GlobalStyle';
 import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
@@ -30,7 +29,6 @@ function App({ Component, pageProps }: ComponentWithPageLayout) {
         </Head>
         <Hydrate state={pageProps.dehydratedState}>
           <GlobalStyle />
-          <GlobalFont />
           {Component.PageLayout ? (
             <Component.PageLayout>
               <Component {...pageProps} />

@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'PlayfairDisplayRegular';
+  src: url('PlayfairDisplay-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'PlayfairDisplayBold';
+  src: url('PlayfairDisplay-Bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'RobotoMonoRegular';
+  src: url('RobotoMono-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'RobotoMonoLight';
+  src: url('RobotoMono-Light.woff') format('woff');
+}
