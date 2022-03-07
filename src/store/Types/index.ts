@@ -17,4 +17,5 @@ export interface IPosition {
 
 export interface IPlayer {
   name: string;
+  team: string;
 }
