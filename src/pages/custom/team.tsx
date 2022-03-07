@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
+import { useEffect } from 'react';
 import { dehydrate, QueryClient, useQuery } from 'react-query';
 import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
@@ -183,6 +184,9 @@ function Team() {
   const teams = data?.teamDTOList;
   const [selectedTeam, setSelectedTeam] =
     useRecoilState<string[]>(selectedTeamState);
+  useEffect(() => {
+    setSelectedTeam([]);
+  }, []);
   return (
     <Wrapper>
       <GridContainer>

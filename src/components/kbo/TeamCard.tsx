@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import HoveredTeamCard from './HoveredTeamCard';
 import UnhoveredTeamCard from './UnhoveredTeamCard';
 import styled from 'styled-components';
 import { Large, Medium, Small } from '../../styles/MediaQuery';
 import Link from 'next/link';
+import { useRecoilState } from 'recoil';
+import { selectedProTeamState } from '../../store/Data/atom';
 
 const Wrapper = styled.div``;
 
@@ -22,11 +24,16 @@ interface ITeamCardProps {
 
 export default function TeamCard({ team }: ITeamCardProps) {
   const [hoverIndex, setHoverIndex] = useState<number>(-1);
+  const [selectedProTeam, setSelectedProTeam] =
+    useRecoilState(selectedProTeamState);
   const showCardHover = (index: number) => {
     setHoverIndex(index);
   };
   const hiddenCardHover = () => {
     setHoverIndex(-1);
+  };
+  const onClick = () => {
+    setSelectedProTeam(team);
   };
   return (
     <Link
@@ -36,9 +43,11 @@ export default function TeamCard({ team }: ITeamCardProps) {
       }}
     >
       <Wrapper
-        onClick={() => console.log(team)}
         onMouseEnter={() => showCardHover(0)}
         onMouseLeave={() => hiddenCardHover()}
+        onClick={() => {
+          onClick();
+        }}
       >
         <Large>
           {hoverIndex === -1 ? (

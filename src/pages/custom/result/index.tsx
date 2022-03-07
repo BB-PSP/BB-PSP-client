@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import PlayerCard from '../../../components/custom/PlayerCard';
+import PlayerCard from '../../../components/PlayerCard/PlayerCard';
 import CommonLayout from '../../../components/layout/CommonLayout';
 import { IPlayer } from '../../../store/Types';
 import { breakpoints } from '../../../styles/media';
