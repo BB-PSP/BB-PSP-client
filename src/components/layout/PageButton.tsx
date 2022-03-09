@@ -103,13 +103,13 @@ function PageButton({ prev, next }: IButton) {
       <Link href={prev}>
         <PrevButtonText>
           prev
-          <ReversedArrowImg src="/image/Arrow.png" alt="화살표" />
+          <ReversedArrowImg src="/image/arrow.png" alt="화살표" />
         </PrevButtonText>
       </Link>
       <Link href={next}>
         <NextButtonText>
           next
-          <ArrowImg src="/image/Arrow.png" alt="화살표" />
+          <ArrowImg src="/image/arrow.png" alt="화살표" />
         </NextButtonText>
       </Link>
     </ButtonContainer>
