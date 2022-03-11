@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { breakpoints } from '../../styles/media';
-import CommonHeader from './CommonHeader';
+import BlackHeader from './BlackHeader';
 
 const Container = styled.div`
   position: relative;
@@ -64,7 +64,7 @@ export default function BlackLayout({
     <Container>
       <BackImage src="/image/home.png" alt="home" />
       <Wrapper>{children}</Wrapper>
-      <CommonHeader />
+      <BlackHeader />
     </Container>
   );
 }
