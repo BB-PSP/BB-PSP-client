@@ -14,6 +14,14 @@ const Wrapper = styled.div`
     width: 128rem;
     padding-top: 25.5rem;
   }
+  ${breakpoints.medium} {
+    width: 68rem;
+    padding-top: 20.5rem;
+  }
+  ${breakpoints.small} {
+    width: 35rem;
+    padding-top: 15.5rem;
+  }
 `;
 
 const TopContentsContainer = styled.div`
@@ -23,6 +31,14 @@ const TopContentsContainer = styled.div`
   ${breakpoints.large} {
     width: 100%;
     height: 21.9rem;
+  }
+  ${breakpoints.medium} {
+    width: 100%;
+    height: 21.9rem;
+  }
+  ${breakpoints.small} {
+    width: 100%;
+    height: 15.9rem;
   }
 `;
 
@@ -40,6 +56,20 @@ const BottomContentsContainer = styled.div`
     height: 59.1rem;
     padding-right: 6.4rem;
     padding-left: 6.4rem;
+    margin-top: 1.5rem;
+  }
+  ${breakpoints.medium} {
+    width: 100%;
+    height: 39.1rem;
+    padding-right: 2.4rem;
+    padding-left: 2.4rem;
+    margin-top: 1.5rem;
+  }
+  ${breakpoints.small} {
+    width: 100%;
+    height: 35.1rem;
+    padding-right: 2.4rem;
+    padding-left: 2.4rem;
     margin-top: 1.5rem;
   }
 `;
