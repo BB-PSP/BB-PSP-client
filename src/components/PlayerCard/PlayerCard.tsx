@@ -45,7 +45,6 @@ export default function PlayerCard({ name }: IPlayer) {
         </Large>
         <Medium>
           <Card>
-            <PlayerFrontCard />
             <PlayerBackCard />
           </Card>
         </Medium>

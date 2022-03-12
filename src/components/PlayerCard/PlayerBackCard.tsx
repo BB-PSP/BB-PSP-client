@@ -19,10 +19,6 @@ const Wrapper = styled.div`
     padding-bottom: 2.048rem;
   }
   ${breakpoints.medium} {
-    position: absolute;
-    z-index: 2;
-    backface-visibility: hidden;
-    transform: rotateY(180deg);
     width: 29rem;
     height: 16.2rem;
     display: flex;
