@@ -1,31 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import HoveredTeamCard from './HoveredTeamCard';
 import UnhoveredTeamCard from './UnhoveredTeamCard';
 import styled from 'styled-components';
 import { Large, Medium, Small } from '../../styles/MediaQuery';
 import Link from 'next/link';
-import { useRecoilState } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 import { selectedProTeamState } from '../../store/Data/atom';
 
 const Wrapper = styled.div``;
 
-interface ITeamCardProps {
-  team: {
-    name: string;
-    colourLogo: string;
-    blackLogo: string;
-    teamColour: string;
-    linearGradient: string;
-    foundedAt: number;
-    champCount: number;
-    lastSeason: number;
-  };
+interface TeamCardProps {
+  name: string;
+  colourLogo: string;
+  blackLogo: string;
+  teamColour: string;
+  linearGradient: string;
+  foundedAt: number;
+  champCount: number;
+  lastSeason: number;
 }
 
-export default function TeamCard({ team }: ITeamCardProps) {
+const TeamCard = (team: TeamCardProps) => {
   const [hoverIndex, setHoverIndex] = useState<number>(-1);
-  const [selectedProTeam, setSelectedProTeam] =
-    useRecoilState(selectedProTeamState);
+  const setSelectedProTeam = useSetRecoilState(selectedProTeamState);
   const showCardHover = (index: number) => {
     setHoverIndex(index);
   };
@@ -37,9 +34,10 @@ export default function TeamCard({ team }: ITeamCardProps) {
   };
   return (
     <Link
+      as={`/kbo/${team.name}`}
       href={{
         pathname: '/kbo/[team]',
-        query: { team: team.name },
+        query: { team: JSON.stringify(team) },
       }}
     >
       <Wrapper
@@ -65,4 +63,6 @@ export default function TeamCard({ team }: ITeamCardProps) {
       </Wrapper>
     </Link>
   );
-}
+};
+
+export default TeamCard;

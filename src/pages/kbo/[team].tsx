@@ -1,7 +1,9 @@
 import styled from 'styled-components';
-import PlayerCard from '../../components/PlayerCard/PlayerCard';
 import CommonLayout from '../../components/layout/CommonLayout';
 import { breakpoints } from '../../styles/media';
+import { useRecoilValue } from 'recoil';
+import { selectedProTeamState } from '../../store/Data/atom';
+import { useRouter } from 'next/router';
 
 const Wrapper = styled.div`
   display: flex;
@@ -68,14 +70,21 @@ const Container = styled.div`
   }
 `;
 
+interface PlayerCardProps {
+  name: string;
+}
+
 function Team() {
+  const router = useRouter();
+  console.log(router.query.team);
+
   return (
     <Wrapper>
-      {/* <Container>
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((i) => {
+      <Container>
+        {/* {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((i) => {
           return <PlayerCard key={i} />;
-        })}
-      </Container> */}
+        })} */}
+      </Container>
     </Wrapper>
   );
 }

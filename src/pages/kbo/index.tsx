@@ -5,6 +5,7 @@ import { GetStaticProps } from 'next';
 import { dehydrate, QueryClient, useQuery } from 'react-query';
 import { fetchTeams } from '../../hooks/api/useTeams';
 import CommonLayout from '../../components/layout/CommonLayout';
+import { ITeam } from '../../store/Types';
 
 const Wrapper = styled.div`
   display: flex;
@@ -24,20 +25,8 @@ const Wrapper = styled.div`
 
 const Slider = styled.div``;
 
-export interface ITeamSliderProps {
-  teams: {
-    name: string;
-    colourLogo: string;
-    blackLogo: string;
-    teamColour: string;
-    foundedAt: number;
-    champCount: number;
-    lastSeason: number;
-  };
-}
-
-function Kbo() {
-  const { data } = useQuery('teamData', () => fetchTeams());
+const Kbo = () => {
+  const { data } = useQuery<ITeam, Error>('teamData', () => fetchTeams());
   const teams = data?.teamDTOList;
   return (
     <Wrapper>
@@ -46,7 +35,7 @@ function Kbo() {
       </Slider>
     </Wrapper>
   );
-}
+};
 
 export const getStaticProps: GetStaticProps = async () => {
   const queryClient = new QueryClient();

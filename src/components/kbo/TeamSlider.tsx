@@ -88,19 +88,17 @@ const SlideBar = styled(motion.div)`
   position: relative;
 `;
 
-export interface ITeamSliderProps {
-  teams: {
-    name: string;
-    colourLogo: string;
-    blackLogo: string;
-    teamColour: string;
-    foundedAt: number;
-    champCount: number;
-    lastSeason: number;
-  };
+export interface TeamSliderProps {
+  name: string;
+  colourLogo: string;
+  blackLogo: string;
+  teamColour: string;
+  foundedAt: number;
+  champCount: number;
+  lastSeason: number;
 }
 
-export default function TeamSlider(teams: ITeamSliderProps) {
+const TeamSlider = (teams: TeamSliderProps) => {
   const x = useMotionValue(0);
   const teamArr = Object.values(teams);
   const largeSlide = useTransform(x, [0, -1350], [0, 620]);
@@ -119,7 +117,7 @@ export default function TeamSlider(teams: ITeamSliderProps) {
               dragMomentum={true}
             >
               {teamArr.map((team) => {
-                return <TeamCard key={team.name} team={team} />;
+                return <TeamCard key={team.name} {...team} />;
               })}
             </Row>
           </AnimatePresence>
@@ -134,7 +132,7 @@ export default function TeamSlider(teams: ITeamSliderProps) {
               dragMomentum={true}
             >
               {teamArr.map((team) => (
-                <TeamCard key={team.name} team={team} />
+                <TeamCard key={team.name} {...team} />
               ))}
             </Row>
           </AnimatePresence>
@@ -149,7 +147,7 @@ export default function TeamSlider(teams: ITeamSliderProps) {
               dragMomentum={true}
             >
               {teamArr.map((team) => (
-                <TeamCard key={team.name} team={team} />
+                <TeamCard key={team.name} {...team} />
               ))}
             </Row>
           </AnimatePresence>
@@ -172,4 +170,6 @@ export default function TeamSlider(teams: ITeamSliderProps) {
       </Small>
     </>
   );
-}
+};
+
+export default TeamSlider;
