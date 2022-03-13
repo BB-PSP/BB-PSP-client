@@ -6,12 +6,14 @@ import { breakpoints } from '../../../styles/media';
 
 const Wrapper = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  /* position: absolute;
+  left: 50%;
+  transform: translateX(-50%); */
   margin: 0 auto;
   ${breakpoints.large} {
-    width: 128rem;
+    width: 135.3rem;
     padding-top: 39.6rem;
   }
   ${breakpoints.medium} {
@@ -29,11 +31,10 @@ const Container = styled.div`
   ${breakpoints.large} {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 4rem;
+    column-gap: 2rem;
     row-gap: 7rem;
-    width: 135.5rem;
+    width: 128rem;
     height: 62.6rem;
-    padding-right: 7.3rem;
     overflow-x: hidden;
     &::-webkit-scrollbar {
       width: 0.2rem;
@@ -48,9 +49,9 @@ const Container = styled.div`
     grid-template-columns: repeat(2, 1fr);
     column-gap: 2rem;
     row-gap: 4rem;
+    /* width: 78rem; */
     width: 80.5rem;
     height: 55.6rem;
-    padding-right: 7.3rem;
     overflow-x: hidden;
     &::-webkit-scrollbar {
       width: 0.2rem;

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import BlackLayout from '../../../components/layout/BlackLayout';
+import ResultButton from '../../../components/layout/ResultButton';
 import Profile from '../../../components/PlayerInfo/Profile';
 import StatTable from '../../../components/PlayerInfo/StatTable';
 import { breakpoints } from '../../../styles/media';
@@ -54,8 +55,6 @@ const BottomContentsContainer = styled.div`
   ${breakpoints.large} {
     width: 100%;
     height: 59.1rem;
-    padding-right: 6.4rem;
-    padding-left: 6.4rem;
     margin-top: 1.5rem;
   }
   ${breakpoints.medium} {
@@ -74,6 +73,21 @@ const BottomContentsContainer = styled.div`
   }
 `;
 
+const TableContainer = styled.div`
+  ${breakpoints.large} {
+    padding-right: 6.4rem;
+    padding-left: 6.4rem;
+  }
+  ${breakpoints.medium} {
+    padding-right: 2.4rem;
+    padding-left: 2.4rem;
+  }
+  ${breakpoints.small} {
+    padding-right: 2.4rem;
+    padding-left: 2.4rem;
+  }
+`;
+
 function Player() {
   return (
     <Wrapper>
@@ -81,7 +95,10 @@ function Player() {
         <Profile />
       </TopContentsContainer>
       <BottomContentsContainer>
-        <StatTable />
+        <TableContainer>
+          <StatTable />
+        </TableContainer>
+        <ResultButton />
       </BottomContentsContainer>
     </Wrapper>
   );
