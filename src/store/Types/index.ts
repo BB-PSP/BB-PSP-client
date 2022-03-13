@@ -17,6 +17,16 @@ export interface IPosition {
 }
 
 export interface IPlayer {
+  age: number;
+  backNumber: number;
+  batInfo: string;
+  pitchInfo: string;
+  birth: string;
+  height: string;
+  weight: string;
+  highSchool: string;
+  position: string;
+  salary: string;
   name: string;
   team: string;
 }
