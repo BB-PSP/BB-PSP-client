@@ -1,15 +1,18 @@
 import Link from 'next/link';
 import styled from 'styled-components';
-
-const Wrapper = styled.div`
-  height: 7.1rem;
-  margin-top: 7rem;
-`;
+import { breakpoints } from '../../styles/media';
 
 const ArrowImg = styled.img`
   margin-top: -0.6rem;
-  width: 10.35rem;
-  height: 3.3rem;
+  ${breakpoints.large} {
+    width: 10.35rem;
+  }
+  ${breakpoints.medium} {
+    width: 10.35rem;
+  }
+  ${breakpoints.small} {
+    width: 5.35rem;
+  }
 `;
 
 const PrevButtonText = styled.h3`
@@ -17,20 +20,30 @@ const PrevButtonText = styled.h3`
   font-family: 'RobotoMonoRegular';
   color: #fff;
   text-align: right;
-  font-size: 2.2rem;
-  line-height: 2.9rem;
+  ${breakpoints.large} {
+    font-size: 2.2rem;
+    line-height: 2.9rem;
+  }
+  ${breakpoints.medium} {
+    font-size: 2.2rem;
+    line-height: 2.9rem;
+  }
+  ${breakpoints.small} {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
 `;
 
 const PrevButton = () => {
   return (
-    <Wrapper>
+    <div>
       <Link href="/">
         <PrevButtonText>
           prev
           <ArrowImg src="/image/white_arrow_reverse.png" alt="화살표" />
         </PrevButtonText>
       </Link>
-    </Wrapper>
+    </div>
   );
 };
 
