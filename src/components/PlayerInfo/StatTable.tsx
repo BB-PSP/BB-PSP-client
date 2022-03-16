@@ -4,39 +4,15 @@ import { breakpoints } from '../../styles/media';
 const Season = styled.h3`
   font-family: 'RobotoMonoRegular';
   color: #fff;
-  ${breakpoints.large} {
-    font-size: 2.2rem;
-    line-height: 2.901rem;
-    padding-top: 5.2rem;
-  }
-  ${breakpoints.medium} {
-    font-size: 1.8rem;
-    line-height: 2.201rem;
-    padding-top: 4.2rem;
-  }
-  ${breakpoints.small} {
-    font-size: 1.6rem;
-    line-height: 2.001rem;
-    padding-top: 3.2rem;
-  }
+  font-size: 2.2rem;
+  line-height: 2.9rem;
+  padding-top: 5.2rem;
 `;
 
 const Table = styled.table`
-  ${breakpoints.large} {
-    width: 115.2rem;
-    margin-top: 3.8rem;
-    margin-bottom: 5.5rem;
-  }
-  ${breakpoints.medium} {
-    width: 64rem;
-    margin-top: 3.8rem;
-    margin-bottom: 4.5rem;
-  }
-  ${breakpoints.small} {
-    width: 30rem;
-    margin-top: 3rem;
-    margin-bottom: 2rem;
-  }
+  width: 100%;
+  margin-top: 3.8rem;
+  margin-bottom: 5.5rem;
 `;
 
 const StatTr = styled.tr`
@@ -146,7 +122,7 @@ function StatTable() {
           <StatTd>8</StatTd>
           <StatTd>10</StatTd>
           <StatTd>3</StatTd>
-          <StatTd>0.360</StatTd>
+          <StatTd>.360</StatTd>
         </StatTr>
       </Table>
     </>

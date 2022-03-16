@@ -12,10 +12,10 @@ const Container = styled.body`
 
 const BackImage = styled.img`
   position: absolute;
-  /* padding-top: 27.2rem; */
+  background-attachment: local;
+  padding-top: 27.2rem;
   z-index: -99;
   left: 50%;
-  top: 20rem;
   transform: translate3d(-50%, 0, 0);
   ${breakpoints.large} {
     width: 104.6rem;
@@ -37,7 +37,7 @@ const Wrapper = styled.div`
   height: 100%;
 `;
 
-export default function BlackLayout({
+export default function BlackFullLayout({
   children,
 }: {
   children: React.ReactNode;
