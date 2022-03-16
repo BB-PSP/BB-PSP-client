@@ -5,6 +5,10 @@ import IndexHeader from './IndexHeader';
 
 const Container = styled.div`
   position: relative;
+  background-color: #ccc;
+  z-index: 1;
+  height: 100vh;
+  /* position: relative;
   width: 100vw;
   ${breakpoints.large} {
     min-height: 100vh;
@@ -20,30 +24,27 @@ const Container = styled.div`
       min-height: -webkit-fill-available;
       position: fixed;
     }
-    height: 100%;
-  }
+    height: 100vh;
+  } */
 `;
 
 const BackImage = styled.img`
   position: absolute;
-  z-index: -99;
   left: 50%;
-  bottom: 0;
   transform: translate3d(-50%, 0, 0);
+  z-index: -99;
+  bottom: 0;
   ${breakpoints.large} {
     width: 104.6rem;
-    height: fit-content;
-    object-fit: contain;
+    height: auto;
   }
   ${breakpoints.medium} {
-    width: 80rem;
+    width: 58rem;
     height: auto;
-    object-fit: contain;
   }
   ${breakpoints.small} {
-    width: 35rem;
+    width: 20rem;
     height: auto;
-    object-fit: contain;
   }
 `;
 
@@ -60,9 +61,14 @@ export default function IndexLayout({
 }) {
   return (
     <Container>
-      <BackImage src="/image/home.png" alt="home" />
-      <Wrapper>{children}</Wrapper>
-      <IndexHeader />
+      <Wrapper>
+        <IndexHeader />
+        <BackImage
+          src="/image/baseball/baseball_gradationmask.png"
+          alt="home"
+        />
+        {children}
+      </Wrapper>
     </Container>
   );
 }

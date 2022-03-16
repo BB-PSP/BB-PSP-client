@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import BlackLayout from '../../../components/layout/BlackLayout';
+import BlackLayout from '../../../components/layout/black/BlackLayout';
 import ResultButton from '../../../components/layout/ResultButton';
 import Profile from '../../../components/PlayerInfo/Profile';
 import StatTable from '../../../components/PlayerInfo/StatTable';

@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import { breakpoints } from '../../styles/media';
+import { breakpoints } from '../../../styles/media';
 import BlackHeader from './BlackHeader';
 
-const Container = styled.body`
+const Container = styled.div`
   position: relative;
   background-color: #3d3d3d;
   z-index: 1;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 `;
 
 const BackImage = styled.img`
@@ -31,12 +32,6 @@ const BackImage = styled.img`
   }
 `;
 
-const Wrapper = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-`;
-
 export default function BlackFullLayout({
   children,
 }: {
@@ -44,11 +39,9 @@ export default function BlackFullLayout({
 }) {
   return (
     <Container>
-      <Wrapper>
-        <BlackHeader />
-        <BackImage src="/image/baseball/whole_baseball.png" alt="home" />
-        {children}
-      </Wrapper>
+      <BlackHeader />
+      <BackImage src="/image/baseball/whole_baseball.png" alt="home" />
+      {children}
     </Container>
   );
 }

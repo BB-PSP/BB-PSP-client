@@ -5,14 +5,14 @@ import CommonHeader from './CommonHeader';
 
 const Container = styled.div`
   position: relative;
-  width: 100vw;
+  background-color: #ccc;
+  z-index: 1;
+  height: 100vh;
   ${breakpoints.large} {
-    min-height: 100vh;
-    height: 108rem;
+    min-height: 108rem;
   }
   ${breakpoints.medium} {
-    min-height: 100vh;
-    height: 88rem;
+    min-height: 88rem;
   }
   ${breakpoints.small} {
     min-height: 100vh;
@@ -20,30 +20,26 @@ const Container = styled.div`
       min-height: -webkit-fill-available;
       position: fixed;
     }
-    height: 100%;
   }
 `;
 
 const BackImage = styled.img`
   position: absolute;
-  z-index: -99;
   left: 50%;
-  bottom: 0;
   transform: translate3d(-50%, 0, 0);
+  z-index: -99;
+  bottom: 0;
   ${breakpoints.large} {
     width: 104.6rem;
-    height: fit-content;
-    object-fit: contain;
+    height: auto;
   }
   ${breakpoints.medium} {
-    width: 80rem;
+    width: 58rem;
     height: auto;
-    object-fit: contain;
   }
   ${breakpoints.small} {
-    width: 35rem;
+    width: 20rem;
     height: auto;
-    object-fit: contain;
   }
 `;
 
@@ -60,9 +56,14 @@ export default function CommonLayout({
 }) {
   return (
     <Container>
-      <BackImage src="/image/home.png" alt="home" />
-      <Wrapper>{children}</Wrapper>
-      <CommonHeader />
+      <Wrapper>
+        <CommonHeader />
+        <BackImage
+          src="/image/baseball/baseball_gradationmask.png"
+          alt="home"
+        />
+        {children}
+      </Wrapper>
     </Container>
   );
 }

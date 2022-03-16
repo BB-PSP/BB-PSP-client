@@ -14,12 +14,11 @@ import { breakpoints } from '../../styles/media';
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   margin: 0 auto;
   ${breakpoints.large} {
     width: 128rem;
-    padding-top: 39.6rem;
+    padding-top: 21.2rem;
   }
   ${breakpoints.medium} {
     width: 68rem;

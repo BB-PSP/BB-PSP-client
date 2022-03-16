@@ -10,9 +10,8 @@ import { ITeam } from '../../store/Types';
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  ${breakpoints.large} {
+  /* ${breakpoints.large} {
     padding-top: 23.7rem;
   }
   ${breakpoints.medium} {
@@ -20,7 +19,7 @@ const Wrapper = styled.div`
   }
   ${breakpoints.small} {
     padding-top: 13.7rem;
-  }
+  } */
 `;
 
 const Slider = styled.div``;

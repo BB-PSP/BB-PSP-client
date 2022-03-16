@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import BlackFullLayout from '../../../../components/layout/BlackFullLayout';
+import BlackFullLayout from '../../../../components/layout/black/BlackFullLayout';
 import PrevButton from '../../../../components/layout/PrevButton';
 import StatTable from '../../../../components/PlayerInfo/StatTable';
 import { breakpoints } from '../../../../styles/media';

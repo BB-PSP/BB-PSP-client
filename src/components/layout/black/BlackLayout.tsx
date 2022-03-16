@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { breakpoints } from '../../styles/media';
+import { breakpoints } from '../../../styles/media';
 import BlackHeader from './BlackHeader';
 
-const Container = styled.body`
+const Container = styled.div`
   position: relative;
   background-color: #3d3d3d;
   z-index: 1;
@@ -12,10 +12,9 @@ const Container = styled.body`
 
 const BackImage = styled.img`
   position: absolute;
-  /* padding-top: 27.2rem; */
+  padding-top: 45.7rem;
   z-index: -99;
   left: 50%;
-  top: 20rem;
   transform: translate3d(-50%, 0, 0);
   ${breakpoints.large} {
     width: 104.6rem;
@@ -46,7 +45,7 @@ export default function BlackLayout({
     <Container>
       <Wrapper>
         <BlackHeader />
-        <BackImage src="/image/baseball/whole_baseball.png" alt="home" />
+        <BackImage src="/image/baseball/cut_baseball.png" alt="home" />
         {children}
       </Wrapper>
     </Container>
