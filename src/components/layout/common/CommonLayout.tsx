@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { breakpoints } from '../../styles/media';
+import { breakpoints } from '../../../styles/media';
 import CommonHeader from './CommonHeader';
 
 const Container = styled.div`

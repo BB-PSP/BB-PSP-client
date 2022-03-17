@@ -4,7 +4,7 @@ import TeamSlider from '../../components/kbo/TeamSlider';
 import { GetStaticProps } from 'next';
 import { dehydrate, QueryClient, useQuery } from 'react-query';
 import { fetchTeams } from '../../hooks/api/useTeams';
-import CommonLayout from '../../components/layout/CommonLayout';
+import CommonLayout from '../../components/layout/common/CommonLayout';
 import { ITeam } from '../../store/Types';
 
 const Wrapper = styled.div`

@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { breakpoints } from '../../styles/media';
 import AgeRangeSlider from '../../components/custom/RangeSlider/AgeRangeSlider';
 import _SalaryRangeSlider from '../../components/custom/RangeSlider/SalaryRangeSlider';
-import CommonLayout from '../../components/layout/CommonLayout';
-import PageButton from '../../components/layout/PageButton';
+import CommonLayout from '../../components/layout/common/CommonLayout';
+import PageButton from '../../components/button/PageButton';
 
 const Wrapper = styled.div`
   display: flex;

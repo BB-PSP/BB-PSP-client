@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import PlayerCard from '../../../components/PlayerCard/PlayerCard';
-import CommonLayout from '../../../components/layout/CommonLayout';
+import CommonLayout from '../../../components/layout/common/CommonLayout';
 import { IPlayer } from '../../../store/Types';
 import { breakpoints } from '../../../styles/media';
 

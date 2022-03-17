@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import CommonLayout from '../../components/layout/CommonLayout';
+import CommonLayout from '../../components/layout/common/CommonLayout';
 import { breakpoints } from '../../styles/media';
 import { useRouter } from 'next/router';
 import PlayerCard from '../../components/PlayerCard/PlayerCard';

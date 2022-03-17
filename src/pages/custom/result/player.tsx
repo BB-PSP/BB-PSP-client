@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import BlackLayout from '../../../components/layout/black/BlackLayout';
-import ResultButton from '../../../components/layout/ResultButton';
+import ResultButton from '../../../components/button/ResultButton';
 import Profile from '../../../components/PlayerInfo/Profile';
 import StatTable from '../../../components/PlayerInfo/StatTable';
 import { breakpoints } from '../../../styles/media';

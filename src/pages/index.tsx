@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import { breakpoints } from '../styles/media';
-import IndexLayout from '../components/layout/IndexLayout';
+import IndexLayout from '../components/layout/main/IndexLayout';
 
 const Wrapper = styled.main`
   display: flex;
