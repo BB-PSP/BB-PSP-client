@@ -3,57 +3,35 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { breakpoints } from '../styles/media';
 import IndexLayout from '../components/layout/main/IndexLayout';
+import IndexHeader from '../components/layout/main/IndexHeader';
 
 const Wrapper = styled.main`
   display: flex;
   flex-direction: column;
-  height: 100%;
-  text-align: center;
-  margin: 0 auto;
-  ${breakpoints.large} {
-    padding-top: 9.4rem;
-    width: 128rem;
-  }
-  ${breakpoints.medium} {
-    padding-top: 9.4rem;
-    width: 68rem;
-  }
-  ${breakpoints.small} {
-    padding-top: 8.4rem;
-    width: 35rem;
-  }
+  align-items: center;
 `;
 
 const SubTitle = styled.h2`
+  position: relative;
   font-family: 'RobotoMonoRegular';
   color: #000;
   ${breakpoints.large} {
-    font-size: 2.2rem;
-    padding-top: 8rem;
+    font-size: 1.1vw;
+    padding-top: 7.4vh;
   }
   ${breakpoints.medium} {
-    font-size: 2.2rem;
-    padding-top: 8rem;
-  }
-  ${breakpoints.small} {
-    font-size: 1.3rem;
-    padding-top: 2.66rem;
+    font-size: 2.2vw;
+    padding-top: 5.4vh;
   }
 `;
 
 const DescriptionBox = styled.section`
-  margin: 0 auto;
+  text-align: center;
   ${breakpoints.large} {
-    width: 40rem;
-    padding-top: 4rem;
+    padding-top: 3.7vh;
   }
   ${breakpoints.medium} {
-    width: 30rem;
-    padding-top: 4rem;
-  }
-  ${breakpoints.small} {
-    width: 20rem;
-    padding-top: 2rem;
+    padding-top: 3.7vh;
   }
 `;
 
@@ -61,49 +39,39 @@ const Description = styled.p`
   font-family: 'RobotoMonoRegular';
   color: #565656;
   ${breakpoints.large} {
-    font-size: 1.6rem;
-    line-height: 2.66rem;
+    font-size: 0.8vw;
+    line-height: 2.5vh;
   }
   ${breakpoints.medium} {
-    font-size: 1.6rem;
-    line-height: 2.44rem;
-  }
-  ${breakpoints.small} {
-    font-size: 1.15rem;
-    line-height: 1.77rem;
+    font-size: 1.6vw;
+    line-height: 2.5vh;
   }
 `;
 
 const ButtonConatiner = styled.nav`
   display: flex;
-  justify-content: space-between;
   ${breakpoints.large} {
+    justify-content: space-between;
+    width: 66.66vw;
     flex-direction: row;
-    margin-top: auto;
-    margin-bottom: 16.5rem;
+    padding-top: 46.57vh;
   }
   ${breakpoints.medium} {
-    flex-direction: row;
-    align-items: center;
-    margin-top: 10.5rem;
-  }
-  ${breakpoints.small} {
-    margin: 0 auto;
     flex-direction: column;
     align-items: flex-start;
-    margin-top: 5rem;
+    margin-top: 12vh;
   }
 `;
 
 const ProButtonBox = styled.div`
   flex-direction: column;
+  ${breakpoints.medium} {
+    margin-bottom: 8vh;
+  }
 `;
 
 const CustomButtonBox = styled.div`
   flex-direction: column;
-  ${breakpoints.small} {
-    padding-top: 5rem;
-  }
 `;
 
 const ProButton = styled.h3`
@@ -113,13 +81,11 @@ const ProButton = styled.h3`
   color: #b70000;
   font-family: 'RobotoMonoRegular';
   ${breakpoints.large} {
-    font-size: 2.8rem;
+    font-size: 1.46vw;
+    line-height: 3.42vh;
   }
   ${breakpoints.medium} {
-    font-size: 2.5rem;
-  }
-  ${breakpoints.small} {
-    font-size: 1.5rem;
+    font-size: 2.92vw;
   }
 `;
 
@@ -130,30 +96,23 @@ const CustomButton = styled.h3`
   color: #b70000;
   font-family: 'RobotoMonoRegular';
   ${breakpoints.large} {
-    font-size: 2.8rem;
+    font-size: 1.46vw;
+    line-height: 3.42vh;
   }
   ${breakpoints.medium} {
-    font-size: 2.5rem;
-  }
-  ${breakpoints.small} {
-    font-size: 1.5rem;
+    font-size: 2.92vw;
   }
 `;
 
 const ArrowImg = styled.img`
   ${breakpoints.large} {
-    margin-top: 1.6rem;
-    width: 10.35rem;
+    margin-top: 0.15vh;
+    width: 5.4vw;
     height: auto;
   }
   ${breakpoints.medium} {
-    margin-top: 1.6rem;
-    width: 10.35rem;
-    height: auto;
-  }
-  ${breakpoints.small} {
-    margin-top: 1rem;
-    width: 6rem;
+    margin-top: 0.7vh;
+    width: 10.8vw;
     height: auto;
   }
 `;
@@ -162,7 +121,10 @@ function Home() {
   return (
     <>
       <Wrapper>
-        <SubTitle>BB:PSP(Baseball: Player Stats Prediction)</SubTitle>
+        <IndexHeader />
+        <div>
+          <SubTitle>BB:PSP(Baseball: Player Stats Prediction)</SubTitle>
+        </div>
         <DescriptionBox>
           <Description>Predict KBO Players' stats</Description>
         </DescriptionBox>

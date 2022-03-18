@@ -7,9 +7,11 @@ const Wrapper = styled.nav`
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 23.8rem;
-  padding-top: 9.4rem;
-  ${breakpoints.small} {
+  ${breakpoints.large} {
+    padding-top: 8.7vh;
+  }
+  ${breakpoints.medium} {
+    padding-top: 8.7vh;
   }
 `;
 
@@ -17,9 +19,11 @@ const Title = styled.h1`
   cursor: grab;
   font-family: 'PlayfairDisplayBold';
   color: #b70000;
-  font-size: 4.8rem;
-  ${breakpoints.small} {
-    font-size: 4rem;
+  ${breakpoints.large} {
+    font-size: 2.5vw;
+  }
+  ${breakpoints.medium} {
+    font-size: 5vw;
   }
 `;
 
