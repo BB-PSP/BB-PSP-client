@@ -49,22 +49,25 @@ const Description = styled.p`
 `;
 
 const ButtonConatiner = styled.nav`
+  position: absolute;
   display: flex;
   ${breakpoints.large} {
-    justify-content: space-between;
+    bottom: 15.28vh;
     width: 66.66vw;
     flex-direction: row;
-    padding-top: 46.57vh;
   }
   ${breakpoints.medium} {
+    bottom: 45vh;
     flex-direction: column;
     align-items: flex-start;
-    margin-top: 12vh;
   }
 `;
 
 const ProButtonBox = styled.div`
   flex-direction: column;
+  ${breakpoints.large} {
+    padding-right: 35.8vw;
+  }
   ${breakpoints.medium} {
     margin-bottom: 8vh;
   }
