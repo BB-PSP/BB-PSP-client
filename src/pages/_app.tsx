@@ -24,6 +24,7 @@ function App({ Component, pageProps }: ComponentWithPageLayout) {
       <RecoilRoot>
         <Head>
           <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width" />
           <meta name="description" content="BB-PSP" />
           <title>BB-PSP</title>
         </Head>
