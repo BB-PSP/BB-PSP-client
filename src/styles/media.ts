@@ -1,8 +1,8 @@
 // airbnb css-in-javascript naming guide
 const breakpoints = {
-  small: '@media (max-width: 768px)',
-  medium: '@media (max-width: 1023px) and (min-width: 769px)',
-  large: '@media (min-width: 1024px)',
+  small: '@media (max-width: 767px)',
+  medium: '@media (max-width: 1024px) and (min-width: 768px)',
+  large: '@media (min-width: 1025px)',
 };
 
 export { breakpoints };
