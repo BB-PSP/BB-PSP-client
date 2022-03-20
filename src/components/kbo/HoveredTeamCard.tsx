@@ -7,15 +7,13 @@ const Wrapper = styled(motion.div)<ITeamCardProps>`
   display: flex;
   flex-direction: column;
   ${(props) => `background: linear-gradient(${props.team.linearGradient});`}
-  width: 25rem;
   ${breakpoints.large} {
-    height: 72.2rem;
+    width: 13.02vw;
+    height: 66.85vh;
   }
   ${breakpoints.medium} {
-    height: 52.2rem;
-  }
-  ${breakpoints.small} {
-    height: 45.2rem;
+    width: 25vw;
+    height: 50vh;
   }
 `;
 
@@ -29,19 +27,14 @@ const Background = styled.div`
     rgba(39, 39, 39, 0.87) 100%
   );
   ${breakpoints.large} {
-    width: 25rem;
-    height: 57.2rem;
-    bottom: 0;
+    width: 13.02vw;
+    height: 52.96vh;
+    bottom: 3.8vh;
   }
   ${breakpoints.medium} {
-    width: 25rem;
-    height: 37.2rem;
-    bottom: 0;
-  }
-  ${breakpoints.small} {
-    width: 25rem;
-    height: 30.2rem;
-    bottom: 0;
+    width: 25vw;
+    height: 40vh;
+    bottom: 3.8vh;
   }
 `;
 
@@ -50,34 +43,27 @@ const LogoContainer = styled.div<ITeamCardProps>`
   background-repeat: no-repeat;
   background-position: center;
   ${breakpoints.large} {
-    height: 29.6rem;
+    background-size: auto 14vh;
+    height: 27.41vh;
     width: 100%;
   }
   ${breakpoints.medium} {
-    height: 21.3rem;
-    width: 100%;
-  }
-  ${breakpoints.small} {
-    height: 21.3rem;
+    background-size: auto 12vh;
+    height: 18vh;
     width: 100%;
   }
 `;
 
 const ContentsContainer = styled.div`
   ${breakpoints.large} {
-    width: 19.5rem;
-    height: 28.5rem;
-    margin-left: 2.4rem;
+    width: 10.16vw;
+    height: 26.39vh;
+    margin-left: 1.25vw;
   }
   ${breakpoints.medium} {
-    width: 19.5rem;
-    height: 30.9rem;
-    margin-left: 2.4rem;
-  }
-  ${breakpoints.small} {
-    width: 19.5rem;
-    height: 28.5rem;
-    margin-left: 2.4rem;
+    width: 20vw;
+    height: 20vh;
+    margin-left: 2.5vw;
   }
 `;
 
@@ -85,43 +71,37 @@ const Order = styled.h2`
   font-family: 'NotoSansCJK-Regular'; // font 수정할것
   color: #fff;
   ${breakpoints.large} {
-    font-size: 3.2rem;
-    line-height: 4.736rem;
+    font-size: 1.67vw;
+    line-height: 4.39vh;
   }
   ${breakpoints.medium} {
-    font-size: 3.2rem;
-    line-height: 4.736rem;
-  }
-  ${breakpoints.small} {
-    font-size: 2.2rem;
-    line-height: 2.736rem;
+    font-size: 3vw;
+    line-height: 5vh;
   }
 `;
 
 const TeamName = styled.h2`
   font-family: 'RobotoMonoLight';
   color: #fff;
-  padding-top: 0.8rem;
+  padding-top: 0.74vh;
   ${breakpoints.large} {
-    font-size: 2.4rem;
-    line-height: 3.165rem;
+    font-size: 1.25vw;
+    line-height: 2.93vh;
+    padding-bottom: 2.95vh;
   }
   ${breakpoints.medium} {
-    font-size: 2.4rem;
-    line-height: 3.165rem;
-  }
-  ${breakpoints.small} {
-    font-size: 2rem;
-    line-height: 2rem;
+    font-size: 2.2vw;
+    line-height: 3vh;
+    padding-bottom: 3vh;
   }
 `;
 
 const Box = styled.div`
   ${breakpoints.large} {
-    padding-top: 2rem;
+    padding-bottom: 3.48vh;
   }
   ${breakpoints.medium} {
-    padding-top: 2rem;
+    padding-bottom: 4vh;
   }
   ${breakpoints.small} {
     padding-top: 1.4rem;
@@ -132,25 +112,28 @@ const Category = styled.p`
   font-family: 'RobotoMonoRegular';
   color: #c5c5c5;
   ${breakpoints.large} {
-    font-size: 1.4rem;
-    line-height: 1.846rem;
+    font-size: 0.72vw;
+    line-height: 1.71vh;
   }
   ${breakpoints.medium} {
-    font-size: 1.4rem;
-    line-height: 1.846rem;
-  }
-  ${breakpoints.small} {
-    font-size: 1.2rem;
-    line-height: 1.5rem;
+    font-size: 1.5vw;
+    line-height: 2vh;
   }
 `;
 
 const Content = styled.p`
   font-family: 'RobotoMonoRegular';
-  font-size: 1.6rem;
-  line-height: 2.4rem;
   color: #fff;
-  padding-top: 0.4rem;
+  ${breakpoints.large} {
+    font-size: 0.83vw;
+    line-height: 0.22vh;
+    padding-top: 0.74vh;
+  }
+  ${breakpoints.medium} {
+    font-size: 1.5vw;
+    line-height: 1vh;
+    padding-top: 1.5vh;
+  }
 `;
 
 interface ITeamCardProps {
@@ -169,6 +152,7 @@ interface ITeamCardProps {
 export default function HoveredTeamCard({ team }: ITeamCardProps) {
   return (
     <Wrapper team={team}>
+      <Background />
       <LogoContainer team={team} />
       <ContentsContainer>
         <Order>1</Order>
@@ -186,7 +170,6 @@ export default function HoveredTeamCard({ team }: ITeamCardProps) {
           <Content>{team?.foundedAt}</Content>
         </Box>
       </ContentsContainer>
-      <Background />
     </Wrapper>
   );
 }

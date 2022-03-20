@@ -6,17 +6,13 @@ import { breakpoints } from '../../styles/media';
 const Wrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  position: absolute;
-  bottom: 0;
-  width: 25rem;
+  margin-top: 22.04vh;
   ${breakpoints.large} {
-    height: 48.4rem;
+    width: 13.02vw;
+    height: 44.81vh;
   }
   ${breakpoints.medium} {
     height: 48.4rem;
-  }
-  ${breakpoints.small} {
-    height: 40rem;
   }
 `;
 
@@ -25,12 +21,10 @@ const LogoBox = styled.div<ITeamCardProps>`
   background-repeat: no-repeat;
   background-position: center top;
   ${breakpoints.large} {
-    height: 14.6rem;
+    background-size: auto 16.8vh;
+    height: 13.52vh;
   }
   ${breakpoints.medium} {
-    height: 14.6rem;
-  }
-  ${breakpoints.small} {
     height: 14.6rem;
   }
 `;
@@ -38,8 +32,8 @@ const LogoBox = styled.div<ITeamCardProps>`
 const LogoBoxBackground = styled.div`
   background-color: #505050;
   position: relative;
-  top: 1.6rem;
-  height: 13rem;
+  top: 1.48vh;
+  height: 12.04vh;
   z-index: -1;
 `;
 
@@ -49,18 +43,13 @@ const ContentsBox = styled.div`
   position: relative;
   z-index: 99;
   ${breakpoints.large} {
-    height: 33.8rem;
+    height: 31.3vh;
     padding-top: 1.8rem;
     padding-left: 2.4rem;
   }
   ${breakpoints.medium} {
     height: 33.8rem;
     padding-top: 1.8rem;
-    padding-left: 2.4rem;
-  }
-  ${breakpoints.small} {
-    height: 25rem;
-    padding-top: 1rem;
     padding-left: 2.4rem;
   }
 `;
@@ -69,16 +58,12 @@ const Order = styled.h2`
   font-family: 'NotoSansCJK-Regular'; // font 수정할것
   color: #fff;
   ${breakpoints.large} {
-    font-size: 3.2rem;
-    line-height: 4.736rem;
+    font-size: 1.67vw;
+    line-height: 4.39vh;
   }
   ${breakpoints.medium} {
     font-size: 3.2rem;
     line-height: 4.736rem;
-  }
-  ${breakpoints.small} {
-    font-size: 2.2rem;
-    line-height: 2.736rem;
   }
 `;
 
@@ -87,8 +72,8 @@ const TeamName = styled.h2`
   color: #fff;
   padding-top: 0.8rem;
   ${breakpoints.large} {
-    font-size: 2.4rem;
-    line-height: 3.165rem;
+    font-size: 1.25vw;
+    line-height: 2.93vh;
   }
   ${breakpoints.medium} {
     font-size: 2.4rem;
@@ -102,7 +87,7 @@ const TeamName = styled.h2`
 
 const Box = styled.div`
   ${breakpoints.large} {
-    padding-top: 2rem;
+    padding-top: 1.04vh;
   }
   ${breakpoints.medium} {
     padding-top: 2rem;
@@ -116,8 +101,8 @@ const Category = styled.p`
   font-family: 'RobotoMonoRegular';
   color: #c5c5c5;
   ${breakpoints.large} {
-    font-size: 1.4rem;
-    line-height: 1.846rem;
+    font-size: 0.73vw;
+    line-height: 1.71vh;
   }
   ${breakpoints.medium} {
     font-size: 1.4rem;
@@ -131,10 +116,10 @@ const Category = styled.p`
 
 const Content = styled.p`
   font-family: 'RobotoMonoRegular';
-  font-size: 1.6rem;
-  line-height: 2.4rem;
+  font-size: 0.83vw;
+  line-height: 2.2vh;
   color: #fff;
-  padding-top: 0.4rem;
+  padding-top: 0.37vh;
 `;
 
 interface ITeamCardProps {

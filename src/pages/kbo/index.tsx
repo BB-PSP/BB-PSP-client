@@ -1,28 +1,30 @@
 import styled from 'styled-components';
-import { breakpoints } from '../../styles/media';
 import TeamSlider from '../../components/kbo/TeamSlider';
 import { GetStaticProps } from 'next';
 import { dehydrate, QueryClient, useQuery } from 'react-query';
 import { fetchTeams } from '../../hooks/api/useTeams';
 import CommonLayout from '../../components/layout/common/CommonLayout';
 import { ITeam } from '../../store/Types';
+import { breakpoints } from '../../styles/media';
 
-const Wrapper = styled.div`
+const Wrapper = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* ${breakpoints.large} {
-    padding-top: 23.7rem;
-  }
-  ${breakpoints.medium} {
-    padding-top: 23.7rem;
-  }
-  ${breakpoints.small} {
-    padding-top: 13.7rem;
-  } */
 `;
 
-const Slider = styled.div``;
+const Slider = styled.div`
+  position: relative;
+  z-index: 1;
+  ${breakpoints.large} {
+    margin-top: 4.91vh;
+    width: 69.27vw;
+  }
+  ${breakpoints.medium} {
+    margin-top: 10vh;
+    width: 77vw;
+  }
+`;
 
 const Kbo = () => {
   const { data } = useQuery<ITeam, Error>('teamData', () => fetchTeams());

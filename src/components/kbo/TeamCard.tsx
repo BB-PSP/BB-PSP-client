@@ -6,8 +6,16 @@ import { Large, Medium, Small } from '../../styles/MediaQuery';
 import Link from 'next/link';
 import { useSetRecoilState } from 'recoil';
 import { selectedProTeamState } from '../../store/Data/atom';
+import { breakpoints } from '../../styles/media';
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  ${breakpoints.large} {
+    margin-right: 1.04vw;
+  }
+  ${breakpoints.medium} {
+    margin-right: 1.04vw;
+  }
+`;
 
 interface TeamCardProps {
   name: string;
