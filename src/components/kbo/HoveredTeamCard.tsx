@@ -43,7 +43,7 @@ const LogoContainer = styled.div<ITeamCardProps>`
   background-repeat: no-repeat;
   background-position: center;
   ${breakpoints.large} {
-    background-size: auto 14vh;
+    background-size: auto 16.8vh;
     height: 27.41vh;
     width: 100%;
   }
