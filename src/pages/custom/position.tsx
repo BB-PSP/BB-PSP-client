@@ -27,10 +27,11 @@ const GridContainer = styled.div`
     row-gap: 6.67vh;
   }
   ${breakpoints.medium} {
+    padding-top: 20vh;
     grid-template-columns: repeat(3, 1fr);
-    height: 50.4rem;
-    column-gap: 2rem;
-    row-gap: 3.8rem;
+    height: 50vh;
+    column-gap: 2.6vw;
+    row-gap: 5vh;
   }
 `;
 
@@ -50,8 +51,8 @@ const PositionCard = styled(motion.div)<IPosition & { clicked: boolean }>`
     height: 11.11vh;
   }
   ${breakpoints.medium} {
-    width: 20rem;
-    height: 10rem;
+    width: 20.83vw;
+    height: 11.11vh;
   }
 `;
 
@@ -63,7 +64,7 @@ const PositionName = styled.h2`
     font-size: 1.77vw;
   }
   ${breakpoints.medium} {
-    font-size: 2rem;
+    font-size: 1.77vw;
   }
 `;
 
