@@ -27,10 +27,11 @@ const GridContainer = styled.div`
     row-gap: 10vh;
   }
   ${breakpoints.medium} {
+    padding-top: 20vh;
     grid-template-columns: repeat(5, 1fr);
-    height: 39.8rem;
-    column-gap: 3.9rem;
-    row-gap: 5.8rem;
+    height: 50vh;
+    column-gap: 2.6vw;
+    row-gap: 5vh;
   }
 `;
 
@@ -48,8 +49,8 @@ const TeamCard = styled(motion.div)<ITeam & { clicked: boolean }>`
     height: 13.43vh;
   }
   ${breakpoints.medium} {
-    width: 10rem;
-    height: 14.5rem;
+    width: 13vw;
+    height: 13vh;
   }
 `;
 
