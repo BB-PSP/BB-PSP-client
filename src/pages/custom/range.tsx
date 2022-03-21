@@ -9,32 +9,18 @@ import PageButton from '../../components/button/PageButton';
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin: 0 auto;
-  ${breakpoints.large} {
-    width: 128rem;
-    padding-top: 33.2rem;
-  }
-  ${breakpoints.medium} {
-    width: 68rem;
-    margin-top: 24.6rem;
-  }
-  ${breakpoints.small} {
-    width: 35rem;
-    margin-top: 12.8rem;
-  }
 `;
 
 const ContentsContainer = styled.div`
-  width: 100%;
-  padding: 5rem 2rem 0 2rem;
-  display: flex;
-  flex-direction: column;
+  ${breakpoints.large} {
+    padding-top: 13.52vh;
+    width: 64.64vw;
+  }
 `;
 
 const SalaryRangeSlider = styled(_SalaryRangeSlider)`
-  margin-bottom: 6rem;
+  margin-bottom: 5.56vh;
 `;
 
 function Range() {
