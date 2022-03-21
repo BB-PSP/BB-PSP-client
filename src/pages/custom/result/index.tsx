@@ -8,33 +8,17 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  /* position: absolute;
-  left: 50%;
-  transform: translateX(-50%); */
-  margin: 0 auto;
-  ${breakpoints.large} {
-    width: 135.3rem;
-    padding-top: 39.6rem;
-  }
-  ${breakpoints.medium} {
-    width: 68rem;
-    padding-top: 24.6rem;
-  }
-  ${breakpoints.small} {
-    width: 35rem;
-    padding-top: 12.8rem;
-  }
 `;
 
 const Container = styled.div`
-  margin: 0 auto;
   ${breakpoints.large} {
+    margin-top: 19.63vh;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 2rem;
-    row-gap: 7rem;
-    width: 128rem;
-    height: 62.6rem;
+    column-gap: 1.04vw;
+    row-gap: 3.7vh;
+    width: 66.67vw;
+    height: 64.33vh;
     overflow-x: hidden;
     &::-webkit-scrollbar {
       width: 0.2rem;
@@ -49,7 +33,6 @@ const Container = styled.div`
     grid-template-columns: repeat(2, 1fr);
     column-gap: 2rem;
     row-gap: 4rem;
-    /* width: 78rem; */
     width: 80.5rem;
     height: 55.6rem;
     overflow-x: hidden;
@@ -60,13 +43,6 @@ const Container = styled.div`
     &::-webkit-scrollbar-thumb {
       background-color: black;
     }
-  }
-  ${breakpoints.small} {
-    display: flex;
-    flex-direction: column;
-    height: 45rem;
-    overflow-x: hidden;
-    overflow-y: scroll;
   }
 `;
 

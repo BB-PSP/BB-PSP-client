@@ -8,7 +8,7 @@ import { IPlayer } from '../../store/Types';
 
 const Card = styled.div`
   ${breakpoints.large} {
-    height: 16.2rem;
+    height: 15vh;
     position: relative;
     transform-style: preserve-3d;
     transition: 1s;
@@ -16,15 +16,7 @@ const Card = styled.div`
     &:hover {
       transform: rotateY(180deg);
     }
-  }
-  ${breakpoints.medium} {
-    height: 16.2rem;
-    position: relative;
-  }
-  ${breakpoints.small} {
-    height: 16.2rem;
-    height: 100%;
-    margin-bottom: 4rem;
+    margin-right: 0.65vw;
   }
 `;
 

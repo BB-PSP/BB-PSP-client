@@ -13,16 +13,8 @@ const Wrapper = styled(motion.div)`
   border-radius: 0.4rem;
   box-shadow: 0.2rem 0.4rem 0.8rem rgba(0, 0, 0.25);
   ${breakpoints.large} {
-    width: 29rem;
-    height: 16.2rem;
-  }
-  ${breakpoints.medium} {
-    width: 29rem;
-    height: 16.2rem;
-  }
-  ${breakpoints.small} {
-    width: 29rem;
-    height: 16.2rem;
+    width: 15.1vw;
+    height: 15vh;
   }
 `;
 
@@ -41,10 +33,10 @@ const LeftBox = styled.div`
   justify-content: center;
   border-right: 1px solid #fff;
   ${breakpoints.large} {
-    width: 15.9rem;
-    height: 9rem;
-    margin-top: 3.6rem;
-    padding-left: 2.9rem;
+    width: 8.28vw;
+    height: 8.33vh;
+    margin-top: 3.33vh;
+    padding-left: 1.51vw;
   }
   ${breakpoints.medium} {
     width: 15.9rem;
@@ -56,8 +48,8 @@ const LeftBox = styled.div`
 
 const Name = styled.h3`
   font-family: 'RobotoMonoBold';
-  font-size: 1.4rem;
-  line-height: 1.846rem;
+  font-size: 0.73vw;
+  line-height: 1.71vh;
   color: #fff;
 `;
 
@@ -68,24 +60,24 @@ const LittleBox = styled.div`
 
 const Position = styled.h3`
   font-family: 'RobotoMonoBold';
-  font-size: 1.4rem;
-  line-height: 1.846rem;
+  font-size: 0.73vw;
+  line-height: 1.71vh;
   color: #fff;
-  padding-right: 1.6rem;
+  padding-right: 0.83vw;
 `;
 
 const Birthday = styled.h3`
   font-family: 'RobotoMonoBold';
-  font-size: 1.4rem;
-  line-height: 1.846rem;
+  font-size: 0.73vw;
+  line-height: 1.71vh;
   color: #fff;
 `;
 
 const RightBox = styled.div`
-  width: 13.1rem;
+  width: 6.82vw;
   height: 100%;
   background-image: url('/image/teamLogo/kiwoom.png');
-  background-size: auto 5.2rem;
+  background-size: auto 4.81vh;
   background-repeat: no-repeat;
   background-position: center;
 `;
