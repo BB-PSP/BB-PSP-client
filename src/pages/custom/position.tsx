@@ -15,38 +15,20 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
-  ${breakpoints.large} {
-    width: 128rem;
-    padding-top: 21.2rem;
-  }
-  ${breakpoints.medium} {
-    width: 68rem;
-    padding-top: 24.6rem;
-  }
-  ${breakpoints.small} {
-    width: 35rem;
-    padding-top: 12.8rem;
-  }
 `;
 
 const GridContainer = styled.div`
   display: grid;
   ${breakpoints.large} {
+    padding-top: 19.63vh;
     grid-template-columns: repeat(3, 1fr);
-    height: 50.4rem;
-    column-gap: 4rem;
-    row-gap: 7.2rem;
+    height: 46.67vh;
+    column-gap: 2.08vw;
+    row-gap: 6.67vh;
   }
   ${breakpoints.medium} {
     grid-template-columns: repeat(3, 1fr);
     height: 50.4rem;
-    column-gap: 2rem;
-    row-gap: 3.8rem;
-  }
-  ${breakpoints.small} {
-    grid-template-columns: repeat(2, 1fr);
-    height: 39.8rem;
     column-gap: 2rem;
     row-gap: 3.8rem;
   }
@@ -64,16 +46,12 @@ const PositionCard = styled(motion.div)<IPosition & { clicked: boolean }>`
       : `background-image: url(${props.blackLogo});`}
   background-position: center;
   ${breakpoints.large} {
-    width: 40rem;
-    height: 12rem;
+    width: 20.83vw;
+    height: 11.11vh;
   }
   ${breakpoints.medium} {
     width: 20rem;
     height: 10rem;
-  }
-  ${breakpoints.small} {
-    width: 15.7rem;
-    height: 6.5rem;
   }
 `;
 
@@ -82,13 +60,10 @@ const PositionName = styled.h2`
   color: #fff;
   margin: 0 auto;
   ${breakpoints.large} {
-    font-size: 3.4rem;
+    font-size: 1.77vw;
   }
   ${breakpoints.medium} {
     font-size: 2rem;
-  }
-  ${breakpoints.small} {
-    font-size: 1.6rem;
   }
 `;
 
