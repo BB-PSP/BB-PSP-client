@@ -57,7 +57,7 @@ const ButtonConatiner = styled.nav`
     flex-direction: row;
   }
   ${breakpoints.medium} {
-    bottom: 45vh;
+    bottom: 38vh;
     flex-direction: column;
     align-items: flex-start;
   }
