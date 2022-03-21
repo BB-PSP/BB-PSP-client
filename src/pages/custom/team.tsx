@@ -15,40 +15,22 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
-  ${breakpoints.large} {
-    width: 128rem;
-    padding-top: 21.2rem;
-  }
-  ${breakpoints.medium} {
-    width: 68rem;
-    margin-top: 10rem;
-  }
-  ${breakpoints.small} {
-    width: 35rem;
-    margin-top: 10rem;
-  }
 `;
 
 const GridContainer = styled.div`
   display: grid;
   ${breakpoints.large} {
+    padding-top: 19.63vh;
     grid-template-columns: repeat(5, 1fr);
-    height: 39.8rem;
-    column-gap: 4.9rem;
-    row-gap: 10.8rem;
+    height: 36.85vh;
+    column-gap: 2.6vw;
+    row-gap: 10vh;
   }
   ${breakpoints.medium} {
     grid-template-columns: repeat(5, 1fr);
     height: 39.8rem;
     column-gap: 3.9rem;
     row-gap: 5.8rem;
-  }
-  ${breakpoints.small} {
-    grid-template-columns: repeat(2, 1fr);
-    height: 39.8rem;
-    column-gap: 2.9rem;
-    row-gap: 3.8rem;
   }
 `;
 
@@ -62,16 +44,12 @@ const TeamCard = styled(motion.div)<ITeam & { clicked: boolean }>`
       : `background-image: url(${props.blackLogo});`}
   background-position: center;
   ${breakpoints.large} {
-    width: 21.7rem;
-    height: 14.5rem;
+    width: 11.3vw;
+    height: 13.43vh;
   }
   ${breakpoints.medium} {
     width: 10rem;
     height: 14.5rem;
-  }
-  ${breakpoints.small} {
-    width: 15.7rem;
-    height: 6.5rem;
   }
 `;
 
