@@ -9,13 +9,10 @@ const ButtonContainer = styled.div`
   justify-content: space-between;
   position: absolute;
   ${breakpoints.large} {
-    bottom: 7.1rem;
+    bottom: 6.48vh;
   }
   ${breakpoints.medium} {
     bottom: 3.1rem;
-  }
-  ${breakpoints.small} {
-    bottom: 1rem;
   }
 `;
 
@@ -25,36 +22,26 @@ const NextButtonText = styled.h3`
   font-size: 2.2rem;
   color: #b70000;
   ${breakpoints.large} {
-    font-size: 2.2rem;
-    line-height: 2.9rem;
-    margin-left: 106.5rem;
+    font-size: 1.15vw;
+    line-height: 2.69vh;
+    margin-left: 55.47vw;
   }
   ${breakpoints.medium} {
     font-size: 2.2rem;
     line-height: 2.9rem;
     margin-left: 46.5rem;
   }
-  ${breakpoints.small} {
-    font-size: 1.6rem;
-    line-height: 2.9rem;
-    margin-left: 20.5rem;
-  }
 `;
 
 const ArrowImg = styled.img`
   ${breakpoints.large} {
     margin-top: -0.6rem;
-    width: 10.35rem;
+    width: 5.39vw;
     height: auto;
   }
   ${breakpoints.medium} {
     margin-top: -0.6rem;
     width: 10.35rem;
-    height: auto;
-  }
-  ${breakpoints.small} {
-    margin-top: -0.6rem;
-    width: 6rem;
     height: auto;
   }
 `;
@@ -65,15 +52,11 @@ const PrevButtonText = styled.h3`
   color: #b70000;
   text-align: right;
   ${breakpoints.large} {
-    font-size: 2.2rem;
-    line-height: 2.9rem;
+    font-size: 1.15vw;
+    line-height: 2.69vh;
   }
   ${breakpoints.medium} {
     font-size: 2.2rem;
-    line-height: 2.9rem;
-  }
-  ${breakpoints.small} {
-    font-size: 1.6rem;
     line-height: 2.9rem;
   }
 `;
@@ -82,17 +65,12 @@ const ReversedArrowImg = styled.img`
   transform: scaleX(-1);
   ${breakpoints.large} {
     margin-top: -0.6rem;
-    width: 10.35rem;
+    width: 5.39vw;
     height: auto;
   }
   ${breakpoints.medium} {
     margin-top: -0.6rem;
     width: 10.35rem;
-    height: auto;
-  }
-  ${breakpoints.small} {
-    margin-top: -0.6rem;
-    width: 6rem;
     height: auto;
   }
 `;
