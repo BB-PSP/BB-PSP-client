@@ -13,6 +13,10 @@ const Wrapper = styled.div`
     height: 6.57vh;
     margin-top: 6.48vh;
   }
+  ${breakpoints.medium} {
+    height: 20vh;
+    padding-top: 4vh;
+  }
 `;
 
 const NextButtonText = styled.h3`
@@ -24,6 +28,11 @@ const NextButtonText = styled.h3`
     font-size: 1.15vw;
     line-height: 2.69vh;
   }
+  ${breakpoints.medium} {
+    width: 4vw;
+    font-size: 2vw;
+    line-height: 3vh;
+  }
 `;
 
 const ArrowImg = styled.img`
@@ -34,8 +43,8 @@ const ArrowImg = styled.img`
   }
   ${breakpoints.medium} {
     margin-top: -0.6rem;
-    width: 10.35rem;
-    height: auto;
+    width: 10vw;
+    height: 3.5vh;
   }
 `;
 
@@ -55,8 +64,8 @@ const PrevButtonText = styled.h3`
     line-height: 2.69vh;
   }
   ${breakpoints.medium} {
-    font-size: 1.15vw;
-    line-height: 2.69vh;
+    font-size: 2vw;
+    line-height: 3vh;
   }
 `;
 
@@ -66,6 +75,12 @@ const TestImage = styled.img`
     margin-top: 1.85vh;
     width: 5.39vw;
     height: 3.06vh;
+  }
+  ${breakpoints.medium} {
+    margin-left: 0.52vw;
+    margin-top: 1.85vh;
+    width: 10vw;
+    height: 3.5vh;
   }
 `;
 
@@ -81,6 +96,11 @@ const ReplacementPlayerButton = styled.div`
     width: 15.36vw;
     height: 5.19vh;
   }
+  ${breakpoints.medium} {
+    margin-top: 1.39vh;
+    width: 25vw;
+    height: 5.19vh;
+  }
 `;
 
 const ButtonText = styled.h3`
@@ -90,6 +110,10 @@ const ButtonText = styled.h3`
   ${breakpoints.large} {
     font-size: 1.15vw;
     line-height: 2.69vh;
+  }
+  ${breakpoints.medium} {
+    font-size: 2vw;
+    line-height: 3vh;
   }
 `;
 

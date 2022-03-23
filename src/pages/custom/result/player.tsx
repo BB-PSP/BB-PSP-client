@@ -20,7 +20,8 @@ const TopContentsContainer = styled.div`
     height: 20.28vh;
   }
   ${breakpoints.medium} {
-    height: 21.9rem;
+    margin-top: 6.48vh;
+    height: 20.28vh;
   }
 `;
 
@@ -40,11 +41,10 @@ const BottomContentsContainer = styled.div`
     height: 54.54vh;
   }
   ${breakpoints.medium} {
-    width: 100%;
-    height: 39.1rem;
-    padding-right: 2.4rem;
-    padding-left: 2.4rem;
-    margin-top: 1.5rem;
+    margin-top: 1.57vh;
+    padding-right: 3.33vw;
+    padding-left: 3.33vw;
+    height: 50.54vh;
   }
 `;
 

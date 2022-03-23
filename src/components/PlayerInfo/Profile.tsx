@@ -11,8 +11,8 @@ const NameBox = styled.div`
     padding-left: 3.125vw;
   }
   ${breakpoints.medium} {
-    width: 22rem;
-    padding-left: 3rem;
+    width: 40vw;
+    padding-left: 6vw;
   }
 `;
 
@@ -24,8 +24,8 @@ const Name = styled.h2`
     line-height: 4.34vh;
   }
   ${breakpoints.medium} {
-    font-size: 2rem;
-    line-height: 2.688rem;
+    font-size: 4vw;
+    line-height: 5vh;
   }
 `;
 
@@ -37,8 +37,8 @@ const Number = styled.h2`
     line-height: 4.34vh;
   }
   ${breakpoints.medium} {
-    font-size: 2rem;
-    line-height: 2.688rem;
+    font-size: 4vw;
+    line-height: 5vh;
   }
 `;
 
@@ -53,9 +53,9 @@ const LogoBox = styled.div`
     height: 100%;
   }
   ${breakpoints.medium} {
-    padding-top: 4.2rem;
-    padding-bottom: 4.2rem;
-    width: 7.9rem;
+    padding-top: 3.89vh;
+    padding-bottom: 3.89vh;
+    width: 8vw;
     height: 100%;
   }
 `;
@@ -70,24 +70,36 @@ const Logo = styled.div`
     height: 8vh;
   }
   ${breakpoints.medium} {
-    background-size: auto 5.8rem;
+    background-size: auto 5vh;
     width: 100%;
-    height: 5.8rem;
+    height: 10vh;
   }
 `;
 
 const TopLine = styled.div`
   width: 0.1rem;
-  height: 2.69vh;
   background-color: #fff;
-  margin-bottom: 0.93vh;
+  ${breakpoints.large} {
+    height: 2.69vh;
+    margin-bottom: 0.93vh;
+  }
+  ${breakpoints.medium} {
+    height: 2.69vh;
+    margin-bottom: 0.93vh;
+  }
 `;
 
 const BottomLine = styled.div`
   width: 0.1rem;
-  height: 2.69vh;
   background-color: #fff;
-  margin-bottom: 0.93vh;
+  ${breakpoints.large} {
+    height: 2.69vh;
+    margin-bottom: 0.93vh;
+  }
+  ${breakpoints.medium} {
+    height: 2.69vh;
+    margin-bottom: 0.93vh;
+  }
 `;
 
 const ProfileContainer = styled.div`
@@ -99,9 +111,9 @@ const ProfileContainer = styled.div`
     padding-left: 2.71vw;
   }
   ${breakpoints.medium} {
-    width: 40rem;
-    padding-top: 5.9rem;
-    padding-left: 2.2rem;
+    width: 40vw;
+    padding-top: 4.54vh;
+    padding-left: 2.71vw;
   }
 `;
 
@@ -112,7 +124,7 @@ const ProfileBox = styled.div`
     padding-bottom: 1.57vh;
   }
   ${breakpoints.medium} {
-    padding-bottom: 1.7rem;
+    padding-bottom: 1.57vh;
   }
 `;
 
