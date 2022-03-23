@@ -8,21 +8,7 @@ import { breakpoints } from '../../../styles/media';
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin: 0 auto;
-  ${breakpoints.large} {
-    width: 128rem;
-    padding-top: 25.5rem;
-  }
-  ${breakpoints.medium} {
-    width: 68rem;
-    padding-top: 20.5rem;
-  }
-  ${breakpoints.small} {
-    width: 35rem;
-    padding-top: 15.5rem;
-  }
 `;
 
 const TopContentsContainer = styled.div`
@@ -30,16 +16,11 @@ const TopContentsContainer = styled.div`
   flex-direction: row;
   background-color: rgba(39, 39, 39, 0.87);
   ${breakpoints.large} {
-    width: 100%;
-    height: 21.9rem;
+    margin-top: 6.48vh;
+    height: 20.28vh;
   }
   ${breakpoints.medium} {
-    width: 100%;
     height: 21.9rem;
-  }
-  ${breakpoints.small} {
-    width: 100%;
-    height: 15.9rem;
   }
 `;
 
@@ -53,9 +34,10 @@ const BottomContentsContainer = styled.div`
     rgba(39, 39, 39, 0) 100%
   );
   ${breakpoints.large} {
-    width: 100%;
-    height: 59.1rem;
-    margin-top: 1.5rem;
+    margin-top: 1.57vh;
+    padding-right: 3.33vw;
+    padding-left: 3.33vw;
+    height: 54.54vh;
   }
   ${breakpoints.medium} {
     width: 100%;
@@ -63,28 +45,6 @@ const BottomContentsContainer = styled.div`
     padding-right: 2.4rem;
     padding-left: 2.4rem;
     margin-top: 1.5rem;
-  }
-  ${breakpoints.small} {
-    width: 100%;
-    height: 35.1rem;
-    padding-right: 2.4rem;
-    padding-left: 2.4rem;
-    margin-top: 1.5rem;
-  }
-`;
-
-const TableContainer = styled.div`
-  ${breakpoints.large} {
-    padding-right: 6.4rem;
-    padding-left: 6.4rem;
-  }
-  ${breakpoints.medium} {
-    padding-right: 2.4rem;
-    padding-left: 2.4rem;
-  }
-  ${breakpoints.small} {
-    padding-right: 2.4rem;
-    padding-left: 2.4rem;
   }
 `;
 
@@ -95,9 +55,7 @@ function Player() {
         <Profile />
       </TopContentsContainer>
       <BottomContentsContainer>
-        <TableContainer>
-          <StatTable />
-        </TableContainer>
+        <StatTable />
         <ResultButton />
       </BottomContentsContainer>
     </Wrapper>

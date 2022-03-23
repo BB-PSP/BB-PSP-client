@@ -7,16 +7,12 @@ const NameBox = styled.div`
   flex-direction: row;
   align-items: center;
   ${breakpoints.large} {
-    width: 43.1rem;
-    padding-left: 6rem;
+    width: 22.45vw;
+    padding-left: 3.125vw;
   }
   ${breakpoints.medium} {
     width: 22rem;
     padding-left: 3rem;
-  }
-  ${breakpoints.small} {
-    width: 10rem;
-    justify-content: center;
   }
 `;
 
@@ -24,16 +20,12 @@ const Name = styled.h2`
   font-family: 'RobotoBoldItalic';
   color: #fff;
   ${breakpoints.large} {
-    font-size: 4rem;
-    line-height: 4.688rem;
+    font-size: 2.08vw;
+    line-height: 4.34vh;
   }
   ${breakpoints.medium} {
     font-size: 2rem;
     line-height: 2.688rem;
-  }
-  ${breakpoints.small} {
-    font-size: 1.2rem;
-    line-height: 2.288rem;
   }
 `;
 
@@ -41,16 +33,12 @@ const Number = styled.h2`
   font-family: 'RobotoBoldItalic';
   color: #fff;
   ${breakpoints.large} {
-    font-size: 4rem;
-    line-height: 4.688rem;
+    font-size: 2.08vw;
+    line-height: 4.34vh;
   }
   ${breakpoints.medium} {
     font-size: 2rem;
     line-height: 2.688rem;
-  }
-  ${breakpoints.small} {
-    font-size: 1.2rem;
-    line-height: 2.288rem;
   }
 `;
 
@@ -59,21 +47,15 @@ const LogoBox = styled.div`
   flex-direction: column;
   align-items: center;
   ${breakpoints.large} {
-    padding-top: 4.2rem;
-    padding-bottom: 4.2rem;
-    width: 7.9rem;
+    padding-top: 3.89vh;
+    padding-bottom: 3.89vh;
+    width: 4.11vw;
     height: 100%;
   }
   ${breakpoints.medium} {
     padding-top: 4.2rem;
     padding-bottom: 4.2rem;
     width: 7.9rem;
-    height: 100%;
-  }
-  ${breakpoints.small} {
-    padding-top: 4.2rem;
-    padding-bottom: 4.2rem;
-    width: 4rem;
     height: 100%;
   }
 `;
@@ -83,53 +65,43 @@ const Logo = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   ${breakpoints.large} {
-    background-size: auto 5.8rem;
+    background-size: auto 5.37vh;
     width: 100%;
-    height: 5.8rem;
+    height: 8vh;
   }
   ${breakpoints.medium} {
     background-size: auto 5.8rem;
     width: 100%;
-    height: 5.8rem;
-  }
-  ${breakpoints.small} {
-    background-size: 4rem auto;
-    width: 4rem;
     height: 5.8rem;
   }
 `;
 
 const TopLine = styled.div`
   width: 0.1rem;
-  height: 2.9rem;
+  height: 2.69vh;
   background-color: #fff;
-  margin-bottom: 1rem;
+  margin-bottom: 0.93vh;
 `;
 
 const BottomLine = styled.div`
   width: 0.1rem;
-  height: 2.9rem;
+  height: 2.69vh;
   background-color: #fff;
-  margin-top: 1rem;
+  margin-bottom: 0.93vh;
 `;
 
 const ProfileContainer = styled.div`
   display: flex;
   flex-direction: column;
   ${breakpoints.large} {
-    width: 77rem;
-    padding-top: 4.9rem;
-    padding-left: 5.2rem;
+    width: 40.1vw;
+    padding-top: 4.54vh;
+    padding-left: 2.71vw;
   }
   ${breakpoints.medium} {
     width: 40rem;
     padding-top: 5.9rem;
     padding-left: 2.2rem;
-  }
-  ${breakpoints.small} {
-    width: 21rem;
-    padding-top: 3rem;
-    padding-left: 1rem;
   }
 `;
 
@@ -137,13 +109,10 @@ const ProfileBox = styled.div`
   display: flex;
   flex-direction: row;
   ${breakpoints.large} {
-    padding-bottom: 1.7rem;
+    padding-bottom: 1.57vh;
   }
   ${breakpoints.medium} {
     padding-bottom: 1.7rem;
-  }
-  ${breakpoints.small} {
-    padding-bottom: 1.2rem;
   }
 `;
 
@@ -151,13 +120,10 @@ const ContentsBox = styled.div`
   display: flex;
   flex-direction: row;
   ${breakpoints.large} {
-    padding-right: 4.8rem;
+    padding-right: 2.5vw;
   }
   ${breakpoints.medium} {
-    padding-right: 2.4rem;
-  }
-  ${breakpoints.small} {
-    padding-right: 1.2rem;
+    padding-right: 2.5vw;
   }
 `;
 
@@ -165,16 +131,12 @@ const ContentsTitle = styled.h3`
   font-family: 'RobotoMonoRegular';
   color: #fff;
   ${breakpoints.large} {
-    font-size: 2.2rem;
-    line-height: 2.901rem;
+    font-size: 1.15vw;
+    line-height: 2.69vh;
   }
   ${breakpoints.medium} {
-    font-size: 1.6rem;
-    line-height: 1.901rem;
-  }
-  ${breakpoints.small} {
-    font-size: 0.8rem;
-    line-height: 1.5rem;
+    font-size: 1.15vw;
+    line-height: 2.69vh;
   }
 `;
 
@@ -182,16 +144,12 @@ const Contents = styled.h3`
   font-family: 'RobotoMonoRegular';
   color: #fff;
   ${breakpoints.large} {
-    font-size: 2.2rem;
-    line-height: 2.901rem;
+    font-size: 1.15vw;
+    line-height: 2.69vh;
   }
   ${breakpoints.medium} {
-    font-size: 1.6rem;
-    line-height: 1.901rem;
-  }
-  ${breakpoints.small} {
-    font-size: 0.8rem;
-    line-height: 1.5rem;
+    font-size: 1.15vw;
+    line-height: 2.69vh;
   }
 `;
 

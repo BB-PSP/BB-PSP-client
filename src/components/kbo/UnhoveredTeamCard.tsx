@@ -135,6 +135,7 @@ interface ITeamCardProps {
 }
 
 export default function UnhoveredTeamCard({ team }: ITeamCardProps) {
+  // console.log(team);
   return (
     <Wrapper>
       <LogoBox team={team}>

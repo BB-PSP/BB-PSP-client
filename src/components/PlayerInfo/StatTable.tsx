@@ -4,15 +4,19 @@ import { breakpoints } from '../../styles/media';
 const Season = styled.h3`
   font-family: 'RobotoMonoRegular';
   color: #fff;
-  font-size: 2.2rem;
-  line-height: 2.9rem;
-  padding-top: 5.2rem;
+  ${breakpoints.large} {
+    font-size: 1.15vw;
+    line-height: 2.69vh;
+    padding-top: 4.81vh;
+  }
 `;
 
 const Table = styled.table`
-  width: 100%;
-  margin-top: 3.8rem;
-  margin-bottom: 5.5rem;
+  ${breakpoints.large} {
+    width: 60vw;
+    margin-top: 3.52vh;
+    margin-bottom: 5.1vh;
+  }
 `;
 
 const StatTr = styled.tr`
@@ -26,21 +30,15 @@ const StatTh = styled.th`
   font-family: 'RobotoMonoRegular';
   color: #fff;
   ${breakpoints.large} {
-    font-size: 2.2rem;
-    line-height: 2.901rem;
-    width: 6.5rem;
+    font-size: 1.15vw;
+    line-height: 2.69vh;
+    width: 3.39vw;
     padding-bottom: 0.7rem;
   }
   ${breakpoints.medium} {
     font-size: 1.8rem;
     line-height: 2.201rem;
     width: 6.5rem;
-    padding-bottom: 0.7rem;
-  }
-  ${breakpoints.small} {
-    font-size: 1.2rem;
-    line-height: 2rem;
-    width: 3.5rem;
     padding-bottom: 0.7rem;
   }
 `;
@@ -50,22 +48,16 @@ const StatTd = styled.td`
   color: #fff;
   text-align: center;
   ${breakpoints.large} {
-    font-size: 2.2rem;
-    line-height: 2.901rem;
-    width: 6.5rem;
-    padding-top: 2.3rem;
+    font-size: 1.15vw;
+    line-height: 2.69vh;
+    width: 3.39vw;
+    padding-top: 2.13vh;
   }
   ${breakpoints.medium} {
     font-size: 1.8rem;
     line-height: 2.201rem;
     width: 6.5rem;
     padding-top: 2.3rem;
-  }
-  ${breakpoints.small} {
-    font-size: 1.2rem;
-    line-height: 1.5rem;
-    width: 3.5rem;
-    padding-top: 1.6rem;
   }
 `;
 
