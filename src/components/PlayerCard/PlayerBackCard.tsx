@@ -18,15 +18,34 @@ const Wrapper = styled.div`
     padding-top: 1.39vh;
     padding-bottom: 1.9vh;
   }
+  ${breakpoints.medium} {
+    position: absolute;
+    width: 40vw;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.4rem;
+    background-color: #97334a;
+    box-shadow: 0.2rem 0.4rem 0.8rem rgba(0, 0, 0, 0.25);
+    padding-top: 1.39vh;
+    padding-bottom: 1.9vh;
+  }
 `;
 
 const LogoBox = styled.div`
   background-image: url('/image/teamLogo/kiwoom.png');
-  background-size: auto 3.43vh;
   background-repeat: no-repeat;
   background-position: center;
-  width: 100%;
-  height: 3.43vh;
+  ${breakpoints.large} {
+    width: 100%;
+    height: 3.43vh;
+    background-size: auto 3.43vh;
+  }
+  ${breakpoints.medium} {
+    width: 100%;
+    height: 7vh;
+    background-size: auto 5vh;
+  }
 `;
 
 const ProfileBox = styled.div`
@@ -40,30 +59,53 @@ const ProfileBox = styled.div`
 
 const Name = styled.h3`
   font-family: 'RobotoMonoRegular';
-  font-size: 0.63vw;
-  line-height: 1.48vh;
   color: #fff;
+  ${breakpoints.large} {
+    font-size: 0.63vw;
+    line-height: 1.48vh;
+  }
+  ${breakpoints.medium} {
+    font-size: 1.2vw;
+    line-height: 2vh;
+  }
 `;
 
 const SmallBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 4.69vw;
+  ${breakpoints.large} {
+    width: 4.69vw;
+  }
+  ${breakpoints.medium} {
+    width: 9vw;
+  }
 `;
 
 const Position = styled.h3`
   font-family: 'RobotoMonoRegular';
-  font-size: 0.63vw;
-  line-height: 1.48vh;
   color: #fff;
+  ${breakpoints.large} {
+    font-size: 0.63vw;
+    line-height: 1.48vh;
+  }
+  ${breakpoints.medium} {
+    font-size: 1.2vw;
+    line-height: 2vh;
+  }
 `;
 
 const Birthday = styled.h3`
   font-family: 'RobotoMonoRegular';
-  font-size: 0.63vw;
-  line-height: 1.48vh;
   color: #fff;
+  ${breakpoints.large} {
+    font-size: 0.63vw;
+    line-height: 1.48vh;
+  }
+  ${breakpoints.medium} {
+    font-size: 1.2vw;
+    line-height: 2vh;
+  }
 `;
 
 const StatContainer = styled.div`
@@ -71,52 +113,75 @@ const StatContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   margin: 1.48vh 1.53vw 0 1.53vw;
-  height: 4.03vh;
+  ${breakpoints.large} {
+    height: 4.03vh;
+  }
 `;
 
 const HitBox = styled.div`
   display: flex;
   flex-direction: column;
-  width: 0.99vw;
   height: 100%;
+  ${breakpoints.large} {
+    width: 0.99vw;
+  }
 `;
 
 const HRBox = styled.div`
   display: flex;
   flex-direction: column;
-  width: 0.78vw;
   height: 100%;
+  ${breakpoints.large} {
+    width: 0.78vw;
+  }
 `;
 
 const RBIBox = styled.div`
   display: flex;
   flex-direction: column;
-  width: 1.15vw;
   height: 100%;
+  ${breakpoints.large} {
+    width: 1.15vw;
+  }
 `;
 
 const AVGBox = styled.div`
   display: flex;
   flex-direction: column;
-  width: 1.61vw;
   height: 100%;
+  ${breakpoints.large} {
+    width: 1.61vw;
+  }
 `;
 
 const StatName = styled.h3`
   font-family: 'RobotoMonoRegular';
-  font-size: 0.63vw;
-  line-height: 1.48vh;
-  color: #fff;
   text-align: center;
+  color: #fff;
+  ${breakpoints.large} {
+    font-size: 0.63vw;
+    line-height: 1.48vh;
+  }
+  ${breakpoints.medium} {
+    font-size: 1vw;
+    line-height: 2vh;
+  }
 `;
 
 const Stat = styled.h3`
-  padding-top: 1.34vh;
   font-family: 'RobotoMonoRegular';
-  font-size: 0.52vw;
-  line-height: 1.2vh;
   color: #d6d6d6;
   text-align: center;
+  ${breakpoints.large} {
+    padding-top: 1.34vh;
+    font-size: 0.52vw;
+    line-height: 1.2vh;
+  }
+  ${breakpoints.medium} {
+    padding-top: 2vh;
+    font-size: 1vw;
+    line-height: 2vh;
+  }
 `;
 
 export default function PlayerBackCard() {

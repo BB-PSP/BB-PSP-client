@@ -17,6 +17,10 @@ const ContentsContainer = styled.div`
     padding-top: 13.52vh;
     width: 64.64vw;
   }
+  ${breakpoints.medium} {
+    padding-top: 20vh;
+    width: 75vw;
+  }
 `;
 
 const SalaryRangeSlider = styled(_SalaryRangeSlider)`

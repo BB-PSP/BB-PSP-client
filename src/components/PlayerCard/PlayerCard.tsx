@@ -18,6 +18,10 @@ const Card = styled.div`
     }
     margin-right: 0.65vw;
   }
+  ${breakpoints.medium} {
+    height: 20vh;
+    position: relative;
+  }
 `;
 
 export default function PlayerCard({ name }: IPlayer) {
