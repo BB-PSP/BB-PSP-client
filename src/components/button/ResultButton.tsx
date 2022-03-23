@@ -9,33 +9,32 @@ const Wrapper = styled.div`
   flex: 1;
   flex-direction: row;
   justify-content: space-between;
-  height: 7.1rem;
-  margin-top: 7rem;
+  ${breakpoints.large} {
+    height: 6.57vh;
+    margin-top: 6.48vh;
+  }
 `;
 
 const NextButtonText = styled.h3`
   cursor: grab;
-  width: 5.3rem;
   font-family: 'RobotoMonoRegular';
-  font-size: 2.2rem;
-  line-height: 2.901rem;
   color: #fff;
+  ${breakpoints.large} {
+    width: 2.76vw;
+    font-size: 1.15vw;
+    line-height: 2.69vh;
+  }
 `;
 
 const ArrowImg = styled.img`
   ${breakpoints.large} {
     margin-top: -0.6rem;
-    width: 10.35rem;
-    height: 3.3rem;
+    width: 5.4vw;
+    height: 3.06vh;
   }
   ${breakpoints.medium} {
     margin-top: -0.6rem;
     width: 10.35rem;
-    height: auto;
-  }
-  ${breakpoints.small} {
-    margin-top: -0.6rem;
-    width: 6rem;
     height: auto;
   }
 `;
@@ -52,44 +51,46 @@ const PrevButtonText = styled.h3`
   color: #fff;
   text-align: right;
   ${breakpoints.large} {
-    font-size: 2.2rem;
-    line-height: 2.9rem;
+    font-size: 1.15vw;
+    line-height: 2.69vh;
   }
   ${breakpoints.medium} {
-    font-size: 2.2rem;
-    line-height: 2.9rem;
-  }
-  ${breakpoints.small} {
-    font-size: 1.6rem;
-    line-height: 2.9rem;
+    font-size: 1.15vw;
+    line-height: 2.69vh;
   }
 `;
 
 const TestImage = styled.img`
-  margin-left: 1rem;
-  margin-top: 2rem;
-  width: 10.35rem;
-  height: 3.3rem;
+  ${breakpoints.large} {
+    margin-left: 0.52vw;
+    margin-top: 1.85vh;
+    width: 5.39vw;
+    height: 3.06vh;
+  }
 `;
 
 const ReplacementPlayerButton = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 29.5rem;
-  height: 5.6rem;
-  margin-top: 1.5rem;
   background: rgba(255, 255, 255, 0.74);
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
+  ${breakpoints.large} {
+    margin-top: 1.39vh;
+    width: 15.36vw;
+    height: 5.19vh;
+  }
 `;
 
 const ButtonText = styled.h3`
   font-family: 'RobotoMonoRegular';
-  font-size: 2.2rem;
-  line-height: 2.9rem;
   text-align: center;
   color: #272727;
+  ${breakpoints.large} {
+    font-size: 1.15vw;
+    line-height: 2.69vh;
+  }
 `;
 
 const ResultButton = () => {
