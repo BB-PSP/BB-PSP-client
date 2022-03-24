@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { breakpoints } from '../../styles/media';
 import PlayerCard from '../PlayerCard/PlayerCard';
 
 const Container = styled.div`
@@ -16,8 +17,14 @@ const Container = styled.div`
 `;
 
 const CloseButton = styled.img`
-  width: 6.2rem;
-  height: 6.2rem;
+  ${breakpoints.large} {
+    width: 3.23vw;
+    height: 5.74vh;
+  }
+  ${breakpoints.medium} {
+    width: 6vw;
+    height: auto;
+  }
 `;
 
 const Background = styled.div`
@@ -43,33 +50,60 @@ const Background = styled.div`
 const ModalBlock = styled.div`
   background-color: white;
   border-radius: 1rem;
-  width: 76.6rem;
-  height: 80.8rem;
+  ${breakpoints.large} {
+    width: 40vw;
+    height: 74.81vh;
+  }
+  ${breakpoints.medium} {
+    width: 50vw;
+    height: 70vh;
+  }
 `;
 
 const Contents = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 5.3rem;
+  ${breakpoints.large} {
+    padding-top: 4.9vh;
+  }
+  ${breakpoints.medium} {
+    padding-top: 3vh;
+  }
 `;
 
 const Title = styled.h2`
   font-family: 'RobotoMonoRegular';
-  font-size: 2.2rem;
-  line-height: 2.9rem;
   color: #272727;
-  padding-bottom: 5.7rem;
+  ${breakpoints.large} {
+    font-size: 1.15vw;
+    line-height: 2.69vh;
+    padding-bottom: 5.28vh;
+  }
+  ${breakpoints.medium} {
+    font-size: 2vw;
+    line-height: 3vh;
+    padding-bottom: 3vh;
+  }
 `;
 
 const Grid = styled.div`
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  height: 67rem;
-  width: 63rem;
-  column-gap: 5rem;
-  row-gap: 4rem;
+  ${breakpoints.large} {
+    grid-template-columns: repeat(2, 1fr);
+    height: 62.04vh;
+    width: 32.81vw;
+    column-gap: 2.6vw;
+    row-gap: 3.7vh;
+  }
+  ${breakpoints.medium} {
+    grid-template-columns: repeat(1, 1fr);
+    height: 61vh;
+    width: 40vw;
+    column-gap: 2.6vw;
+    row-gap: 3.7vh;
+  }
   overflow: scroll;
 `;
 
