@@ -50,7 +50,7 @@ const TeamCard = (team: TeamCardProps) => {
     >
       <Wrapper
         onMouseEnter={() => showCardHover(0)}
-        onMouseLeave={() => hiddenCardHover()}
+        onMouseOut={() => hiddenCardHover()}
         onClick={() => {
           onClick();
         }}

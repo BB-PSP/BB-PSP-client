@@ -41,7 +41,9 @@ const Kbo = () => {
 export const getStaticProps: GetStaticProps = async () => {
   const queryClient = new QueryClient();
 
-  await queryClient.prefetchQuery('teamData', () => fetchTeams());
+  await queryClient.prefetchQuery('teamData', () => fetchTeams(), {
+    staleTime: 2000,
+  });
 
   return {
     props: {

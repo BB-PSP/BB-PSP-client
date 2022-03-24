@@ -1,9 +1,10 @@
-/** @type {import('next').NextConfig} */
-const withImages = require('next-images');
-module.exports = withImages();
-
-const nextConfig = {
-  reactStrictMode: true,
+module.exports = {
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'http://3.138.85.147:8081/:path*',
+      },
+    ];
+  },
 };
-
-module.exports = nextConfig;
