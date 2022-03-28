@@ -7,9 +7,9 @@ import { RecoilRoot } from 'recoil';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 
-// if (process.env.NODE_ENV === 'development') {
-//   initMockAPI();
-// }
+if (process.env.NODE_ENV === 'development') {
+  initMockAPI();
+}
 
 type ComponentWithPageLayout = AppProps & {
   Component: AppProps['Component'] & {
