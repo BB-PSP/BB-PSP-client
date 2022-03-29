@@ -13,7 +13,7 @@ const Background = styled.div`
     rgba(39, 39, 39, 0.87) 100%
   );
   ${breakpoints.large} {
-    width: 13.02vw;
+    width: 12.8vw;
     height: 52.96vh;
     bottom: 3.8vh;
   }
