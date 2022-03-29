@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   display: flex;
   flex: 1;
   flex-direction: row;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   ${breakpoints.large} {
     height: 6.57vh;
     margin-top: 6.48vh;
@@ -62,6 +62,7 @@ const PrevButtonText = styled.h3`
   ${breakpoints.large} {
     font-size: 1.15vw;
     line-height: 2.69vh;
+    padding-right: 20.23vw;
   }
   ${breakpoints.medium} {
     font-size: 2vw;
@@ -93,8 +94,9 @@ const ReplacementPlayerButton = styled.div`
   border-radius: 10px;
   ${breakpoints.large} {
     margin-top: 1.39vh;
-    width: 15.36vw;
+    padding: 1.11vh 1.46vw;
     height: 5.19vh;
+    margin-right: 16.98vw;
   }
   ${breakpoints.medium} {
     margin-top: 1.39vh;

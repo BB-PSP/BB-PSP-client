@@ -19,7 +19,7 @@ const Container = styled.div`
 const CloseButton = styled.img`
   ${breakpoints.large} {
     width: 3.23vw;
-    height: 5.74vh;
+    height: auto;
   }
   ${breakpoints.medium} {
     width: 6vw;

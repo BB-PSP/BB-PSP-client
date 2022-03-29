@@ -36,8 +36,8 @@ const BottomContentsContainer = styled.div`
   );
   ${breakpoints.large} {
     margin-top: 1.57vh;
-    padding-right: 3.33vw;
-    padding-left: 3.33vw;
+    /* padding-right: 3.33vw;
+    padding-left: 3.33vw; */
     height: 54.54vh;
   }
   ${breakpoints.medium} {

@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 import { breakpoints } from '../../styles/media';
 
+const Wrapper = styled.div`
+  padding-right: 3.33vw;
+  padding-left: 3.33vw;
+`;
+
 const Season = styled.h3`
   font-family: 'RobotoMonoRegular';
   color: #fff;
@@ -73,7 +78,7 @@ const StatTd = styled.td`
 
 function StatTable() {
   return (
-    <>
+    <Wrapper>
       <Season>2021 stats</Season>
       <Table>
         <StatTr>
@@ -127,7 +132,7 @@ function StatTable() {
           <StatTd>.360</StatTd>
         </StatTr>
       </Table>
-    </>
+    </Wrapper>
   );
 }
 
