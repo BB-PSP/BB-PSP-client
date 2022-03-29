@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 import TeamSlider from '../../components/kbo/TeamSlider';
 import { GetStaticProps } from 'next';
-import { dehydrate, QueryClient, useQuery } from 'react-query';
-import { fetchTeams } from '../../hooks/api/useTeams';
+import { dehydrate, QueryClient } from 'react-query';
+import { fetchTeams, useTeams } from '../../hooks/api/useTeams';
 import CommonLayout from '../../components/layout/common/CommonLayout';
-import { ITeam } from '../../store/Types';
 import { breakpoints } from '../../styles/media';
 
 const Wrapper = styled.main`
@@ -27,7 +26,7 @@ const Slider = styled.div`
 `;
 
 const Kbo = () => {
-  const { data } = useQuery<ITeam, Error>('teamData', () => fetchTeams());
+  const { data } = useTeams(2021);
   const teams = data?.teamDTOList;
   return (
     <Wrapper>
@@ -40,11 +39,7 @@ const Kbo = () => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const queryClient = new QueryClient();
-
-  await queryClient.prefetchQuery('teamData', () => fetchTeams(), {
-    staleTime: 2000,
-  });
-
+  await queryClient.prefetchQuery('teamData', () => fetchTeams(2021));
   return {
     props: {
       dehydratedState: dehydrate(queryClient),

@@ -4,7 +4,7 @@ import position from '../data/position.json';
 import player from '../data/player.json';
 
 export const handlers = [
-  rest.get('/api/team', (req, res, ctx) => {
+  rest.get('/api/team/2021', (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(team));
   }),
 
