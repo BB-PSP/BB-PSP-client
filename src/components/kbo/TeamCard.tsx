@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { breakpoints } from '../../styles/media';
+import Link from 'next/link';
 
 const Background = styled.div`
   display: none;
@@ -149,6 +150,7 @@ const Content = styled.p`
 `;
 
 interface TeamCardProps {
+  company: string;
   name: string;
   colourLogo: string;
   blackLogo: string;
@@ -174,27 +176,31 @@ interface ITeamCardProps {
 
 const TeamCard = (team: TeamCardProps) => {
   return (
-    <Wrapper team={team}>
-      <Background />
-      <LogoBox team={team}>
-        <LogoBoxBackground />
-      </LogoBox>
-      <ContentsBox>
-        <TeamName>{team?.name}</TeamName>
-        <Box>
-          <Category>Last season</Category>
-          <Content>{team?.lastSeason}</Content>
-        </Box>
-        <Box>
-          <Category>Wins</Category>
-          <Content>{team?.champCount}</Content>
-        </Box>
-        <Box>
-          <Category>Foundation year</Category>
-          <Content>{team?.foundedAt}</Content>
-        </Box>
-      </ContentsBox>
-    </Wrapper>
+    <Link href={`/kbo/${encodeURIComponent(team.name)}`}>
+      <Wrapper team={team}>
+        <Background />
+        <LogoBox team={team}>
+          <LogoBoxBackground />
+        </LogoBox>
+        <ContentsBox>
+          <TeamName>
+            {team?.company} {team?.name}
+          </TeamName>
+          <Box>
+            <Category>Last season</Category>
+            <Content>{team?.lastSeason}</Content>
+          </Box>
+          <Box>
+            <Category>Wins</Category>
+            <Content>{team?.champCount}</Content>
+          </Box>
+          <Box>
+            <Category>Foundation year</Category>
+            <Content>{team?.foundedAt}</Content>
+          </Box>
+        </ContentsBox>
+      </Wrapper>
+    </Link>
   );
 };
 
