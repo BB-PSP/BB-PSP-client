@@ -1,7 +1,8 @@
 {
   "teamDTOList": [
     {
-      "name": "KT Wiz",
+      "company": "KT",
+      "name": "Wiz",
       "colourLogo": "/image/teamLogo/kt.png",
       "blackLogo": "/image/teamLogo_b/kt_b.png",
       "teamColour": "#000000",
@@ -11,7 +12,8 @@
       "lastSeason": 1
     },
     {
-      "name": "Doosan Bears",
+      "company": "Doosan",
+      "name": "Bears",
       "colourLogo": "/image/teamLogo/doosan.png",
       "blackLogo": "/image/teamLogo_b/doosan_b.png",
       "teamColour": "#110F29",
@@ -21,7 +23,8 @@
       "lastSeason": 2
     },
     {
-      "name": "Samsung Lions",
+      "company": "Samsung",
+      "name": "Lions",
       "colourLogo": "/image/teamLogo/samsung.png",
       "blackLogo": "/image/teamLogo_b/samsung_b.png",
       "teamColour": "#005BAC",
@@ -31,7 +34,8 @@
       "lastSeason": 3
     },
     {
-      "name": "LG Twins",
+      "company": "LG",
+      "name": "Twins",
       "colourLogo": "/image/teamLogo/lg.png",
       "blackLogo": "/image/teamLogo_b/lg_b.png",
       "teamColour": "#BE0737",
@@ -41,7 +45,8 @@
       "lastSeason": 4
     },
     {
-      "name": "Kiwoom Heroes",
+      "company": "Kiwoom",
+      "name": "Heroes",
       "colourLogo": "/image/teamLogo/kiwoom.png",
       "blackLogo": "/image/teamLogo_b/kiwoom_b.png",
       "teamColour": "#97334A",
@@ -51,7 +56,8 @@
       "lastSeason": 5
     },
     {
-      "name": "SSG Landers",
+      "company": "SSG",
+      "name": "Landers",
       "colourLogo": "/image/teamLogo/ssg.png",
       "blackLogo": "/image/teamLogo_b/ssg_b.png",
       "teamColour": "#221815",
@@ -61,7 +67,8 @@
       "lastSeason": 6
     },
     {
-      "name": "NC Dinos",
+      "company": "NC",
+      "name": "Dinos",
       "colourLogo": "/image/teamLogo/nc.png",
       "blackLogo": "/image/teamLogo_b/nc_b.png",
       "teamColour": "#C8A17A",
@@ -71,7 +78,8 @@
       "lastSeason": 7
     },
     {
-      "name": "Lottes Giants",
+      "company": "Lotte",
+      "name": "Giants",
       "colourLogo": "/image/teamLogo/lotte.png",
       "blackLogo": "/image/teamLogo_b/lotte_b.png",
       "teamColour": "#052956",
@@ -81,7 +89,8 @@
       "lastSeason": 8
     },
     {
-      "name": "KIA Tigers",
+      "company": "KIA",
+      "name": "Tigers",
       "colourLogo": "/image/teamLogo/kia.png",
       "blackLogo": "/image/teamLogo_b/kia_b.png",
       "teamColour": "#D41F1F",
@@ -91,7 +100,8 @@
       "lastSeason": 9
     },
     {
-      "name": "Hanwha Eagles",
+      "company": "Hanhwa",
+      "name": "Eagles",
       "colourLogo": "/image/teamLogo/hanhwa.png",
       "blackLogo": "/image/teamLogo_b/hanhwa_b.png",
       "teamColour": "#EF701F",
