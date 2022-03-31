@@ -3,30 +3,25 @@ import styled from 'styled-components';
 import { breakpoints } from '../../styles/media';
 
 const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: #97334a;
+  box-shadow: 0.2rem 0.4rem 0.8rem rgba(0, 0, 0, 0.25);
   ${breakpoints.large} {
-    position: absolute;
     z-index: 2;
     backface-visibility: hidden;
     transform: rotateY(180deg);
     width: 15.1vw;
     height: 15vh;
-    display: flex;
-    flex-direction: column;
     border-radius: 0.4rem;
-    background-color: #97334a;
-    box-shadow: 0.2rem 0.4rem 0.8rem rgba(0, 0, 0, 0.25);
     padding-top: 1.39vh;
     padding-bottom: 1.9vh;
   }
   ${breakpoints.medium} {
-    position: absolute;
     width: 40vw;
     height: 20vh;
-    display: flex;
-    flex-direction: column;
     border-radius: 0.4rem;
-    background-color: #97334a;
-    box-shadow: 0.2rem 0.4rem 0.8rem rgba(0, 0, 0, 0.25);
     padding-top: 1.39vh;
     padding-bottom: 1.9vh;
   }

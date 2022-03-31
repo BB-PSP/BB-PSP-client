@@ -7,20 +7,19 @@ import Link from 'next/link';
 import { IPlayer } from '../../store/Types';
 
 const Card = styled.div`
+  position: relative;
   ${breakpoints.large} {
+    width: 15.1vw;
     height: 15vh;
-    position: relative;
     transform-style: preserve-3d;
     transition: 1s;
     transform: rotateY(0deg);
     &:hover {
       transform: rotateY(180deg);
     }
-    margin-right: 0.65vw;
   }
   ${breakpoints.medium} {
     height: 20vh;
-    position: relative;
   }
 `;
 

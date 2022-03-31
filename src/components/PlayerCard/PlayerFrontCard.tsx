@@ -1,9 +1,8 @@
-import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
 import { breakpoints } from '../../styles/media';
 
-const Wrapper = styled(motion.div)`
+const Wrapper = styled.div`
   position: absolute;
   z-index: 1;
   backface-visibility: hidden;
