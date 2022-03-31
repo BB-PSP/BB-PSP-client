@@ -176,7 +176,13 @@ interface ITeamCardProps {
 
 const TeamCard = (team: TeamCardProps) => {
   return (
-    <Link href={`/kbo/${encodeURIComponent(team.name)}`}>
+    <Link
+      href={{
+        pathname: `/kbo/${encodeURIComponent(team.name)}`,
+        query: { name: JSON.stringify(team.name) },
+      }}
+      as={`/kbo/${encodeURIComponent(team.name)}`}
+    >
       <Wrapper team={team}>
         <Background />
         <LogoBox team={team}>
