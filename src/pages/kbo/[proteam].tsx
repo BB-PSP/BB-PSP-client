@@ -8,43 +8,46 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding-left: 2.6vw;
 `;
 
 const Container = styled.div`
+  overflow-x: hidden;
   position: absolute;
   bottom: 0;
-  margin-top: 19.54vh;
   ${breakpoints.large} {
+    margin-top: 19.54vh;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 2.08vw;
+    column-gap: 1.04vw;
     row-gap: 3.7vh;
     width: 70.94vw;
     height: 63.33vh;
-    overflow-x: hidden;
-    &::-webkit-scrollbar {
-      width: 0.2rem;
-      background-color: white;
-    }
-    &::-webkit-scrollbar-thumb {
-      background-color: black;
-    }
+    white-space: nowrap;
+    padding-right: 2.6vw;
   }
   ${breakpoints.medium} {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 2rem;
-    row-gap: 4rem;
-    width: 80.5rem;
-    height: 55.6rem;
-    padding-right: 7.3rem;
-    overflow-x: hidden;
-    &::-webkit-scrollbar {
-      width: 0.2rem;
-      background-color: white;
-    }
-    &::-webkit-scrollbar-thumb {
-      background-color: black;
+    column-gap: 2vw;
+    row-gap: 2vh;
+    width: 82.6vw;
+    height: 80vh;
+    padding-right: 2.6vw;
+  }
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    width: 0.4rem;
+  }
+  &::-webkit-scrollbar-track {
+    background: #fff;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #3d3d3d;
+    background-clip: padding-box;
+    &:hover {
+      background: #606060;
     }
   }
 `;
