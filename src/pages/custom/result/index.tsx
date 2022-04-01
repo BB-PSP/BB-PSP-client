@@ -11,38 +11,39 @@ const Wrapper = styled.div`
 `;
 
 const Container = styled.div`
+  overflow-x: hidden;
+  position: absolute;
+  bottom: 0;
   ${breakpoints.large} {
-    margin-top: 19.63vh;
+    margin-top: 19.54vh;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 1.04vw;
     row-gap: 3.7vh;
     width: 66.67vw;
     height: 64.33vh;
-    overflow-x: hidden;
-    &::-webkit-scrollbar {
-      width: 0.2rem;
-      background-color: white;
-    }
-    &::-webkit-scrollbar-thumb {
-      background-color: black;
-    }
   }
   ${breakpoints.medium} {
-    margin-top: 19.63vh;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 2vw;
     row-gap: 2vh;
-    width: 81vw;
-    height: 50vh;
-    overflow-x: hidden;
-    &::-webkit-scrollbar {
-      width: 0.2rem;
-      background-color: white;
-    }
-    &::-webkit-scrollbar-thumb {
-      background-color: black;
+    width: 82.6vw;
+    height: 80vh;
+    padding-right: 2.6vw;
+  }
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    width: 0.4rem;
+  }
+  &::-webkit-scrollbar-track {
+    background: #fff;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #3d3d3d;
+    background-clip: padding-box;
+    &:hover {
+      background: #606060;
     }
   }
 `;
@@ -51,7 +52,7 @@ function Result(player: IPlayer) {
   return (
     <Wrapper>
       <Container>
-        {[1, 2, 3, 4, 5, 6].map((i) => {
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((i) => {
           return <PlayerCard key={i} {...player} />;
         })}
       </Container>
