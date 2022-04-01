@@ -1,15 +1,13 @@
 import { motion } from 'framer-motion';
-import { GetStaticProps } from 'next';
 import React from 'react';
-import { dehydrate, QueryClient, useQuery } from 'react-query';
 import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
 import CommonLayout from '../../components/layout/common/CommonLayout';
 import PageButton from '../../components/button/PageButton';
-import { fetchPositions } from '../../hooks/api/usePositions';
 import { selectedPositionState } from '../../store/Data/atom';
 import { IPosition } from '../../store/Types';
 import { breakpoints } from '../../styles/media';
+import position from '../../data/position.json';
 
 const Wrapper = styled.div`
   display: flex;
@@ -69,8 +67,7 @@ const PositionName = styled.h2`
 `;
 
 function Position() {
-  const { data } = useQuery('positionData', () => fetchPositions());
-  const positions = data?.positionList;
+  const positions = position.positionList;
   const [selectedPosition, setSelectedPosition] = useRecoilState<string[]>(
     selectedPositionState,
   );
@@ -106,18 +103,6 @@ function Position() {
     </>
   );
 }
-
-export const getStaticProps: GetStaticProps = async () => {
-  const queryClient = new QueryClient();
-
-  await queryClient.prefetchQuery('positionData', () => fetchPositions());
-
-  return {
-    props: {
-      dehydratedState: dehydrate(queryClient),
-    },
-  };
-};
 
 Position.PageLayout = CommonLayout;
 
