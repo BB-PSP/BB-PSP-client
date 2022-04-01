@@ -1,15 +1,3 @@
-export interface ITeam {
-  teamDTOList: {
-    name: string;
-    colourLogo: string;
-    blackLogo: string;
-    teamColour: string;
-    foundedAt: number;
-    champCount: number;
-    lastSeason: number;
-  };
-}
-
 export interface IPosition {
   name: string;
   colourLogo: string;
@@ -36,18 +24,17 @@ export interface IButton {
   next: string;
 }
 
-export interface Team {
-  Team: {
-    name: string;
-    colourLogo: string;
-    blackLogo: string;
-    teamColour: string;
-    foundedAt: number;
-    champCount: number;
-    lastSeason: number;
-  };
+export interface ITeam {
+  company: string;
+  name: string;
+  colourLogo: string;
+  blackLogo: string;
+  teamColour: string;
+  foundedAt: number;
+  champCount: number;
+  lastSeason: number;
 }
 
 export interface TeamResponse {
-  teamDTOList: Array<Team>;
+  teamDTOList: Array<ITeam>;
 }
