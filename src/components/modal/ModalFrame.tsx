@@ -123,9 +123,9 @@ function ModalFrame({ setShowModal }: ModalProps) {
           <Contents>
             <Title>replacement player</Title>
             <Grid>
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((i) => {
+              {/* {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((i) => {
                 return <PlayerCard key={i} />;
-              })}
+              })} */}
             </Grid>
           </Contents>
         </ModalBlock>
