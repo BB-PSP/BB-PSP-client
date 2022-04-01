@@ -1,15 +1,13 @@
 import { motion } from 'framer-motion';
-import { GetStaticProps } from 'next';
 import { useEffect } from 'react';
-import { dehydrate, QueryClient, useQuery } from 'react-query';
 import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
 import CommonLayout from '../../components/layout/common/CommonLayout';
 import PageButton from '../../components/button/PageButton';
-import { fetchTeams } from '../../hooks/api/useTeams';
 import { selectedTeamState } from '../../store/Data/atom';
 import { ITeam } from '../../store/Types';
 import { breakpoints } from '../../styles/media';
+import team from '../../data/team.json';
 
 const Wrapper = styled.div`
   display: flex;
@@ -64,8 +62,7 @@ const cardVariants = {
 };
 
 function Team() {
-  const { data } = useQuery('teamData', () => fetchTeams());
-  const teams = data?.teamDTOList;
+  const teams = team.teamDTOList;
   const [selectedTeam, setSelectedTeam] =
     useRecoilState<string[]>(selectedTeamState);
   useEffect(() => {
@@ -78,6 +75,7 @@ function Team() {
           const isClicked = selectedTeam.includes(team.name);
           return (
             <TeamCard
+              key={team.name}
               variants={cardVariants}
               initial="unHovered"
               whileHover="hovered"
@@ -89,7 +87,6 @@ function Team() {
                 }
               }}
               clicked={isClicked}
-              key={team.name}
               {...team}
             />
           );
@@ -99,18 +96,6 @@ function Team() {
     </Wrapper>
   );
 }
-
-export const getStaticProps: GetStaticProps = async () => {
-  const queryClient = new QueryClient();
-
-  await queryClient.prefetchQuery('teamData', () => fetchTeams());
-
-  return {
-    props: {
-      dehydratedState: dehydrate(queryClient),
-    },
-  };
-};
 
 Team.PageLayout = CommonLayout;
 
