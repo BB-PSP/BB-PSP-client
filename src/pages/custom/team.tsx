@@ -8,6 +8,7 @@ import { selectedTeamState } from '../../store/Data/atom';
 import { ITeam } from '../../store/Types';
 import { breakpoints } from '../../styles/media';
 import team from '../../data/team.json';
+import { GetStaticProps } from 'next/types';
 
 const Wrapper = styled.div`
   display: flex;
@@ -61,8 +62,9 @@ const cardVariants = {
   },
 };
 
-function Team() {
-  const teams = team.teamDTOList;
+function Team({ teams }) {
+  console.log(teams);
+  // const teams = team.teamDTOList;
   const [selectedTeam, setSelectedTeam] =
     useRecoilState<string[]>(selectedTeamState);
   useEffect(() => {
@@ -96,6 +98,13 @@ function Team() {
     </Wrapper>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const teams = team.teamDTOList;
+  return {
+    props: { teams },
+  };
+};
 
 Team.PageLayout = CommonLayout;
 
