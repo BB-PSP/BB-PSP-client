@@ -33,9 +33,7 @@ const GridContainer = styled.div`
   }
 `;
 
-const PositionCard = styled(motion.div)<
-  IPosition & { clicked: boolean } & { redImage: string }
->`
+const PositionCard = styled(motion.div)<IPosition & { clicked: boolean }>`
   cursor: grab;
   display: flex;
   align-items: center;
@@ -50,7 +48,7 @@ const PositionCard = styled(motion.div)<
     `} */
   ${(props) =>
     props.clicked
-      ? `background-image: url(${props.redImage});`
+      ? `background-image: url(${props.colourLogo});`
       : `background-image: url(${props.blackLogo});`}
   background-position: center;
   ${breakpoints.large} {
@@ -110,7 +108,6 @@ function Position() {
                 clicked={isClicked}
                 key={position.name}
                 {...position}
-                redImage={redImages[0]}
               >
                 <PositionName>{position?.name}</PositionName>
               </PositionCard>
