@@ -34,13 +34,15 @@ const GridContainer = styled.div`
   }
 `;
 
-const TeamCard = styled(motion.div)<ITeam & { clicked: boolean }>`
+const TeamCard = styled(motion.div)<
+  ITeam & { clicked: boolean } & { color: string }
+>`
   cursor: grab;
   background-size: contain;
   background-repeat: no-repeat;
   ${(props) =>
     props.clicked
-      ? `background-image: url(${props.colourLogo});`
+      ? `background-image: url(${props.color});`
       : `background-image: url(${props.blackLogo});`}
   background-position: center;
   ${breakpoints.large} {
@@ -62,14 +64,21 @@ const cardVariants = {
   },
 };
 
-function Team({ teams }: InferGetStaticPropsType<typeof getStaticProps>) {
-  console.log(teams);
-  // const teams = team.teamDTOList;
+function Team({
+  teams,
+  color,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const [selectedTeam, setSelectedTeam] =
     useRecoilState<string[]>(selectedTeamState);
   useEffect(() => {
     setSelectedTeam([]);
+    for (let i = 0; i < color.length; i++) {
+      preloadImage(color[i]);
+    }
   }, []);
+  function preloadImage(url: string) {
+    new Image().src = url;
+  }
   return (
     <Wrapper>
       <GridContainer>
@@ -89,6 +98,7 @@ function Team({ teams }: InferGetStaticPropsType<typeof getStaticProps>) {
                 }
               }}
               clicked={isClicked}
+              color={color}
               {...team}
             />
           );
@@ -101,8 +111,9 @@ function Team({ teams }: InferGetStaticPropsType<typeof getStaticProps>) {
 
 export const getStaticProps: GetStaticProps = async () => {
   const teams = team.teamDTOList;
+  const colourLogo = teams.map((team) => team.colourLogo);
   return {
-    props: { teams: teams },
+    props: { teams: teams, color: colourLogo },
   };
 };
 
