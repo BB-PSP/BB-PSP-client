@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import CommonLayout from '../../components/layout/common/CommonLayout';
 import PageButton from '../../components/button/PageButton';
 import { selectedPositionState } from '../../store/Data/atom';
@@ -33,15 +33,24 @@ const GridContainer = styled.div`
   }
 `;
 
-const PositionCard = styled(motion.div)<IPosition & { clicked: boolean }>`
+const PositionCard = styled(motion.div)<
+  IPosition & { clicked: boolean } & { redImage: string }
+>`
   cursor: grab;
   display: flex;
   align-items: center;
   background-size: contain;
   background-repeat: no-repeat;
+  background-image: url(${(props) => props.blackLogo});
+  /* ${(props) =>
+    props.clicked &&
+    css`
+      background-color: rgba(183, 0, 0, 0.76);
+      background-blend-mode: multiply;
+    `} */
   ${(props) =>
     props.clicked
-      ? `background-image: url(${props.colourLogo});`
+      ? `background-image: url(${props.redImage});`
       : `background-image: url(${props.blackLogo});`}
   background-position: center;
   ${breakpoints.large} {
@@ -68,9 +77,18 @@ const PositionName = styled.h2`
 
 function Position() {
   const positions = position.positionList;
+  const redImages = positions.map((position) => position.colourLogo);
   const [selectedPosition, setSelectedPosition] = useRecoilState<string[]>(
     selectedPositionState,
   );
+  function preloadImage(url: string) {
+    new Image().src = url;
+  }
+  useEffect(() => {
+    for (let i = 0; i < redImages.length; i++) {
+      preloadImage(redImages[i]);
+    }
+  }, []);
   return (
     <>
       <Wrapper>
@@ -92,6 +110,7 @@ function Position() {
                 clicked={isClicked}
                 key={position.name}
                 {...position}
+                redImage={redImages[0]}
               >
                 <PositionName>{position?.name}</PositionName>
               </PositionCard>
