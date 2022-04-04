@@ -8,6 +8,7 @@ import { selectedPositionState } from '../../store/Data/atom';
 import { IPosition } from '../../store/Types';
 import { breakpoints } from '../../styles/media';
 import position from '../../data/position.json';
+import Image from 'next/image';
 
 const Wrapper = styled.div`
   display: flex;
@@ -39,7 +40,6 @@ const PositionCard = styled(motion.div)<IPosition & { clicked: boolean }>`
   align-items: center;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url(${(props) => props.blackLogo});
   /* ${(props) =>
     props.clicked &&
     css`
@@ -79,14 +79,14 @@ function Position() {
   const [selectedPosition, setSelectedPosition] = useRecoilState<string[]>(
     selectedPositionState,
   );
-  function preloadImage(url: string) {
-    new Image().src = url;
-  }
-  useEffect(() => {
-    for (let i = 0; i < redImages.length; i++) {
-      preloadImage(redImages[i]);
-    }
-  }, []);
+  // function preloadImage(url: string) {
+  //   new Image().src = url;
+  // }
+  // useEffect(() => {
+  //   for (let i = 0; i < redImages.length; i++) {
+  //     preloadImage(redImages[i]);
+  //   }
+  // }, []);
   return (
     <>
       <Wrapper>

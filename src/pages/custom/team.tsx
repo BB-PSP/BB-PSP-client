@@ -8,7 +8,7 @@ import { selectedTeamState } from '../../store/Data/atom';
 import { ITeam } from '../../store/Types';
 import { breakpoints } from '../../styles/media';
 import team from '../../data/team.json';
-import { GetStaticProps } from 'next/types';
+import { GetStaticProps, InferGetStaticPropsType } from 'next/types';
 
 const Wrapper = styled.div`
   display: flex;
@@ -62,7 +62,7 @@ const cardVariants = {
   },
 };
 
-function Team({ teams }) {
+function Team({ teams }: InferGetStaticPropsType<typeof getStaticProps>) {
   console.log(teams);
   // const teams = team.teamDTOList;
   const [selectedTeam, setSelectedTeam] =
@@ -102,7 +102,7 @@ function Team({ teams }) {
 export const getStaticProps: GetStaticProps = async () => {
   const teams = team.teamDTOList;
   return {
-    props: { teams },
+    props: { teams: teams },
   };
 };
 
