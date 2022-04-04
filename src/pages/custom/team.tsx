@@ -34,15 +34,13 @@ const GridContainer = styled.div`
   }
 `;
 
-const TeamCard = styled(motion.div)<
-  ITeam & { clicked: boolean } & { color: string }
->`
+const TeamCard = styled(motion.div)<ITeam & { clicked: boolean }>`
   cursor: grab;
   background-size: contain;
   background-repeat: no-repeat;
   ${(props) =>
     props.clicked
-      ? `background-image: url(${props.color});`
+      ? `background-image: url(${props.colourLogo});`
       : `background-image: url(${props.blackLogo});`}
   background-position: center;
   ${breakpoints.large} {
@@ -98,7 +96,6 @@ function Team({
                 }
               }}
               clicked={isClicked}
-              color={color}
               {...team}
             />
           );
