@@ -4,7 +4,7 @@ import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
 import CommonLayout from '../../components/layout/common/CommonLayout';
 import PageButton from '../../components/button/PageButton';
-import { selectedTeamState } from '../../store/Data/atom';
+import { selectedTeamState, colorImagesState } from '../../store/Data/atom';
 import { ITeam } from '../../store/Types';
 import { breakpoints } from '../../styles/media';
 import team from '../../data/team.json';
@@ -34,15 +34,11 @@ const GridContainer = styled.div`
   }
 `;
 
-const TeamCard = styled(motion.div)<ITeam & { clicked: boolean }>`
+const TeamLogoBox = styled(motion.div)<{ clicked: boolean }>`
   cursor: grab;
-  background-size: contain;
-  background-repeat: no-repeat;
-  ${(props) =>
-    props.clicked
-      ? `background-image: url(${props.colourLogo});`
-      : `background-image: url(${props.blackLogo});`}
-  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   ${breakpoints.large} {
     width: 11.3vw;
     height: 13.43vh;
@@ -51,6 +47,12 @@ const TeamCard = styled(motion.div)<ITeam & { clicked: boolean }>`
     width: 13vw;
     height: 13vh;
   }
+`;
+
+const TeamLogo = styled.img`
+  position: relative;
+  width: auto;
+  height: 100%;
 `;
 
 const cardVariants = {
@@ -68,25 +70,31 @@ function Team({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [selectedTeam, setSelectedTeam] =
     useRecoilState<string[]>(selectedTeamState);
-  useEffect(() => {
-    setSelectedTeam([]);
-    for (let i = 0; i < color.length; i++) {
-      preloadImage(color[i]);
-    }
-  }, []);
-  function preloadImage(url: string) {
-    new Image().src = url;
-  }
+  // const [colorImages, setColorImages] = useRecoilState(colorImagesState);
+
+  // useEffect(() => {
+  //   setSelectedTeam([]);
+  //   imagePreload(color);
+  // }, []);
+
+  // function imagePreload(urls: string[]) {
+  //   const preloadedCorlorImages = urls.map((url) => {
+  //     console.log(url);
+  //     return (new Image().src = url);
+  //   });
+  //   setColorImages(preloadedCorlorImages);
+  // }
+
   return (
     <Wrapper>
       <GridContainer>
-        {teams?.map((team: ITeam) => {
+        {teams?.map((team: ITeam, index: number) => {
           const isClicked = selectedTeam.includes(team.name);
           return (
-            <TeamCard
+            <TeamLogoBox
               key={team.name}
               variants={cardVariants}
-              initial="unHovered"
+              initial="unhovered"
               whileHover="hovered"
               onClick={() => {
                 if (selectedTeam.includes(team.name)) {
@@ -96,8 +104,13 @@ function Team({
                 }
               }}
               clicked={isClicked}
-              {...team}
-            />
+            >
+              {isClicked ? (
+                <TeamLogo alt={`${team?.name} Logo`} src={team?.colourLogo} />
+              ) : (
+                <TeamLogo alt={`${team?.name} Logo`} src={team?.blackLogo} />
+              )}
+            </TeamLogoBox>
           );
         })}
       </GridContainer>
