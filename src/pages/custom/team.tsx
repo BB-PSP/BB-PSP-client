@@ -72,18 +72,18 @@ function Team({
     useRecoilState<string[]>(selectedTeamState);
   // const [colorImages, setColorImages] = useRecoilState(colorImagesState);
 
-  // useEffect(() => {
-  //   setSelectedTeam([]);
-  //   imagePreload(color);
-  // }, []);
+  useEffect(() => {
+    setSelectedTeam([]);
+    imagePreload(color);
+  }, []);
 
-  // function imagePreload(urls: string[]) {
-  //   const preloadedCorlorImages = urls.map((url) => {
-  //     console.log(url);
-  //     return (new Image().src = url);
-  //   });
-  //   setColorImages(preloadedCorlorImages);
-  // }
+  function imagePreload(urls: string[]) {
+    const preloadedCorlorImages = urls.map((url) => {
+      // console.log(url);
+      return (new Image().src = url);
+    });
+    // setColorImages(preloadedCorlorImages);
+  }
 
   return (
     <Wrapper>
