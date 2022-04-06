@@ -14,20 +14,16 @@ const Container = styled.div`
 const BackImage = styled.img`
   position: absolute;
   background-attachment: local;
-  padding-top: 27.2rem;
+  padding-top: 25.19vh;
   z-index: -99;
   left: 50%;
   transform: translate3d(-50%, 0, 0);
   ${breakpoints.large} {
-    width: 104.6rem;
+    width: 54.48vw;
     height: auto;
   }
   ${breakpoints.medium} {
-    width: 58rem;
-    height: auto;
-  }
-  ${breakpoints.small} {
-    width: 20rem;
+    width: 60vw;
     height: auto;
   }
 `;
