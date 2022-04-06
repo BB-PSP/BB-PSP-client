@@ -19,7 +19,6 @@ const Wrapper = styled.div`
 const GridContainer = styled.div`
   display: grid;
   ${breakpoints.large} {
-    width: 66.67vw;
     padding-top: 19.63vh;
     grid-template-columns: repeat(5, 1fr);
     height: 36.85vh;
@@ -32,6 +31,8 @@ const GridContainer = styled.div`
     height: 50vh;
     column-gap: 2.6vw;
     row-gap: 5vh;
+  }
+  ${breakpoints.small} {
   }
 `;
 
@@ -55,10 +56,12 @@ const TeamLogo = styled.img`
   ${breakpoints.large} {
     width: auto;
     height: 13.43vh;
+    /* width: 11.3vw;
+    height: auto; */
   }
   ${breakpoints.medium} {
-    width: auto;
-    height: 7.2vh;
+    width: 14vw;
+    height: auto;
   }
 `;
 

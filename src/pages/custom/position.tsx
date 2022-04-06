@@ -35,13 +35,11 @@ const GridContainer = styled.div`
 `;
 
 const PositionCard = styled(motion.div)<{ clicked: boolean }>`
+  position: relative;
   cursor: grab;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  /* background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center; */
+  flex-direction: column;
   ${breakpoints.large} {
     width: 20.83vw;
     height: 11.11vh;
@@ -53,22 +51,25 @@ const PositionCard = styled(motion.div)<{ clicked: boolean }>`
 `;
 
 const PositionLogo = styled.img`
-  position: relative;
-  width: auto;
-  height: 100%;
+  ${breakpoints.large} {
+    width: 100%;
+    height: 100%;
+  }
+  ${breakpoints.medium} {
+    width: 100%;
+    height: auto;
+  }
 `;
 
 const PositionName = styled.h2`
   position: absolute;
   font-family: 'RobotoMonoRegular';
   color: #fff;
-  margin: 0 auto;
-  margin-top: 3.52vh;
   ${breakpoints.large} {
     font-size: 1.77vw;
   }
   ${breakpoints.medium} {
-    font-size: 1.77vw;
+    font-size: 1.3vw;
   }
 `;
 
@@ -123,7 +124,7 @@ function Position({
                   <PositionLogo
                     alt={`${position?.name} Logo`}
                     src={position?.blackLogo}
-                  ></PositionLogo>
+                  />
                 )}
                 <PositionName>{position?.name}</PositionName>
               </PositionCard>
