@@ -8,7 +8,7 @@ import { selectedPositionState } from '../../store/Data/atom';
 import { IPosition } from '../../store/Types';
 import { breakpoints } from '../../styles/media';
 import position from '../../data/position.json';
-import Image from 'next/image';
+import { GetStaticProps, InferGetStaticPropsType } from 'next';
 
 const Wrapper = styled.div`
   display: flex;
@@ -73,20 +73,24 @@ const PositionName = styled.h2`
   }
 `;
 
-function Position() {
-  const positions = position.positionList;
-  const redImages = positions.map((position) => position.colourLogo);
+function imagePreload(urls: string[]) {
+  urls.map((url) => {
+    new Image().src = url;
+  });
+}
+
+function Position({
+  positions,
+  redImages,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const [selectedPosition, setSelectedPosition] = useRecoilState<string[]>(
     selectedPositionState,
   );
-  // function preloadImage(url: string) {
-  //   new Image().src = url;
-  // }
-  // useEffect(() => {
-  //   for (let i = 0; i < redImages.length; i++) {
-  //     preloadImage(redImages[i]);
-  //   }
-  // }, []);
+  useEffect(() => {
+    setSelectedPosition([]);
+    imagePreload(redImages);
+  });
+
   return (
     <>
       <Wrapper>
@@ -119,6 +123,16 @@ function Position() {
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const positions = position.positionList;
+  const redImages = positions.map((position) => {
+    position.colourLogo;
+  });
+  return {
+    props: { positions: positions, redImages: redImages },
+  };
+};
 
 Position.PageLayout = CommonLayout;
 
