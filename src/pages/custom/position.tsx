@@ -37,6 +37,7 @@ const GridContainer = styled.div`
 const PositionCard = styled(motion.div)<{ clicked: boolean }>`
   cursor: grab;
   display: flex;
+  flex-direction: column;
   align-items: center;
   /* background-size: contain;
   background-repeat: no-repeat;
@@ -58,9 +59,11 @@ const PositionLogo = styled.img`
 `;
 
 const PositionName = styled.h2`
+  position: absolute;
   font-family: 'RobotoMonoRegular';
   color: #fff;
   margin: 0 auto;
+  margin-top: 3.52vh;
   ${breakpoints.large} {
     font-size: 1.77vw;
   }
@@ -120,9 +123,9 @@ function Position({
                   <PositionLogo
                     alt={`${position?.name} Logo`}
                     src={position?.blackLogo}
-                  />
+                  ></PositionLogo>
                 )}
-                {/* <PositionName>{position?.name}</PositionName> */}
+                <PositionName>{position?.name}</PositionName>
               </PositionCard>
             );
           })}
