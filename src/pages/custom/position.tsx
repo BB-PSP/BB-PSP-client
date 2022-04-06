@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import React, { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import CommonLayout from '../../components/layout/common/CommonLayout';
 import PageButton from '../../components/button/PageButton';
 import { selectedPositionState } from '../../store/Data/atom';
@@ -34,23 +34,13 @@ const GridContainer = styled.div`
   }
 `;
 
-const PositionCard = styled(motion.div)<IPosition & { clicked: boolean }>`
+const PositionCard = styled(motion.div)<{ clicked: boolean }>`
   cursor: grab;
   display: flex;
   align-items: center;
-  background-size: contain;
+  /* background-size: contain;
   background-repeat: no-repeat;
-  /* ${(props) =>
-    props.clicked &&
-    css`
-      background-color: rgba(183, 0, 0, 0.76);
-      background-blend-mode: multiply;
-    `} */
-  ${(props) =>
-    props.clicked
-      ? `background-image: url(${props.colourLogo});`
-      : `background-image: url(${props.blackLogo});`}
-  background-position: center;
+  background-position: center; */
   ${breakpoints.large} {
     width: 20.83vw;
     height: 11.11vh;
@@ -59,6 +49,12 @@ const PositionCard = styled(motion.div)<IPosition & { clicked: boolean }>`
     width: 20.83vw;
     height: 11.11vh;
   }
+`;
+
+const PositionLogo = styled.img`
+  position: relative;
+  width: auto;
+  height: 100%;
 `;
 
 const PositionName = styled.h2`
@@ -81,15 +77,17 @@ function imagePreload(urls: string[]) {
 
 function Position({
   positions,
-  redImages,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const colorImages = positions.map(
+    (position: IPosition) => position.colourLogo,
+  );
   const [selectedPosition, setSelectedPosition] = useRecoilState<string[]>(
     selectedPositionState,
   );
   useEffect(() => {
     setSelectedPosition([]);
-    imagePreload(redImages);
-  });
+    imagePreload(colorImages);
+  }, []);
 
   return (
     <>
@@ -113,7 +111,18 @@ function Position({
                 key={position.name}
                 {...position}
               >
-                <PositionName>{position?.name}</PositionName>
+                {isClicked ? (
+                  <PositionLogo
+                    alt={`${position?.name} Logo`}
+                    src={position?.colourLogo}
+                  />
+                ) : (
+                  <PositionLogo
+                    alt={`${position?.name} Logo`}
+                    src={position?.blackLogo}
+                  />
+                )}
+                {/* <PositionName>{position?.name}</PositionName> */}
               </PositionCard>
             );
           })}
@@ -125,12 +134,9 @@ function Position({
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const positions = position.positionList;
-  const redImages = positions.map((position) => {
-    position.colourLogo;
-  });
+  const positions = position?.positionList;
   return {
-    props: { positions: positions, redImages: redImages },
+    props: { positions: positions },
   };
 };
 
