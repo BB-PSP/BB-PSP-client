@@ -19,6 +19,7 @@ const Wrapper = styled.div`
 const GridContainer = styled.div`
   display: grid;
   ${breakpoints.large} {
+    width: 66.67vw;
     padding-top: 19.63vh;
     grid-template-columns: repeat(5, 1fr);
     height: 36.85vh;
@@ -51,8 +52,14 @@ const TeamLogoBox = styled(motion.div)<{ clicked: boolean }>`
 
 const TeamLogo = styled.img`
   position: relative;
-  width: auto;
-  height: 100%;
+  ${breakpoints.large} {
+    width: auto;
+    height: 13.43vh;
+  }
+  ${breakpoints.medium} {
+    width: auto;
+    height: 7.2vh;
+  }
 `;
 
 const cardVariants = {
