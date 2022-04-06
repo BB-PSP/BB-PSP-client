@@ -70,25 +70,23 @@ function Team({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [selectedTeam, setSelectedTeam] =
     useRecoilState<string[]>(selectedTeamState);
-  // const [colorImages, setColorImages] = useRecoilState(colorImagesState);
-
   useEffect(() => {
     setSelectedTeam([]);
     imagePreload(color);
   }, []);
-
   function imagePreload(urls: string[]) {
-    const preloadedCorlorImages = urls.map((url) => {
-      // console.log(url);
-      return (new Image().src = url);
+    // const preloadedCorlorImages = urls.map((url) => {
+    //   return (new Image().src = url);
+    // });
+    urls.map((url) => {
+      new Image().src = url;
     });
-    // setColorImages(preloadedCorlorImages);
   }
 
   return (
     <Wrapper>
       <GridContainer>
-        {teams?.map((team: ITeam, index: number) => {
+        {teams?.map((team: ITeam) => {
           const isClicked = selectedTeam.includes(team.name);
           return (
             <TeamLogoBox
