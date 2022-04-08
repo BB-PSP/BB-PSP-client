@@ -17,8 +17,7 @@ const Container = styled.div`
     background-size: 60vh auto;
   }
   ${breakpoints.small} {
-    height: 100vh;
-    background-size: 40vh auto;
+    background-size: 80vw auto;
   }
 `;
 

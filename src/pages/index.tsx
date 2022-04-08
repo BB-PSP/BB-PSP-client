@@ -23,6 +23,10 @@ const SubTitle = styled.h2`
     font-size: 2.2vw;
     padding-top: 5.4vh;
   }
+  ${breakpoints.small} {
+    font-size: 3.3vw;
+    padding-top: 3.4vh;
+  }
 `;
 
 const DescriptionBox = styled.section`
@@ -32,6 +36,9 @@ const DescriptionBox = styled.section`
   }
   ${breakpoints.medium} {
     padding-top: 3.7vh;
+  }
+  ${breakpoints.small} {
+    padding-top: 2vh;
   }
 `;
 
@@ -45,6 +52,10 @@ const Description = styled.p`
   ${breakpoints.medium} {
     font-size: 1.6vw;
     line-height: 2.5vh;
+  }
+  ${breakpoints.small} {
+    font-size: 2vw;
+    line-height: 3vh;
   }
 `;
 
@@ -61,6 +72,11 @@ const ButtonConatiner = styled.nav`
     flex-direction: column;
     align-items: flex-start;
   }
+  ${breakpoints.small} {
+    bottom: 40vh;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 const ProButtonBox = styled.div`
@@ -69,6 +85,9 @@ const ProButtonBox = styled.div`
     padding-right: 35.8vw;
   }
   ${breakpoints.medium} {
+    margin-bottom: 8vh;
+  }
+  ${breakpoints.small} {
     margin-bottom: 8vh;
   }
 `;
@@ -90,6 +109,9 @@ const ProButton = styled.h3`
   ${breakpoints.medium} {
     font-size: 2.92vw;
   }
+  ${breakpoints.small} {
+    font-size: 3.5vw;
+  }
 `;
 
 const CustomButton = styled.h3`
@@ -105,6 +127,9 @@ const CustomButton = styled.h3`
   ${breakpoints.medium} {
     font-size: 2.92vw;
   }
+  ${breakpoints.small} {
+    font-size: 3.5vw;
+  }
 `;
 
 const ArrowImg = styled.img`
@@ -116,6 +141,11 @@ const ArrowImg = styled.img`
   ${breakpoints.medium} {
     margin-top: 0.7vh;
     width: 10.8vw;
+    height: auto;
+  }
+  ${breakpoints.small} {
+    margin-top: 1vh;
+    width: 20vw;
     height: auto;
   }
 `;
