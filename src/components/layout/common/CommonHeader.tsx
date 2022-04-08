@@ -14,6 +14,9 @@ const Wrapper = styled.div`
   ${breakpoints.medium} {
     padding-top: 8.7vh;
   }
+  ${breakpoints.small} {
+    padding-top: 7vh;
+  }
 `;
 
 const Title = styled.h1`
@@ -25,6 +28,9 @@ const Title = styled.h1`
   }
   ${breakpoints.medium} {
     font-size: 5vw;
+  }
+  ${breakpoints.small} {
+    font-size: 10vw;
   }
 `;
 
@@ -40,6 +46,11 @@ const SubTitle = styled.h2`
     font-size: 1.4rem;
     line-height: 1.846rem;
     padding-top: 0.8rem;
+  }
+  ${breakpoints.small} {
+    font-size: 3vw;
+    line-height: 3vh;
+    padding-top: 1vh;
   }
 `;
 

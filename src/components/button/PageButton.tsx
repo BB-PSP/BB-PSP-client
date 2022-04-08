@@ -14,6 +14,9 @@ const ButtonContainer = styled.div`
   ${breakpoints.medium} {
     bottom: 2.87vh;
   }
+  ${breakpoints.small} {
+    bottom: 2.87vh;
+  }
 `;
 
 const NextButtonText = styled.h3`
@@ -31,6 +34,11 @@ const NextButtonText = styled.h3`
     line-height: 3vh;
     margin-left: 60vw;
   }
+  ${breakpoints.small} {
+    font-size: 3.3vw;
+    line-height: 3vh;
+    margin-left: 60vw;
+  }
 `;
 
 const ArrowImg = styled.img`
@@ -42,6 +50,11 @@ const ArrowImg = styled.img`
   ${breakpoints.medium} {
     margin-top: -0.6rem;
     width: 9vw;
+    height: auto;
+  }
+  ${breakpoints.small} {
+    margin-top: -0.8vh;
+    width: 13vw;
     height: auto;
   }
 `;
@@ -59,6 +72,10 @@ const PrevButtonText = styled.h3`
     font-size: 2vw;
     line-height: 3vh;
   }
+  ${breakpoints.small} {
+    font-size: 3.3vw;
+    line-height: 3vh;
+  }
 `;
 
 const ReversedArrowImg = styled.img`
@@ -71,6 +88,11 @@ const ReversedArrowImg = styled.img`
   ${breakpoints.medium} {
     margin-top: -0.6rem;
     width: 9vw;
+    height: auto;
+  }
+  ${breakpoints.small} {
+    margin-top: -0.8vh;
+    width: 13vw;
     height: auto;
   }
 `;
