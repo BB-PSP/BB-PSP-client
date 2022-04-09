@@ -33,10 +33,10 @@ const GridContainer = styled.div`
     row-gap: 5vh;
   }
   ${breakpoints.small} {
-    padding-top: 4vh;
+    padding-top: 1vh;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 25vw;
-    row-gap: 1vh;
+    row-gap: 0.5vh;
   }
 `;
 
@@ -70,8 +70,9 @@ const TeamLogo = styled.img`
     height: auto;
   }
   ${breakpoints.small} {
-    width: 20vw;
-    height: auto;
+    /* width: 20vw; */
+    width: auto;
+    height: 9vh;
   }
 `;
 
