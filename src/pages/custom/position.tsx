@@ -32,6 +32,13 @@ const GridContainer = styled.div`
     column-gap: 2.6vw;
     row-gap: 5vh;
   }
+  ${breakpoints.small} {
+    padding-top: 20vh;
+    grid-template-columns: repeat(3, 1fr);
+    height: 50vh;
+    column-gap: 2.6vw;
+    row-gap: 1vh;
+  }
 `;
 
 const PositionCard = styled(motion.div)<{ clicked: boolean }>`
@@ -48,6 +55,10 @@ const PositionCard = styled(motion.div)<{ clicked: boolean }>`
     width: 20.83vw;
     height: 11.11vh;
   }
+  ${breakpoints.small} {
+    width: 25vw;
+    height: auto;
+  }
 `;
 
 const PositionLogo = styled.img`
@@ -56,6 +67,10 @@ const PositionLogo = styled.img`
     height: 100%;
   }
   ${breakpoints.medium} {
+    width: 100%;
+    height: auto;
+  }
+  ${breakpoints.small} {
     width: 100%;
     height: auto;
   }
@@ -70,6 +85,9 @@ const PositionName = styled.h2`
   }
   ${breakpoints.medium} {
     font-size: 1.3vw;
+  }
+  ${breakpoints.small} {
+    font-size: 2vw;
   }
 `;
 
