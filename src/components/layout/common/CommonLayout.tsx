@@ -7,6 +7,9 @@ const Container = styled.div`
   position: relative;
   width: 100%;
   height: 100vh;
+  @supports (-webkit-touch-callout: none) {
+    height: -webkit-fill-available;
+  }
   background-image: url('/image/baseball/baseball_gradationmask.png');
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -18,7 +21,6 @@ const Container = styled.div`
     background-size: 60vh auto;
   }
   ${breakpoints.small} {
-    height: 100vh;
     background-size: 40vh auto;
   }
 `;
