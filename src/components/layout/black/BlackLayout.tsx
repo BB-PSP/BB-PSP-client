@@ -22,6 +22,9 @@ const Container = styled.div`
     height: 100vh;
     background-size: 40vh auto;
   }
+  @supports (-webkit-touch-callout: none) {
+    height: -webkit-fill-available;
+  }
 `;
 
 export default function BlackLayout({
