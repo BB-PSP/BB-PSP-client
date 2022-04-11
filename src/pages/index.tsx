@@ -4,13 +4,11 @@ import styled from 'styled-components';
 import { breakpoints } from '../styles/media';
 import IndexLayout from '../components/layout/main/IndexLayout';
 import IndexHeader from '../components/layout/main/IndexHeader';
-import { useEffect } from 'react';
 
 const Wrapper = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: calc(var(--vh, 1vh) * 100);
 `;
 
 const SubTitle = styled.h2`
@@ -75,7 +73,7 @@ const ButtonConatiner = styled.nav`
     align-items: flex-start;
   }
   ${breakpoints.small} {
-    bottom: 40vh;
+    bottom: 35vh;
     flex-direction: column;
     align-items: flex-start;
   }
@@ -153,14 +151,6 @@ const ArrowImg = styled.img`
 `;
 
 function Home() {
-  useEffect(() => {
-    const vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-    window.addEventListener('resize', () => {
-      const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
-    });
-  });
   return (
     <>
       <Wrapper>
