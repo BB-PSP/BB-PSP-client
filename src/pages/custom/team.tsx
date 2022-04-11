@@ -96,9 +96,6 @@ function Team({
     imagePreload(color);
   }, []);
   function imagePreload(urls: string[]) {
-    // const preloadedCorlorImages = urls.map((url) => {
-    //   return (new Image().src = url);
-    // });
     urls.map((url) => {
       new Image().src = url;
     });
