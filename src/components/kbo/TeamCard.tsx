@@ -4,7 +4,6 @@ import { breakpoints } from '../../styles/media';
 import Link from 'next/link';
 
 const Background = styled.div`
-  display: none;
   z-index: -99;
   position: absolute;
   background: linear-gradient(
@@ -14,29 +13,39 @@ const Background = styled.div`
     rgba(39, 39, 39, 0.87) 100%
   );
   ${breakpoints.large} {
+    display: none;
     width: 12.8vw;
     height: 52.96vh;
     bottom: 3.8vh;
   }
   ${breakpoints.medium} {
-    width: 25vw;
+    width: 37.5vw;
     height: 40vh;
     bottom: 3.8vh;
+  }
+  ${breakpoints.small} {
+    width: 69vw;
+    height: 100%;
   }
 `;
 
 const ContentsBox = styled.div`
   width: 100%;
-  background-color: rgba(39, 39, 39, 0.87);
   position: relative;
   z-index: 99;
   ${breakpoints.large} {
     height: 31.3vh;
     padding-top: 4.5vh;
     padding-left: 1.3vw;
+    background-color: rgba(39, 39, 39, 0.87);
   }
   ${breakpoints.medium} {
-    height: 33.8rem;
+    height: 40vh;
+    padding-top: 2vh;
+    padding-left: 4vw;
+  }
+  ${breakpoints.small} {
+    height: 50vh;
     padding-top: 1.8rem;
     padding-left: 2.4rem;
   }
@@ -51,17 +60,26 @@ const LogoBox = styled.div<ITeamCardProps>`
     height: 13.52vh;
   }
   ${breakpoints.medium} {
-    height: 14.6rem;
+    background-image: url(${(props) => props?.team?.colourLogo});
+    background-size: auto 16vh;
+    background-position: center;
+    height: 20vh;
+  }
+  ${breakpoints.small} {
+    background-image: url(${(props) => props?.team?.colourLogo});
+    background-size: auto 18vh;
+    background-position: center;
+    height: 30vh;
   }
 `;
 
 const Wrapper = styled.div<ITeamCardProps>`
   display: flex;
   flex-direction: column;
-  margin-top: 22.04vh;
   ${breakpoints.large} {
     width: 13.02vw;
     height: 44.81vh;
+    margin-top: 22.04vh;
     margin-right: 1.04vw;
     &:hover {
       height: 66.85vh;
@@ -81,8 +99,17 @@ const Wrapper = styled.div<ITeamCardProps>`
     }
   }
   ${breakpoints.medium} {
-    height: 48.4rem;
+    ${(props) => `background: linear-gradient(${props.team.linearGradient});`}
+    width: 37.5vw;
+    height: 100%;
     margin-right: 1.04vw;
+  }
+  ${breakpoints.small} {
+    ${(props) => `background: linear-gradient(${props.team.linearGradient});`}
+    width: 100%;
+    height: 100%;
+    margin-right: 1.04vw;
+    margin-top: 5vh;
   }
 `;
 
@@ -92,6 +119,12 @@ const LogoBoxBackground = styled.div`
   top: 1.48vh;
   height: 12.04vh;
   z-index: -1;
+  ${breakpoints.medium} {
+    display: none;
+  }
+  ${breakpoints.small} {
+    display: none;
+  }
 `;
 
 const TeamName = styled.h2`
@@ -103,12 +136,12 @@ const TeamName = styled.h2`
     line-height: 2.93vh;
   }
   ${breakpoints.medium} {
-    font-size: 2.4rem;
-    line-height: 3.165rem;
+    font-size: 3vw;
+    line-height: 3vh;
   }
   ${breakpoints.small} {
-    font-size: 2rem;
-    line-height: 2rem;
+    font-size: 5vw;
+    line-height: 3vh;
   }
 `;
 
@@ -117,10 +150,10 @@ const Box = styled.div`
     padding-top: 1.04vh;
   }
   ${breakpoints.medium} {
-    padding-top: 2rem;
+    padding-top: 1vh;
   }
   ${breakpoints.small} {
-    padding-top: 1.4rem;
+    padding-top: 1vh;
   }
 `;
 
@@ -132,12 +165,12 @@ const Category = styled.p`
     line-height: 1.71vh;
   }
   ${breakpoints.medium} {
-    font-size: 1.4rem;
-    line-height: 1.846rem;
+    font-size: 2vw;
+    line-height: 3vh;
   }
   ${breakpoints.small} {
-    font-size: 1.2rem;
-    line-height: 1.5rem;
+    font-size: 3vw;
+    line-height: 3.5vh;
   }
 `;
 
@@ -147,6 +180,14 @@ const Content = styled.p`
   line-height: 2.2vh;
   color: #fff;
   padding-top: 0.37vh;
+  ${breakpoints.medium} {
+    font-size: 2vw;
+    line-height: 3vh;
+  }
+  ${breakpoints.small} {
+    font-size: 3vw;
+    line-height: 3.5vh;
+  }
 `;
 
 interface TeamCardProps {

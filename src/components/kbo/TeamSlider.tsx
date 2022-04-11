@@ -12,29 +12,33 @@ const TeamSliderContainer = styled.div`
   align-items: center;
   overflow-y: hidden;
   overflow-x: scroll;
-  white-space: nowrap;
-  padding-bottom: 5rem;
   ${breakpoints.large} {
     height: 71.39vh;
     width: 100%;
+    white-space: nowrap;
+    padding-bottom: 5rem;
+    &::-webkit-scrollbar {
+      background: transparent;
+      height: 0.5rem;
+    }
+    &::-webkit-scrollbar-track {
+      background: #fff;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #3d3d3d;
+      background-clip: padding-box;
+      &:hover {
+        background: #606060;
+      }
+    }
   }
   ${breakpoints.medium} {
     height: 60vh;
     width: 100%;
   }
-  &::-webkit-scrollbar {
-    background: transparent;
-    height: 0.5rem;
-  }
-  &::-webkit-scrollbar-track {
-    background: #fff;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: #3d3d3d;
-    background-clip: padding-box;
-    &:hover {
-      background: #606060;
-    }
+  ${breakpoints.small} {
+    height: 60vh;
+    width: 100%;
   }
 `;
 
@@ -43,6 +47,12 @@ const Row = styled.div`
   flex-direction: row;
   width: 200%;
   height: 100%;
+  ${breakpoints.medium} {
+    width: 500%;
+  }
+  ${breakpoints.small} {
+    width: 1000%;
+  }
 `;
 
 export interface TeamSliderProps {

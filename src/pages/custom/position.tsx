@@ -34,7 +34,7 @@ const GridContainer = styled.div`
   }
   ${breakpoints.small} {
     padding-top: 20vh;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     height: 50vh;
     column-gap: 2.6vw;
     row-gap: 1vh;

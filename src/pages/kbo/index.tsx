@@ -23,6 +23,9 @@ const Slider = styled.div`
     margin-top: 10vh;
     width: 77vw;
   }
+  ${breakpoints.small} {
+    width: 70vw;
+  }
 `;
 
 const Kbo = () => {
