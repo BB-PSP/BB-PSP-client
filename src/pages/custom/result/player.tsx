@@ -23,6 +23,10 @@ const TopContentsContainer = styled.div`
     margin-top: 6.48vh;
     height: 20.28vh;
   }
+  ${breakpoints.small} {
+    margin-top: 5vh;
+    height: 10vh;
+  }
 `;
 
 const BottomContentsContainer = styled.div`
@@ -36,8 +40,6 @@ const BottomContentsContainer = styled.div`
   );
   ${breakpoints.large} {
     margin-top: 1.57vh;
-    /* padding-right: 3.33vw;
-    padding-left: 3.33vw; */
     height: 54.54vh;
   }
   ${breakpoints.medium} {
@@ -45,6 +47,10 @@ const BottomContentsContainer = styled.div`
     padding-right: 3.33vw;
     padding-left: 3.33vw;
     height: 50.54vh;
+  }
+  ${breakpoints.small} {
+    margin-top: 2vh;
+    height: 50vh;
   }
 `;
 

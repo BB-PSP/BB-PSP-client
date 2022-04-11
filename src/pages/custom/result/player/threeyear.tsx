@@ -26,6 +26,9 @@ const ContentsContainer = styled.div`
   ${breakpoints.medium} {
     margin-top: 10vh;
   }
+  ${breakpoints.small} {
+    margin-top: 5vh;
+  }
 `;
 
 const StatContainer = styled.div`
@@ -45,6 +48,9 @@ const ButtonContainer = styled.div`
     margin-top: 16.11vh;
     margin-bottom: 6.48vh;
   }
+  ${breakpoints.small} {
+    margin-bottom: 3vh;
+  }
 `;
 
 const PlayerName = styled.h1`
@@ -58,6 +64,10 @@ const PlayerName = styled.h1`
   ${breakpoints.medium} {
     font-size: 6vw;
     margin-top: 6vh;
+  }
+  ${breakpoints.small} {
+    font-size: 6vw;
+    margin-top: 2vh;
   }
 `;
 

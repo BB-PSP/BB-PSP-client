@@ -26,6 +26,10 @@ const BackImage = styled.img`
     width: 60vw;
     height: auto;
   }
+  ${breakpoints.small} {
+    width: 80vw;
+    height: auto;
+  }
 `;
 
 export default function BlackFullLayout({

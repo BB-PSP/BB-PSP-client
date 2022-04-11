@@ -8,12 +8,16 @@ const Wrapper = styled.div`
   display: flex;
   flex: 1;
   flex-direction: row;
-  /* justify-content: space-between; */
   ${breakpoints.large} {
     height: 6.57vh;
     margin-top: 6.48vh;
   }
   ${breakpoints.medium} {
+    height: 20vh;
+    padding-top: 4vh;
+  }
+  ${breakpoints.small} {
+    justify-content: space-between;
     height: 20vh;
     padding-top: 4vh;
   }
@@ -33,6 +37,11 @@ const NextButtonText = styled.h3`
     font-size: 2vw;
     line-height: 3vh;
   }
+  ${breakpoints.small} {
+    width: 4vw;
+    font-size: 2vw;
+    line-height: 3vh;
+  }
 `;
 
 const ArrowImg = styled.img`
@@ -45,6 +54,11 @@ const ArrowImg = styled.img`
     margin-top: -0.6rem;
     width: 10vw;
     height: 3.5vh;
+  }
+  ${breakpoints.small} {
+    margin-top: -0.6rem;
+    width: 10vw;
+    height: auto;
   }
 `;
 
@@ -68,6 +82,10 @@ const PrevButtonText = styled.h3`
     font-size: 2vw;
     line-height: 3vh;
   }
+  ${breakpoints.small} {
+    font-size: 2vw;
+    line-height: 3vh;
+  }
 `;
 
 const TestImage = styled.img`
@@ -82,6 +100,12 @@ const TestImage = styled.img`
     margin-top: 1.85vh;
     width: 10vw;
     height: 3.5vh;
+  }
+  ${breakpoints.small} {
+    margin-left: 0.52vw;
+    /* margin-top: 1.85vh; */
+    width: 10vw;
+    height: auto;
   }
 `;
 
@@ -103,6 +127,12 @@ const ReplacementPlayerButton = styled.div`
     width: 25vw;
     height: 5.19vh;
   }
+  ${breakpoints.small} {
+    margin-top: 1.39vh;
+    width: 25vw;
+    height: 5.19vh;
+    margin-left: 2vw;
+  }
 `;
 
 const ButtonText = styled.h3`
@@ -114,6 +144,10 @@ const ButtonText = styled.h3`
     line-height: 2.69vh;
   }
   ${breakpoints.medium} {
+    font-size: 2vw;
+    line-height: 3vh;
+  }
+  ${breakpoints.small} {
     font-size: 2vw;
     line-height: 3vh;
   }

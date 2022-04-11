@@ -14,6 +14,10 @@ const NameBox = styled.div`
     width: 40vw;
     padding-left: 6vw;
   }
+  ${breakpoints.small} {
+    width: 32vw;
+    padding-left: 5vw;
+  }
 `;
 
 const Name = styled.h2`
@@ -27,6 +31,10 @@ const Name = styled.h2`
     font-size: 4vw;
     line-height: 5vh;
   }
+  ${breakpoints.small} {
+    font-size: 3vw;
+    line-height: 3vh;
+  }
 `;
 
 const Number = styled.h2`
@@ -39,6 +47,10 @@ const Number = styled.h2`
   ${breakpoints.medium} {
     font-size: 4vw;
     line-height: 5vh;
+  }
+  ${breakpoints.small} {
+    font-size: 3vw;
+    line-height: 3vh;
   }
 `;
 
@@ -58,6 +70,10 @@ const LogoBox = styled.div`
     width: 8vw;
     height: 100%;
   }
+  ${breakpoints.small} {
+    width: 10vw;
+    height: 100%;
+  }
 `;
 
 const Logo = styled.div`
@@ -74,6 +90,11 @@ const Logo = styled.div`
     width: 100%;
     height: 10vh;
   }
+  ${breakpoints.small} {
+    background-size: auto 3vh;
+    width: 100%;
+    height: 10vh;
+  }
 `;
 
 const TopLine = styled.div`
@@ -87,6 +108,10 @@ const TopLine = styled.div`
     height: 2.69vh;
     margin-bottom: 0.93vh;
   }
+  ${breakpoints.small} {
+    height: 2.69vh;
+    margin-top: 1vh;
+  }
 `;
 
 const BottomLine = styled.div`
@@ -99,6 +124,10 @@ const BottomLine = styled.div`
   ${breakpoints.medium} {
     height: 2.69vh;
     margin-bottom: 0.93vh;
+  }
+  ${breakpoints.small} {
+    height: 2.69vh;
+    margin-bottom: 1vh;
   }
 `;
 
@@ -115,6 +144,10 @@ const ProfileContainer = styled.div`
     padding-top: 4.54vh;
     padding-left: 2.71vw;
   }
+  ${breakpoints.small} {
+    width: 45vw;
+    padding-top: 1.5vh;
+  }
 `;
 
 const ProfileBox = styled.div`
@@ -126,6 +159,8 @@ const ProfileBox = styled.div`
   ${breakpoints.medium} {
     padding-bottom: 1.57vh;
   }
+  ${breakpoints.small} {
+  }
 `;
 
 const ContentsBox = styled.div`
@@ -135,6 +170,9 @@ const ContentsBox = styled.div`
     padding-right: 2.5vw;
   }
   ${breakpoints.medium} {
+    padding-right: 2.5vw;
+  }
+  ${breakpoints.small} {
     padding-right: 2.5vw;
   }
 `;
@@ -150,6 +188,10 @@ const ContentsTitle = styled.h3`
     font-size: 1.15vw;
     line-height: 2.69vh;
   }
+  ${breakpoints.small} {
+    font-size: 2vw;
+    line-height: 2vh;
+  }
 `;
 
 const Contents = styled.h3`
@@ -163,8 +205,11 @@ const Contents = styled.h3`
     font-size: 1.15vw;
     line-height: 2.69vh;
   }
+  ${breakpoints.small} {
+    font-size: 2vw;
+    line-height: 2vh;
+  }
 `;
-
 function Profile() {
   return (
     <>
