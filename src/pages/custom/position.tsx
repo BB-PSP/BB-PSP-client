@@ -14,14 +14,39 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 10vh;
 `;
 
 const GridContainer = styled.div`
   display: grid;
   ${breakpoints.large} {
-    padding-top: 19.63vh;
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 5vh;
+    /* height: 46.67vh; */
+    column-gap: 2.08vw;
+    row-gap: 6.67vh;
+  }
+  ${breakpoints.medium} {
+    padding-top: 20vh;
     grid-template-columns: repeat(3, 1fr);
-    height: 46.67vh;
+    height: 50vh;
+    column-gap: 2.6vw;
+    row-gap: 5vh;
+  }
+  ${breakpoints.small} {
+    padding-top: 20vh;
+    grid-template-columns: repeat(2, 1fr);
+    height: 50vh;
+    column-gap: 2.6vw;
+    row-gap: 1vh;
+  }
+`;
+
+const GridContainer2 = styled.div`
+  display: grid;
+  ${breakpoints.large} {
+    grid-template-columns: repeat(3, 1fr);
+    padding-top: 5vh;
     column-gap: 2.08vw;
     row-gap: 6.67vh;
   }
@@ -46,6 +71,7 @@ const PositionCard = styled(motion.div)<{ clicked: boolean }>`
   cursor: grab;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   ${breakpoints.large} {
     width: 20.83vw;
@@ -110,12 +136,84 @@ function Position({
     setSelectedPosition([]);
     imagePreload(colorImages);
   }, []);
-
+  const arr1 = positions.slice(0, 2);
+  const arr2 = positions.slice(2, 5);
+  const arr3 = positions.slice(5, 7);
   return (
     <>
       <Wrapper>
         <GridContainer>
-          {positions?.map((position: IPosition) => {
+          {arr1?.map((position: IPosition) => {
+            const isClicked = selectedPosition.includes(position.name);
+            return (
+              <PositionCard
+                whileHover={{ scale: 1.05 }}
+                onClick={() => {
+                  if (selectedPosition.includes(position.name)) {
+                    setSelectedPosition(
+                      selectedPosition.filter((v) => v !== position.name),
+                    );
+                  } else {
+                    setSelectedPosition((prev) => [...prev, position.name]);
+                  }
+                }}
+                clicked={isClicked}
+                key={position.name}
+                {...position}
+              >
+                {isClicked ? (
+                  <PositionLogo
+                    alt={`${position?.name} Logo`}
+                    src={position?.colourLogo}
+                  />
+                ) : (
+                  <PositionLogo
+                    alt={`${position?.name} Logo`}
+                    src={position?.blackLogo}
+                  />
+                )}
+                <PositionName>{position?.name}</PositionName>
+              </PositionCard>
+            );
+          })}
+        </GridContainer>
+        <GridContainer2>
+          {arr2?.map((position: IPosition) => {
+            const isClicked = selectedPosition.includes(position.name);
+            return (
+              <PositionCard
+                whileHover={{ scale: 1.05 }}
+                onClick={() => {
+                  if (selectedPosition.includes(position.name)) {
+                    setSelectedPosition(
+                      selectedPosition.filter((v) => v !== position.name),
+                    );
+                  } else {
+                    setSelectedPosition((prev) => [...prev, position.name]);
+                  }
+                }}
+                clicked={isClicked}
+                key={position.name}
+                {...position}
+              >
+                {isClicked ? (
+                  <PositionLogo
+                    alt={`${position?.name} Logo`}
+                    src={position?.colourLogo}
+                  />
+                ) : (
+                  <PositionLogo
+                    alt={`${position?.name} Logo`}
+                    src={position?.blackLogo}
+                  />
+                )}
+                <PositionName>{position?.name}</PositionName>
+              </PositionCard>
+            );
+          })}
+        </GridContainer2>
+        <GridContainer>
+          {arr3?.map((position: IPosition) => {
             const isClicked = selectedPosition.includes(position.name);
             return (
               <PositionCard
