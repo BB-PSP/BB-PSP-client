@@ -10,6 +10,7 @@ const Wrapper = styled.div`
   flex-direction: row;
   ${breakpoints.large} {
     height: 6.57vh;
+    bottom: 0;
     margin-top: 6.48vh;
   }
   ${breakpoints.medium} {
