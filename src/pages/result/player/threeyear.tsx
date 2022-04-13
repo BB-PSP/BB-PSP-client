@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import BlackFullLayout from '../../../../components/layout/black/BlackFullLayout';
-import PrevButton from '../../../../components/button/PrevButton';
-import StatTable from '../../../../components/PlayerInfo/StatTable';
-import { breakpoints } from '../../../../styles/media';
+import BlackFullLayout from '../../../components/layout/black/BlackFullLayout';
+import PrevButton from '../../../components/button/PrevButton';
+import StatTable from '../../../components/PlayerInfo/StatTable';
+import { breakpoints } from '../../../styles/media';
 
 const Wrapper = styled.div`
   display: flex;

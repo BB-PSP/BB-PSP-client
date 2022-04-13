@@ -62,23 +62,7 @@ function Team() {
     <Wrapper>
       <Container>
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((i) => {
-          return (
-            <PlayerCard
-              key={i}
-              age={0}
-              backNumber={0}
-              batInfo={''}
-              pitchInfo={''}
-              birth={''}
-              height={''}
-              weight={''}
-              highSchool={''}
-              position={''}
-              salary={''}
-              name={''}
-              team={''}
-            />
-          );
+          return <PlayerCard key={i} name={'홍창기'} />;
         })}
       </Container>
     </Wrapper>

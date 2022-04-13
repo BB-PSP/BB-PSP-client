@@ -75,18 +75,24 @@ const Birthday = styled.h3`
 const RightBox = styled.div`
   width: 6.82vw;
   height: 100%;
-  background-image: url('/image/teamLogo/kiwoom.png');
+  background-image: url('/image/teamLogo/lg.png');
   background-size: auto 4.81vh;
   background-repeat: no-repeat;
   background-position: center;
 `;
 
-export default function PlayerFrontCard() {
+interface IPlayerFrontCard {
+  name: string;
+  position: string;
+  birth: string;
+}
+
+export default function PlayerFrontCard({ name }: IPlayerFrontCard) {
   return (
     <Wrapper>
       <ContentsBox>
         <LeftBox>
-          <Name>이정후</Name>
+          <Name>{name}</Name>
           <LittleBox>
             <Position>CF</Position>
             <Birthday>98.08.20</Birthday>
