@@ -5,7 +5,6 @@ import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { RecoilRoot } from 'recoil';
 import type { AppProps } from 'next/app';
-import Head from 'next/head';
 
 if (process.env.NODE_ENV === 'development') {
   initMockAPI();
@@ -22,12 +21,6 @@ function App({ Component, pageProps }: ComponentWithPageLayout) {
   return (
     <QueryClientProvider client={queryClient}>
       <RecoilRoot>
-        <Head>
-          <meta charSet="utf-8" />
-          <meta name="viewport" content="width=device-width" />
-          <meta name="description" content="BB-PSP" />
-          <title>BB-PSP</title>
-        </Head>
         <Hydrate state={pageProps.dehydratedState}>
           <GlobalStyle />
           {Component.PageLayout ? (
