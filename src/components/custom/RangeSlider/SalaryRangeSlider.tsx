@@ -34,6 +34,9 @@ const Label = styled.label`
     padding-top: 5.8rem;
     width: 6.7rem;
   }
+  > label {
+    font-size: 0.3vw;
+  }
 `;
 
 const Rail = styled.div`
@@ -106,7 +109,7 @@ export default function SalaryRangeSlider({
               isBold={isBold}
               isHighlighted={value[0] <= number && number <= value[1]}
             />
-            {isBold && <Mark>${number}</Mark>}
+            {isBold && <Mark>₩{number}</Mark>}
           </LineWrapper>
         );
       });
@@ -118,20 +121,26 @@ export default function SalaryRangeSlider({
 
   return (
     <Wrapper className={className}>
-      <Label>{label}</Label>
+      <Label>
+        {label}
+        <label>
+          <br />
+          (천만원)
+        </label>
+      </Label>
       <Rail ref={railRef}>
         <GraduationWrapper>{renderGraduation()}</GraduationWrapper>
         <RangeSliderThumb
           ref={minThumbRef}
           left={value2Percent(value[0] - min)}
-          value={'$' + value[0]}
+          value={'₩' + value[0]}
           onMouseDown={onThumbMouseDown('min')}
           onTouchStart={onThumbTouchStart('min')}
         />
         <RangeSliderThumb
           ref={maxThumbRef}
           left={value2Percent(value[1] - min)}
-          value={'$' + value[1]}
+          value={'₩' + value[1]}
           onMouseDown={onThumbMouseDown('max')}
           onTouchStart={onThumbTouchStart('max')}
         />
