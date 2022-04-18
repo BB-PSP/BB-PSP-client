@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { breakpoints } from '../../styles/media';
-import AgeRangeSlider from '../../components/custom/RangeSlider/AgeRangeSlider';
-import _SalaryRangeSlider from '../../components/custom/RangeSlider/SalaryRangeSlider';
-import CommonLayout from '../../components/layout/common/CommonLayout';
-import PageButton from '../../components/button/PageButton';
+import { breakpoints } from '@styles/media';
+import AgeRangeSlider from '@custom/RangeSlider/AgeRangeSlider';
+import _SalaryRangeSlider from '@custom/RangeSlider/SalaryRangeSlider';
+import CommonLayout from '@layout/common/CommonLayout';
+import PageButton from '@button/PageButton';
 
 const Wrapper = styled.div`
   display: flex;

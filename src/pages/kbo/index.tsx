@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import TeamSlider from '../../components/kbo/TeamSlider';
+import TeamSlider from '@kbo/TeamSlider';
 import { GetStaticProps } from 'next';
 import { dehydrate, QueryClient } from 'react-query';
-import { fetchTeams, useTeams } from '../../hooks/api/useTeams';
-import CommonLayout from '../../components/layout/common/CommonLayout';
-import { breakpoints } from '../../styles/media';
+import { fetchTeams, useTeams } from '@hooks/api/useTeams';
+import CommonLayout from '@layout/common/CommonLayout';
+import { breakpoints } from '@styles/media';
 
 const Wrapper = styled.main`
   display: flex;

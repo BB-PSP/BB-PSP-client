@@ -2,11 +2,11 @@ import { motion } from 'framer-motion';
 import React, { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
-import CommonLayout from '../../components/layout/common/CommonLayout';
-import PageButton from '../../components/button/PageButton';
-import { selectedPositionState } from '../../store/Data/atom';
-import { IPosition } from '../../store/Types';
-import { breakpoints } from '../../styles/media';
+import CommonLayout from '@layout/common/CommonLayout';
+import PageButton from '@button/PageButton';
+import { selectedPositionState } from '@store/Data/atom';
+import { IPosition } from '@store/Types';
+import { breakpoints } from '@styles/media';
 import position from '../../data/position.json';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 

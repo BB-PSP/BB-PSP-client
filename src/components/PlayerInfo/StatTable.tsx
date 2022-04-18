@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { breakpoints } from '../../styles/media';
+import { breakpoints } from '@styles/media';
 
 const Wrapper = styled.div`
   padding-right: 3.33vw;

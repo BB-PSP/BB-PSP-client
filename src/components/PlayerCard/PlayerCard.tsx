@@ -1,8 +1,8 @@
 import PlayerBackCard from './PlayerBackCard';
 import PlayerFrontCard from './PlayerFrontCard';
 import styled from 'styled-components';
-import { breakpoints } from '../../styles/media';
-import { Large, Medium, Small } from '../../styles/MediaQuery';
+import { breakpoints } from '@styles/media';
+import { Large, Medium, Small } from '@styles/MediaQuery';
 import Link from 'next/link';
 
 const Card = styled.div`

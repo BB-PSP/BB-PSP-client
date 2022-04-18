@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { breakpoints } from '../../../styles/media';
-import BlackHeader from './BlackHeader';
+import { breakpoints } from '@styles/media';
+import BlackHeader from '@layout/black/BlackHeader';
 
 const Container = styled.div`
   background-color: #3d3d3d;

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import styled from 'styled-components';
-import { IButton } from '../../store/Types';
-import { breakpoints } from '../../styles/media';
+import { IButton } from '@store/Types';
+import { breakpoints } from '@styles/media';
 
 const ButtonContainer = styled.div`
   display: flex;

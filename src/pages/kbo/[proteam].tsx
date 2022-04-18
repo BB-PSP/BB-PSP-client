@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import CommonLayout from '../../components/layout/common/CommonLayout';
-import { breakpoints } from '../../styles/media';
-import PlayerCard from '../../components/PlayerCard/PlayerCard';
+import CommonLayout from '@layout/common/CommonLayout';
+import { breakpoints } from '@styles/media';
+import PlayerCard from '@PlayerCard/PlayerCard';
 import { useRouter } from 'next/router';
 
 const Wrapper = styled.div`

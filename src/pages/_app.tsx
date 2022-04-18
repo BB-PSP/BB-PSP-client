@@ -1,6 +1,6 @@
 import React from 'react';
 import initMockAPI from '../mocks';
-import GlobalStyle from '../styles/GlobalStyle';
+import GlobalStyle from '@styles/GlobalStyle';
 import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { RecoilRoot } from 'recoil';

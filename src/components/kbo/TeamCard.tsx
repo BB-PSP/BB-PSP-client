@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { breakpoints } from '../../styles/media';
+import { breakpoints } from '@styles/media';
 import Link from 'next/link';
 
 const Background = styled.div`
