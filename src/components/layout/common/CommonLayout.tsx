@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { breakpoints } from '@styles/media';
-import CommonHeader from './CommonHeader';
+import CommonHeader from '@layout/common/CommonHeader';
 
 const Container = styled.div`
   position: relative;

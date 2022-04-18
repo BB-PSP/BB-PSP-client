@@ -1,5 +1,5 @@
-import PlayerBackCard from './PlayerBackCard';
-import PlayerFrontCard from './PlayerFrontCard';
+import PlayerBackCard from '@PlayerCard/PlayerBackCard';
+import PlayerFrontCard from '@PlayerCard/PlayerFrontCard';
 import styled from 'styled-components';
 import { breakpoints } from '@styles/media';
 import { Large, Medium, Small } from '@styles/MediaQuery';

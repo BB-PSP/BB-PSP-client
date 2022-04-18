@@ -26,7 +26,8 @@
       "@PlayerCard/*": ["components/PlayerCard/*"],
       "@PlayerInfo/*": ["components/PlayerInfo/*"],
       "@custom/*": ["components/custom/*"],
-      "@modal/*": ["components/modal/*"]
+      "@modal/*": ["components/modal/*"],
+      "@data/*": ["data/*"]
     }
   },
   "include": [

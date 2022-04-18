@@ -7,7 +7,7 @@ import PageButton from '@button/PageButton';
 import { selectedTeamState } from '@store/Data/atom';
 import { ITeam } from '@store/Types';
 import { breakpoints } from '@styles/media';
-import team from '../../data/team.json';
+import team from '@data/team.json';
 import { GetStaticProps, InferGetStaticPropsType } from 'next/types';
 
 const Wrapper = styled.div`

@@ -7,7 +7,7 @@ import PageButton from '@button/PageButton';
 import { selectedPositionState } from '@store/Data/atom';
 import { IPosition } from '@store/Types';
 import { breakpoints } from '@styles/media';
-import position from '../../data/position.json';
+import position from '@data/position.json';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 
 const Wrapper = styled.div`
