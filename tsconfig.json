@@ -14,7 +14,20 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@layout/*": ["components/layout/*"],
+      "@button/*": ["components/button/*"],
+      "@hooks/*": ["hooks/*"],
+      "@styles/*": ["styles/*"],
+      "@kbo/*": ["components/kbo/*"],
+      "@store/*": ["store/*"],
+      "@PlayerCard/*": ["components/PlayerCard/*"],
+      "@PlayerInfo/*": ["components/PlayerInfo/*"],
+      "@custom/*": ["components/custom/*"],
+      "@modal/*": ["components/modal/*"]
+    }
   },
   "include": [
     "next-env.d.ts",
