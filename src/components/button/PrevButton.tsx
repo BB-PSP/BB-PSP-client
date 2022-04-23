@@ -3,47 +3,55 @@ import styled from 'styled-components';
 import { breakpoints } from '@styles/media';
 
 const ArrowImg = styled.img`
-  margin-top: -0.6rem;
   ${breakpoints.large} {
-    width: 10.35rem;
+    margin-top: -0.6rem;
+    width: 5.4vw;
+    height: auto;
   }
   ${breakpoints.medium} {
-    width: 10.35rem;
+    margin-top: -0.6rem;
+    width: 9vw;
+    height: auto;
   }
   ${breakpoints.small} {
-    width: 5.35rem;
+    margin-top: -0.8vh;
+    width: 13vw;
+    height: auto;
   }
 `;
 
-const PrevButtonText = styled.h3`
+const Button = styled.button`
   cursor: grab;
   font-family: 'RobotoMonoRegular';
   color: #fff;
   text-align: right;
   ${breakpoints.large} {
-    font-size: 2.2rem;
-    line-height: 2.9rem;
+    font-size: 1.15vw;
+    line-height: 2.69vh;
   }
   ${breakpoints.medium} {
-    font-size: 2.2rem;
-    line-height: 2.9rem;
+    font-size: 2vw;
+    line-height: 3vh;
   }
   ${breakpoints.small} {
-    font-size: 1.4rem;
-    line-height: 2rem;
+    font-size: 3.3vw;
+    line-height: 3vh;
   }
 `;
 
 const PrevButton = () => {
   return (
-    <div>
+    <nav>
       <Link href="/">
-        <PrevButtonText>
+        <Button>
           prev
-          <ArrowImg src="/image/white_arrow_reverse.png" alt="화살표" />
-        </PrevButtonText>
+          <ArrowImg
+            src="/image/white_arrow_reverse.png"
+            alt="이전 페이지 버튼"
+          />
+        </Button>
       </Link>
-    </div>
+    </nav>
   );
 };
 
