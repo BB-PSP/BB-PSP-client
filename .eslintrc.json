@@ -16,7 +16,9 @@
     "prettier", // 8.0.0 버젼이상은 모두 prettier로 통합됨.
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:import/typescript",
+    "plugin:import/recommended"
   ],
   //plugin과 extends로 적용된 규칙에 덮어씌워져서 강제 설정할 수 있는 부분
   "rules": {
@@ -29,6 +31,24 @@
     "import/extensions": ["off"],
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", ["parent", "sibling"], "index"],
+        "pathGroups": [
+          {
+            "pattern": "angular",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "newlines-between": "always"
+      }
+    ],
     "@typescript-eslint/no-var-requires": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off", //values returned from a module are of the expected type.
     "no-nested-ternary": "off",
