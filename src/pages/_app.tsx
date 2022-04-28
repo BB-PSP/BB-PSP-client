@@ -6,7 +6,7 @@ import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { RecoilRoot } from 'recoil';
 
-import initMockAPI from '../mocks';
+// import initMockAPI from '../mocks';
 
 // if (process.env.NODE_ENV === 'development') {
 //   initMockAPI();

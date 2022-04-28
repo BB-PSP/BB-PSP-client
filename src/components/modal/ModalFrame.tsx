@@ -1,4 +1,4 @@
-import PlayerCard from '@PlayerCard/PlayerCard';
+// import PlayerCard from '@PlayerCard/PlayerCard';
 import { breakpoints } from '@styles/media';
 import styled from 'styled-components';
 

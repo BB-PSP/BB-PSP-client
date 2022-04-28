@@ -1,5 +1,5 @@
 import CommonLayout from '@layout/common/CommonLayout';
-import PlayerCard from '@PlayerCard/PlayerCard';
+// import PlayerCard from '@PlayerCard/PlayerCard';
 import { breakpoints } from '@styles/media';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
