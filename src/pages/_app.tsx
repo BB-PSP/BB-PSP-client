@@ -1,15 +1,16 @@
-import React from 'react';
-import initMockAPI from '../mocks';
 import GlobalStyle from '@styles/GlobalStyle';
+import type { AppProps } from 'next/app';
+import Head from 'next/head';
+import React from 'react';
 import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { RecoilRoot } from 'recoil';
-import type { AppProps } from 'next/app';
-import Head from 'next/head';
 
-if (process.env.NODE_ENV === 'development') {
-  initMockAPI();
-}
+import initMockAPI from '../mocks';
+
+// if (process.env.NODE_ENV === 'development') {
+//   initMockAPI();
+// }
 
 type ComponentWithPageLayout = AppProps & {
   Component: AppProps['Component'] & {
