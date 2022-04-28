@@ -1,8 +1,8 @@
-import styled from 'styled-components';
 import CommonLayout from '@layout/common/CommonLayout';
-import { breakpoints } from '@styles/media';
 import PlayerCard from '@PlayerCard/PlayerCard';
+import { breakpoints } from '@styles/media';
 import { useRouter } from 'next/router';
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   display: flex;
@@ -61,9 +61,9 @@ function Team() {
   return (
     <Wrapper>
       <Container>
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((i) => {
+        {/* {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((i) => {
           return <PlayerCard key={i} name={'홍창기'} />;
-        })}
+        })} */}
       </Container>
     </Wrapper>
   );
