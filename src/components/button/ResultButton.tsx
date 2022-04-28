@@ -1,8 +1,8 @@
+import ModalFrame from '@modal/ModalFrame';
+import { breakpoints } from '@styles/media';
 import Link from 'next/link';
 import { useState } from 'react';
 import styled from 'styled-components';
-import { breakpoints } from '@styles/media';
-import ModalFrame from '@modal/ModalFrame';
 
 const Wrapper = styled.div`
   display: flex;

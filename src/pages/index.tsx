@@ -1,9 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
+import IndexHeader from '@layout/main/IndexHeader';
+import IndexLayout from '@layout/main/IndexLayout';
+import { breakpoints } from '@styles/media';
 import Link from 'next/link';
 import styled from 'styled-components';
-import { breakpoints } from '@styles/media';
-import IndexLayout from '@layout/main/IndexLayout';
-import IndexHeader from '@layout/main/IndexHeader';
 
 const Wrapper = styled.main`
   display: flex;

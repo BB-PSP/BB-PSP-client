@@ -1,6 +1,6 @@
+import { breakpoints } from '@styles/media';
 import Link from 'next/link';
 import styled from 'styled-components';
-import { breakpoints } from '@styles/media';
 
 const ArrowImg = styled.img`
   ${breakpoints.large} {

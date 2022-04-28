@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { breakpoints } from '@styles/media';
+import PageButton from '@button/PageButton';
 import AgeRangeSlider from '@custom/RangeSlider/AgeRangeSlider';
 import _SalaryRangeSlider from '@custom/RangeSlider/SalaryRangeSlider';
 import CommonLayout from '@layout/common/CommonLayout';
-import PageButton from '@button/PageButton';
+import { breakpoints } from '@styles/media';
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   display: flex;

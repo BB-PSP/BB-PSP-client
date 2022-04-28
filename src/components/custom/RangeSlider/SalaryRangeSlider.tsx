@@ -1,8 +1,7 @@
-import styled from 'styled-components';
-import { breakpoints } from '@styles/media';
-
 import RangeSliderThumb from '@custom/RangeSlider/RangeSliderThumb';
 import { useRangeSlider } from '@custom/RangeSlider/useRangeSlider';
+import { breakpoints } from '@styles/media';
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   display: flex;

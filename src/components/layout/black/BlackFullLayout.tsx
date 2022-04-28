@@ -1,7 +1,7 @@
+import BlackHeader from '@layout/black/BlackHeader';
+import { breakpoints } from '@styles/media';
 import React from 'react';
 import styled from 'styled-components';
-import { breakpoints } from '@styles/media';
-import BlackHeader from '@layout/black/BlackHeader';
 
 const Container = styled.div`
   position: relative;

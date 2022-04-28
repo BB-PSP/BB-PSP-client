@@ -1,9 +1,9 @@
-import styled from 'styled-components';
-import BlackLayout from '@layout/black/BlackLayout';
 import ResultButton from '@button/ResultButton';
+import BlackLayout from '@layout/black/BlackLayout';
 import Profile from '@PlayerInfo/Profile';
 import StatTable from '@PlayerInfo/StatTable';
 import { breakpoints } from '@styles/media';
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   display: flex;

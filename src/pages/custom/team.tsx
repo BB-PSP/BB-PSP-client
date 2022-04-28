@@ -1,14 +1,14 @@
-import { motion } from 'framer-motion';
-import { useEffect } from 'react';
-import { useRecoilState } from 'recoil';
-import styled from 'styled-components';
-import CommonLayout from '@layout/common/CommonLayout';
 import PageButton from '@button/PageButton';
+import team from '@data/team.json';
+import CommonLayout from '@layout/common/CommonLayout';
 import { selectedTeamState } from '@store/Data/atom';
 import { ITeam } from '@store/Types';
 import { breakpoints } from '@styles/media';
-import team from '@data/team.json';
+import { motion } from 'framer-motion';
 import { GetStaticProps, InferGetStaticPropsType } from 'next/types';
+import { useEffect } from 'react';
+import { useRecoilState } from 'recoil';
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   display: flex;

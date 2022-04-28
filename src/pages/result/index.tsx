@@ -1,8 +1,8 @@
-import styled from 'styled-components';
-import PlayerCard from '@PlayerCard/PlayerCard';
 import CommonLayout from '@layout/common/CommonLayout';
+import PlayerCard from '@PlayerCard/PlayerCard';
 import { IPlayer } from '@store/Types';
 import { breakpoints } from '@styles/media';
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   display: flex;

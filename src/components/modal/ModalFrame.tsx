@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { breakpoints } from '@styles/media';
 import PlayerCard from '@PlayerCard/PlayerCard';
+import { breakpoints } from '@styles/media';
+import styled from 'styled-components';
 
 const Container = styled.div`
   position: absolute;
