@@ -18,6 +18,7 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
     "plugin:import/typescript",
+    // "plugin:@next/next/recommended",
     "plugin:import/recommended"
   ],
   //plugin과 extends로 적용된 규칙에 덮어씌워져서 강제 설정할 수 있는 부분
