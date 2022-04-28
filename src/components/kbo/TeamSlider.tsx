@@ -1,7 +1,7 @@
+import TeamCard from '@kbo/TeamCard';
+import { breakpoints } from '@styles/media';
 import React from 'react';
 import styled from 'styled-components';
-import { breakpoints } from '@styles/media';
-import TeamCard from '@kbo/TeamCard';
 
 const Wrapper = styled.div`
   width: 100%;
