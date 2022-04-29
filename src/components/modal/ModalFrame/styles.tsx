@@ -1,8 +1,7 @@
-// import PlayerCard from '@PlayerCard/PlayerCard';
 import { breakpoints } from '@styles/media';
 import styled from 'styled-components';
 
-const Container = styled.div`
+export const Container = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
@@ -16,7 +15,7 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const CloseButton = styled.img`
+export const CloseButton = styled.img`
   ${breakpoints.large} {
     width: 3.23vw;
     height: auto;
@@ -31,7 +30,7 @@ const CloseButton = styled.img`
   }
 `;
 
-const Background = styled.div`
+export const Background = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,7 +50,7 @@ const Background = styled.div`
   }
 `;
 
-const ModalBlock = styled.div`
+export const ModalBlock = styled.div`
   background-color: white;
   border-radius: 1rem;
   ${breakpoints.large} {
@@ -68,7 +67,7 @@ const ModalBlock = styled.div`
   }
 `;
 
-const Contents = styled.div`
+export const Contents = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -83,7 +82,7 @@ const Contents = styled.div`
   }
 `;
 
-const Title = styled.h2`
+export const Title = styled.h2`
   font-family: 'RobotoMonoRegular';
   color: #272727;
   ${breakpoints.large} {
@@ -103,7 +102,7 @@ const Title = styled.h2`
   }
 `;
 
-const Grid = styled.div`
+export const Grid = styled.div`
   margin: 0 auto;
   display: grid;
   ${breakpoints.large} {
@@ -122,32 +121,3 @@ const Grid = styled.div`
   }
   overflow: scroll;
 `;
-
-interface ModalProps {
-  setShowModal: (showModal: boolean) => void;
-}
-
-function ModalFrame({ setShowModal }: ModalProps) {
-  return (
-    <Container>
-      <Background>
-        <CloseButton
-          src="/image/modal_close.png"
-          onClick={() => setShowModal(false)}
-        />
-        <ModalBlock>
-          <Contents>
-            <Title>replacement player</Title>
-            <Grid>
-              {/* {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((i) => {
-                return <PlayerCard key={i} />;
-              })} */}
-            </Grid>
-          </Contents>
-        </ModalBlock>
-      </Background>
-    </Container>
-  );
-}
-
-export default ModalFrame;

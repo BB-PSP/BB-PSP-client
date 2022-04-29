@@ -1,9 +1,7 @@
-import { IButton } from '@store/Types';
 import { breakpoints } from '@styles/media';
-import Link from 'next/link';
 import styled from 'styled-components';
 
-const ButtonContainer = styled.nav`
+export const ButtonContainer = styled.nav`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -22,7 +20,7 @@ const ButtonContainer = styled.nav`
   }
 `;
 
-const ArrowImg = styled.img`
+export const ArrowImg = styled.img`
   ${breakpoints.large} {
     margin-top: -0.6rem;
     width: 5.4vw;
@@ -40,7 +38,7 @@ const ArrowImg = styled.img`
   }
 `;
 
-const ReversedArrowImg = styled.img`
+export const ReversedArrowImg = styled.img`
   transform: scaleX(-1);
   ${breakpoints.large} {
     margin-top: -0.6rem;
@@ -59,7 +57,7 @@ const ReversedArrowImg = styled.img`
   }
 `;
 
-const Button = styled.button`
+export const Button = styled.button`
   cursor: grab;
   font-family: 'RobotoMonoRegular';
   color: #b70000;
@@ -76,24 +74,3 @@ const Button = styled.button`
     line-height: 3vh;
   }
 `;
-
-function PageButton({ prev, next }: IButton) {
-  return (
-    <ButtonContainer>
-      <Link href={prev}>
-        <Button style={{ textAlign: 'right' }}>
-          prev
-          <ReversedArrowImg src="/image/arrow.png" alt="이전 페이지 버튼" />
-        </Button>
-      </Link>
-      <Link href={next}>
-        <Button style={{ textAlign: 'left' }}>
-          next
-          <ArrowImg src="/image/arrow.png" alt="다음 페이지 버튼" />
-        </Button>
-      </Link>
-    </ButtonContainer>
-  );
-}
-
-export default PageButton;

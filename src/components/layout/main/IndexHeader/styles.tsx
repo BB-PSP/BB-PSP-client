@@ -1,9 +1,7 @@
 import { breakpoints } from '@styles/media';
-import Link from 'next/link';
-import React from 'react';
 import styled from 'styled-components';
 
-const Wrapper = styled.nav`
+export const Wrapper = styled.nav`
   display: flex;
   justify-content: center;
   width: 100%;
@@ -18,7 +16,7 @@ const Wrapper = styled.nav`
   }
 `;
 
-const Title = styled.h1`
+export const Title = styled.h1`
   cursor: grab;
   font-family: 'PlayfairDisplayBold';
   color: #b70000;
@@ -32,13 +30,3 @@ const Title = styled.h1`
     font-size: 10vw;
   }
 `;
-
-export default function IndexHeader() {
-  return (
-    <Wrapper>
-      <Link href="/">
-        <Title>bb:</Title>
-      </Link>
-    </Wrapper>
-  );
-}

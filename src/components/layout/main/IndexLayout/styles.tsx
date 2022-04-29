@@ -1,10 +1,7 @@
-import BlackHeader from '@layout/black/BlackHeader';
 import { breakpoints } from '@styles/media';
-import React from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div`
-  background-color: #3d3d3d;
+export const Container = styled.div`
   position: relative;
   width: 100%;
   height: 100vh;
@@ -19,23 +16,9 @@ const Container = styled.div`
     background-size: 60vh auto;
   }
   ${breakpoints.small} {
-    height: 100vh;
     background-size: 40vh auto;
   }
   @supports (-webkit-touch-callout: none) {
     height: -webkit-fill-available;
   }
 `;
-
-export default function BlackLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <Container>
-      <BlackHeader />
-      {children}
-    </Container>
-  );
-}

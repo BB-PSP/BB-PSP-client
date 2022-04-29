@@ -1,9 +1,7 @@
 import { breakpoints } from '@styles/media';
-import Link from 'next/link';
-import React from 'react';
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,7 +17,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Title = styled.h1`
+export const Title = styled.h1`
   cursor: grab;
   font-family: 'PlayfairDisplayBold';
   color: #fff;
@@ -34,7 +32,7 @@ const Title = styled.h1`
   }
 `;
 
-const SubTitle = styled.h2`
+export const SubTitle = styled.h2`
   font-family: 'RobotoMonoRegular';
   color: #fff;
   ${breakpoints.large} {
@@ -53,14 +51,3 @@ const SubTitle = styled.h2`
     padding-top: 1vh;
   }
 `;
-
-export default function BlackHeader() {
-  return (
-    <Wrapper>
-      <Link href="/">
-        <Title>bb:</Title>
-      </Link>
-      <SubTitle>BB:PSP(Baseball: Player Stats Prediction)</SubTitle>
-    </Wrapper>
-  );
-}

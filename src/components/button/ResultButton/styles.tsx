@@ -1,10 +1,7 @@
-import ModalFrame from '@modal/ModalFrame';
 import { breakpoints } from '@styles/media';
-import Link from 'next/link';
-import { useState } from 'react';
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   flex: 1;
   flex-direction: row;
@@ -26,7 +23,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Button = styled.button`
+export const Button = styled.button`
   cursor: grab;
   font-family: 'RobotoMonoRegular';
   color: #fff;
@@ -46,7 +43,7 @@ const Button = styled.button`
   }
 `;
 
-const ArrowImg = styled.img`
+export const ArrowImg = styled.img`
   ${breakpoints.large} {
     margin-top: -0.6rem;
     width: 5.4vw;
@@ -64,13 +61,13 @@ const ArrowImg = styled.img`
   }
 `;
 
-const ViewAllBox = styled.div`
+export const ViewAllBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 `;
 
-const TestImage = styled.img`
+export const TestImage = styled.img`
   ${breakpoints.large} {
     margin-left: 0.52vw;
     margin-top: 1.85vh;
@@ -90,7 +87,7 @@ const TestImage = styled.img`
   }
 `;
 
-const ReplacementPlayerButton = styled.button`
+export const ReplacementPlayerButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -124,40 +121,3 @@ const ReplacementPlayerButton = styled.button`
     margin-left: 2vw;
   }
 `;
-
-const ResultButton = () => {
-  const [showModal, setShowModal] = useState(false);
-  const openModal = () => {
-    setShowModal(true);
-  };
-  return (
-    <Wrapper>
-      <Link href="/">
-        <Button style={{ textAlign: 'right' }}>
-          prev
-          <ArrowImg
-            src="/image/white_arrow_reverse.png"
-            alt="이전 페이지 버튼"
-          />
-        </Button>
-      </Link>
-      <ReplacementPlayerButton onClick={openModal}>
-        replacement player
-      </ReplacementPlayerButton>
-      {showModal ? <ModalFrame setShowModal={setShowModal} /> : null}
-      <Link href="/custom/result/player/threeyear">
-        <Button style={{ textAlign: 'left', width: '2.76vw' }}>
-          <ViewAllBox>
-            view all
-            <TestImage
-              src="/image/white_arrow.png"
-              alt="3년치 성적 예측 페이지 버튼"
-            />
-          </ViewAllBox>
-        </Button>
-      </Link>
-    </Wrapper>
-  );
-};
-
-export default ResultButton;

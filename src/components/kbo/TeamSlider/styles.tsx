@@ -1,13 +1,11 @@
-import TeamCard from '@kbo/TeamCard';
 import { breakpoints } from '@styles/media';
-import React from 'react';
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   width: 100%;
 `;
 
-const TeamSliderContainer = styled.div`
+export const TeamSliderContainer = styled.div`
   position: relative;
   align-items: center;
   overflow-y: hidden;
@@ -42,7 +40,7 @@ const TeamSliderContainer = styled.div`
   }
 `;
 
-const Row = styled.div`
+export const Row = styled.div`
   display: flex;
   flex-direction: row;
   width: 200%;
@@ -54,30 +52,3 @@ const Row = styled.div`
     width: 1000%;
   }
 `;
-
-export interface TeamSliderProps {
-  name: string;
-  colourLogo: string;
-  blackLogo: string;
-  teamColour: string;
-  foundedAt: number;
-  champCount: number;
-  lastSeason: number;
-}
-
-const TeamSlider = (teams: TeamSliderProps) => {
-  const teamArr = Object.values(teams);
-  return (
-    <Wrapper>
-      <TeamSliderContainer>
-        <Row>
-          {teamArr.map((team) => {
-            return <TeamCard key={team.name} {...team} />;
-          })}
-        </Row>
-      </TeamSliderContainer>
-    </Wrapper>
-  );
-};
-
-export default TeamSlider;

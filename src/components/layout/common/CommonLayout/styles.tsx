@@ -1,9 +1,7 @@
-import CommonHeader from '@layout/common/CommonHeader';
 import { breakpoints } from '@styles/media';
-import React from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div`
+export const Container = styled.div`
   position: relative;
   width: 100%;
   height: 100vh;
@@ -24,16 +22,3 @@ const Container = styled.div`
     height: -webkit-fill-available;
   }
 `;
-
-export default function CommonLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <Container>
-      <CommonHeader />
-      {children}
-    </Container>
-  );
-}

@@ -1,8 +1,7 @@
 import { breakpoints } from '@styles/media';
-import Link from 'next/link';
 import styled from 'styled-components';
 
-const ArrowImg = styled.img`
+export const ArrowImg = styled.img`
   ${breakpoints.large} {
     margin-top: -0.6rem;
     width: 5.4vw;
@@ -20,7 +19,7 @@ const ArrowImg = styled.img`
   }
 `;
 
-const Button = styled.button`
+export const Button = styled.button`
   cursor: grab;
   font-family: 'RobotoMonoRegular';
   color: #fff;
@@ -38,21 +37,3 @@ const Button = styled.button`
     line-height: 3vh;
   }
 `;
-
-const PrevButton = () => {
-  return (
-    <nav>
-      <Link href="/">
-        <Button>
-          prev
-          <ArrowImg
-            src="/image/white_arrow_reverse.png"
-            alt="이전 페이지 버튼"
-          />
-        </Button>
-      </Link>
-    </nav>
-  );
-};
-
-export default PrevButton;

@@ -1,9 +1,7 @@
-import BlackHeader from '@layout/black/BlackHeader';
 import { breakpoints } from '@styles/media';
-import React from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div`
+export const Container = styled.div`
   position: relative;
   background-color: #3d3d3d;
   z-index: 1;
@@ -11,7 +9,7 @@ const Container = styled.div`
   height: 100%;
 `;
 
-const BackImage = styled.img`
+export const BackImage = styled.img`
   position: absolute;
   background-attachment: local;
   padding-top: 25.19vh;
@@ -31,17 +29,3 @@ const BackImage = styled.img`
     height: auto;
   }
 `;
-
-export default function BlackFullLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <Container>
-      <BlackHeader />
-      <BackImage src="/image/baseball/whole_baseball.png" alt="home" />
-      {children}
-    </Container>
-  );
-}

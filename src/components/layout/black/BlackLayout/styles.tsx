@@ -1,8 +1,8 @@
 import { breakpoints } from '@styles/media';
-import React from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div`
+export const Container = styled.div`
+  background-color: #3d3d3d;
   position: relative;
   width: 100%;
   height: 100vh;
@@ -17,17 +17,10 @@ const Container = styled.div`
     background-size: 60vh auto;
   }
   ${breakpoints.small} {
+    height: 100vh;
     background-size: 40vh auto;
   }
   @supports (-webkit-touch-callout: none) {
     height: -webkit-fill-available;
   }
 `;
-
-export default function IndexLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return <Container>{children}</Container>;
-}
