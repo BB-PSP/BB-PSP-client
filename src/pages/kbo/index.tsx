@@ -1,8 +1,10 @@
 import { fetchTeams, useTeams } from '@hooks/api/useTeams';
 import TeamSlider from '@kbo/TeamSlider';
 import CommonLayout from '@layout/common/CommonLayout';
+import { ITeam } from '@store/Types';
 import { breakpoints } from '@styles/media';
 import { GetStaticProps } from 'next';
+import { useEffect } from 'react';
 import { dehydrate, QueryClient } from 'react-query';
 import styled from 'styled-components';
 
@@ -28,9 +30,19 @@ const Slider = styled.div`
   }
 `;
 
+function imagePreload(urls: string[]) {
+  urls.map((url) => {
+    new Image().src = url;
+  });
+}
+
 const Kbo = () => {
   const { data } = useTeams(2021);
   const teams = data?.teamDTOList;
+  const color = teams.map((team: ITeam) => team.colourLogo);
+  useEffect(() => {
+    imagePreload(color);
+  }, []);
   return (
     <Wrapper>
       <Slider>
