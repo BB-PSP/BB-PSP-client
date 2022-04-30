@@ -43,15 +43,15 @@ export const Background = styled.div`
     height: 52.96vh;
     bottom: 3.8vh;
   }
-  /* ${breakpoints.medium} {
-    width: 37.5vw;
+  ${breakpoints.medium} {
+    width: 48.7%;
     height: 40vh;
     bottom: 3.8vh;
   }
   ${breakpoints.small} {
     width: 69vw;
     height: 100%;
-  } */
+  }
 `;
 
 export const ContentsBox = styled.div`
@@ -59,7 +59,6 @@ export const ContentsBox = styled.div`
   position: relative;
   z-index: 99;
   height: 31.3vh;
-  background-color: rgba(39, 39, 39, 0.87);
   ${breakpoints.large} {
     width: 100%;
     height: 31.3vh;
@@ -67,16 +66,15 @@ export const ContentsBox = styled.div`
     padding-left: 1.3vw;
     background-color: rgba(39, 39, 39, 0.87);
   }
-  /* ${breakpoints.medium} {
-    height: 40vh;
-    padding-top: 2vh;
-    padding-left: 4vw;
+  ${breakpoints.medium} {
+    height: 100%;
+    padding: 1vh 0 10vh 4vw;
   }
   ${breakpoints.small} {
     height: 50vh;
     padding-top: 1.8rem;
     padding-left: 2.4rem;
-  } */
+  }
 `;
 
 export const LogoBox = styled.div<ITeamCardProps>`
@@ -119,10 +117,10 @@ export const Wrapper = styled.div<ITeamCardProps>`
   overflow-y: hidden;
   display: flex;
   flex-direction: column;
-  width: 13vw;
   height: 100%;
   margin-top: 22vh;
   margin-right: 1.1vw;
+  width: 13vw;
   ${breakpoints.large} {
     &:hover {
       height: 66.85vh;
@@ -144,29 +142,10 @@ export const Wrapper = styled.div<ITeamCardProps>`
       ${(props) => `background: linear-gradient(${props.team.linearGradient});`}
     }
   }
-  /* ${breakpoints.large} {
-    &:hover {
-      height: 66.85vh;
-      margin-top: 0;
-      ${(props) => `background: linear-gradient(${props.team.linearGradient});`}
-      ${ContentsBox} {
-        background-color: transparent;
-      }
-      ${Background} {
-        display: block;
-      }
-      ${LogoBox} {
-        background-image: url(${(props) => props.team.colourLogo});
-        background-position: center;
-        height: 27.41vh;
-      }
-    }
-  } */
-  /* ${breakpoints.medium} {
+  ${breakpoints.medium} {
     ${(props) => `background: linear-gradient(${props.team.linearGradient});`}
-    width: 37.5vw;
+    width: 100%;
     height: 100%;
-    margin-right: 1.04vw;
   }
   ${breakpoints.small} {
     ${(props) => `background: linear-gradient(${props.team.linearGradient});`}
@@ -174,7 +153,7 @@ export const Wrapper = styled.div<ITeamCardProps>`
     height: 100%;
     margin-right: 1.04vw;
     margin-top: 5vh;
-  } */
+  }
 `;
 
 export const TeamName = styled.h2`

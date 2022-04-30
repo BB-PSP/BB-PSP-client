@@ -31,7 +31,7 @@ export const TeamSliderContainer = styled.div`
     }
   }
   ${breakpoints.medium} {
-    height: 60vh;
+    height: 100%;
     width: 100%;
   }
   ${breakpoints.small} {
@@ -47,6 +47,7 @@ export const Row = styled.div`
   height: 100%;
   ${breakpoints.medium} {
     width: 500%;
+    height: 100%;
   }
   ${breakpoints.small} {
     width: 1000%;

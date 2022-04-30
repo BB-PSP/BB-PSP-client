@@ -22,8 +22,7 @@ const Slider = styled.div`
     width: 69.27vw;
   }
   ${breakpoints.medium} {
-    margin-top: 10vh;
-    width: 77vw;
+    width: 80vw;
   }
   ${breakpoints.small} {
     width: 70vw;
