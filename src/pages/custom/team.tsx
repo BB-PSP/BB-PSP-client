@@ -40,7 +40,7 @@ const GridContainer = styled.div`
   }
 `;
 
-const TeamLogoBox = styled(motion.div)<{ clicked: boolean }>`
+const TeamLogoBox = styled(motion.div)`
   cursor: grab;
   display: flex;
   align-items: center;
@@ -119,7 +119,6 @@ function Team({
                   setSelectedTeam((prev) => [...prev, team.name]);
                 }
               }}
-              clicked={isClicked}
             >
               {isClicked ? (
                 <TeamLogo alt={`${team?.name} Logo`} src={team?.colourLogo} />
