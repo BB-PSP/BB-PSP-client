@@ -29,8 +29,6 @@ export interface ITeamCardProps {
 export const Background = styled.div`
   z-index: -99;
   position: absolute;
-  height: 52.96vh;
-  width: 100%;
   background: linear-gradient(
     180deg,
     rgba(39, 39, 39, 0) 0%,
@@ -39,8 +37,8 @@ export const Background = styled.div`
   );
   ${breakpoints.large} {
     display: none;
-    width: 12.8vw;
-    height: 52.96vh;
+    width: 12.85vw;
+    height: 100%;
     bottom: 3.8vh;
   }
   ${breakpoints.medium} {
@@ -58,12 +56,9 @@ export const ContentsBox = styled.div`
   width: 100%;
   position: relative;
   z-index: 99;
-  height: 31.3vh;
   ${breakpoints.large} {
     width: 100%;
-    height: 31.3vh;
-    padding-top: 4.5vh;
-    padding-left: 1.3vw;
+    padding: 4.5vh 0 8vh 1.3vw;
     background-color: rgba(39, 39, 39, 0.87);
   }
   ${breakpoints.medium} {
@@ -103,7 +98,7 @@ export const LogoBoxBackground = styled.div`
   background-color: #505050;
   position: relative;
   top: 1.5vh;
-  height: 12.1vh;
+  height: 12vh;
   z-index: -1;
   ${breakpoints.medium} {
     display: none;
@@ -119,11 +114,12 @@ export const Wrapper = styled.div<ITeamCardProps>`
   flex-direction: column;
   height: 100%;
   margin-top: 22vh;
-  margin-right: 1.1vw;
-  width: 13vw;
+  margin-right: 1vw;
+  /* width: 13vw; */
+  width: 100%;
   ${breakpoints.large} {
     &:hover {
-      height: 66.85vh;
+      height: 100%;
       margin-top: 0;
       ${Background} {
         display: block;
@@ -162,7 +158,7 @@ export const TeamName = styled.h2`
   padding-top: 0.8rem;
   ${breakpoints.large} {
     font-size: 1.25vw;
-    line-height: 2.93vh;
+    line-height: 2.9vh;
   }
   ${breakpoints.medium} {
     font-size: 3vw;
@@ -176,7 +172,7 @@ export const TeamName = styled.h2`
 
 export const Box = styled.div`
   ${breakpoints.large} {
-    padding-top: 1.04vh;
+    padding-top: 1.5vh;
   }
   ${breakpoints.medium} {
     padding-top: 1vh;

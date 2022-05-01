@@ -14,7 +14,7 @@ export const TeamSliderContainer = styled.div`
     height: 71.39vh;
     width: 100%;
     white-space: nowrap;
-    padding-bottom: 5rem;
+    /* padding-bottom: 5rem; */
     &::-webkit-scrollbar {
       background: transparent;
       height: 0.5rem;
@@ -35,6 +35,7 @@ export const TeamSliderContainer = styled.div`
     width: 100%;
   }
   ${breakpoints.small} {
+    margin-top: 5vh;
     height: 60vh;
     width: 100%;
   }
