@@ -18,6 +18,7 @@ function ModalFrame({ setShowModal }: ModalProps) {
       <Background>
         <CloseButton
           src="/image/modal_close.png"
+          alt="모달창 닫기 버튼"
           onClick={() => setShowModal(false)}
         />
         <ModalBlock>
