@@ -166,7 +166,7 @@ function Home() {
             <Link href="/kbo">
               <ProButton>
                 Professional team
-                <ArrowImg src="image/arrow.png" />
+                <ArrowImg src="image/arrow.png" alt="프로팀 분석 버튼" />
               </ProButton>
             </Link>
           </ProButtonBox>
@@ -174,7 +174,7 @@ function Home() {
             <Link href="/custom/team">
               <CustomButton>
                 Choose it yourself
-                <ArrowImg src="image/arrow.png" />
+                <ArrowImg src="image/arrow.png" alt="커스텀 분석 버튼" />
               </CustomButton>
             </Link>
           </CustomButtonBox>
