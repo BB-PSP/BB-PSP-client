@@ -18,6 +18,7 @@ type ComponentWithPageLayout = AppProps & {
   };
 };
 
+// 메타 태그 수정할 것
 function App({ Component, pageProps }: ComponentWithPageLayout) {
   const [queryClient] = React.useState(() => new QueryClient());
   return (
