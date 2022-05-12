@@ -1,5 +1,5 @@
+import styled from '@emotion/styled';
 import { breakpoints } from '@styles/media';
-import styled from 'styled-components';
 
 export const Container = styled.div`
   position: relative;
