@@ -10,12 +10,9 @@
   "dependencies": {
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
-    "@mui/material": "^5.4.4",
-    "@mui/styled-engine-sc": "^5.4.2",
     "axios": "^0.26.0",
     "framer-motion": "^6.2.3",
     "next": "12.0.8",
-    "next-images": "^1.8.4",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-query": "^3.34.12",
