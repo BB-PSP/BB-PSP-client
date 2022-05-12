@@ -18,7 +18,6 @@
     "react-query": "^3.34.12",
     "react-responsive": "^9.0.0-beta.6",
     "recoil": "^0.7.2",
-    "styled-components": "^5.3.3",
     "styled-reset": "^4.3.4"
   },
   "devDependencies": {
@@ -28,7 +27,6 @@
     "@types/react": "17.0.38",
     "@types/react-query": "^1.2.9",
     "@types/react-responsive": "^8.0.5",
-    "@types/styled-components": "^5.1.21",
     "@typescript-eslint/eslint-plugin": "^5.12.0",
     "@typescript-eslint/parser": "^5.12.0",
     "babel-loader": "^8.2.3",
