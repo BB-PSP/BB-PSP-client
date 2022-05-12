@@ -36,7 +36,9 @@ function imagePreload(urls: string[]) {
 }
 
 const Kbo = () => {
-  const { data } = useTeams(2021);
+  const { isLoading, error, data } = useTeams(2021);
+  if (isLoading) return <div>Loading...</div>;
+  if (error) console.error(error);
   const teams = data?.teamDTOList;
   const color = teams.map((team: ITeam) => team.colourLogo);
   useEffect(() => {
