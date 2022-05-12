@@ -1,5 +1,6 @@
 import PageButton from '@button/PageButton';
 import team from '@data/team.json';
+import styled from '@emotion/styled';
 import CommonLayout from '@layout/common/CommonLayout';
 import { selectedTeamState } from '@store/Data/atom';
 import { ITeam } from '@store/Types';
@@ -8,7 +9,6 @@ import { motion } from 'framer-motion';
 import { GetStaticProps, InferGetStaticPropsType } from 'next/types';
 import { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
-import styled from 'styled-components';
 
 const Wrapper = styled.div`
   display: flex;

@@ -1,6 +1,6 @@
+import styled from '@emotion/styled';
 import { breakpoints } from '@styles/media';
 import React from 'react';
-import styled from 'styled-components';
 
 const Wrapper = styled.div`
   position: absolute;

@@ -1,9 +1,9 @@
+import styled from '@emotion/styled';
 import PlayerBackCard from '@PlayerCard/PlayerBackCard';
 import PlayerFrontCard from '@PlayerCard/PlayerFrontCard';
 import { breakpoints } from '@styles/media';
 import { Large, Medium, Small } from '@styles/MediaQuery';
 import Link from 'next/link';
-import styled from 'styled-components';
 
 const Card = styled.div`
   position: relative;

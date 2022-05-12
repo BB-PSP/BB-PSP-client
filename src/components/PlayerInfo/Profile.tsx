@@ -1,6 +1,6 @@
+import styled from '@emotion/styled';
 import { breakpoints } from '@styles/media';
 import { Large, Medium, Small } from '@styles/MediaQuery';
-import styled from 'styled-components';
 
 const NameBox = styled.div`
   display: flex;

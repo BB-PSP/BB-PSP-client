@@ -1,5 +1,5 @@
+import styled from '@emotion/styled';
 import { ForwardedRef, forwardRef, MouseEvent, TouchEvent } from 'react';
-import styled from 'styled-components';
 
 const Wrapper = styled.div<{ left: string }>`
   position: absolute;

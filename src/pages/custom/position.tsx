@@ -1,5 +1,6 @@
 import PageButton from '@button/PageButton';
 import position from '@data/position.json';
+import styled from '@emotion/styled';
 import CommonLayout from '@layout/common/CommonLayout';
 import { selectedPositionState } from '@store/Data/atom';
 import { IPosition } from '@store/Types';
@@ -8,7 +9,6 @@ import PositionCard from 'components/PositionCard';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import React, { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
-import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
