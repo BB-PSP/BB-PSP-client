@@ -1,8 +1,11 @@
 import styled from '@emotion/styled';
+import { useBatters } from '@hooks/api/useBatters';
+import { fetchPlayers } from '@hooks/api/usePlayers';
 import CommonLayout from '@layout/common/CommonLayout';
-// import PlayerCard from '@PlayerCard/PlayerCard';
 import { breakpoints } from '@styles/media';
+import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
+import { dehydrate, QueryClient } from 'react-query';
 
 const Wrapper = styled.div`
   display: flex;
@@ -52,10 +55,11 @@ const Container = styled.div`
   }
 `;
 
-function Team() {
+const Team = () => {
+  const { data } = useBatters(2021, 'Eagles');
   const router = useRouter();
   const team = router.query.proteam;
-  console.log(team);
+  console.log(data);
   // 쿼리로 선택한 팀을 받아온다.
   // 그 팀의 선수들을 전부 불러오는 api를 호출한다.
   return (
@@ -67,7 +71,28 @@ function Team() {
       </Container>
     </Wrapper>
   );
-}
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchQuery('playerData', () =>
+    fetchPlayers(2021, 'Twins'),
+  );
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  };
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [],
+    fallback: true,
+  };
+};
 
 Team.PageLayout = CommonLayout;
 
