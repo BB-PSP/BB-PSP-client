@@ -29,10 +29,10 @@ const TeamCard = (team: TeamCardProps) => {
   return (
     <Link
       href={{
-        pathname: `/kbo/${encodeURIComponent(team.name)}`,
+        pathname: `/kbo/${encodeURIComponent(team.name)}/position`,
         query: { name: JSON.stringify(team.name) },
       }}
-      as={`/kbo/${encodeURIComponent(team.name)}`}
+      as={`/kbo/${encodeURIComponent(team.name)}/position`}
     >
       <Wrapper team={team}>
         <Background />
