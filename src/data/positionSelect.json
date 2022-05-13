@@ -1,0 +1,16 @@
+{
+  "positionSelectList": [
+    {
+      "id": 1,
+      "name": "pitcher",
+      "colourLogo": "/image/positionLogo/pitcher_r.png",
+      "blackLogo": "/image/positionLogo_b/pitcher_line_b.png"
+    },
+    {
+      "id": 2,
+      "name": "batter",
+      "colourLogo": "/image/positionLogo/pitcher_r.png",
+      "blackLogo": "/image/positionLogo_b/pitcher_line_b.png"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "batterPositionList": [
+    {
+      "id": 1,
+      "name": "catcher",
+      "colourLogo": "/image/positionLogo/catcher_r.png",
+      "blackLogo": "/image/positionLogo_b/catcher_line_b.png"
+    },
+    {
+      "id": 2,
+      "name": "first baseman",
+      "colourLogo": "/image/positionLogo/firstbaseman_r.png",
+      "blackLogo": "/image/positionLogo_b/firstbaseman_line_b.png"
+    },
+    {
+      "id": 3,
+      "name": "second baseman",
+      "colourLogo": "/image/positionLogo/secondbaseman_r.png",
+      "blackLogo": "/image/positionLogo_b/secondbaseman_line_b.png"
+    },
+    {
+      "id": 4,
+      "name": "third baseman",
+      "colourLogo": "/image/positionLogo/thirdbaseman_r.png",
+      "blackLogo": "/image/positionLogo_b/thirdbaseman_line_b.png"
+    },
+    {
+      "id": 5,
+      "name": "shortstop",
+      "colourLogo": "/image/positionLogo/shortstop_r.png",
+      "blackLogo": "/image/positionLogo_b/shortstop_line_b.png"
+    },
+    {
+      "id": 6,
+      "name": "outfielder",
+      "colourLogo": "/image/positionLogo/leftfielder_r.png",
+      "blackLogo": "/image/positionLogo_b/leftfielder_line_b.png"
+    }
+  ]
+}
