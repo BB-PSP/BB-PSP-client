@@ -9,7 +9,7 @@ export const Container = styled.div`
   background-repeat: no-repeat;
   background-position: center bottom;
   ${breakpoints.large} {
-    min-height: 80rem;
+    min-height: 70rem;
     background-size: 54.5vw auto;
   }
   ${breakpoints.medium} {
