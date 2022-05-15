@@ -34,7 +34,6 @@ const Position = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const router = useRouter();
   const team = router.query.proteam as string;
-  console.log(team);
   const colorImages = positionSelectList?.map(
     (position: IPosition) => position.colourLogo,
   );
@@ -74,7 +73,9 @@ const Position = ({
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async (context) => {
+  const { params } = context;
+  console.log(params);
   const positionSelectList = positionSelect?.positionSelectList;
   return {
     props: {
