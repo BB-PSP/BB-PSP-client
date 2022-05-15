@@ -72,33 +72,46 @@ const Birthday = styled.h3`
   color: #fff;
 `;
 
-const RightBox = styled.div`
+const RightBox = styled.div<StyledProps>`
   width: 6.82vw;
   height: 100%;
-  background-image: url('/image/teamLogo/lg.png');
+  background-image: url(${(props) => '/image/teamLogo/' + props.team + '.png'});
+  /* background-image: url('/image/teamLogo/${(props) => props.team}.png'); */
+  /* background-image: url('/image/teamLogo/lg.png'); */
   background-size: auto 4.81vh;
   background-repeat: no-repeat;
   background-position: center;
 `;
 
+interface StyledProps {
+  team: string;
+}
+
 interface IPlayerFrontCard {
   name: string;
   position: string;
   birth: string;
+  team: string;
 }
 
-export default function PlayerFrontCard({ name }: IPlayerFrontCard) {
+export default function PlayerFrontCard({
+  name,
+  position,
+  birth,
+  team,
+}: IPlayerFrontCard) {
+  console.log(team);
   return (
     <Wrapper>
       <ContentsBox>
         <LeftBox>
           <Name>{name}</Name>
           <LittleBox>
-            <Position>CF</Position>
-            <Birthday>98.08.20</Birthday>
+            <Position>{position}</Position>
+            <Birthday>{birth}</Birthday>
           </LittleBox>
         </LeftBox>
-        <RightBox></RightBox>
+        <RightBox team={team} />
       </ContentsBox>
     </Wrapper>
   );

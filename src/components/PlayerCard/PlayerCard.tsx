@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import PlayerBackCard from '@PlayerCard/PlayerBackCard';
 import PlayerFrontCard from '@PlayerCard/PlayerFrontCard';
+import { IBatterProps } from '@store/Types';
 import { breakpoints } from '@styles/media';
 import { Large, Medium, Small } from '@styles/MediaQuery';
 import Link from 'next/link';
@@ -23,25 +24,25 @@ const Card = styled.div`
   }
 `;
 
-interface IPlayerCard {
-  name: string;
-  position: string;
-  birth: string;
-  team: string;
-}
-
-export default function PlayerCard(playerCard: IPlayerCard) {
+export default function PlayerCard(player: IBatterProps) {
+  const batter_stat = player?.batter_stat;
+  const player_info = player?.player_info;
   return (
     <Link
       href={{
         pathname: '/result/[player]',
-        query: { player: playerCard.name },
+        query: { player: player.player_info.name },
       }}
     >
       <>
         <Large>
           <Card>
-            <PlayerFrontCard {...playerCard} />
+            <PlayerFrontCard
+              name={player_info.name}
+              position={player_info.position}
+              birth={player_info.birth}
+              team={player_info.team}
+            />
             <PlayerBackCard />
           </Card>
         </Large>
