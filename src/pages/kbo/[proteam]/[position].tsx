@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
-import { useBatters } from '@hooks/api/useBatters';
-import { fetchPlayers } from '@hooks/api/usePlayers';
+import { fetchPlayers, usePlayers } from '@hooks/api/usePlayers';
 import CommonLayout from '@layout/common/CommonLayout';
+import PlayerCard from '@PlayerCard/PlayerCard';
+import { IBatterProps } from '@store/Types';
 import { breakpoints } from '@styles/media';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
@@ -56,29 +57,31 @@ const Container = styled.div`
 `;
 
 const Team = () => {
-  const { data } = useBatters(2021, 'Eagles');
   const router = useRouter();
-  const team = router.query.proteam;
-  // console.log(data);
-  // 쿼리로 선택한 팀을 받아온다.
-  // 그 팀의 선수들을 전부 불러오는 api를 호출한다.
+  const position = router.query?.position as string;
+  const proteam = router.query?.proteam as string;
+  const { isLoading, error, data } = usePlayers(position, 2021, proteam);
+  if (isLoading) return <div>Loading...</div>;
+  if (error) console.error(error);
+  console.log(data);
   return (
     <Wrapper>
       <Container>
-        {/* {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((i) => {
-          return <PlayerCard key={i} name={'홍창기'} />;
-        })} */}
+        {data.map((player: IBatterProps) => {
+          return <PlayerCard key={player?.player_info?.name} {...player} />;
+        })}
       </Container>
     </Wrapper>
   );
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const { params } = context;
+  const proteam = context.params?.proteam as string;
+  const position = context.params?.position as string;
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery('playerData', () =>
-    fetchPlayers(2021, 'Twins'),
+    fetchPlayers(position, 2021, proteam),
   );
 
   return {

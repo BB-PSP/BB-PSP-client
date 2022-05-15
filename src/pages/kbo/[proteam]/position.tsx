@@ -32,6 +32,7 @@ const imagePreload = (urls: string[]) => {
 const Position = ({
   positionSelectList,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  // const [selectedPosition, setSelectedPosition] = useState('');
   const router = useRouter();
   const team = router.query.proteam as string;
   const colorImages = positionSelectList?.map(
@@ -40,30 +41,19 @@ const Position = ({
   const pitcher = positionSelectList[0];
   const batter = positionSelectList[1];
   useEffect(() => {
+    // setSelectedPosition('');
     imagePreload(colorImages);
   }, []);
 
   return (
     <Wrapper>
       <CardWrapper>
-        <Link
-          href={{
-            pathname: `/kbo/${encodeURIComponent(team)}`,
-            query: { name: JSON.stringify(team) },
-          }}
-          as={`/kbo/${encodeURIComponent(team)}`}
-        >
+        <Link href="/kbo/[proteam]/[position]" as={`/kbo/${team}/pitchers`}>
           <button>
             <PositionSelectCard position={pitcher} />
           </button>
         </Link>
-        <Link
-          href={{
-            pathname: `/kbo/${encodeURIComponent(team)}`,
-            query: { name: JSON.stringify(team) },
-          }}
-          as={`/kbo/${encodeURIComponent(team)}`}
-        >
+        <Link href="/kbo/[proteam]/[position]" as={`/kbo/${team}/batters`}>
           <button>
             <PositionSelectCard position={batter} />
           </button>
@@ -73,9 +63,8 @@ const Position = ({
   );
 };
 
-export const getStaticProps: GetStaticProps = async (context) => {
-  const { params } = context;
-  console.log(params);
+export const getStaticProps: GetStaticProps = () => {
+  // const proteam = context.params?.proteam;
   const positionSelectList = positionSelect?.positionSelectList;
   return {
     props: {
