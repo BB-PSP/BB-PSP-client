@@ -63,7 +63,6 @@ const Team = () => {
   const { isLoading, error, data } = usePlayers(position, 2021, proteam);
   if (isLoading) return <div>Loading...</div>;
   if (error) console.error(error);
-  console.log(data);
   return (
     <Wrapper>
       <Container>

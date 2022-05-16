@@ -32,7 +32,6 @@ const imagePreload = (urls: string[]) => {
 const Position = ({
   positionSelectList,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  // const [selectedPosition, setSelectedPosition] = useState('');
   const router = useRouter();
   const team = router.query.proteam as string;
   const colorImages = positionSelectList?.map(
@@ -41,7 +40,6 @@ const Position = ({
   const pitcher = positionSelectList[0];
   const batter = positionSelectList[1];
   useEffect(() => {
-    // setSelectedPosition('');
     imagePreload(colorImages);
   }, []);
 
@@ -64,7 +62,6 @@ const Position = ({
 };
 
 export const getStaticProps: GetStaticProps = () => {
-  // const proteam = context.params?.proteam;
   const positionSelectList = positionSelect?.positionSelectList;
   return {
     props: {

@@ -43,17 +43,44 @@ export default function PlayerCard(player: IBatterProps) {
               birth={player_info.birth}
               team={player_info.team}
             />
-            <PlayerBackCard />
+            <PlayerBackCard
+              name={player_info.name}
+              position={player_info.position}
+              birth={player_info.birth}
+              team={player_info.team}
+              hit={batter_stat._H}
+              hr={batter_stat._HR}
+              rbi={batter_stat._RBI}
+              avg={batter_stat._AVG}
+            />
           </Card>
         </Large>
         <Medium>
           <Card>
-            <PlayerBackCard />
+            <PlayerBackCard
+              name={player_info.name}
+              position={player_info.position}
+              birth={player_info.birth}
+              team={player_info.team}
+              hit={batter_stat._H}
+              hr={batter_stat._HR}
+              rbi={batter_stat._RBI}
+              avg={batter_stat._AVG}
+            />
           </Card>
         </Medium>
         <Small>
           <Card>
-            <PlayerBackCard />
+            <PlayerBackCard
+              name={player_info.name}
+              position={player_info.position}
+              birth={player_info.birth}
+              team={player_info.team}
+              hit={batter_stat._H}
+              hr={batter_stat._HR}
+              rbi={batter_stat._RBI}
+              avg={batter_stat._AVG}
+            />
           </Card>
         </Small>
       </>

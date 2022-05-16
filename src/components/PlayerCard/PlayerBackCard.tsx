@@ -2,11 +2,32 @@ import styled from '@emotion/styled';
 import { breakpoints } from '@styles/media';
 import React from 'react';
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<StyledProps>`
   display: flex;
   flex-direction: column;
   position: absolute;
-  background-color: #97334a;
+  background-color: ${(props) =>
+    props.team === 'Twins'
+      ? '#BE0737'
+      : props.team === 'Wiz'
+      ? '#000000'
+      : props.team === 'Bears'
+      ? '#110F29'
+      : props.team === 'Lions'
+      ? '#005ABC'
+      : props.team === 'Heroes'
+      ? '#97334A'
+      : props.team === 'Lander'
+      ? '#221815'
+      : props.team === 'Dinos'
+      ? '#C8A17A'
+      : props.team === 'Giants'
+      ? '#052956'
+      : props.team === 'Tigers'
+      ? '#D41F1F'
+      : props.team === 'Eagles'
+      ? '#EF701F'
+      : '#fff'};
   box-shadow: 0.2rem 0.4rem 0.8rem rgba(0, 0, 0, 0.25);
   ${breakpoints.large} {
     z-index: 2;
@@ -27,8 +48,8 @@ const Wrapper = styled.div`
   }
 `;
 
-const LogoBox = styled.div`
-  background-image: url('/image/teamLogo/kiwoom.png');
+const LogoBox = styled.div<StyledProps>`
+  background-image: url(${(props) => '/image/teamLogo/' + props.team + '.png'});
   background-repeat: no-repeat;
   background-position: center;
   ${breakpoints.large} {
@@ -70,7 +91,7 @@ const SmallBox = styled.div`
   flex-direction: row;
   justify-content: space-between;
   ${breakpoints.large} {
-    width: 4.69vw;
+    width: 6.5vw;
   }
   ${breakpoints.medium} {
     width: 9vw;
@@ -179,33 +200,57 @@ const Stat = styled.h3`
   }
 `;
 
-export default function PlayerBackCard() {
+interface StyledProps {
+  team: string;
+}
+
+interface IPlayerBackCard {
+  name: string;
+  position: string;
+  birth: string;
+  team: string;
+  hit: number;
+  hr: number;
+  rbi: number;
+  avg: number;
+}
+
+export default function PlayerBackCard({
+  name,
+  position,
+  birth,
+  team,
+  hit,
+  hr,
+  rbi,
+  avg,
+}: IPlayerBackCard) {
   return (
-    <Wrapper>
-      <LogoBox />
+    <Wrapper team={team}>
+      <LogoBox team={team} />
       <ProfileBox>
-        <Name>LEE.JEONG HU</Name>
+        <Name>{name}</Name>
         <SmallBox>
-          <Position>CF</Position>
-          <Birthday>98.08.20</Birthday>
+          <Position>{position}</Position>
+          <Birthday>{birth}</Birthday>
         </SmallBox>
       </ProfileBox>
       <StatContainer>
         <HitBox>
           <StatName>H</StatName>
-          <Stat>180</Stat>
+          <Stat>{hit}</Stat>
         </HitBox>
         <HRBox>
           <StatName>HR</StatName>
-          <Stat>35</Stat>
+          <Stat>{hr}</Stat>
         </HRBox>
         <RBIBox>
           <StatName>RBI</StatName>
-          <Stat>111</Stat>
+          <Stat>{rbi}</Stat>
         </RBIBox>
         <AVGBox>
           <StatName>AVG</StatName>
-          <Stat>0.360</Stat>
+          <Stat>{avg}</Stat>
         </AVGBox>
       </StatContainer>
     </Wrapper>
