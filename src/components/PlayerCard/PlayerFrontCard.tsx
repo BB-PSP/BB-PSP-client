@@ -100,7 +100,6 @@ export default function PlayerFrontCard({
   birth,
   team,
 }: IPlayerFrontCard) {
-  console.log(team);
   return (
     <Wrapper>
       <ContentsBox>
