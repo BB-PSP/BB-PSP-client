@@ -26,16 +26,9 @@ interface TeamCardProps {
 }
 
 const TeamCard = (team: TeamCardProps) => {
+  console.log(team);
   return (
-    <Link
-      href="/kbo/[proteam]/position"
-      as={`/kbo/${team.name}/position`}
-      // href={{
-      //   pathname: `/kbo/${encodeURIComponent(team.name)}/position`,
-      //   query: { name: JSON.stringify(team.name) },
-      // }}
-      // as={`/kbo/${encodeURIComponent(team.name)}/position`}
-    >
+    <Link href="/kbo/[proteam]/position" as={`/kbo/${team.name}/position`}>
       <Wrapper team={team}>
         <Background />
         <LogoBox team={team}>
