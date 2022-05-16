@@ -76,8 +76,6 @@ const RightBox = styled.div<StyledProps>`
   width: 6.82vw;
   height: 100%;
   background-image: url(${(props) => '/image/teamLogo/' + props.team + '.png'});
-  /* background-image: url('/image/teamLogo/${(props) => props.team}.png'); */
-  /* background-image: url('/image/teamLogo/lg.png'); */
   background-size: auto 4.81vh;
   background-repeat: no-repeat;
   background-position: center;
