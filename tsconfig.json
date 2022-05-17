@@ -25,6 +25,7 @@
       "@store/*": ["store/*"],
       "@PlayerCard/*": ["components/PlayerCard/*"],
       "@PlayerInfo/*": ["components/PlayerInfo/*"],
+      // "@Profile/*": ["components/PlayerInfo/Profile/*"],
       "@custom/*": ["components/custom/*"],
       "@modal/*": ["components/modal/*"],
       "@data/*": ["data/*"]

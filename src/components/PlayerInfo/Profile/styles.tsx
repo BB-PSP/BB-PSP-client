@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
 import { breakpoints } from '@styles/media';
-import { Large, Medium, Small } from '@styles/MediaQuery';
 
-const NameBox = styled.div`
+import { StyledProps } from '.';
+
+export const NameBox = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -20,7 +21,7 @@ const NameBox = styled.div`
   }
 `;
 
-const Name = styled.h2`
+export const Name = styled.h2`
   font-family: 'RobotoBoldItalic';
   color: #fff;
   ${breakpoints.large} {
@@ -37,7 +38,7 @@ const Name = styled.h2`
   }
 `;
 
-const Number = styled.h2`
+export const Number = styled.h2`
   font-family: 'RobotoBoldItalic';
   color: #fff;
   ${breakpoints.large} {
@@ -54,7 +55,7 @@ const Number = styled.h2`
   }
 `;
 
-const LogoBox = styled.div`
+export const LogoBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -76,7 +77,7 @@ const LogoBox = styled.div`
   }
 `;
 
-const Logo = styled.div<StyledProps>`
+export const Logo = styled.div<StyledProps>`
   background-image: url(${(props) => '/image/teamLogo/' + props.team + '.png'});
   background-repeat: no-repeat;
   background-position: center;
@@ -97,7 +98,7 @@ const Logo = styled.div<StyledProps>`
   }
 `;
 
-const TopLine = styled.div`
+export const TopLine = styled.div`
   width: 0.1rem;
   background-color: #fff;
   ${breakpoints.large} {
@@ -114,7 +115,7 @@ const TopLine = styled.div`
   }
 `;
 
-const BottomLine = styled.div`
+export const BottomLine = styled.div`
   width: 0.1rem;
   background-color: #fff;
   ${breakpoints.large} {
@@ -131,7 +132,7 @@ const BottomLine = styled.div`
   }
 `;
 
-const ProfileContainer = styled.div`
+export const ProfileContainer = styled.div`
   display: flex;
   flex-direction: column;
   ${breakpoints.large} {
@@ -150,7 +151,7 @@ const ProfileContainer = styled.div`
   }
 `;
 
-const ProfileBox = styled.div`
+export const ProfileBox = styled.div`
   display: flex;
   flex-direction: row;
   ${breakpoints.large} {
@@ -163,7 +164,7 @@ const ProfileBox = styled.div`
   }
 `;
 
-const ContentsBox = styled.div`
+export const ContentsBox = styled.div`
   display: flex;
   flex-direction: row;
   ${breakpoints.large} {
@@ -177,7 +178,7 @@ const ContentsBox = styled.div`
   }
 `;
 
-const ContentsTitle = styled.h3`
+export const ContentsTitle = styled.h3`
   font-family: 'RobotoMonoRegular';
   color: #fff;
   ${breakpoints.large} {
@@ -194,7 +195,7 @@ const ContentsTitle = styled.h3`
   }
 `;
 
-const Contents = styled.h3`
+export const Contents = styled.h3`
   font-family: 'RobotoMonoRegular';
   color: #fff;
   ${breakpoints.large} {
@@ -210,96 +211,3 @@ const Contents = styled.h3`
     line-height: 2vh;
   }
 `;
-
-export interface StyledProps {
-  team: string;
-}
-
-const Profile = (player: any) => {
-  const team = player?.team;
-  return (
-    <>
-      <NameBox>
-        <Name>{player?.name}&nbsp;</Name>
-        <Number># {player?.backNumber}</Number>
-      </NameBox>
-      <LogoBox>
-        <TopLine />
-        <Logo team={team} />
-        <BottomLine />
-      </LogoBox>
-      <ProfileContainer>
-        <Large>
-          <ProfileBox>
-            <ContentsBox>
-              <ContentsTitle>B/T:</ContentsTitle>
-              <Contents>
-                {player?.batInfo.slice(0, 1)}/{player?.pitchInfo.slice(0, 1)}
-              </Contents>
-            </ContentsBox>
-            <ContentsBox>
-              <ContentsTitle>HEIGHT:</ContentsTitle>
-              <Contents>{player?.height}CM</Contents>
-            </ContentsBox>
-            <ContentsBox>
-              <ContentsTitle>WEIGHT:</ContentsTitle>
-              <Contents>{player?.weight}KG</Contents>
-            </ContentsBox>
-          </ProfileBox>
-        </Large>
-        <Medium>
-          <ProfileBox>
-            <ContentsBox>
-              <ContentsTitle>B/T:</ContentsTitle>
-              <Contents>L/R</Contents>
-            </ContentsBox>
-            <ContentsBox>
-              <ContentsTitle>HEIGHT:</ContentsTitle>
-              <Contents>185CM</Contents>
-            </ContentsBox>
-            <ContentsBox>
-              <ContentsTitle>WEIGHT:</ContentsTitle>
-              <Contents>80KG</Contents>
-            </ContentsBox>
-          </ProfileBox>
-        </Medium>
-        <Small>
-          <ProfileBox>
-            <ContentsBox>
-              <ContentsTitle>B/T:</ContentsTitle>
-              <Contents>L/R</Contents>
-            </ContentsBox>
-          </ProfileBox>
-          <ProfileBox>
-            <ContentsBox>
-              <ContentsTitle>HEIGHT:</ContentsTitle>
-              <Contents>185CM</Contents>
-            </ContentsBox>
-            <ContentsBox>
-              <ContentsTitle>WEIGHT:</ContentsTitle>
-              <Contents>80KG</Contents>
-            </ContentsBox>
-          </ProfileBox>
-        </Small>
-        <ProfileBox>
-          <ContentsBox>
-            <ContentsTitle>BIRTH:</ContentsTitle>
-            <Contents>{player.birth}</Contents>
-          </ContentsBox>
-          <ContentsBox>
-            <ContentsTitle>SCHOOL:</ContentsTitle>
-            <Contents>{player.school}</Contents>
-          </ContentsBox>
-        </ProfileBox>
-        <ProfileBox>
-          <ContentsBox>
-            <ContentsTitle>SALARY(2022):</ContentsTitle>
-            <Contents>750MILLION KRW</Contents>
-          </ContentsBox>
-        </ProfileBox>
-      </ProfileContainer>
-    </>
-  );
-};
-
-export default Profile;
