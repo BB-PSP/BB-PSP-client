@@ -4,6 +4,51 @@ export interface IPosition {
   blackLogo: string;
 }
 
+export interface IPitcherProps {
+  pitcher_stat: {
+    _BABIP: number;
+    _BB: number;
+    _BB_9: number;
+    _BK: number;
+    _CG: number;
+    _ER: number;
+    _ERA: number;
+    _FIP: number;
+    _G: number;
+    _GS: number;
+    _H: number;
+    _HBP: number;
+    _HLD: number;
+    _HR: number;
+    _HR_9: number;
+    _H_9: number;
+    _IBB: number;
+    _IP: number;
+    _K_9: number;
+    _K_BB: number;
+    _L: number;
+    _LOB: number;
+    _R: number;
+    _SHO: number;
+    _SO: number;
+    _SV: number;
+    _TBF: number;
+    _W: number;
+    _WHIP: number;
+    _WP: number;
+    _WPCT: number;
+  };
+  player_info: {
+    backNumber: string;
+    birth: string;
+    height: number;
+    weight: number;
+    name: string;
+    position: string;
+    team: string;
+  };
+}
+
 export interface IBatterProps {
   batter_stat: {
     _1B: number;
