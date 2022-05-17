@@ -12,11 +12,14 @@ const PitcherCard = (player: IPitcherProps) => {
   return (
     <Link
       href={{
-        pathname: '/result/[player]',
-        query: { player: player.player_info.name },
+        pathname: '/result/pitcher/[player]/[birth]',
+        query: {
+          player: player.player_info.name,
+          birth: player.player_info.birth,
+        },
       }}
     >
-      <>
+      <button>
         <Large>
           <Card>
             <PitcherFrontCard
@@ -65,7 +68,7 @@ const PitcherCard = (player: IPitcherProps) => {
             />
           </Card>
         </Small>
-      </>
+      </button>
     </Link>
   );
 };

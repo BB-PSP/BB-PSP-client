@@ -1,8 +1,8 @@
 import PrevButton from '@button/PrevButton';
+import styled from '@emotion/styled';
 import BlackFullLayout from '@layout/black/BlackFullLayout';
 import StatTable from '@PlayerInfo/StatTable';
 import { breakpoints } from '@styles/media';
-import styled from 'styled-components';
 
 const Wrapper = styled.div`
   display: flex;

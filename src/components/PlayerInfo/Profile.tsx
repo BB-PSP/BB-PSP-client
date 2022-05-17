@@ -76,8 +76,8 @@ const LogoBox = styled.div`
   }
 `;
 
-const Logo = styled.div`
-  background-image: url('/image/teamLogo/kiwoom.png');
+const Logo = styled.div<StyledProps>`
+  background-image: url(${(props) => '/image/teamLogo/' + props.team + '.png'});
   background-repeat: no-repeat;
   background-position: center;
   ${breakpoints.large} {
@@ -210,16 +210,22 @@ const Contents = styled.h3`
     line-height: 2vh;
   }
 `;
-function Profile() {
+
+export interface StyledProps {
+  team: string;
+}
+
+const Profile = (player: any) => {
+  const team = player?.team;
   return (
     <>
       <NameBox>
-        <Name>페르난데스&nbsp;</Name>
-        <Number>#51</Number>
+        <Name>{player?.name}&nbsp;</Name>
+        <Number># {player?.backNumber}</Number>
       </NameBox>
       <LogoBox>
         <TopLine />
-        <Logo />
+        <Logo team={team} />
         <BottomLine />
       </LogoBox>
       <ProfileContainer>
@@ -227,15 +233,17 @@ function Profile() {
           <ProfileBox>
             <ContentsBox>
               <ContentsTitle>B/T:</ContentsTitle>
-              <Contents>L/R</Contents>
+              <Contents>
+                {player?.batInfo.slice(0, 1)}/{player?.pitchInfo.slice(0, 1)}
+              </Contents>
             </ContentsBox>
             <ContentsBox>
               <ContentsTitle>HEIGHT:</ContentsTitle>
-              <Contents>185CM</Contents>
+              <Contents>{player?.height}CM</Contents>
             </ContentsBox>
             <ContentsBox>
               <ContentsTitle>WEIGHT:</ContentsTitle>
-              <Contents>80KG</Contents>
+              <Contents>{player?.weight}KG</Contents>
             </ContentsBox>
           </ProfileBox>
         </Large>
@@ -276,11 +284,11 @@ function Profile() {
         <ProfileBox>
           <ContentsBox>
             <ContentsTitle>BIRTH:</ContentsTitle>
-            <Contents>1998.08.20</Contents>
+            <Contents>{player.birth}</Contents>
           </ContentsBox>
           <ContentsBox>
             <ContentsTitle>SCHOOL:</ContentsTitle>
-            <Contents>선린인고</Contents>
+            <Contents>{player.school}</Contents>
           </ContentsBox>
         </ProfileBox>
         <ProfileBox>
@@ -292,6 +300,6 @@ function Profile() {
       </ProfileContainer>
     </>
   );
-}
+};
 
 export default Profile;
