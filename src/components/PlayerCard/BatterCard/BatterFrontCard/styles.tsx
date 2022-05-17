@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
 import { breakpoints } from '@styles/media';
-import React from 'react';
 
-const Wrapper = styled.div`
+import { StyledProps } from '.';
+
+export const Wrapper = styled.div`
   position: absolute;
   z-index: 1;
   backface-visibility: hidden;
@@ -17,7 +18,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const ContentsBox = styled.div`
+export const ContentsBox = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -26,7 +27,7 @@ const ContentsBox = styled.div`
   background-color: rgba(39, 39, 39, 0.87);
 `;
 
-const LeftBox = styled.div`
+export const LeftBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,19 +46,19 @@ const LeftBox = styled.div`
   }
 `;
 
-const Name = styled.h3`
+export const Name = styled.h3`
   font-family: 'RobotoMonoBold';
   font-size: 0.73vw;
   line-height: 1.71vh;
   color: #fff;
 `;
 
-const LittleBox = styled.div`
+export const LittleBox = styled.div`
   display: flex;
   flex-direction: row;
 `;
 
-const Position = styled.h3`
+export const Position = styled.h3`
   font-family: 'RobotoMonoBold';
   font-size: 0.73vw;
   line-height: 1.71vh;
@@ -65,14 +66,14 @@ const Position = styled.h3`
   padding-right: 0.83vw;
 `;
 
-const Birthday = styled.h3`
+export const Birthday = styled.h3`
   font-family: 'RobotoMonoBold';
   font-size: 0.73vw;
   line-height: 1.71vh;
   color: #fff;
 `;
 
-const RightBox = styled.div<StyledProps>`
+export const RightBox = styled.div<StyledProps>`
   width: 6.82vw;
   height: 100%;
   background-image: url(${(props) => '/image/teamLogo/' + props.team + '.png'});
@@ -80,36 +81,3 @@ const RightBox = styled.div<StyledProps>`
   background-repeat: no-repeat;
   background-position: center;
 `;
-
-interface StyledProps {
-  team: string;
-}
-
-interface IPlayerFrontCard {
-  name: string;
-  position: string;
-  birth: string;
-  team: string;
-}
-
-export default function PlayerFrontCard({
-  name,
-  position,
-  birth,
-  team,
-}: IPlayerFrontCard) {
-  return (
-    <Wrapper>
-      <ContentsBox>
-        <LeftBox>
-          <Name>{name}</Name>
-          <LittleBox>
-            <Position>{position}</Position>
-            <Birthday>{birth}</Birthday>
-          </LittleBox>
-        </LeftBox>
-        <RightBox team={team} />
-      </ContentsBox>
-    </Wrapper>
-  );
-}

@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
 import { breakpoints } from '@styles/media';
-import React from 'react';
 
-const Wrapper = styled.div<StyledProps>`
+import { StyledProps } from '../BatterFrontCard';
+
+export const Wrapper = styled.div<StyledProps>`
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -48,7 +49,7 @@ const Wrapper = styled.div<StyledProps>`
   }
 `;
 
-const LogoBox = styled.div<StyledProps>`
+export const LogoBox = styled.div<StyledProps>`
   background-image: url(${(props) => '/image/teamLogo/' + props.team + '.png'});
   background-repeat: no-repeat;
   background-position: center;
@@ -64,7 +65,7 @@ const LogoBox = styled.div<StyledProps>`
   }
 `;
 
-const ProfileBox = styled.div`
+export const ProfileBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -73,7 +74,7 @@ const ProfileBox = styled.div`
   border-bottom: 1px solid #fff;
 `;
 
-const Name = styled.h3`
+export const Name = styled.h3`
   font-family: 'RobotoMonoRegular';
   color: #fff;
   ${breakpoints.large} {
@@ -86,7 +87,7 @@ const Name = styled.h3`
   }
 `;
 
-const SmallBox = styled.div`
+export const SmallBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -98,7 +99,7 @@ const SmallBox = styled.div`
   }
 `;
 
-const Position = styled.h3`
+export const Position = styled.h3`
   font-family: 'RobotoMonoRegular';
   color: #fff;
   ${breakpoints.large} {
@@ -111,7 +112,7 @@ const Position = styled.h3`
   }
 `;
 
-const Birthday = styled.h3`
+export const Birthday = styled.h3`
   font-family: 'RobotoMonoRegular';
   color: #fff;
   ${breakpoints.large} {
@@ -124,7 +125,7 @@ const Birthday = styled.h3`
   }
 `;
 
-const StatContainer = styled.div`
+export const StatContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -134,7 +135,7 @@ const StatContainer = styled.div`
   }
 `;
 
-const HitBox = styled.div`
+export const HitBox = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -143,7 +144,7 @@ const HitBox = styled.div`
   }
 `;
 
-const HRBox = styled.div`
+export const HRBox = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -152,7 +153,7 @@ const HRBox = styled.div`
   }
 `;
 
-const RBIBox = styled.div`
+export const RBIBox = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -161,7 +162,7 @@ const RBIBox = styled.div`
   }
 `;
 
-const AVGBox = styled.div`
+export const AVGBox = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -170,7 +171,7 @@ const AVGBox = styled.div`
   }
 `;
 
-const StatName = styled.h3`
+export const StatName = styled.h3`
   font-family: 'RobotoMonoRegular';
   text-align: center;
   color: #fff;
@@ -184,7 +185,7 @@ const StatName = styled.h3`
   }
 `;
 
-const Stat = styled.h3`
+export const Stat = styled.h3`
   font-family: 'RobotoMonoRegular';
   color: #d6d6d6;
   text-align: center;
@@ -199,60 +200,3 @@ const Stat = styled.h3`
     line-height: 2vh;
   }
 `;
-
-interface StyledProps {
-  team: string;
-}
-
-interface IPlayerBackCard {
-  name: string;
-  position: string;
-  birth: string;
-  team: string;
-  hit: number;
-  hr: number;
-  rbi: number;
-  avg: number;
-}
-
-export default function PlayerBackCard({
-  name,
-  position,
-  birth,
-  team,
-  hit,
-  hr,
-  rbi,
-  avg,
-}: IPlayerBackCard) {
-  return (
-    <Wrapper team={team}>
-      <LogoBox team={team} />
-      <ProfileBox>
-        <Name>{name}</Name>
-        <SmallBox>
-          <Position>{position}</Position>
-          <Birthday>{birth}</Birthday>
-        </SmallBox>
-      </ProfileBox>
-      <StatContainer>
-        <HitBox>
-          <StatName>H</StatName>
-          <Stat>{hit}</Stat>
-        </HitBox>
-        <HRBox>
-          <StatName>HR</StatName>
-          <Stat>{hr}</Stat>
-        </HRBox>
-        <RBIBox>
-          <StatName>RBI</StatName>
-          <Stat>{rbi}</Stat>
-        </RBIBox>
-        <AVGBox>
-          <StatName>AVG</StatName>
-          <Stat>{avg}</Stat>
-        </AVGBox>
-      </StatContainer>
-    </Wrapper>
-  );
-}

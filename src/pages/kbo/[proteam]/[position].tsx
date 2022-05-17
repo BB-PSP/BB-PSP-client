@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
 import { fetchPlayers, usePlayers } from '@hooks/api/usePlayers';
 import CommonLayout from '@layout/common/CommonLayout';
-import PlayerCard from '@PlayerCard/PlayerCard';
+import BatterCard from '@PlayerCard/BatterCard';
+import PitcherCard from '@PlayerCard/PitcherCard';
 import { IBatterProps } from '@store/Types';
 import { breakpoints } from '@styles/media';
 import { GetStaticPaths, GetStaticProps } from 'next';
@@ -63,12 +64,19 @@ const Team = () => {
   const { isLoading, error, data } = usePlayers(position, 2021, proteam);
   if (isLoading) return <div>Loading...</div>;
   if (error) console.error(error);
+  console.log(position);
   return (
     <Wrapper>
       <Container>
-        {data.map((player: IBatterProps) => {
-          return <PlayerCard key={player?.player_info?.name} {...player} />;
-        })}
+        {position === 'batters'
+          ? data.map((player: IBatterProps) => {
+              return <BatterCard key={player?.player_info?.name} {...player} />;
+            })
+          : data.map((player: IBatterProps) => {
+              return (
+                <PitcherCard key={player?.player_info?.name} {...player} />
+              );
+            })}
       </Container>
     </Wrapper>
   );

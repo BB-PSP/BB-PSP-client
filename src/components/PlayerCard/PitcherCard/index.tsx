@@ -1,30 +1,12 @@
-import styled from '@emotion/styled';
-import PlayerBackCard from '@PlayerCard/PlayerBackCard';
-import PlayerFrontCard from '@PlayerCard/PlayerFrontCard';
 import { IBatterProps } from '@store/Types';
-import { breakpoints } from '@styles/media';
 import { Large, Medium, Small } from '@styles/MediaQuery';
 import Link from 'next/link';
 
-const Card = styled.div`
-  position: relative;
-  ${breakpoints.large} {
-    width: 15.1vw;
-    height: 15vh;
-    transform-style: preserve-3d;
-    transition: 1s;
-    transform: rotateY(0deg);
-    &:hover {
-      transform: rotateY(180deg);
-    }
-  }
-  ${breakpoints.medium} {
-    width: 100%;
-    height: 20vh;
-  }
-`;
+import PitcherBackCard from './PitcherBackCard';
+import PitcherFrontCard from './PitcherFrontCard';
+import { Card } from './styles';
 
-export default function PlayerCard(player: IBatterProps) {
+const PitcherCard = (player: IBatterProps) => {
   const batter_stat = player?.batter_stat;
   const player_info = player?.player_info;
   return (
@@ -37,13 +19,13 @@ export default function PlayerCard(player: IBatterProps) {
       <>
         <Large>
           <Card>
-            <PlayerFrontCard
+            <PitcherFrontCard
               name={player_info.name}
               position={player_info.position}
               birth={player_info.birth}
               team={player_info.team}
             />
-            <PlayerBackCard
+            <PitcherBackCard
               name={player_info.name}
               position={player_info.position}
               birth={player_info.birth}
@@ -57,7 +39,7 @@ export default function PlayerCard(player: IBatterProps) {
         </Large>
         <Medium>
           <Card>
-            <PlayerBackCard
+            <PitcherBackCard
               name={player_info.name}
               position={player_info.position}
               birth={player_info.birth}
@@ -71,7 +53,7 @@ export default function PlayerCard(player: IBatterProps) {
         </Medium>
         <Small>
           <Card>
-            <PlayerBackCard
+            <PitcherBackCard
               name={player_info.name}
               position={player_info.position}
               birth={player_info.birth}
@@ -86,4 +68,6 @@ export default function PlayerCard(player: IBatterProps) {
       </>
     </Link>
   );
-}
+};
+
+export default PitcherCard;
