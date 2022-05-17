@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 
 const fetchBatter = async (year: number, name: string, birth: string) => {
   const { data } = await axios(
-    `http://18.223.133.67:8081/api/pitchers/stat/${year}?name=${name}&birth=${birth}`,
+    `http://18.223.133.67:8081/api/batters/stat/${year}?name=${name}&birth=${birth}`,
   );
   return data;
 };
