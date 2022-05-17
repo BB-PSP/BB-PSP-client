@@ -3,7 +3,7 @@ import { fetchPlayers, usePlayers } from '@hooks/api/usePlayers';
 import CommonLayout from '@layout/common/CommonLayout';
 import BatterCard from '@PlayerCard/BatterCard';
 import PitcherCard from '@PlayerCard/PitcherCard';
-import { IBatterProps } from '@store/Types';
+import { IBatterProps, IPitcherProps } from '@store/Types';
 import { breakpoints } from '@styles/media';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
@@ -64,7 +64,7 @@ const Team = () => {
   const { isLoading, error, data } = usePlayers(position, 2021, proteam);
   if (isLoading) return <div>Loading...</div>;
   if (error) console.error(error);
-  console.log(position);
+  // console.log(position);
   return (
     <Wrapper>
       <Container>
@@ -72,7 +72,7 @@ const Team = () => {
           ? data.map((player: IBatterProps) => {
               return <BatterCard key={player?.player_info?.name} {...player} />;
             })
-          : data.map((player: IBatterProps) => {
+          : data.map((player: IPitcherProps) => {
               return (
                 <PitcherCard key={player?.player_info?.name} {...player} />
               );

@@ -24,10 +24,10 @@ export interface IPlayerBackCard {
   position: string;
   birth: string;
   team: string;
-  hit: number;
-  hr: number;
-  rbi: number;
-  avg: number;
+  g: number;
+  w: number;
+  l: number;
+  era: number;
 }
 
 const PitcherBackCard = ({
@@ -35,10 +35,10 @@ const PitcherBackCard = ({
   position,
   birth,
   team,
-  hit,
-  hr,
-  rbi,
-  avg,
+  g,
+  w,
+  l,
+  era,
 }: IPlayerBackCard) => {
   return (
     <Wrapper team={team}>
@@ -52,20 +52,20 @@ const PitcherBackCard = ({
       </ProfileBox>
       <StatContainer>
         <HitBox>
-          <StatName>H</StatName>
-          <Stat>{hit}</Stat>
+          <StatName>G</StatName>
+          <Stat>{g}</Stat>
         </HitBox>
         <HRBox>
-          <StatName>HR</StatName>
-          <Stat>{hr}</Stat>
+          <StatName>W</StatName>
+          <Stat>{w}</Stat>
         </HRBox>
         <RBIBox>
-          <StatName>RBI</StatName>
-          <Stat>{rbi}</Stat>
+          <StatName>L</StatName>
+          <Stat>{l}</Stat>
         </RBIBox>
         <AVGBox>
-          <StatName>AVG</StatName>
-          <Stat>{avg}</Stat>
+          <StatName>ERA</StatName>
+          <Stat>{era}</Stat>
         </AVGBox>
       </StatContainer>
     </Wrapper>

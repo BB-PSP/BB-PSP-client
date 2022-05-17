@@ -1,4 +1,4 @@
-import { IBatterProps } from '@store/Types';
+import { IPitcherProps } from '@store/Types';
 import { Large, Medium, Small } from '@styles/MediaQuery';
 import Link from 'next/link';
 
@@ -6,8 +6,8 @@ import PitcherBackCard from './PitcherBackCard';
 import PitcherFrontCard from './PitcherFrontCard';
 import { Card } from './styles';
 
-const PitcherCard = (player: IBatterProps) => {
-  const batter_stat = player?.batter_stat;
+const PitcherCard = (player: IPitcherProps) => {
+  const pitcher_stat = player?.pitcher_stat;
   const player_info = player?.player_info;
   return (
     <Link
@@ -30,10 +30,10 @@ const PitcherCard = (player: IBatterProps) => {
               position={player_info.position}
               birth={player_info.birth}
               team={player_info.team}
-              hit={batter_stat._H}
-              hr={batter_stat._HR}
-              rbi={batter_stat._RBI}
-              avg={batter_stat._AVG}
+              g={pitcher_stat._G}
+              w={pitcher_stat._W}
+              l={pitcher_stat._L}
+              era={pitcher_stat._ERA}
             />
           </Card>
         </Large>
@@ -44,10 +44,10 @@ const PitcherCard = (player: IBatterProps) => {
               position={player_info.position}
               birth={player_info.birth}
               team={player_info.team}
-              hit={batter_stat._H}
-              hr={batter_stat._HR}
-              rbi={batter_stat._RBI}
-              avg={batter_stat._AVG}
+              g={pitcher_stat._G}
+              w={pitcher_stat._W}
+              l={pitcher_stat._L}
+              era={pitcher_stat._ERA}
             />
           </Card>
         </Medium>
@@ -58,10 +58,10 @@ const PitcherCard = (player: IBatterProps) => {
               position={player_info.position}
               birth={player_info.birth}
               team={player_info.team}
-              hit={batter_stat._H}
-              hr={batter_stat._HR}
-              rbi={batter_stat._RBI}
-              avg={batter_stat._AVG}
+              g={pitcher_stat._G}
+              w={pitcher_stat._W}
+              l={pitcher_stat._L}
+              era={pitcher_stat._ERA}
             />
           </Card>
         </Small>
