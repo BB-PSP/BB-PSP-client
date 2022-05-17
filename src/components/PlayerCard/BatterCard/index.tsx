@@ -12,11 +12,14 @@ const BatterCard = (player: IBatterProps) => {
   return (
     <Link
       href={{
-        pathname: '/result/[player]',
-        query: { player: player.player_info.name },
+        pathname: '/result/batter/[player]/[birth]',
+        query: {
+          player: player.player_info.name,
+          birth: player.player_info.birth,
+        },
       }}
     >
-      <>
+      <button>
         <Large>
           <Card>
             <BatterFrontCard
@@ -65,7 +68,7 @@ const BatterCard = (player: IBatterProps) => {
             />
           </Card>
         </Small>
-      </>
+      </button>
     </Link>
   );
 };
