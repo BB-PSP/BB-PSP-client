@@ -18,7 +18,7 @@ export const Wrapper = styled.div<StyledProps>`
       ? '#005ABC'
       : props.team === 'Heroes'
       ? '#97334A'
-      : props.team === 'Lander'
+      : props.team === 'Landers'
       ? '#221815'
       : props.team === 'Dinos'
       ? '#C8A17A'

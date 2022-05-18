@@ -18,7 +18,7 @@ export const Wrapper = styled.div<StyledProps>`
       ? '#005ABC'
       : props.team === 'Heroes'
       ? '#97334A'
-      : props.team === 'Lander'
+      : props.team === 'Landers'
       ? '#221815'
       : props.team === 'Dinos'
       ? '#C8A17A'
@@ -28,7 +28,7 @@ export const Wrapper = styled.div<StyledProps>`
       ? '#D41F1F'
       : props.team === 'Eagles'
       ? '#EF701F'
-      : '#fff'};
+      : '#221815'};
   box-shadow: 0.2rem 0.4rem 0.8rem rgba(0, 0, 0, 0.25);
   ${breakpoints.large} {
     z-index: 2;
