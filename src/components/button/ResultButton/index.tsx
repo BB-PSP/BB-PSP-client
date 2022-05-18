@@ -1,5 +1,6 @@
 import ModalFrame from '@modal/ModalFrame';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 
 import {
@@ -16,17 +17,13 @@ const ResultButton = () => {
   const openModal = () => {
     setShowModal(true);
   };
+  const router = useRouter();
   return (
     <Wrapper>
-      <Link href="/">
-        <Button style={{ textAlign: 'right' }}>
-          prev
-          <ArrowImg
-            src="/image/white_arrow_reverse.png"
-            alt="이전 페이지 버튼"
-          />
-        </Button>
-      </Link>
+      <Button onClick={() => router.back()} style={{ textAlign: 'right' }}>
+        prev
+        <ArrowImg src="/image/white_arrow_reverse.png" alt="이전 페이지 버튼" />
+      </Button>
       <ReplacementPlayerButton onClick={openModal}>
         replacement player
       </ReplacementPlayerButton>
