@@ -74,7 +74,7 @@ const PlayerName = styled.h1`
 const Threeyear = () => {
   return (
     <Wrapper>
-      <PlayerName>Jung-hoo Lee #07</PlayerName>
+      {/* <PlayerName>이정후 #07</PlayerName> */}
       <ContentsContainer>
         <StatContainer>
           <StatTable />
