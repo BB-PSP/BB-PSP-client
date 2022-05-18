@@ -13,8 +13,8 @@ interface Props {
 const PositionSelectCard: FC<Props> = ({ position }) => {
   return (
     <Wrapper whileHover={{ scale: 1.05 }}>
-      <PositionLogo alt={position.name} src={position.blackLogo} />
-      <PositionName>{position.name}</PositionName>
+      <PositionLogo alt={position?.name} src={position?.blackLogo} />
+      <PositionName>{position?.name}</PositionName>
     </Wrapper>
   );
 };

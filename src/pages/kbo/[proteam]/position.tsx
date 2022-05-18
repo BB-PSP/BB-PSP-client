@@ -6,7 +6,7 @@ import PositionSelectCard from 'components/PositionSelectCard';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -37,9 +37,13 @@ const Position = ({
   const colorImages = positionSelectList?.map(
     (position: IPosition) => position.colourLogo,
   );
-  const pitcher = positionSelectList[0];
-  const batter = positionSelectList[1];
+  const [pitcher, setPitcher] = useState();
+  const [batter, setBatter] = useState();
   useEffect(() => {
+    if (positionSelectList.length > 0) {
+      setPitcher(positionSelectList[0]);
+      setBatter(positionSelectList[1]);
+    }
     imagePreload(colorImages);
   }, []);
 
