@@ -74,7 +74,7 @@ const Player = () => {
       </TopContentsContainer>
       <BottomContentsContainer>
         <StatTable {...batter_stat} />
-        <ResultButton />
+        <ResultButton name={name} birth={birth} />
       </BottomContentsContainer>
     </Wrapper>
   );

@@ -12,7 +12,13 @@ import {
   Wrapper,
 } from './styles';
 
-const ResultButton = () => {
+interface IResultButtonProps {
+  name: string;
+  birth: string;
+}
+
+const ResultButton = ({ name, birth }: IResultButtonProps) => {
+  console.log(name, birth);
   const [showModal, setShowModal] = useState(false);
   const openModal = () => {
     setShowModal(true);
@@ -28,7 +34,15 @@ const ResultButton = () => {
         replacement player
       </ReplacementPlayerButton>
       {showModal ? <ModalFrame setShowModal={setShowModal} /> : null}
-      <Link href="/custom/result/player/threeyear">
+      <Link
+        href={{
+          pathname: '/result/batter/[player]/[birth]/threeyear',
+          query: {
+            player: name,
+            birth: birth,
+          },
+        }}
+      >
         <Button style={{ textAlign: 'left', width: '2.76vw' }}>
           <ViewAllBox>
             view all
