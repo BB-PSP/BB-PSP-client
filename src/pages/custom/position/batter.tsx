@@ -41,13 +41,23 @@ export const CardWrapper = styled.div`
   }
 `;
 
+const imagePreload = (urls: string[]) => {
+  urls.map((url) => {
+    new Image().src = url;
+  });
+};
+
 const Batter = ({
   batterPositionList,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const colorImages = batterPositionList.map(
+    (position: IPosition) => position.colourLogo,
+  );
   const [selectedPosition, setSelectedPosition] = useRecoilState<string[]>(
     selectedPositionState,
   );
   useEffect(() => {
+    imagePreload(colorImages);
     setSelectedPosition([]);
   }, []);
   return (
