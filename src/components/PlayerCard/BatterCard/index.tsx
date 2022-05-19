@@ -9,6 +9,7 @@ import { Card } from './styles';
 const BatterCard = (player: IBatterProps) => {
   const batter_stat = player?.batter_stat;
   const player_info = player?.player_info;
+  console.log(player_info);
   return (
     <Link
       href={{
