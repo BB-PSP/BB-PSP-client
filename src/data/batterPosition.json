@@ -2,36 +2,42 @@
   "batterPositionList": [
     {
       "id": 1,
+      "data": "C",
       "name": "catcher",
       "colourLogo": "/image/positionLogo/catcher_r.png",
       "blackLogo": "/image/positionLogo_b/catcher_b.png"
     },
     {
       "id": 2,
+      "data": "_1B",
       "name": "first baseman",
       "colourLogo": "/image/positionLogo/first_r.png",
       "blackLogo": "/image/positionLogo_b/first_b.png"
     },
     {
       "id": 3,
+      "data": "_2B",
       "name": "second baseman",
       "colourLogo": "/image/positionLogo/second_r.png",
       "blackLogo": "/image/positionLogo_b/second_b.png"
     },
     {
       "id": 4,
+      "data": "_3B",
       "name": "third baseman",
       "colourLogo": "/image/positionLogo/third_r.png",
       "blackLogo": "/image/positionLogo_b/third_b.png"
     },
     {
       "id": 5,
+      "data": "SS",
       "name": "shortstop",
       "colourLogo": "/image/positionLogo/short_r.png",
       "blackLogo": "/image/positionLogo_b/short_b.png"
     },
     {
       "id": 6,
+      "data": "OF",
       "name": "outfielder",
       "colourLogo": "/image/positionLogo/outfielder_r.png",
       "blackLogo": "/image/positionLogo_b/outfielder_b.png"
