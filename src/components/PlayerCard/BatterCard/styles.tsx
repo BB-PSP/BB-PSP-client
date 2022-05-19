@@ -15,6 +15,6 @@ export const Card = styled.div`
   }
   ${breakpoints.medium} {
     width: 100%;
-    height: 20vh;
+    height: 12vh;
   }
 `;

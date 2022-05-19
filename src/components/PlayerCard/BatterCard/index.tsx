@@ -42,29 +42,21 @@ const BatterCard = (player: IBatterProps) => {
         </Large>
         <Medium>
           <Card>
-            <BatterBackCard
+            <BatterFrontCard
               name={player_info.name}
               position={player_info.position}
               birth={player_info.birth}
               team={player_info.team}
-              hit={batter_stat._H}
-              hr={batter_stat._HR}
-              rbi={batter_stat._RBI}
-              avg={batter_stat._AVG}
             />
           </Card>
         </Medium>
         <Small>
           <Card>
-            <BatterBackCard
+            <BatterFrontCard
               name={player_info.name}
               position={player_info.position}
               birth={player_info.birth}
               team={player_info.team}
-              hit={batter_stat._H}
-              hr={batter_stat._HR}
-              rbi={batter_stat._RBI}
-              avg={batter_stat._AVG}
             />
           </Card>
         </Small>

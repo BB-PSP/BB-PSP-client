@@ -14,14 +14,16 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-left: 2.6vw;
+  ${breakpoints.medium} {
+    padding-top: 10vh;
+  }
 `;
 
 const Container = styled.div`
   overflow-x: hidden;
-  position: absolute;
-  bottom: 0;
   ${breakpoints.large} {
+    position: absolute;
+    bottom: 0;
     margin-top: 19.54vh;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -30,16 +32,14 @@ const Container = styled.div`
     width: 70.94vw;
     height: 63.33vh;
     white-space: nowrap;
+    padding-left: 2vw;
     padding-right: 2.6vw;
   }
   ${breakpoints.medium} {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 2vw;
-    row-gap: 2vh;
-    width: 82.6vw;
-    height: 80vh;
-    padding-right: 2.6vw;
+    grid-template-columns: repeat(3, 1fr);
+    width: 85vw;
+    height: 60vh;
   }
   &::-webkit-scrollbar {
     background-color: transparent;
@@ -64,7 +64,6 @@ const Team = () => {
   const { isLoading, error, data } = usePlayers(position, 2021, proteam);
   if (isLoading) return <div>Loading...</div>;
   if (error) console.error(error);
-  // console.log(position);
   return (
     <Wrapper>
       <Container>
