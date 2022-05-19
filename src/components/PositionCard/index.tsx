@@ -7,6 +7,7 @@ import { PositionLogo, PositionName, Wrapper } from './styles';
 interface Props {
   isclicked: boolean;
   position: {
+    data: string;
     name: string;
     colourLogo: string;
     blackLogo: string;
@@ -18,10 +19,10 @@ const PositionCard: FC<Props> = ({ position, isclicked }) => {
     selectedPositionState,
   );
   const onClickPosition = useCallback(() => {
-    if (selectedPosition.includes(position.name)) {
-      setSelectedPosition(selectedPosition.filter((v) => v !== position.name));
+    if (selectedPosition.includes(position.data)) {
+      setSelectedPosition(selectedPosition.filter((v) => v !== position.data));
     } else {
-      setSelectedPosition((prev) => [...prev, position.name]);
+      setSelectedPosition((prev) => [...prev, position.data]);
     }
   }, [selectedPosition]);
   return (
