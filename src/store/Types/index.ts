@@ -1,4 +1,5 @@
 export interface IPosition {
+  data: string;
   name: string;
   colourLogo: string;
   blackLogo: string;
