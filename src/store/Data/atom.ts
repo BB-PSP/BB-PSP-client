@@ -14,3 +14,8 @@ export const selectedPositionState = atom<string[]>({
   key: 'selectedPositionState',
   default: [],
 });
+
+export const ageRangeState = atom<number[]>({
+  key: 'ageRangeState',
+  default: [25, 35],
+});
