@@ -1,11 +1,13 @@
 import positionSelect from '@data/positionSelect.json';
 import styled from '@emotion/styled';
 import CommonLayout from '@layout/common/CommonLayout';
+import { selectedPositionState } from '@store/Data/atom';
 import { IPosition } from '@store/Types';
 import PositionSelectCard from 'components/PositionSelectCard';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Link from 'next/link';
 import React, { useEffect } from 'react';
+import { useSetRecoilState } from 'recoil';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -31,12 +33,14 @@ const imagePreload = (urls: string[]) => {
 const Position = ({
   positionSelectList,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const setSelectedPosition = useSetRecoilState(selectedPositionState);
   const colorImages = positionSelectList.map(
     (position: IPosition) => position.colourLogo,
   );
   const pitcher = positionSelectList[0];
   const batter = positionSelectList[1];
   useEffect(() => {
+    setSelectedPosition([]);
     imagePreload(colorImages);
   }, []);
 
@@ -44,7 +48,11 @@ const Position = ({
     <Wrapper>
       <CardWrapper>
         <Link href="/custom/range">
-          <button>
+          <button
+            onClick={() => {
+              setSelectedPosition((prev) => [...prev, 'P']);
+            }}
+          >
             <PositionSelectCard position={pitcher} />
           </button>
         </Link>

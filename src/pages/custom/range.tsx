@@ -1,10 +1,12 @@
 import PageButton from '@button/PageButton';
 import AgeRangeSlider from '@custom/RangeSlider/AgeRangeSlider';
-import _SalaryRangeSlider from '@custom/RangeSlider/SalaryRangeSlider';
+// import _SalaryRangeSlider from '@custom/RangeSlider/SalaryRangeSlider';
 import styled from '@emotion/styled';
 import CommonLayout from '@layout/common/CommonLayout';
+import { ageRangeState, selectedPositionState } from '@store/Data/atom';
 import { breakpoints } from '@styles/media';
-import React, { useState } from 'react';
+import React from 'react';
+import { useRecoilState, useRecoilValue } from 'recoil';
 
 const Wrapper = styled.div`
   display: flex;
@@ -24,13 +26,14 @@ const ContentsContainer = styled.div`
   }
 `;
 
-const SalaryRangeSlider = styled(_SalaryRangeSlider)`
-  margin-bottom: 5.56vh;
-`;
+// const SalaryRangeSlider = styled(_SalaryRangeSlider)`
+//   margin-bottom: 5.56vh;
+// `;
 
 function Range() {
-  const [salaryRange, setSalaryRange] = useState<number[]>([30, 70]);
-  const [ageRange, setAgeRange] = useState<number[]>([25, 35]);
+  const position = useRecoilValue(selectedPositionState);
+  // const [salaryRange, setSalaryRange] = useState<number[]>([30, 70]);
+  const [ageRange, setAgeRange] = useRecoilState<number[]>(ageRangeState);
   return (
     <Wrapper>
       <ContentsContainer>
@@ -49,7 +52,11 @@ function Range() {
           max={50}
         />
       </ContentsContainer>
-      <PageButton prev="/custom/position" next="/custom/result/player" />
+      {position[0] === 'P' ? (
+        <PageButton prev="/custom/position" next="/custom/pitcher" />
+      ) : (
+        <PageButton prev="/custom/position" next="/custom/batter" />
+      )}
     </Wrapper>
   );
 }

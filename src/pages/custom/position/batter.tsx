@@ -64,7 +64,7 @@ const Batter = ({
     <Wrapper>
       <CardWrapper>
         {batterPositionList.map((batterPosition: IPosition) => {
-          const isclicked = selectedPosition.includes(batterPosition.name);
+          const isclicked = selectedPosition.includes(batterPosition.data);
           return (
             <div key={batterPosition?.name}>
               <PositionCard position={batterPosition} isclicked={isclicked} />
