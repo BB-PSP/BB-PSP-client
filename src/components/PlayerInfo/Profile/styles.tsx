@@ -137,7 +137,7 @@ export const ProfileContainer = styled.div`
   flex-direction: column;
   ${breakpoints.large} {
     width: 40.1vw;
-    padding-top: 4.54vh;
+    padding-top: 2.5vh;
     padding-left: 2.71vw;
   }
   ${breakpoints.medium} {

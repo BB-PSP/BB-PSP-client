@@ -19,8 +19,19 @@ export interface StyledProps {
   team: string;
 }
 
-const Profile = (player: any) => {
-  const team = player?.team;
+interface IProfileProps {
+  name: string;
+  backNumber: number;
+  team: string;
+  batInfo: string;
+  pitchInfo: string;
+  height: number;
+  weight: number;
+  school: string;
+  birth: string;
+}
+
+const Profile = (player: IProfileProps) => {
   return (
     <>
       <NameBox>
@@ -29,7 +40,7 @@ const Profile = (player: any) => {
       </NameBox>
       <LogoBox>
         <TopLine />
-        <Logo team={team} />
+        <Logo team={player?.team} />
         <BottomLine />
       </LogoBox>
       <ProfileContainer>
@@ -51,7 +62,7 @@ const Profile = (player: any) => {
             </ContentsBox>
           </ProfileBox>
         </Large>
-        <Medium>
+        {/* <Medium>
           <ProfileBox>
             <ContentsBox>
               <ContentsTitle>B/T:</ContentsTitle>
@@ -84,12 +95,14 @@ const Profile = (player: any) => {
               <Contents>80KG</Contents>
             </ContentsBox>
           </ProfileBox>
-        </Small>
+        </Small> */}
         <ProfileBox>
           <ContentsBox>
             <ContentsTitle>BIRTH:</ContentsTitle>
             <Contents>{player.birth}</Contents>
           </ContentsBox>
+        </ProfileBox>
+        <ProfileBox>
           <ContentsBox>
             <ContentsTitle>SCHOOL:</ContentsTitle>
             <Contents>{player.school}</Contents>
