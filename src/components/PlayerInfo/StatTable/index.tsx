@@ -30,7 +30,7 @@ const StatTable = () => {
           <StatTd>85</StatTd>
         </StatTr>
       </Table>
-      <Table>
+      {/* <Table>
         <StatTr>
           <StatTh>BB</StatTh>
           <StatTh>IBB</StatTh>
@@ -55,7 +55,7 @@ const StatTable = () => {
           <StatTd>3</StatTd>
           <StatTd>.360</StatTd>
         </StatTr>
-      </Table>
+      </Table> */}
     </Wrapper>
   );
 };

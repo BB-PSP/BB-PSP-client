@@ -14,7 +14,8 @@ const Wrapper = styled.div`
 
 const ContentsContainer = styled.div`
   ${breakpoints.large} {
-    padding-top: 13.52vh;
+    /* padding-top: 13.52vh; */
+    padding-top: 25vh;
     width: 64.64vw;
   }
   ${breakpoints.medium} {
@@ -33,13 +34,13 @@ function Range() {
   return (
     <Wrapper>
       <ContentsContainer>
-        <SalaryRangeSlider
+        {/* <SalaryRangeSlider
           label="salary"
           value={salaryRange}
           onChange={setSalaryRange}
           min={0}
           max={100}
-        />
+        /> */}
         <AgeRangeSlider
           label="age"
           value={ageRange}
