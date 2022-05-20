@@ -21,13 +21,14 @@ export interface IPlayerFrontCard {
 }
 
 const BatterFrontCard = ({ name, position, birth, team }: IPlayerFrontCard) => {
+  const pos = position.length === 3 ? position.slice(1, 3) : position;
   return (
     <Wrapper>
       <ContentsBox>
         <LeftBox>
           <Name>{name}</Name>
           <LittleBox>
-            <Position>{position}</Position>
+            <Position>{pos}</Position>
             <Birthday>{birth}</Birthday>
           </LittleBox>
         </LeftBox>
