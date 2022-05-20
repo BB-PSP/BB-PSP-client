@@ -69,8 +69,14 @@ const Pitcher = () => {
   const position = useRecoilValue(selectedPositionState);
   const age = useRecoilValue(ageRangeState);
   console.log(team, position, age);
-  const { data } = useCustomPitcher(2021, age[1], age[0], position, team);
-  console.log(data);
+  const { data, isSuccess, isError } = useCustomPitcher(
+    2021,
+    age[1],
+    age[0],
+    position,
+    team,
+  );
+  console.log(isSuccess);
   return (
     <Wrapper>
       <Container>pitcher</Container>
