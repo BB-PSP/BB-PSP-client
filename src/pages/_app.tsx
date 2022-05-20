@@ -6,19 +6,12 @@ import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { RecoilRoot } from 'recoil';
 
-// import initMockAPI from '../mocks';
-
-// if (process.env.NODE_ENV === 'development') {
-//   initMockAPI();
-// }
-
 type ComponentWithPageLayout = AppProps & {
   Component: AppProps['Component'] & {
     PageLayout?: React.ComponentType;
   };
 };
 
-// 메타 태그 수정할 것
 function App({ Component, pageProps }: ComponentWithPageLayout) {
   const [queryClient] = React.useState(() => new QueryClient());
   return (
