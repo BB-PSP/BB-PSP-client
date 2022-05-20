@@ -100,7 +100,6 @@ function Team({
       new Image().src = url;
     });
   }
-
   return (
     <Wrapper>
       <GridContainer>
@@ -129,7 +128,11 @@ function Team({
           );
         })}
       </GridContainer>
-      <PageButton prev="/" next="/custom/position" />
+      {selectedTeam.length > 0 ? (
+        <PageButton prev="/" next="/custom/position" />
+      ) : (
+        <PageButton prev="/" next="" />
+      )}
     </Wrapper>
   );
 }

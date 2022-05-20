@@ -72,7 +72,11 @@ const Batter = ({
           );
         })}
       </CardWrapper>
-      <PageButton prev="/custom/position" next="/custom/range" />
+      {selectedPosition.length > 0 ? (
+        <PageButton prev="/custom/position" next="/custom/range" />
+      ) : (
+        <PageButton prev="/custom/position" next="" />
+      )}
     </Wrapper>
   );
 };
