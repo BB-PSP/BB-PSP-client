@@ -89,6 +89,20 @@ export interface IBatterProps {
   };
 }
 
+export interface IBatterStatProps {
+  _AVG: number;
+  _BB: number;
+  _G: number;
+  _H: number;
+  _HR: number;
+  _AB: number;
+  _OBP: number;
+  _PA: number;
+  _R: number;
+  _RBI: number;
+  _SLG: number;
+}
+
 export interface IPlayer {
   age: number;
   backNumber: number;
