@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useQuery } from 'react-query';
+import { useMutation } from 'react-query';
 
 const fetchCustomPitcher = async (
   year: number,
@@ -22,15 +22,8 @@ const useCustomPitcher = (
   position_list: string[],
   team_list: string[],
 ) => {
-  return useQuery(
-    'customPitcher',
-    () =>
-      fetchCustomPitcher(year, age_end, age_start, position_list, team_list),
-    {
-      keepPreviousData: true,
-      refetchOnMount: false,
-      refetchOnWindowFocus: false,
-    },
+  return useMutation('customPitcher', () =>
+    fetchCustomPitcher(year, age_end, age_start, position_list, team_list),
   );
 };
 
