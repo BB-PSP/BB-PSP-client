@@ -2,7 +2,7 @@ import { IBatterStatProps } from '@store/Types';
 
 import { Season, StatTd, StatTh, StatTr, Table, Wrapper } from './styles';
 
-const StatTable = (batterStat: IBatterStatProps) => {
+const BatterTable = (batterStat: IBatterStatProps) => {
   return (
     <Wrapper>
       <Season>2021 stats</Season>
@@ -38,4 +38,4 @@ const StatTable = (batterStat: IBatterStatProps) => {
   );
 };
 
-export default StatTable;
+export default BatterTable;

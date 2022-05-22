@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { fetchPitcher, usePitcher } from '@hooks/api/usePitcher';
 import BlackLayout from '@layout/black/BlackLayout';
 import Profile from '@PlayerInfo/Profile';
-import StatTable from '@PlayerInfo/StatTable';
+import PitcherTable from '@PlayerInfo/StatTable/PitcherTable';
 import { breakpoints } from '@styles/media';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
@@ -73,7 +73,7 @@ const Player = () => {
         <Profile {...player_info} />
       </TopContentsContainer>
       <BottomContentsContainer>
-        <StatTable {...pitcher_stat} />
+        <PitcherTable {...pitcher_stat} />
         <ResultButton name={name} birth={birth} />
       </BottomContentsContainer>
     </Wrapper>

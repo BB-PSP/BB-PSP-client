@@ -4,7 +4,7 @@ import { fetchBatter, useBatter } from '@hooks/api/useBatter';
 import BlackLayout from '@layout/black/BlackLayout';
 import ModalFrame from '@modal/ModalFrame';
 import Profile from '@PlayerInfo/Profile';
-import StatTable from '@PlayerInfo/StatTable';
+import BatterTable from '@PlayerInfo/StatTable/BatterTable';
 import { breakpoints } from '@styles/media';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
@@ -117,7 +117,7 @@ const Player = () => {
         <Profile {...player_info} />
       </TopContentsContainer>
       <BottomContentsContainer>
-        <StatTable {...batter_stat} />
+        <BatterTable {...batter_stat} />
         <ResultButton name={name} birth={birth} />
         <ReplacementPlayerButton onClick={openModal}>
           replacement player
