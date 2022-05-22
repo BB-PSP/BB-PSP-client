@@ -1,7 +1,7 @@
 import PrevButton from '@button/PrevButton';
 import styled from '@emotion/styled';
 import BlackFullLayout from '@layout/black/BlackFullLayout';
-import StatTable from '@PlayerInfo/StatTable';
+import BatterTable from '@PlayerInfo/StatTable/BatterTable';
 import { breakpoints } from '@styles/media';
 
 const Wrapper = styled.div`
@@ -21,7 +21,7 @@ const ContentsContainer = styled.div`
     rgba(39, 39, 39, 0) 100%
   );
   ${breakpoints.large} {
-    margin-top: 22.69vh;
+    margin-top: 10vh;
   }
   ${breakpoints.medium} {
     margin-top: 10vh;
@@ -53,33 +53,14 @@ const ButtonContainer = styled.div`
   }
 `;
 
-const PlayerName = styled.h1`
-  position: absolute;
-  font-family: 'RobotoBoldItalic';
-  color: #fff;
-  ${breakpoints.large} {
-    font-size: 5.21vw;
-    margin-top: 14.07vh;
-  }
-  ${breakpoints.medium} {
-    font-size: 6vw;
-    margin-top: 6vh;
-  }
-  ${breakpoints.small} {
-    font-size: 6vw;
-    margin-top: 2vh;
-  }
-`;
-
 const Threeyear = () => {
   return (
     <Wrapper>
-      {/* <PlayerName>이정후 #07</PlayerName> */}
       <ContentsContainer>
         <StatContainer>
-          <StatTable />
-          <StatTable />
-          <StatTable />
+          <BatterTable />
+          <BatterTable />
+          <BatterTable />
         </StatContainer>
         <ButtonContainer>
           <PrevButton />

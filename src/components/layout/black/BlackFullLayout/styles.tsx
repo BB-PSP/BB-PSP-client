@@ -12,12 +12,12 @@ export const Container = styled.div`
 export const BackImage = styled.img`
   position: absolute;
   background-attachment: local;
-  padding-top: 25.19vh;
+  padding-top: 13vh;
   z-index: -99;
   left: 50%;
   transform: translate3d(-50%, 0, 0);
   ${breakpoints.large} {
-    width: 54.48vw;
+    width: 45vw;
     height: auto;
   }
   ${breakpoints.medium} {
