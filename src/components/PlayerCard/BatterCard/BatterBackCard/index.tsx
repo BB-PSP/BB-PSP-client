@@ -40,13 +40,14 @@ const BatterBackCard = ({
   rbi,
   avg,
 }: IPlayerBackCard) => {
+  const pos = position.length === 3 ? position.slice(1, 3) : position;
   return (
     <Wrapper team={team}>
       <LogoBox team={team} />
       <ProfileBox>
         <Name>{name}</Name>
         <SmallBox>
-          <Position>{position}</Position>
+          <Position>{pos}</Position>
           <Birthday>{birth}</Birthday>
         </SmallBox>
       </ProfileBox>
