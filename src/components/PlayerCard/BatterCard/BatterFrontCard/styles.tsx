@@ -35,7 +35,6 @@ export const LeftBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
   border-right: 1px solid #fff;
   ${breakpoints.large} {
     width: 8.28vw;
@@ -54,6 +53,7 @@ export const Name = styled.h3`
   font-size: 0.73vw;
   line-height: 1.71vh;
   color: #fff;
+  text-align: start;
   ${breakpoints.medium} {
     font-size: 1.5vw;
     line-height: 2vh;
@@ -63,6 +63,7 @@ export const Name = styled.h3`
 export const LittleBox = styled.div`
   display: flex;
   flex-direction: row;
+  padding-top: 0.5vh;
 `;
 
 export const Position = styled.h3`
