@@ -21,7 +21,7 @@ const TopContentsContainer = styled.div`
   background-color: rgba(39, 39, 39, 0.87);
   ${breakpoints.large} {
     margin-top: 6.48vh;
-    height: 20.28vh;
+    height: 20vh;
   }
   ${breakpoints.medium} {
     margin-top: 6.48vh;
@@ -43,8 +43,8 @@ const BottomContentsContainer = styled.div`
     rgba(39, 39, 39, 0) 100%
   );
   ${breakpoints.large} {
-    margin-top: 1.57vh;
-    height: 54.54vh;
+    margin-top: 1.5vh;
+    height: 55vh;
   }
   ${breakpoints.medium} {
     margin-top: 1.57vh;
