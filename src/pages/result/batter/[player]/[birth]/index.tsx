@@ -63,7 +63,7 @@ const BottomContentsContainer = styled.div`
   }
 `;
 
-export const ReplacementPlayerButton = styled.button`
+const ReplacementPlayerButton = styled.button`
   position: absolute;
   background: rgba(255, 255, 255, 0.74);
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
