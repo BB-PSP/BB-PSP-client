@@ -14,11 +14,12 @@ export const Wrapper = styled(motion.div)`
     height: 11vh;
   }
   ${breakpoints.medium} {
-    width: 23.5vw;
+    width: 25vw;
     height: 11vh;
   }
   ${breakpoints.small} {
-    height: auto;
+    width: 35vw;
+    height: 11vh;
   }
 `;
 
@@ -32,7 +33,7 @@ export const PositionLogo = styled.img`
     height: auto;
   }
   ${breakpoints.small} {
-    width: 80%;
+    width: 100%;
     height: auto;
   }
 `;

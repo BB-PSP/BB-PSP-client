@@ -2,6 +2,7 @@ import positionSelect from '@data/positionSelect.json';
 import styled from '@emotion/styled';
 import CommonLayout from '@layout/common/CommonLayout';
 import { IPosition } from '@store/Types';
+import { breakpoints } from '@styles/media';
 import PositionSelectCard from 'components/PositionSelectCard';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import Link from 'next/link';
@@ -15,6 +16,13 @@ export const Wrapper = styled.div`
   width: 50%;
   margin: 0 auto;
   margin-top: 30vh;
+  ${breakpoints.medium} {
+    width: 60%;
+  }
+  ${breakpoints.small} {
+    width: 90%;
+    margin-top: 25vh;
+  }
 `;
 
 export const CardWrapper = styled.div`
