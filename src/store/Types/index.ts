@@ -103,6 +103,18 @@ export interface IBatterStatProps {
   _SLG: number;
 }
 
+export interface IPitcherStatProps {
+  _G: number;
+  _IP: number;
+  _W: number;
+  _L: number;
+  _ERA: number;
+  _SO: number;
+  _HLD: number;
+  _SV: number;
+  _WHIP: number;
+}
+
 export interface IPlayer {
   age: number;
   backNumber: number;
