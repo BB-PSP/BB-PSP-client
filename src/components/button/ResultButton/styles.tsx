@@ -7,10 +7,9 @@ export const Wrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   ${breakpoints.large} {
+    position: absolute;
     width: 61vw;
-    height: 6.57vh;
-    bottom: 0;
-    margin-top: 6.48vh;
+    bottom: 5vh;
   }
   ${breakpoints.medium} {
     height: 20vh;
@@ -29,7 +28,7 @@ export const Button = styled.button`
   color: #fff;
   ${breakpoints.large} {
     font-size: 1.15vw;
-    line-height: 2.69vh;
+    line-height: 2.7vh;
   }
   ${breakpoints.medium} {
     width: 4vw;
@@ -47,7 +46,7 @@ export const ArrowImg = styled.img`
   ${breakpoints.large} {
     margin-top: -0.6rem;
     width: 5.4vw;
-    height: 3.06vh;
+    height: 3vh;
   }
   ${breakpoints.medium} {
     margin-top: -0.6rem;
@@ -67,12 +66,12 @@ export const ViewAllBox = styled.div`
   justify-content: space-between;
 `;
 
-export const TestImage = styled.img`
+export const BackArrowImg = styled.img`
   ${breakpoints.large} {
     margin-left: 0.52vw;
     margin-top: 1.85vh;
-    width: 5.39vw;
-    height: 3.06vh;
+    width: 5.4vw;
+    height: 3vh;
   }
   ${breakpoints.medium} {
     margin-left: 0.52vw;

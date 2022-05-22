@@ -5,9 +5,9 @@ import { useState } from 'react';
 
 import {
   ArrowImg,
+  BackArrowImg,
   Button,
   ReplacementPlayerButton,
-  TestImage,
   ViewAllBox,
   Wrapper,
 } from './styles';
@@ -18,7 +18,6 @@ interface IResultButtonProps {
 }
 
 const ResultButton = ({ name, birth }: IResultButtonProps) => {
-  console.log(name, birth);
   const [showModal, setShowModal] = useState(false);
   const openModal = () => {
     setShowModal(true);
@@ -30,9 +29,9 @@ const ResultButton = ({ name, birth }: IResultButtonProps) => {
         prev
         <ArrowImg src="/image/white_arrow_reverse.png" alt="이전 페이지 버튼" />
       </Button>
-      <ReplacementPlayerButton onClick={openModal}>
+      {/* <ReplacementPlayerButton onClick={openModal}>
         replacement player
-      </ReplacementPlayerButton>
+      </ReplacementPlayerButton> */}
       {showModal ? <ModalFrame setShowModal={setShowModal} /> : null}
       <Link
         href={{
@@ -46,7 +45,7 @@ const ResultButton = ({ name, birth }: IResultButtonProps) => {
         <Button style={{ textAlign: 'left', width: '2.76vw' }}>
           <ViewAllBox>
             view all
-            <TestImage
+            <BackArrowImg
               src="/image/white_arrow.png"
               alt="3년치 성적 예측 페이지 버튼"
             />
