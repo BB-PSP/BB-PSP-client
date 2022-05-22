@@ -85,38 +85,3 @@ export const BackArrowImg = styled.img`
     height: auto;
   }
 `;
-
-export const ReplacementPlayerButton = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.74);
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  font-family: 'RobotoMonoRegular';
-  text-align: center;
-  color: #272727;
-  ${breakpoints.large} {
-    font-size: 1.15vw;
-    line-height: 2.69vh;
-    margin-top: 1.39vh;
-    padding: 1.11vh 1.46vw;
-    height: 5.19vh;
-    margin-left: 3vw;
-  }
-  ${breakpoints.medium} {
-    font-size: 2vw;
-    line-height: 3vh;
-    margin-top: 1.39vh;
-    width: 25vw;
-    height: 5.19vh;
-  }
-  ${breakpoints.small} {
-    font-size: 2vw;
-    line-height: 3vh;
-    margin-top: 1.39vh;
-    width: 25vw;
-    height: 5.19vh;
-    margin-left: 2vw;
-  }
-`;

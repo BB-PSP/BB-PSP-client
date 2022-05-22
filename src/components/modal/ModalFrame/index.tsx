@@ -12,7 +12,7 @@ interface ModalProps {
   setShowModal: (showModal: boolean) => void;
 }
 
-function ModalFrame({ setShowModal }: ModalProps) {
+const ModalFrame = ({ setShowModal }: ModalProps) => {
   return (
     <Container>
       <Background>
@@ -34,6 +34,6 @@ function ModalFrame({ setShowModal }: ModalProps) {
       </Background>
     </Container>
   );
-}
+};
 
 export default ModalFrame;
