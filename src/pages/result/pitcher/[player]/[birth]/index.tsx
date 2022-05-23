@@ -101,6 +101,7 @@ const ReplacementPlayerButton = styled.button`
 `;
 
 const Player = () => {
+  const [showModal, setShowModal] = useState(false);
   const router = useRouter();
   const name = router.query?.player as string;
   const birth = router.query?.birth as string;
@@ -109,7 +110,6 @@ const Player = () => {
   if (error) console.error(error);
   const pitcher_stat = data?.pitcher_stat;
   const player_info = data?.player_info;
-  const [showModal, setShowModal] = useState(false);
   const openModal = () => {
     setShowModal(true);
   };
