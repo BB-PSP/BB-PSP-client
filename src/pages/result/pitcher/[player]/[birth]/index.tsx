@@ -15,23 +15,32 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
+  width: 66.67vw;
+  ${breakpoints.medium} {
+    width: 88vw;
+  }
+  ${breakpoints.small} {
+    width: 90vw;
+  }
 `;
 
 const TopContentsContainer = styled.div`
   display: flex;
   flex-direction: row;
   background-color: rgba(39, 39, 39, 0.87);
+  width: 100%;
   ${breakpoints.large} {
     margin-top: 6.48vh;
     height: 20.28vh;
   }
   ${breakpoints.medium} {
-    margin-top: 6.48vh;
-    height: 20.28vh;
+    margin-top: 6vh;
+    height: 20vh;
   }
   ${breakpoints.small} {
     margin-top: 5vh;
-    height: 10vh;
+    height: 15vh;
   }
 `;
 
@@ -44,15 +53,14 @@ const BottomContentsContainer = styled.div`
     rgba(39, 39, 39, 0.433227) 65.57%,
     rgba(39, 39, 39, 0) 100%
   );
+  width: 100%;
   ${breakpoints.large} {
     margin-top: 1.57vh;
     height: 54.54vh;
   }
   ${breakpoints.medium} {
     margin-top: 1.57vh;
-    padding-right: 3.33vw;
-    padding-left: 3.33vw;
-    height: 50.54vh;
+    height: 55vh;
   }
   ${breakpoints.small} {
     margin-top: 2vh;
@@ -81,17 +89,14 @@ const ReplacementPlayerButton = styled.button`
   ${breakpoints.medium} {
     font-size: 2vw;
     line-height: 3vh;
-    margin-top: 1.39vh;
-    width: 25vw;
-    height: 5.19vh;
+    margin-top: 1.4vh;
+    height: 5.2vh;
   }
   ${breakpoints.small} {
     font-size: 2vw;
     line-height: 3vh;
-    margin-top: 1.39vh;
-    width: 25vw;
-    height: 5.19vh;
-    margin-left: 2vw;
+    height: 4vh;
+    bottom: 3vh;
   }
 `;
 

@@ -12,11 +12,11 @@ export const NameBox = styled.div`
     padding-left: 3.125vw;
   }
   ${breakpoints.medium} {
-    width: 40vw;
+    width: 23vw;
     padding-left: 6vw;
   }
   ${breakpoints.small} {
-    width: 32vw;
+    width: 22vw;
     padding-left: 5vw;
   }
 `;
@@ -29,11 +29,11 @@ export const Name = styled.h2`
     line-height: 4.34vh;
   }
   ${breakpoints.medium} {
-    font-size: 4vw;
-    line-height: 5vh;
+    font-size: 2.2vw;
+    line-height: 3vh;
   }
   ${breakpoints.small} {
-    font-size: 3vw;
+    font-size: 2.5vw;
     line-height: 3vh;
   }
 `;
@@ -46,11 +46,11 @@ export const Number = styled.h2`
     line-height: 4.34vh;
   }
   ${breakpoints.medium} {
-    font-size: 4vw;
-    line-height: 5vh;
+    font-size: 2.2vw;
+    line-height: 3vh;
   }
   ${breakpoints.small} {
-    font-size: 3vw;
+    font-size: 2.5vw;
     line-height: 3vh;
   }
 `;
@@ -72,6 +72,8 @@ export const LogoBox = styled.div`
     height: 100%;
   }
   ${breakpoints.small} {
+    padding-top: 3vh;
+    padding-bottom: 3vh;
     width: 10vw;
     height: 100%;
   }
@@ -102,16 +104,15 @@ export const TopLine = styled.div`
   width: 0.1rem;
   background-color: #fff;
   ${breakpoints.large} {
-    height: 2.69vh;
-    margin-bottom: 0.93vh;
+    height: 3vh;
+    margin-bottom: 1vh;
   }
   ${breakpoints.medium} {
-    height: 2.69vh;
-    margin-bottom: 0.93vh;
+    height: 3vh;
+    margin-bottom: 1vh;
   }
   ${breakpoints.small} {
-    height: 2.69vh;
-    margin-top: 1vh;
+    height: 3vh;
   }
 `;
 
@@ -119,16 +120,15 @@ export const BottomLine = styled.div`
   width: 0.1rem;
   background-color: #fff;
   ${breakpoints.large} {
-    height: 2.69vh;
-    margin-bottom: 0.93vh;
+    height: 3vh;
+    margin-top: 1vh;
   }
   ${breakpoints.medium} {
-    height: 2.69vh;
-    margin-bottom: 0.93vh;
+    height: 3vh;
+    margin-top: 1vh;
   }
   ${breakpoints.small} {
-    height: 2.69vh;
-    margin-bottom: 1vh;
+    height: 3vh;
   }
 `;
 
@@ -141,13 +141,14 @@ export const ProfileContainer = styled.div`
     padding-left: 2.71vw;
   }
   ${breakpoints.medium} {
-    width: 40vw;
-    padding-top: 4.54vh;
-    padding-left: 2.71vw;
+    width: 55vw;
+    padding-top: 3vh;
+    padding-left: 2.5vw;
   }
   ${breakpoints.small} {
-    width: 45vw;
-    padding-top: 1.5vh;
+    width: 58vw;
+    padding-top: 2.8vh;
+    padding-left: 2vw;
   }
 `;
 
@@ -158,9 +159,10 @@ export const ProfileBox = styled.div`
     padding-bottom: 1.57vh;
   }
   ${breakpoints.medium} {
-    padding-bottom: 1.57vh;
+    padding-bottom: 1vh;
   }
   ${breakpoints.small} {
+    padding-bottom: 0.5vh;
   }
 `;
 
@@ -174,7 +176,7 @@ export const ContentsBox = styled.div`
     padding-right: 2.5vw;
   }
   ${breakpoints.small} {
-    padding-right: 2.5vw;
+    padding-right: 3vw;
   }
 `;
 
@@ -186,8 +188,8 @@ export const ContentsTitle = styled.h3`
     line-height: 2.69vh;
   }
   ${breakpoints.medium} {
-    font-size: 1.15vw;
-    line-height: 2.69vh;
+    font-size: 1.8vw;
+    line-height: 2.8vh;
   }
   ${breakpoints.small} {
     font-size: 2vw;
@@ -203,8 +205,8 @@ export const Contents = styled.h3`
     line-height: 2.69vh;
   }
   ${breakpoints.medium} {
-    font-size: 1.15vw;
-    line-height: 2.69vh;
+    font-size: 1.8vw;
+    line-height: 2.8vh;
   }
   ${breakpoints.small} {
     font-size: 2vw;

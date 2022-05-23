@@ -8,17 +8,18 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   ${breakpoints.large} {
     position: absolute;
-    width: 61vw;
+    width: 66.67vw;
     bottom: 5vh;
   }
   ${breakpoints.medium} {
-    height: 20vh;
-    padding-top: 4vh;
+    position: absolute;
+    width: 88vw;
+    bottom: 5vh;
   }
   ${breakpoints.small} {
-    justify-content: space-between;
-    height: 20vh;
-    padding-top: 4vh;
+    position: absolute;
+    width: 90vw;
+    bottom: 3vh;
   }
 `;
 
@@ -31,12 +32,10 @@ export const Button = styled.button`
     line-height: 2.7vh;
   }
   ${breakpoints.medium} {
-    width: 4vw;
     font-size: 2vw;
     line-height: 3vh;
   }
   ${breakpoints.small} {
-    width: 4vw;
     font-size: 2vw;
     line-height: 3vh;
   }
@@ -49,38 +48,30 @@ export const ArrowImg = styled.img`
     height: 3vh;
   }
   ${breakpoints.medium} {
-    margin-top: -0.6rem;
+    margin-top: -1.5vh;
     width: 10vw;
     height: 3.5vh;
   }
   ${breakpoints.small} {
-    margin-top: -0.6rem;
+    margin-top: -1vh;
     width: 10vw;
     height: auto;
   }
 `;
 
-export const ViewAllBox = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-`;
-
 export const BackArrowImg = styled.img`
   ${breakpoints.large} {
-    margin-left: 0.52vw;
-    margin-top: 1.85vh;
+    margin-top: -0.6rem;
     width: 5.4vw;
     height: 3vh;
   }
   ${breakpoints.medium} {
-    margin-left: 0.52vw;
-    margin-top: 1.85vh;
+    margin-top: -1.5vh;
     width: 10vw;
     height: 3.5vh;
   }
   ${breakpoints.small} {
-    margin-left: 0.52vw;
+    margin-top: -1vh;
     width: 10vw;
     height: auto;
   }

@@ -20,7 +20,7 @@ export const Season = styled.h3`
     padding-top: 4vh;
   }
   ${breakpoints.small} {
-    font-size: 2vw;
+    font-size: 2.2vw;
     line-height: 3vh;
     padding-top: 4vh;
   }
@@ -38,9 +38,8 @@ export const Table = styled.table`
     margin-bottom: 5.1vh;
   }
   ${breakpoints.small} {
-    width: 80vw;
-    margin-top: 3.52vh;
-    margin-bottom: 5.1vh;
+    width: 83vw;
+    margin-top: 2vh;
   }
 `;
 
@@ -64,13 +63,13 @@ export const StatTh = styled.th`
     font-size: 2vw;
     line-height: 3vh;
     width: 7vw;
-    padding-bottom: 0.7rem;
+    padding-bottom: 0.5vh;
   }
   ${breakpoints.small} {
     font-size: 2vw;
     line-height: 3vh;
-    width: 7vw;
-    padding-bottom: 0.7rem;
+    width: 10vw;
+    padding-bottom: 0.5vh;
   }
 `;
 
@@ -88,12 +87,12 @@ export const StatTd = styled.td`
     font-size: 2vw;
     line-height: 3vh;
     width: 7vw;
-    padding-top: 2.13vh;
+    padding-top: 1vh;
   }
   ${breakpoints.small} {
     font-size: 2vw;
     line-height: 3vh;
-    width: 7vw;
-    padding-top: 2.13vh;
+    width: 10vw;
+    padding-top: 1vh;
   }
 `;

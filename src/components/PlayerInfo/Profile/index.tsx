@@ -1,5 +1,3 @@
-import { Large, Medium, Small } from '@styles/MediaQuery';
-
 import {
   BottomLine,
   Contents,
@@ -54,26 +52,22 @@ const Profile = (player: IProfileProps) => {
         <BottomLine />
       </LogoBox>
       <ProfileContainer>
-        <Large>
-          <ProfileBox>
-            <ContentsBox>
-              <ContentsTitle>B/T:</ContentsTitle>
-              <Contents>
-                {player?.batInfo.slice(0, 1)}/{player?.pitchInfo.slice(0, 1)}
-              </Contents>
-            </ContentsBox>
-            <ContentsBox>
-              <ContentsTitle>HEIGHT:</ContentsTitle>
-              <Contents>{player?.height}CM</Contents>
-            </ContentsBox>
-            <ContentsBox>
-              <ContentsTitle>WEIGHT:</ContentsTitle>
-              <Contents>{player?.weight}KG</Contents>
-            </ContentsBox>
-          </ProfileBox>
-        </Large>
-        <Medium />
-        <Small />
+        <ProfileBox>
+          <ContentsBox>
+            <ContentsTitle>B/T:</ContentsTitle>
+            <Contents>
+              {player?.batInfo.slice(0, 1)}/{player?.pitchInfo.slice(0, 1)}
+            </Contents>
+          </ContentsBox>
+          <ContentsBox>
+            <ContentsTitle>HEIGHT:</ContentsTitle>
+            <Contents>{player?.height}CM</Contents>
+          </ContentsBox>
+          <ContentsBox>
+            <ContentsTitle>WEIGHT:</ContentsTitle>
+            <Contents>{player?.weight}KG</Contents>
+          </ContentsBox>
+        </ProfileBox>
         <ProfileBox>
           <ContentsBox>
             <ContentsTitle>BIRTH:</ContentsTitle>

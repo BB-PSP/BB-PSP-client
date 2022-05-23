@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import { ArrowImg, BackArrowImg, Button, ViewAllBox, Wrapper } from './styles';
+import { ArrowImg, BackArrowImg, Button, Wrapper } from './styles';
 
 interface IResultButtonProps {
   name: string;
@@ -25,14 +25,12 @@ const ResultButton = ({ name, birth }: IResultButtonProps) => {
           },
         }}
       >
-        <Button style={{ textAlign: 'left', width: '2.76vw' }}>
-          <ViewAllBox>
-            view all
-            <BackArrowImg
-              src="/image/white_arrow.png"
-              alt="3년치 성적 예측 페이지 버튼"
-            />
-          </ViewAllBox>
+        <Button style={{ textAlign: 'left' }}>
+          more
+          <BackArrowImg
+            src="/image/white_arrow.png"
+            alt="3년치 성적 예측 페이지 버튼"
+          />
         </Button>
       </Link>
     </Wrapper>
