@@ -28,7 +28,7 @@ const ContentsContainer = styled.div`
     margin-top: 10vh;
   }
   ${breakpoints.medium} {
-    margin-top: 10vh;
+    margin-top: 5vh;
   }
   ${breakpoints.small} {
     margin-top: 5vh;
@@ -49,10 +49,11 @@ const ButtonContainer = styled.div`
     margin-bottom: 6.48vh;
   }
   ${breakpoints.medium} {
-    margin-top: 16.11vh;
-    margin-bottom: 6.48vh;
+    margin-top: 2vh;
+    margin-bottom: 3vh;
   }
   ${breakpoints.small} {
+    margin-top: 10vh;
     margin-bottom: 3vh;
   }
 `;

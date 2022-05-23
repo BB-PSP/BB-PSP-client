@@ -25,10 +25,10 @@ const ContentsContainer = styled.div`
     rgba(39, 39, 39, 0) 100%
   );
   ${breakpoints.large} {
-    margin-top: 20vh;
+    margin-top: 10vh;
   }
   ${breakpoints.medium} {
-    margin-top: 10vh;
+    margin-top: 5vh;
   }
   ${breakpoints.small} {
     margin-top: 5vh;
@@ -49,29 +49,12 @@ const ButtonContainer = styled.div`
     margin-bottom: 6.48vh;
   }
   ${breakpoints.medium} {
-    margin-top: 16.11vh;
-    margin-bottom: 6.48vh;
-  }
-  ${breakpoints.small} {
+    margin-top: 2vh;
     margin-bottom: 3vh;
   }
-`;
-
-const PlayerName = styled.h1`
-  position: absolute;
-  font-family: 'RobotoBoldItalic';
-  color: #fff;
-  ${breakpoints.large} {
-    font-size: 5.21vw;
-    margin-top: 14.07vh;
-  }
-  ${breakpoints.medium} {
-    font-size: 6vw;
-    margin-top: 6vh;
-  }
   ${breakpoints.small} {
-    font-size: 6vw;
-    margin-top: 2vh;
+    margin-top: 10vh;
+    margin-bottom: 3vh;
   }
 `;
 
@@ -85,7 +68,6 @@ const Threeyear = () => {
   const pitcher_stat = data?.pitcher_stat;
   return (
     <Wrapper>
-      <PlayerName>Jung-hoo Lee #07</PlayerName>
       <ContentsContainer>
         <StatContainer>
           <PitcherTable {...pitcher_stat} />
