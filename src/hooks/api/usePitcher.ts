@@ -11,12 +11,14 @@ const fetchPitcher = async (year: number, name: string, birth: string) => {
 };
 
 const usePitcher = (year: number, name: string, birth: string) => {
-  return useQuery('pitcher', () => fetchPitcher(year, name, birth), {
-    keepPreviousData: true,
-    refetchOnMount: false,
-    refetchOnWindowFocus: false,
-    cacheTime: 0,
-  });
+  return useQuery(
+    ['pitcher', year, name, birth],
+    () => fetchPitcher(year, name, birth),
+    {
+      refetchOnMount: false,
+      refetchOnWindowFocus: false,
+    },
+  );
 };
 
 export { usePitcher, fetchPitcher };
