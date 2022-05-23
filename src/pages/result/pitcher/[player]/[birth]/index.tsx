@@ -104,7 +104,6 @@ const Player = () => {
   const router = useRouter();
   const name = router.query?.player as string;
   const birth = router.query?.birth as string;
-  console.log(name, birth);
   const { isLoading, error, data } = usePitcher(2021, name, birth);
   if (isLoading) return <div>Loading...</div>;
   if (error) console.error(error);

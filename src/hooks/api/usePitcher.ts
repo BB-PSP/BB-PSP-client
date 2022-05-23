@@ -15,6 +15,7 @@ const usePitcher = (year: number, name: string, birth: string) => {
     keepPreviousData: true,
     refetchOnMount: false,
     refetchOnWindowFocus: false,
+    cacheTime: 0,
   });
 };
 
