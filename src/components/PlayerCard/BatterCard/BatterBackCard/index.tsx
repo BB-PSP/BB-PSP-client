@@ -66,7 +66,7 @@ const BatterBackCard = ({
         </RBIBox>
         <AVGBox>
           <StatName>AVG</StatName>
-          <Stat>{avg}</Stat>
+          <Stat>{avg.toFixed(3)}</Stat>
         </AVGBox>
       </StatContainer>
     </Wrapper>

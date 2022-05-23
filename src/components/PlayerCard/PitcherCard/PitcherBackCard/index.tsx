@@ -65,7 +65,7 @@ const PitcherBackCard = ({
         </RBIBox>
         <AVGBox>
           <StatName>ERA</StatName>
-          <Stat>{era}</Stat>
+          <Stat>{era.toFixed(2)}</Stat>
         </AVGBox>
       </StatContainer>
     </Wrapper>
