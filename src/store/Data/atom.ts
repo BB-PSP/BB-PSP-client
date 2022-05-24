@@ -19,3 +19,8 @@ export const ageRangeState = atom<number[]>({
   key: 'ageRangeState',
   default: [25, 35],
 });
+
+export const salaryRangeState = atom<number[]>({
+  key: 'salaryRangeState',
+  default: [30, 70],
+});

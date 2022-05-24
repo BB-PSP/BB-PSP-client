@@ -21,28 +21,35 @@ const Label = styled.label`
     padding-top: 5.8rem;
   }
   ${breakpoints.medium} {
-    font-size: 2.2rem;
-    line-height: 2.9rem;
-    padding-right: 4.7rem;
-    padding-top: 5.8rem;
+    font-size: 2vw;
+    line-height: 1vh;
+    padding-right: 2vw;
+    padding-top: 6vh;
+    width: 10vw;
   }
   ${breakpoints.small} {
-    font-size: 1.2rem;
-    line-height: 2.9rem;
-    padding-right: 1.7rem;
-    padding-top: 5.8rem;
-    width: 6.7rem;
+    font-size: 2.2vw;
+    line-height: 1.2vh;
+    padding-right: 2vw;
+    padding-top: 7vh;
+    width: 15vw;
   }
   > label {
-    font-size: 0.3vw;
+    font-size: 1vw;
+    ${breakpoints.medium} {
+      font-size: 1vw;
+    }
+    ${breakpoints.small} {
+      font-size: 1.5vw;
+    }
   }
 `;
 
 const Rail = styled.div`
   position: relative;
   width: 100%;
-  height: 3.2rem;
-  margin-top: 6.4rem;
+  height: 3vh;
+  margin-top: 6vh;
 `;
 
 const GraduationWrapper = styled.div`
@@ -66,9 +73,15 @@ const Line = styled.div<{ isBold: boolean; isHighlighted: boolean }>`
 const Mark = styled.p`
   position: absolute;
   transform: translateX(-50%);
-  margin-top: 1rem;
+  margin-top: 1vh;
   color: #272727;
-  font-size: 1.1rem;
+  font-size: 1vw;
+  ${breakpoints.medium} {
+    font-size: 1.5vw;
+  }
+  ${breakpoints.small} {
+    font-size: 2vw;
+  }
 `;
 
 type SalaryRangeSliderProps = {

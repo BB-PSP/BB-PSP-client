@@ -37,6 +37,7 @@ const Container = styled.div`
     white-space: nowrap;
     padding-left: 2vw;
     padding-right: 2.6vw;
+    padding-bottom: 2vh;
   }
   ${breakpoints.medium} {
     display: grid;

@@ -11,6 +11,7 @@ const Wrapper = styled.div`
 
 const Label = styled.label`
   font-family: 'RobotoMonoRegular';
+  color: #b70000;
   ${breakpoints.large} {
     font-size: 2.2rem;
     line-height: 2.9rem;
@@ -18,28 +19,42 @@ const Label = styled.label`
     padding-top: 5.8rem;
   }
   ${breakpoints.medium} {
-    font-size: 2.2rem;
-    line-height: 2.9rem;
-    padding-right: 8.7rem;
-    padding-top: 5.8rem;
+    font-size: 2vw;
+    line-height: 1vh;
+    padding-right: 2vw;
+    padding-top: 5vh;
+    width: 10vw;
   }
   ${breakpoints.small} {
-    font-size: 1.2rem;
-    line-height: 2.9rem;
-    padding-right: 1.7rem;
-    padding-top: 5.8rem;
-    width: 6.7rem;
+    font-size: 2.2vw;
+    line-height: 1.2vh;
+    padding-right: 2vw;
+    padding-top: 9vh;
+    width: 15vw;
   }
-
-  color: #b70000;
+  > label {
+    font-size: 1vw;
+    ${breakpoints.medium} {
+      font-size: 1vw;
+    }
+    ${breakpoints.small} {
+      font-size: 1.5vw;
+    }
+  }
 `;
 
 const Rail = styled.div`
   position: relative;
   width: 100%;
-  height: 2.4rem;
+  height: 3vh;
   background-color: #3d3d3d;
-  margin-top: 6.4rem;
+  margin-top: 10vh;
+  ${breakpoints.medium} {
+    margin-top: 5vh;
+  }
+  ${breakpoints.small} {
+    margin-top: 9vh;
+  }
 `;
 
 const Track = styled.div<{ left: string; width: string }>`
@@ -54,7 +69,8 @@ const GraduationWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 0.4rem;
+  margin-top: 1vh;
+  font-size: 1vw;
 `;
 
 const LineWrapper = styled.div`
@@ -76,9 +92,15 @@ const Line = styled.div<{ isHighlighted?: boolean }>`
 const Mark = styled.p`
   position: absolute;
   transform: translateX(-50%);
-  margin-top: 1rem;
+  margin-top: 1vh;
   color: #272727;
-  font-size: 1.1rem;
+  font-size: 1vw;
+  ${breakpoints.medium} {
+    font-size: 1.5vw;
+  }
+  ${breakpoints.small} {
+    font-size: 2vw;
+  }
 `;
 
 type AgeRangeSliderProps = {

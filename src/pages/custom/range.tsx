@@ -1,9 +1,13 @@
 import PageButton from '@button/PageButton';
 import AgeRangeSlider from '@custom/RangeSlider/AgeRangeSlider';
-// import _SalaryRangeSlider from '@custom/RangeSlider/SalaryRangeSlider';
+import _SalaryRangeSlider from '@custom/RangeSlider/SalaryRangeSlider';
 import styled from '@emotion/styled';
 import CommonLayout from '@layout/common/CommonLayout';
-import { ageRangeState, selectedPositionState } from '@store/Data/atom';
+import {
+  ageRangeState,
+  salaryRangeState,
+  selectedPositionState,
+} from '@store/Data/atom';
 import { breakpoints } from '@styles/media';
 import React from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
@@ -16,38 +20,38 @@ const Wrapper = styled.div`
 
 const ContentsContainer = styled.div`
   ${breakpoints.large} {
-    /* padding-top: 13.52vh; */
-    padding-top: 25vh;
+    padding-top: 10vh;
     width: 64.64vw;
   }
   ${breakpoints.medium} {
-    padding-top: 20vh;
-    width: 75vw;
+    padding-top: 15vh;
+    width: 80vw;
   }
   ${breakpoints.small} {
-    padding-top: 15vh;
+    padding-top: 12vh;
     width: 90vw;
   }
 `;
 
-// const SalaryRangeSlider = styled(_SalaryRangeSlider)`
-//   margin-bottom: 5.56vh;
-// `;
+const SalaryRangeSlider = styled(_SalaryRangeSlider)`
+  margin-bottom: 8vh;
+`;
 
-function Range() {
+const Range = () => {
   const position = useRecoilValue(selectedPositionState);
-  // const [salaryRange, setSalaryRange] = useState<number[]>([30, 70]);
+  const [salaryRange, setSalaryRange] =
+    useRecoilState<number[]>(salaryRangeState);
   const [ageRange, setAgeRange] = useRecoilState<number[]>(ageRangeState);
   return (
     <Wrapper>
       <ContentsContainer>
-        {/* <SalaryRangeSlider
+        <SalaryRangeSlider
           label="salary"
           value={salaryRange}
           onChange={setSalaryRange}
-          min={0}
+          min={2}
           max={100}
-        /> */}
+        />
         <AgeRangeSlider
           label="age"
           value={ageRange}
@@ -63,7 +67,7 @@ function Range() {
       )}
     </Wrapper>
   );
-}
+};
 
 Range.PageLayout = CommonLayout;
 
