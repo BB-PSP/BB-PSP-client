@@ -1,6 +1,6 @@
 import { Background, LoadingImage } from './styles';
 
-const Loading = () => {
+const BlackLoading = () => {
   return (
     <Background>
       <LoadingImage src="/spinner.gif" alt="로딩중" />
@@ -8,4 +8,4 @@ const Loading = () => {
   );
 };
 
-export default Loading;
+export default BlackLoading;

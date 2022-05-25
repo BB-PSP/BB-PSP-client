@@ -6,6 +6,7 @@ import ModalFrame from '@modal/ModalFrame';
 import Profile from '@PlayerInfo/Profile';
 import PitcherTable from '@PlayerInfo/StatTable/PitcherTable';
 import { breakpoints } from '@styles/media';
+import BlackLoading from 'components/loading/blackLoading';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
@@ -106,7 +107,7 @@ const Player = () => {
   const name = router.query?.player as string;
   const birth = router.query?.birth as string;
   const { isLoading, error, data } = usePitcher(2021, name, birth);
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <BlackLoading />;
   if (error) console.error(error);
   const pitcher_stat = data?.pitcher_stat;
   const player_info = data?.player_info;

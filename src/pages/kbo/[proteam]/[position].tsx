@@ -5,6 +5,7 @@ import BatterCard from '@PlayerCard/BatterCard';
 import PitcherCard from '@PlayerCard/PitcherCard';
 import { IBatterProps, IPitcherProps } from '@store/Types';
 import { breakpoints } from '@styles/media';
+import CommonLoading from 'components/loading/commonLoading';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import { dehydrate, QueryClient } from 'react-query';
@@ -72,7 +73,7 @@ const Team = () => {
   const position = router.query?.position as string;
   const proteam = router.query?.proteam as string;
   const { isLoading, error, data } = usePlayers(position, 2021, proteam);
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <CommonLoading />;
   if (error) console.error(error);
   return (
     <Wrapper>

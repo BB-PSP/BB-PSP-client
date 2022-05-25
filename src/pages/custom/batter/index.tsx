@@ -10,6 +10,7 @@ import {
 } from '@store/Data/atom';
 import { IBatterProps } from '@store/Types';
 import { breakpoints } from '@styles/media';
+import CommonLoading from 'components/loading/commonLoading';
 import { useRecoilValue } from 'recoil';
 
 const Wrapper = styled.div`
@@ -74,7 +75,7 @@ const Batter = () => {
     salary[0],
     salary[1],
   );
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <CommonLoading />;
   if (error) console.error(error);
   return (
     <Wrapper>

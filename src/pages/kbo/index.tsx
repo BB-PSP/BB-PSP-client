@@ -4,6 +4,7 @@ import TeamSlider from '@kbo/TeamSlider';
 import CommonLayout from '@layout/common/CommonLayout';
 import { ITeam } from '@store/Types';
 import { breakpoints } from '@styles/media';
+import CommonLoading from 'components/loading/commonLoading';
 import { GetStaticProps } from 'next';
 import { useEffect } from 'react';
 import { dehydrate, QueryClient } from 'react-query';
@@ -37,7 +38,7 @@ function imagePreload(urls: string[]) {
 
 const Kbo = () => {
   const { isLoading, error, data } = useTeams(2021);
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <CommonLoading />;
   if (error) console.error(error);
   const teams = data?.teamDTOList;
   const color = teams.map((team: ITeam) => team.colourLogo);
