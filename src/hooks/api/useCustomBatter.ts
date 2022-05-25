@@ -1,46 +1,53 @@
 import axios from 'axios';
 import { useQuery } from 'react-query';
 
-const fetchCustomPitcher = async (
+const fetchCustomBatter = async (
   year: number,
   age_start: number,
   age_end: number,
+  position_list: string[],
   team_list: string[],
   salary_start: number,
   salary_end: number,
 ) => {
   const { data } = await axios(
     encodeURI(
-      `http://18.223.133.67:8081/api/pitchers/stat/range/${year}?age_range=${age_start},${age_end}&teams=${team_list}&salary_range=${salary_start},${salary_end}`,
+      `http://18.223.133.67:8081/api/batters/stat/range/${year}?age_range=${age_start},${age_end}&positions=${position_list}&teams=${team_list}&salary_range=${salary_start},${salary_end}`,
     ),
   );
   return data;
 };
 
-const useCustomPitcher = (
+const useCustomBatter = (
   year: number,
   age_start: number,
   age_end: number,
+  position_list: string[],
   team_list: string[],
   salary_start: number,
   salary_end: number,
 ) => {
   return useQuery(
-    ['customPitcher', age_start, age_end, team_list, salary_start, salary_end],
+    [
+      'customBatter',
+      age_start,
+      age_end,
+      position_list,
+      team_list,
+      salary_start,
+      salary_end,
+    ],
     () =>
-      fetchCustomPitcher(
+      fetchCustomBatter(
         year,
         age_start,
         age_end,
+        position_list,
         team_list,
         salary_start,
         salary_end,
       ),
-    {
-      refetchOnMount: false,
-      refetchOnWindowFocus: false,
-    },
   );
 };
 
-export { useCustomPitcher, fetchCustomPitcher };
+export { useCustomBatter, fetchCustomBatter };
