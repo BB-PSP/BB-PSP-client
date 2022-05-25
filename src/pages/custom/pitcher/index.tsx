@@ -20,6 +20,9 @@ const Wrapper = styled.div`
   ${breakpoints.medium} {
     padding-top: 10vh;
   }
+  ${breakpoints.small} {
+    padding-top: 10vh;
+  }
 `;
 
 const Container = styled.div`
@@ -42,6 +45,12 @@ const Container = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     width: 85vw;
+    height: 60vh;
+  }
+  ${breakpoints.small} {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 80vw;
     height: 60vh;
   }
   &::-webkit-scrollbar {
