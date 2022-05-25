@@ -24,6 +24,17 @@ function App({ Component, pageProps }: ComponentWithPageLayout) {
             content="wi₩dth=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
           />
           <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
+          <meta
+            property="og:url"
+            content="https://bb-m8oaqya5q-shinwonse.vercel.app/"
+          />
+          <meta property="og:title" content="BB:PSP" />
+          <meta property="og:type" content="website" />
+          <meta
+            property="og:image"
+            content="/image/baseball_gradationmask.png"
+          />
+          <meta property="og:description" content="건국대학교 졸업프로젝트" />
           <title>BB-PSP</title>
         </Head>
         <Hydrate state={pageProps.dehydratedState}>
