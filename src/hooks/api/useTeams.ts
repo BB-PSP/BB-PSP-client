@@ -7,7 +7,7 @@ const fetchTeams = async (year: number) => {
 };
 
 const useTeams = (year: number) => {
-  return useQuery(['teamData', year], () => fetchTeams(year), {
+  return useQuery('teamData', () => fetchTeams(year), {
     keepPreviousData: true,
     refetchOnMount: false,
     refetchOnWindowFocus: false,
