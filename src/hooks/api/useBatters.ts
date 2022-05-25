@@ -9,11 +9,15 @@ const fetchBatters = async (year: number, symbol: string) => {
 };
 
 const useBatters = (year: number, symbol: string) => {
-  return useQuery('batterData', () => fetchBatters(year, symbol), {
-    keepPreviousData: true,
-    refetchOnMount: false,
-    refetchOnWindowFocus: false,
-  });
+  return useQuery(
+    ['batterData', year, symbol],
+    () => fetchBatters(year, symbol),
+    {
+      keepPreviousData: true,
+      refetchOnMount: false,
+      refetchOnWindowFocus: false,
+    },
+  );
 };
 
 export { useBatters, fetchBatters };

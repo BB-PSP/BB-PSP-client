@@ -9,11 +9,15 @@ const fetchPitchers = async (year: number, symbol: string) => {
 };
 
 const usePitchers = (year: number, symbol: string) => {
-  return useQuery('pitcherData', () => fetchPitchers(year, symbol), {
-    keepPreviousData: true,
-    refetchOnMount: false,
-    refetchOnWindowFocus: false,
-  });
+  return useQuery(
+    ['pitcherData', year, symbol],
+    () => fetchPitchers(year, symbol),
+    {
+      keepPreviousData: true,
+      refetchOnMount: false,
+      refetchOnWindowFocus: false,
+    },
+  );
 };
 
 export { usePitchers, fetchPitchers };

@@ -12,7 +12,7 @@ const fetchPitcher = async (year: number, name: string, birth: string) => {
 
 const usePitcher = (year: number, name: string, birth: string) => {
   return useQuery(
-    ['pitcher', name, birth],
+    ['pitcher', year, name, birth],
     () => fetchPitcher(year, name, birth),
     {
       refetchOnMount: false,
