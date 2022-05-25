@@ -1,13 +1,16 @@
 import styled from '@emotion/styled';
-import { fetchPlayers, usePlayers } from '@hooks/api/usePlayers';
+import { useCustomBatter } from '@hooks/api/useCustomBatter';
 import CommonLayout from '@layout/common/CommonLayout';
 import BatterCard from '@PlayerCard/BatterCard';
-import PitcherCard from '@PlayerCard/PitcherCard';
-import { IBatterProps, IPitcherProps } from '@store/Types';
+import {
+  ageRangeState,
+  salaryRangeState,
+  selectedPositionState,
+  selectedTeamState,
+} from '@store/Data/atom';
+import { IBatterProps } from '@store/Types';
 import { breakpoints } from '@styles/media';
-import { GetStaticPaths, GetStaticProps } from 'next';
-import { useRouter } from 'next/router';
-import { dehydrate, QueryClient } from 'react-query';
+import { useRecoilValue } from 'recoil';
 
 const Wrapper = styled.div`
   display: flex;
@@ -58,27 +61,30 @@ const Container = styled.div`
 `;
 
 const Batter = () => {
+  const team = useRecoilValue(selectedTeamState);
+  const position = useRecoilValue(selectedPositionState);
+  const age = useRecoilValue(ageRangeState);
+  const salary = useRecoilValue(salaryRangeState);
+  const { isLoading, error, data } = useCustomBatter(
+    2021,
+    age[0],
+    age[1],
+    position,
+    team,
+    salary[0],
+    salary[1],
+  );
+  if (isLoading) return <div>Loading...</div>;
+  if (error) console.error(error);
   return (
     <Wrapper>
-      <Container>pitcher</Container>
+      <Container>
+        {data.map((player: IBatterProps) => {
+          return <BatterCard key={player?.player_info?.name} {...player} />;
+        })}
+      </Container>
     </Wrapper>
   );
-};
-
-export const getStaticProps: GetStaticProps = async (context) => {
-  const proteam = context.params?.proteam as string;
-  const position = context.params?.position as string;
-  const queryClient = new QueryClient();
-
-  await queryClient.prefetchQuery('playerData', () =>
-    fetchPlayers(position, 2021, proteam),
-  );
-
-  return {
-    props: {
-      dehydratedState: dehydrate(queryClient),
-    },
-  };
 };
 
 Batter.PageLayout = CommonLayout;

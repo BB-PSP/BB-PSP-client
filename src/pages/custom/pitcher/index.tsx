@@ -1,19 +1,14 @@
 import styled from '@emotion/styled';
 import { useCustomPitcher } from '@hooks/api/useCustomPitcher';
-import { fetchPlayers, usePlayers } from '@hooks/api/usePlayers';
 import CommonLayout from '@layout/common/CommonLayout';
-import BatterCard from '@PlayerCard/BatterCard';
 import PitcherCard from '@PlayerCard/PitcherCard';
 import {
   ageRangeState,
-  selectedPositionState,
+  salaryRangeState,
   selectedTeamState,
 } from '@store/Data/atom';
-import { IBatterProps, IPitcherProps } from '@store/Types';
+import { IPitcherProps } from '@store/Types';
 import { breakpoints } from '@styles/media';
-import { GetStaticPaths, GetStaticProps } from 'next';
-import { useRouter } from 'next/router';
-import { dehydrate, QueryClient } from 'react-query';
 import { useRecoilValue } from 'recoil';
 
 const Wrapper = styled.div`
@@ -66,28 +61,27 @@ const Container = styled.div`
 
 const Pitcher = () => {
   const team = useRecoilValue(selectedTeamState);
-  const position = useRecoilValue(selectedPositionState);
   const age = useRecoilValue(ageRangeState);
-  console.log(team, position, age);
-  const { data, isSuccess, isError } = useCustomPitcher(
+  const salary = useRecoilValue(salaryRangeState);
+  const { isLoading, error, data } = useCustomPitcher(
     2021,
-    age[1],
     age[0],
-    position,
+    age[1],
     team,
+    salary[0],
+    salary[1],
   );
-  console.log(isSuccess);
+  if (isLoading) return <div>Loading...</div>;
+  if (error) console.error(error);
   return (
     <Wrapper>
-      <Container>pitcher</Container>
+      <Container>
+        {data.map((player: IPitcherProps) => {
+          return <PitcherCard key={player?.player_info?.name} {...player} />;
+        })}
+      </Container>
     </Wrapper>
   );
-};
-
-export const getStaticProps: GetStaticProps = async () => {
-  return {
-    props: {},
-  };
 };
 
 Pitcher.PageLayout = CommonLayout;
