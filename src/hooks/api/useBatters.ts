@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 
 const fetchBatters = async (year: number, symbol: string) => {
   const { data } = await axios(
-    `http://18.223.133.67:8081/api/batters/stat/${year}/${symbol}`,
+    `https://bbpsp-backend-api.click/api/batters/stat/${year}/${symbol}`,
   );
   return data;
 };

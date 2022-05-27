@@ -4,7 +4,7 @@ import { useQuery } from 'react-query';
 const fetchPitcher = async (year: number, name: string, birth: string) => {
   const { data } = await axios(
     encodeURI(
-      `http://18.223.133.67:8081/api/pitchers/stat/${year}?name=${name}&birth=${birth}`,
+      `https://bbpsp-backend-api.click/api/pitchers/stat/${year}?name=${name}&birth=${birth}`,
     ),
   );
   return data;

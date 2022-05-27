@@ -11,7 +11,7 @@ const fetchCustomPitcher = async (
 ) => {
   const { data } = await axios(
     encodeURI(
-      `http://18.223.133.67:8081/api/pitchers/stat/range/${year}?age_range=${age_start},${age_end}&teams=${team_list}&salary_range=${salary_start},${salary_end}`,
+      `https://bbpsp-backend-api.click/api/pitchers/stat/range/${year}?age_range=${age_start},${age_end}&teams=${team_list}&salary_range=${salary_start},${salary_end}`,
     ),
   );
   return data;

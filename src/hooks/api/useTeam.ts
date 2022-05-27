@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 
 const fetchTeam = async (year: number, team: string) => {
   const { data } = await axios(
-    `http://18.223.133.67:8081/api/teams/${year}/${team}`,
+    `https://bbpsp-backend-api.click/api/teams/${year}/${team}`,
   );
   return data;
 };
