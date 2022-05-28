@@ -81,8 +81,8 @@ const Batter = () => {
     age[1],
     position,
     team,
-    salary[0],
-    salary[1],
+    salary[0] * 10000,
+    salary[1] * 10000,
   );
   if (isLoading) return <CommonLoading />;
   if (error) console.error(error);

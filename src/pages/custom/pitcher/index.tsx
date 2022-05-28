@@ -78,8 +78,8 @@ const Pitcher = () => {
     age[0],
     age[1],
     team,
-    salary[0],
-    salary[1],
+    salary[0] * 10000,
+    salary[1] * 10000,
   );
   if (isLoading) return <CommonLoading />;
   if (error) console.error(error);

@@ -49,8 +49,8 @@ const Range = () => {
           label="salary"
           value={salaryRange}
           onChange={setSalaryRange}
-          min={2}
-          max={100}
+          min={0}
+          max={30}
         />
         <AgeRangeSlider
           label="age"

@@ -17,10 +17,10 @@ export const selectedPositionState = atom<string[]>({
 
 export const ageRangeState = atom<number[]>({
   key: 'ageRangeState',
-  default: [25, 35],
+  default: [20, 21],
 });
 
 export const salaryRangeState = atom<number[]>({
   key: 'salaryRangeState',
-  default: [30, 70],
+  default: [0, 1],
 });
