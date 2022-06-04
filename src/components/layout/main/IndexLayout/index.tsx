@@ -1,7 +1,12 @@
-import { Container } from './styles';
+import { Container, ImageContainer } from './styles';
 
 const IndexLayout = ({ children }: { children: React.ReactNode }) => {
-  return <Container>{children}</Container>;
+  return (
+    <Container>
+      {children}
+      <ImageContainer />
+    </Container>
+  );
 };
 
 export default IndexLayout;

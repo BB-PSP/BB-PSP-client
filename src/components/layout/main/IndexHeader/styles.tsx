@@ -21,7 +21,7 @@ export const Title = styled.h1`
   font-family: 'PlayfairDisplayBold';
   color: #b70000;
   ${breakpoints.large} {
-    font-size: 2.5vw;
+    font-size: 3.6rem;
   }
   ${breakpoints.medium} {
     font-size: 5vw;

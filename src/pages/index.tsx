@@ -16,7 +16,7 @@ const SubTitle = styled.h2`
   font-family: 'RobotoMonoRegular';
   color: #000;
   ${breakpoints.large} {
-    font-size: 1.1vw;
+    font-size: 1.5rem;
     padding-top: 7.4vh;
   }
   ${breakpoints.medium} {
@@ -46,7 +46,7 @@ const Description = styled.p`
   font-family: 'RobotoMonoRegular';
   color: #565656;
   ${breakpoints.large} {
-    font-size: 0.8vw;
+    font-size: 1.1rem;
     line-height: 2.5vh;
   }
   ${breakpoints.medium} {
@@ -63,8 +63,7 @@ const ButtonConatiner = styled.nav`
   position: absolute;
   display: flex;
   ${breakpoints.large} {
-    bottom: 15.28vh;
-    width: 66.66vw;
+    bottom: 15vh;
     flex-direction: row;
   }
   ${breakpoints.medium} {
@@ -82,7 +81,7 @@ const ButtonConatiner = styled.nav`
 const ProButtonBox = styled.div`
   flex-direction: column;
   ${breakpoints.large} {
-    padding-right: 35.8vw;
+    margin-right: 52rem;
   }
   ${breakpoints.medium} {
     margin-bottom: 8vh;
@@ -103,8 +102,8 @@ const ProButton = styled.h3`
   color: #b70000;
   font-family: 'RobotoMonoRegular';
   ${breakpoints.large} {
-    font-size: 1.46vw;
-    line-height: 3.42vh;
+    font-size: 2rem;
+    line-height: 3rem;
   }
   ${breakpoints.medium} {
     font-size: 2.92vw;
@@ -121,8 +120,8 @@ const CustomButton = styled.h3`
   color: #b70000;
   font-family: 'RobotoMonoRegular';
   ${breakpoints.large} {
-    font-size: 1.46vw;
-    line-height: 3.42vh;
+    font-size: 2rem;
+    line-height: 3rem;
   }
   ${breakpoints.medium} {
     font-size: 2.92vw;
@@ -134,8 +133,8 @@ const CustomButton = styled.h3`
 
 const ArrowImg = styled.img`
   ${breakpoints.large} {
-    margin-top: 0.15vh;
-    width: 5.4vw;
+    margin-top: 1rem;
+    width: 8rem;
     height: auto;
   }
   ${breakpoints.medium} {
@@ -150,7 +149,7 @@ const ArrowImg = styled.img`
   }
 `;
 
-function Home() {
+const Home = () => {
   return (
     <>
       <Wrapper>
@@ -182,7 +181,7 @@ function Home() {
       </Wrapper>
     </>
   );
-}
+};
 
 Home.PageLayout = IndexLayout;
 
