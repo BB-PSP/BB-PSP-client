@@ -9,7 +9,7 @@ import { GetStaticProps } from 'next';
 import { useEffect } from 'react';
 import { dehydrate, QueryClient } from 'react-query';
 
-const Wrapper = styled.main`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,7 +20,8 @@ const Slider = styled.div`
   z-index: 1;
   ${breakpoints.large} {
     margin-top: 4.91vh;
-    width: 69.27vw;
+    width: 69vw;
+    min-width: 100rem;
   }
   ${breakpoints.medium} {
     width: 80vw;
