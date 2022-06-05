@@ -12,7 +12,6 @@ export const Wrapper = styled.nav`
     padding-top: 8.7vh;
   }
   ${breakpoints.small} {
-    padding-top: 7vh;
     padding-top: 5rem;
   }
 `;
