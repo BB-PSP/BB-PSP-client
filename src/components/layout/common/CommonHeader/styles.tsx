@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
     padding-top: 8.7vh;
   }
   ${breakpoints.small} {
-    padding-top: 7vh;
+    padding-top: 5rem;
   }
 `;
 
@@ -45,6 +45,6 @@ export const SubTitle = styled.h2`
   }
   ${breakpoints.small} {
     font-size: 3vw;
-    padding-top: 1vh;
+    padding-top: 2rem;
   }
 `;

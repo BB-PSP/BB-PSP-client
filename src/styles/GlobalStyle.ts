@@ -16,8 +16,9 @@ const GlobalStyle = createGlobalStyle`
     max-width: 100%;
     overflow: hidden;
     ${breakpoints.small} {
-      overflow-x: hidden;
-      /* overflow-y: hidden; */
+      overflow: hidden;
+      touch-action: none;
+      position: fixed;
     }
     font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   }

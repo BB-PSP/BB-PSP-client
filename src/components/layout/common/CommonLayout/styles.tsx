@@ -26,9 +26,11 @@ export const ImageContainer = styled.div`
   background-position: center bottom;
   background-size: contain;
   ${breakpoints.medium} {
-    background-size: 60vh auto;
+    width: 100%;
+    background-size: auto 40vw;
   }
   ${breakpoints.small} {
-    background-size: 40vh auto;
+    width: 100%;
+    background-size: auto 40vw;
   }
 `;
