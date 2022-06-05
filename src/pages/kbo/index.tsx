@@ -20,7 +20,7 @@ const Slider = styled.div`
   z-index: 1;
   ${breakpoints.large} {
     margin-top: 4.91vh;
-    width: 69vw;
+    width: 70vw;
     min-width: 100rem;
   }
   ${breakpoints.medium} {

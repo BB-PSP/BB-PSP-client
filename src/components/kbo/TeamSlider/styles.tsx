@@ -1,10 +1,6 @@
 import styled from '@emotion/styled';
 import { breakpoints } from '@styles/media';
 
-export const Wrapper = styled.div`
-  width: 100%;
-`;
-
 export const TeamSliderContainer = styled.div`
   position: relative;
   align-items: center;
@@ -12,6 +8,7 @@ export const TeamSliderContainer = styled.div`
   overflow-x: scroll;
   ${breakpoints.large} {
     height: 71.39vh;
+    min-height: 55rem;
     width: 100%;
     white-space: nowrap;
     &::-webkit-scrollbar {

@@ -38,6 +38,7 @@ export const Background = styled.div`
   ${breakpoints.large} {
     display: none;
     width: 12.85vw;
+    width: 13vw;
     height: 100%;
     bottom: 3.8vh;
   }
@@ -115,7 +116,6 @@ export const Wrapper = styled.div<ITeamCardProps>`
   height: 100%;
   margin-top: 22vh;
   margin-right: 1vw;
-  /* width: 13vw; */
   width: 100%;
   ${breakpoints.large} {
     &:hover {

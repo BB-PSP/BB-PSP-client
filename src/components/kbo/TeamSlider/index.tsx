@@ -1,6 +1,6 @@
 import TeamCard from '@kbo/TeamCard';
 
-import { Row, TeamSliderContainer, Wrapper } from './styles';
+import { Row, TeamSliderContainer } from './styles';
 
 export interface TeamSliderProps {
   name: string;
@@ -15,7 +15,7 @@ export interface TeamSliderProps {
 const TeamSlider = (teams: TeamSliderProps) => {
   const teamArr = Object.values(teams);
   return (
-    <Wrapper>
+    <div>
       <TeamSliderContainer>
         <Row>
           {teamArr.map((team) => {
@@ -23,7 +23,7 @@ const TeamSlider = (teams: TeamSliderProps) => {
           })}
         </Row>
       </TeamSliderContainer>
-    </Wrapper>
+    </div>
   );
 };
 
