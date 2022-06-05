@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
   body{
     background-color: #ccc;
     max-width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
     ${breakpoints.small} {
       overflow: hidden;
       touch-action: none;
