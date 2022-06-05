@@ -22,7 +22,7 @@ export const Title = styled.h1`
   font-family: 'PlayfairDisplayBold';
   color: #b70000;
   ${breakpoints.large} {
-    font-size: 2.5vw;
+    font-size: 3.6rem;
   }
   ${breakpoints.medium} {
     font-size: 5vw;
@@ -36,18 +36,15 @@ export const SubTitle = styled.h2`
   font-family: 'RobotoMonoRegular';
   color: #b70000;
   ${breakpoints.large} {
-    font-size: 0.73vw;
-    line-height: 1.73vh;
-    padding-top: 0.74vh;
+    font-size: 1.2rem;
+    padding-top: 1vh;
   }
   ${breakpoints.medium} {
-    font-size: 1.4rem;
-    line-height: 1.846rem;
-    padding-top: 0.8rem;
+    font-size: 2vw;
+    padding-top: 1vh;
   }
   ${breakpoints.small} {
     font-size: 3vw;
-    line-height: 3vh;
     padding-top: 1vh;
   }
 `;
