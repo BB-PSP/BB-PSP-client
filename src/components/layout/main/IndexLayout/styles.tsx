@@ -8,9 +8,6 @@ export const Container = styled.div`
   ${breakpoints.large} {
     min-height: 70rem;
   }
-  ${breakpoints.small} {
-    height: 100%;
-  }
   @supports (-webkit-touch-callout: none) {
     height: -webkit-fill-available;
   }
