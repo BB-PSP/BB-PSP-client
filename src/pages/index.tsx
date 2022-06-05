@@ -25,7 +25,7 @@ const SubTitle = styled.h2`
   }
   ${breakpoints.small} {
     font-size: 3.3vw;
-    padding-top: 3.4vh;
+    padding-top: 2.2rem;
   }
 `;
 
@@ -38,7 +38,7 @@ const DescriptionBox = styled.section`
     padding-top: 3.7vh;
   }
   ${breakpoints.small} {
-    padding-top: 2vh;
+    padding-top: 1.8rem;
   }
 `;
 
@@ -55,7 +55,6 @@ const Description = styled.p`
   }
   ${breakpoints.small} {
     font-size: 2vw;
-    line-height: 3vh;
   }
 `;
 
@@ -72,7 +71,7 @@ const ButtonConatiner = styled.nav`
     align-items: flex-start;
   }
   ${breakpoints.small} {
-    bottom: 35vh;
+    bottom: 25rem;
     flex-direction: column;
     align-items: flex-start;
   }
@@ -87,7 +86,7 @@ const ProButtonBox = styled.div`
     margin-bottom: 8vh;
   }
   ${breakpoints.small} {
-    margin-bottom: 8vh;
+    margin-bottom: 6rem;
   }
 `;
 
@@ -143,7 +142,7 @@ const ArrowImg = styled.img`
     height: auto;
   }
   ${breakpoints.small} {
-    margin-top: 1vh;
+    margin-top: 1rem;
     width: 20vw;
     height: auto;
   }
