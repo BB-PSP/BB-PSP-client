@@ -62,7 +62,7 @@ export const ModalBlock = styled.div`
     height: 70vh;
   }
   ${breakpoints.small} {
-    width: 70vw;
+    width: 60vw;
     height: 70vh;
   }
 `;
@@ -113,10 +113,15 @@ export const Grid = styled.div`
   }
   ${breakpoints.medium} {
     grid-template-columns: repeat(1, 1fr);
-    height: 61vh;
-    width: 40vw;
-    column-gap: 2.6vw;
-    row-gap: 3.7vh;
+    height: 60vh;
+    width: 28vw;
+    row-gap: 1vh;
+  }
+  ${breakpoints.small} {
+    grid-template-columns: repeat(1, 1fr);
+    height: 60vh;
+    width: 38vw;
+    row-gap: 1vh;
   }
   overflow: scroll;
 `;
