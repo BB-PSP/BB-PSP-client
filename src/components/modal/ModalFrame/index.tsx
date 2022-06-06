@@ -1,3 +1,9 @@
+import { usePitcherRecommend } from '@hooks/api/usePitcherRecommend';
+import PitcherCard from '@PlayerCard/PitcherCard';
+import { IPitcherProps } from '@store/Types';
+import CommonLoading from 'components/loading/commonLoading';
+import { useRouter } from 'next/router';
+
 import {
   Background,
   CloseButton,
@@ -13,6 +19,12 @@ interface ModalProps {
 }
 
 const ModalFrame = ({ setShowModal }: ModalProps) => {
+  const router = useRouter();
+  const name = router.query?.player as string;
+  const birth = router.query?.birth as string;
+  const { isLoading, error, data } = usePitcherRecommend(2021, name, birth);
+  if (isLoading) return <CommonLoading />;
+  if (error) console.error(error);
   return (
     <Container>
       <Background>
@@ -25,9 +37,11 @@ const ModalFrame = ({ setShowModal }: ModalProps) => {
           <Contents>
             <Title>replacement player</Title>
             <Grid>
-              {/* {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((i) => {
-                return <PlayerCard key={i} />;
-              })} */}
+              {data?.map((player: IPitcherProps) => {
+                return (
+                  <PitcherCard key={player?.player_info.name} {...player} />
+                );
+              })}
             </Grid>
           </Contents>
         </ModalBlock>

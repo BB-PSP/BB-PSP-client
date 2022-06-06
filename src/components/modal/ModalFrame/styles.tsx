@@ -35,7 +35,7 @@ export const Background = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(5px);
@@ -108,7 +108,7 @@ export const Grid = styled.div`
   ${breakpoints.large} {
     grid-template-columns: repeat(2, 1fr);
     height: 62.04vh;
-    width: 32.81vw;
+    width: 35vw;
     column-gap: 2.6vw;
     row-gap: 3.7vh;
   }
