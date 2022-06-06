@@ -99,7 +99,7 @@ export const LogoBoxBackground = styled.div`
   background-color: #505050;
   position: relative;
   top: 1.5vh;
-  height: 12vh;
+  height: 12.1vh;
   z-index: -1;
   ${breakpoints.medium} {
     display: none;
@@ -115,6 +115,7 @@ export const Wrapper = styled.div<ITeamCardProps>`
   flex-direction: column;
   height: 100%;
   margin-top: 22vh;
+  bottom: 5vh;
   margin-right: 1vw;
   width: 100%;
   ${breakpoints.large} {

@@ -8,7 +8,7 @@ export const TeamSliderContainer = styled.div`
   overflow-x: scroll;
   ${breakpoints.large} {
     height: 71.39vh;
-    min-height: 55rem;
+    /* min-height: 55rem; */
     width: 100%;
     white-space: nowrap;
     &::-webkit-scrollbar {

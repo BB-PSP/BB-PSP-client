@@ -13,15 +13,16 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  ${breakpoints.large} {
+    padding-top: 4vh;
+  }
 `;
 
 const Slider = styled.div`
   position: relative;
   z-index: 1;
   ${breakpoints.large} {
-    margin-top: 4.91vh;
     width: 70vw;
-    min-width: 100rem;
   }
   ${breakpoints.medium} {
     width: 80vw;
