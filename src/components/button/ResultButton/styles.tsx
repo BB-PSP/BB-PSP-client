@@ -3,7 +3,6 @@ import { breakpoints } from '@styles/media';
 
 export const Wrapper = styled.div`
   display: flex;
-  flex: 1;
   flex-direction: row;
   justify-content: space-between;
   ${breakpoints.large} {

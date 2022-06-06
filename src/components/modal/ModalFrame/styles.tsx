@@ -35,7 +35,7 @@ export const Background = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(5px);
@@ -72,7 +72,7 @@ export const Contents = styled.div`
   flex-direction: column;
   align-items: center;
   ${breakpoints.large} {
-    padding-top: 4.9vh;
+    padding-top: 3.5vh;
   }
   ${breakpoints.medium} {
     padding-top: 3vh;
@@ -87,8 +87,7 @@ export const Title = styled.h2`
   color: #272727;
   ${breakpoints.large} {
     font-size: 1.15vw;
-    line-height: 2.69vh;
-    padding-bottom: 5.28vh;
+    padding-bottom: 3vh;
   }
   ${breakpoints.medium} {
     font-size: 2vw;
