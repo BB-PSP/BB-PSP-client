@@ -9,7 +9,7 @@ import {
   selectedPositionState,
 } from '@store/Data/atom';
 import { breakpoints } from '@styles/media';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 
 const Wrapper = styled.div`
@@ -42,6 +42,10 @@ const Range = () => {
   const [salaryRange, setSalaryRange] =
     useRecoilState<number[]>(salaryRangeState);
   const [ageRange, setAgeRange] = useRecoilState<number[]>(ageRangeState);
+  useEffect(() => {
+    setSalaryRange([0, 1]);
+    setAgeRange([20, 21]);
+  }, []);
   return (
     <Wrapper>
       <ContentsContainer>
