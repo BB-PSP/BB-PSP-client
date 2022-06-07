@@ -18,7 +18,7 @@ const ResultButton = ({ name, birth }: IResultButtonProps) => {
       </Button>
       <Link
         href={{
-          pathname: '/result/batter/[player]/[birth]/threeyear',
+          pathname: '/result/batter/[player]/[birth]/predictedStat',
           query: {
             player: name,
             birth: birth,
@@ -29,7 +29,7 @@ const ResultButton = ({ name, birth }: IResultButtonProps) => {
           more
           <BackArrowImg
             src="/image/white_arrow.png"
-            alt="3년치 성적 예측 페이지 버튼"
+            alt="성적 예측 페이지 버튼"
           />
         </Button>
       </Link>
