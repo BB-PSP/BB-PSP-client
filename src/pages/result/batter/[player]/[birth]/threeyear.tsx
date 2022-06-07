@@ -1,9 +1,12 @@
 import PrevButton from '@button/PrevButton';
 import styled from '@emotion/styled';
 import { fetchBatter, useBatter } from '@hooks/api/useBatter';
-import BlackFullLayout from '@layout/black/BlackFullLayout';
+import { useBatterPrediction } from '@hooks/api/useBatterPrediction';
+import BlackLayout from '@layout/black/BlackLayout';
+import BatterPredictTable from '@PlayerInfo/StatTable/BatterPredictTable';
 import BatterTable from '@PlayerInfo/StatTable/BatterTable';
 import { breakpoints } from '@styles/media';
+import CommonLoading from 'components/loading/commonLoading';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import { dehydrate, QueryClient } from 'react-query';
@@ -24,15 +27,7 @@ const ContentsContainer = styled.div`
     rgba(39, 39, 39, 0.433227) 65.57%,
     rgba(39, 39, 39, 0) 100%
   );
-  ${breakpoints.large} {
-    margin-top: 10vh;
-  }
-  ${breakpoints.medium} {
-    margin-top: 5vh;
-  }
-  ${breakpoints.small} {
-    margin-top: 5vh;
-  }
+  margin-top: 5vh;
 `;
 
 const StatContainer = styled.div`
@@ -63,7 +58,10 @@ const Threeyear = () => {
   const name = router.query?.player as string;
   const birth = router.query?.birth as string;
   const { isLoading, error, data } = useBatter(2021, name, birth);
-  if (isLoading) return <div>Loading...</div>;
+  const predictedData = useBatterPrediction(2021, name, birth);
+  if (predictedData.isLoading) return <CommonLoading />;
+  const predictedStat = predictedData?.data;
+  if (isLoading) return <CommonLoading />;
   if (error) console.error(error);
   const batter_stat = data?.batter_stat;
   return (
@@ -71,8 +69,7 @@ const Threeyear = () => {
       <ContentsContainer>
         <StatContainer>
           <BatterTable {...batter_stat} />
-          <BatterTable {...batter_stat} />
-          <BatterTable {...batter_stat} />
+          <BatterPredictTable {...predictedStat} />
         </StatContainer>
         <ButtonContainer>
           <PrevButton />
@@ -105,6 +102,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-Threeyear.PageLayout = BlackFullLayout;
+Threeyear.PageLayout = BlackLayout;
 
 export default Threeyear;
