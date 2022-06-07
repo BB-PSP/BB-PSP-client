@@ -28,7 +28,7 @@ const ContentsContainer = styled.div`
     rgba(39, 39, 39, 0) 100%
   );
   ${breakpoints.large} {
-    margin-top: 10vh;
+    margin-top: 5vh;
   }
   ${breakpoints.medium} {
     margin-top: 5vh;
