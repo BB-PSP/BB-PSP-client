@@ -125,3 +125,11 @@ export const Grid = styled.div`
   }
   overflow: scroll;
 `;
+
+export const NoDataBox = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 23vh;
+`;

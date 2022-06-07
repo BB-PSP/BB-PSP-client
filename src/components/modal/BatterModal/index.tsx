@@ -12,6 +12,7 @@ import {
   Contents,
   Grid,
   ModalBlock,
+  NoDataBox,
   Title,
 } from './styles';
 
@@ -38,13 +39,19 @@ const BatterModal = ({ setShowModal }: ModalProps) => {
         <ModalBlock>
           <Contents>
             <Title>replacement player</Title>
-            <Grid>
-              {data?.map((player: IBatterProps) => {
-                return (
-                  <BatterCard key={player?.player_info.name} {...player} />
-                );
-              })}
-            </Grid>
+            {data?.length === 0 ? (
+              <NoDataBox>
+                <NoData />
+              </NoDataBox>
+            ) : (
+              <Grid>
+                {data?.map((player: IBatterProps) => {
+                  return (
+                    <BatterCard key={player?.player_info.name} {...player} />
+                  );
+                })}
+              </Grid>
+            )}
           </Contents>
         </ModalBlock>
       </Background>

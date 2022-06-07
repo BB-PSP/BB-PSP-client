@@ -12,6 +12,7 @@ import {
   Contents,
   Grid,
   ModalBlock,
+  NoDataBox,
   Title,
 } from './styles';
 
@@ -26,7 +27,6 @@ const PitcherModal = ({ setShowModal }: ModalProps) => {
   const { isLoading, error, data } = usePitcherRecommend(2021, name, birth);
   if (isLoading) return <CommonLoading />;
   if (error) console.error(error);
-  if (data?.length === 0) return <NoData />;
   return (
     <Container>
       <Background>
@@ -38,13 +38,19 @@ const PitcherModal = ({ setShowModal }: ModalProps) => {
         <ModalBlock>
           <Contents>
             <Title>replacement player</Title>
-            <Grid>
-              {data?.map((player: IPitcherProps) => {
-                return (
-                  <PitcherCard key={player?.player_info.name} {...player} />
-                );
-              })}
-            </Grid>
+            {data?.length === 0 ? (
+              <NoDataBox>
+                <NoData />
+              </NoDataBox>
+            ) : (
+              <Grid>
+                {data?.map((player: IPitcherProps) => {
+                  return (
+                    <PitcherCard key={player?.player_info.name} {...player} />
+                  );
+                })}
+              </Grid>
+            )}
           </Contents>
         </ModalBlock>
       </Background>

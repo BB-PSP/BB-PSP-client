@@ -106,9 +106,9 @@ export const Grid = styled.div`
   display: grid;
   ${breakpoints.large} {
     grid-template-columns: repeat(2, 1fr);
-    height: 62.04vh;
+    height: 62vh;
     width: 35vw;
-    column-gap: 2.6vw;
+    column-gap: 2vw;
     row-gap: 3.7vh;
   }
   ${breakpoints.medium} {
@@ -123,5 +123,13 @@ export const Grid = styled.div`
     width: 38vw;
     row-gap: 1vh;
   }
-  overflow: scroll;
+  overflow-y: scroll;
+`;
+
+export const NoDataBox = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 23vh;
 `;
