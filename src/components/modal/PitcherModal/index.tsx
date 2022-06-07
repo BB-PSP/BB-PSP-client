@@ -2,6 +2,7 @@ import { usePitcherRecommend } from '@hooks/api/usePitcherRecommend';
 import PitcherCard from '@PlayerCard/PitcherCard';
 import { IPitcherProps } from '@store/Types';
 import CommonLoading from 'components/loading/commonLoading';
+import NoData from 'components/nodata';
 import { useRouter } from 'next/router';
 
 import {
@@ -25,6 +26,7 @@ const PitcherModal = ({ setShowModal }: ModalProps) => {
   const { isLoading, error, data } = usePitcherRecommend(2021, name, birth);
   if (isLoading) return <CommonLoading />;
   if (error) console.error(error);
+  if (data?.length === 0) return <NoData />;
   return (
     <Container>
       <Background>

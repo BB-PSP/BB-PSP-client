@@ -11,6 +11,7 @@ import {
 import { IBatterProps } from '@store/Types';
 import { breakpoints } from '@styles/media';
 import CommonLoading from 'components/loading/commonLoading';
+import NoData from 'components/nodata';
 import { useRecoilValue } from 'recoil';
 
 const Wrapper = styled.div`
@@ -86,6 +87,7 @@ const Batter = () => {
   );
   if (isLoading) return <CommonLoading />;
   if (error) console.error(error);
+  if (data?.length === 0) return <NoData />;
   return (
     <Wrapper>
       <Container>

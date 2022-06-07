@@ -2,6 +2,7 @@ import { useBatterRecommend } from '@hooks/api/useBatterRecommend';
 import BatterCard from '@PlayerCard/BatterCard';
 import { IBatterProps } from '@store/Types';
 import CommonLoading from 'components/loading/commonLoading';
+import NoData from 'components/nodata';
 import { useRouter } from 'next/router';
 
 import {
@@ -25,6 +26,7 @@ const BatterModal = ({ setShowModal }: ModalProps) => {
   const { isLoading, error, data } = useBatterRecommend(2021, name, birth);
   if (isLoading) return <CommonLoading />;
   if (error) console.error(error);
+  if (data?.length === 0) return <NoData />;
   return (
     <Container>
       <Background>
