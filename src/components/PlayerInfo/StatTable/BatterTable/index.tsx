@@ -24,9 +24,9 @@ const BatterTable = (batterStat: IBatterStatProps) => {
           <StatTd>{batterStat?._G}</StatTd>
           <StatTd>{batterStat?._PA}</StatTd>
           <StatTd>{batterStat?._AB}</StatTd>
-          <StatTd>{batterStat?._AVG.toFixed(3)}</StatTd>
-          <StatTd>{batterStat?._OBP.toFixed(3)}</StatTd>
-          <StatTd>{batterStat?._SLG.toFixed(3)}</StatTd>
+          <StatTd>{batterStat?._AVG?.toFixed(3)}</StatTd>
+          <StatTd>{batterStat?._OBP?.toFixed(3)}</StatTd>
+          <StatTd>{batterStat?._SLG?.toFixed(3)}</StatTd>
           <StatTd>{batterStat?._H}</StatTd>
           <StatTd>{batterStat?._HR}</StatTd>
           <StatTd>{batterStat?._RBI}</StatTd>
