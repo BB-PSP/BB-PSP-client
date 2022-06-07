@@ -9,7 +9,7 @@ import { breakpoints } from '@styles/media';
 import BlackLoading from 'components/loading/blackLoading';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { dehydrate, QueryClient } from 'react-query';
 
 const Wrapper = styled.div`
@@ -107,6 +107,9 @@ const Player = () => {
   const position = 'pitcher';
   const name = router.query?.player as string;
   const birth = router.query?.birth as string;
+  useEffect(() => {
+    setShowModal(false);
+  }, [name, birth]);
   const { isLoading, error, data } = usePitcher(2021, name, birth);
   if (isLoading) return <BlackLoading />;
   if (error) console.error(error);
