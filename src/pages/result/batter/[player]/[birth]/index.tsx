@@ -2,7 +2,7 @@ import ResultButton from '@button/ResultButton';
 import styled from '@emotion/styled';
 import { fetchBatter, useBatter } from '@hooks/api/useBatter';
 import BlackLayout from '@layout/black/BlackLayout';
-import ModalFrame from '@modal/ModalFrame';
+import BatterModal from '@modal/BatterModal';
 import Profile from '@PlayerInfo/Profile';
 import BatterTable from '@PlayerInfo/StatTable/BatterTable';
 import { breakpoints } from '@styles/media';
@@ -126,7 +126,7 @@ const Player = () => {
           replacement player
         </ReplacementPlayerButton>
       </BottomContentsContainer>
-      {showModal ? <ModalFrame setShowModal={setShowModal} /> : null}
+      {showModal ? <BatterModal setShowModal={setShowModal} /> : null}
     </Wrapper>
   );
 };

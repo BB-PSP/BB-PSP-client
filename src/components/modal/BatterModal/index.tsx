@@ -1,6 +1,6 @@
-import { usePitcherRecommend } from '@hooks/api/usePitcherRecommend';
-import PitcherCard from '@PlayerCard/PitcherCard';
-import { IPitcherProps } from '@store/Types';
+import { useBatterRecommend } from '@hooks/api/useBatterRecommend';
+import BatterCard from '@PlayerCard/BatterCard';
+import { IBatterProps } from '@store/Types';
 import CommonLoading from 'components/loading/commonLoading';
 import { useRouter } from 'next/router';
 
@@ -18,11 +18,11 @@ interface ModalProps {
   setShowModal: (showModal: boolean) => void;
 }
 
-const ModalFrame = ({ setShowModal }: ModalProps) => {
+const BatterModal = ({ setShowModal }: ModalProps) => {
   const router = useRouter();
   const name = router.query?.player as string;
   const birth = router.query?.birth as string;
-  const { isLoading, error, data } = usePitcherRecommend(2021, name, birth);
+  const { isLoading, error, data } = useBatterRecommend(2021, name, birth);
   if (isLoading) return <CommonLoading />;
   if (error) console.error(error);
   return (
@@ -37,9 +37,9 @@ const ModalFrame = ({ setShowModal }: ModalProps) => {
           <Contents>
             <Title>replacement player</Title>
             <Grid>
-              {data?.map((player: IPitcherProps) => {
+              {data?.map((player: IBatterProps) => {
                 return (
-                  <PitcherCard key={player?.player_info.name} {...player} />
+                  <BatterCard key={player?.player_info.name} {...player} />
                 );
               })}
             </Grid>
@@ -50,4 +50,4 @@ const ModalFrame = ({ setShowModal }: ModalProps) => {
   );
 };
 
-export default ModalFrame;
+export default BatterModal;

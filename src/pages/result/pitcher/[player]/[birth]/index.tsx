@@ -2,7 +2,7 @@ import ResultButton from '@button/ResultButton';
 import styled from '@emotion/styled';
 import { fetchPitcher, usePitcher } from '@hooks/api/usePitcher';
 import BlackLayout from '@layout/black/BlackLayout';
-import ModalFrame from '@modal/ModalFrame';
+import PitcherModal from '@modal/PitcherModal';
 import Profile from '@PlayerInfo/Profile';
 import PitcherTable from '@PlayerInfo/StatTable/PitcherTable';
 import { breakpoints } from '@styles/media';
@@ -126,7 +126,7 @@ const Player = () => {
           replacement player
         </ReplacementPlayerButton>
       </BottomContentsContainer>
-      {showModal ? <ModalFrame setShowModal={setShowModal} /> : null}
+      {showModal ? <PitcherModal setShowModal={setShowModal} /> : null}
     </Wrapper>
   );
 };
