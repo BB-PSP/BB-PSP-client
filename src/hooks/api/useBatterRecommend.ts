@@ -8,7 +8,7 @@ const fetchBatterRecommend = async (
 ) => {
   const { data } = await axios(
     encodeURI(
-      `https://bbpsp-backend-api.click/api/pitchers/stat/recommend/${year}?name=${name}&birth=${birth}`,
+      `https://bbpsp-backend-api.click/api/batters/stat/recommend/${year}?name=${name}&birth=${birth}`,
     ),
   );
   return data;
