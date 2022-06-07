@@ -129,6 +129,18 @@ export interface IPitcherStatProps {
   _WHIP: number;
 }
 
+export interface IPitcherPredictedStatProps {
+  pip: number;
+  pera: number;
+  pwhip: number;
+  pw: number;
+  pl: number;
+  pso: number;
+  phld: number;
+  ps: number;
+  pg: number;
+}
+
 export interface IPlayer {
   age: number;
   backNumber: number;
