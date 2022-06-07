@@ -47,6 +47,11 @@ const useCustomBatter = (
         salary_start,
         salary_end,
       ),
+    {
+      keepPreviousData: true,
+      refetchOnMount: false,
+      refetchOnWindowFocus: false,
+    },
   );
 };
 

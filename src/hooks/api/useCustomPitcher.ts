@@ -37,6 +37,7 @@ const useCustomPitcher = (
         salary_end,
       ),
     {
+      keepPreviousData: true,
       refetchOnMount: false,
       refetchOnWindowFocus: false,
     },
