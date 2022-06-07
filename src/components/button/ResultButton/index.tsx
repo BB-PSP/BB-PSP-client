@@ -4,11 +4,12 @@ import { useRouter } from 'next/router';
 import { ArrowImg, BackArrowImg, Button, Wrapper } from './styles';
 
 interface IResultButtonProps {
+  position: string;
   name: string;
   birth: string;
 }
 
-const ResultButton = ({ name, birth }: IResultButtonProps) => {
+const ResultButton = ({ position, name, birth }: IResultButtonProps) => {
   const router = useRouter();
   return (
     <Wrapper>
@@ -18,8 +19,9 @@ const ResultButton = ({ name, birth }: IResultButtonProps) => {
       </Button>
       <Link
         href={{
-          pathname: '/result/batter/[player]/[birth]/predictedStat',
+          pathname: '/result/[position]/[player]/[birth]/predictedStat',
           query: {
+            position: position,
             player: name,
             birth: birth,
           },
