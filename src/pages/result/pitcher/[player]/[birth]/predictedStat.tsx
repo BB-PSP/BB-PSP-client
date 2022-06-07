@@ -6,7 +6,7 @@ import BlackLayout from '@layout/black/BlackLayout';
 import PitcherPredictTable from '@PlayerInfo/StatTable/PitcherPredictTable';
 import PitcherTable from '@PlayerInfo/StatTable/PitcherTable';
 import { breakpoints } from '@styles/media';
-import CommonLoading from 'components/loading/commonLoading';
+import BlackLoading from 'components/loading/blackLoading';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import { dehydrate, QueryClient } from 'react-query';
@@ -68,8 +68,8 @@ const PredictedStat = () => {
   const { isLoading, error, data } = usePitcher(2021, name, birth);
   const predictedData = usePitcherPrediction(2021, name, birth);
   const predictedStat = predictedData?.data;
-  if (predictedData.isLoading) return <CommonLoading />;
-  if (isLoading) return <div>Loading...</div>;
+  if (predictedData.isLoading) return <BlackLoading />;
+  if (isLoading) return <BlackLoading />;
   if (error) console.error(error);
   const pitcher_stat = data?.pitcher_stat;
   return (

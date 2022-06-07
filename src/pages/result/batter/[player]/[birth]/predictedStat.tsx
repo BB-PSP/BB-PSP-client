@@ -6,7 +6,7 @@ import BlackLayout from '@layout/black/BlackLayout';
 import BatterPredictTable from '@PlayerInfo/StatTable/BatterPredictTable';
 import BatterTable from '@PlayerInfo/StatTable/BatterTable';
 import { breakpoints } from '@styles/media';
-import CommonLoading from 'components/loading/commonLoading';
+import BlackLoading from 'components/loading/blackLoading';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import { dehydrate, QueryClient } from 'react-query';
@@ -59,9 +59,9 @@ const PredictedStat = () => {
   const birth = router.query?.birth as string;
   const { isLoading, error, data } = useBatter(2021, name, birth);
   const predictedData = useBatterPrediction(2021, name, birth);
-  if (predictedData.isLoading) return <CommonLoading />;
+  if (predictedData.isLoading) return <BlackLoading />;
   const predictedStat = predictedData?.data;
-  if (isLoading) return <CommonLoading />;
+  if (isLoading) return <BlackLoading />;
   if (error) console.error(error);
   const batter_stat = data?.batter_stat;
   return (
