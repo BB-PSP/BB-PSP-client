@@ -53,7 +53,7 @@ const ButtonContainer = styled.div`
   }
 `;
 
-const Threeyear = () => {
+const PredictedStat = () => {
   const router = useRouter();
   const name = router.query?.player as string;
   const birth = router.query?.birth as string;
@@ -102,6 +102,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-Threeyear.PageLayout = BlackLayout;
+PredictedStat.PageLayout = BlackLayout;
 
-export default Threeyear;
+export default PredictedStat;
