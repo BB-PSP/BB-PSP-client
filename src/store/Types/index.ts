@@ -103,6 +103,20 @@ export interface IBatterStatProps {
   _SLG: number;
 }
 
+export interface IBatterPredictedStatProps {
+  pg: number;
+  pavg: number;
+  ppa: number;
+  pab: number;
+  pr: number;
+  ph: number;
+  phr: number;
+  prbi: number;
+  pbb: number;
+  pslg: number;
+  pobp: number;
+}
+
 export interface IPitcherStatProps {
   _G: number;
   _IP: number;
