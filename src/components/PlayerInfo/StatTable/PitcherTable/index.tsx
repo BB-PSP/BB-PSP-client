@@ -23,7 +23,7 @@ const PitcherTable = (pitcherStat: IPitcherStatProps) => {
           <StatTd>{pitcherStat?._IP}</StatTd>
           <StatTd>{pitcherStat?._W}</StatTd>
           <StatTd>{pitcherStat?._L}</StatTd>
-          <StatTd>{pitcherStat?._ERA.toFixed(2)}</StatTd>
+          <StatTd>{pitcherStat?._ERA?.toFixed(2)}</StatTd>
           <StatTd>{pitcherStat?._SO}</StatTd>
           <StatTd>{pitcherStat?._HLD}</StatTd>
           <StatTd>{pitcherStat?._SV}</StatTd>

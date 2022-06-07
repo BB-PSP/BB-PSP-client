@@ -1,9 +1,12 @@
 import PrevButton from '@button/PrevButton';
 import styled from '@emotion/styled';
 import { fetchPitcher, usePitcher } from '@hooks/api/usePitcher';
-import BlackFullLayout from '@layout/black/BlackFullLayout';
+import { usePitcherPrediction } from '@hooks/api/usePitcherPrediction';
+import BlackLayout from '@layout/black/BlackLayout';
+import PitcherPredictTable from '@PlayerInfo/StatTable/PitcherPredictTable';
 import PitcherTable from '@PlayerInfo/StatTable/PitcherTable';
 import { breakpoints } from '@styles/media';
+import CommonLoading from 'components/loading/commonLoading';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import { dehydrate, QueryClient } from 'react-query';
@@ -58,11 +61,14 @@ const ButtonContainer = styled.div`
   }
 `;
 
-const Threeyear = () => {
+const PredictedStat = () => {
   const router = useRouter();
   const name = router.query?.player as string;
   const birth = router.query?.birth as string;
   const { isLoading, error, data } = usePitcher(2021, name, birth);
+  const predictedData = usePitcherPrediction(2021, name, birth);
+  const predictedStat = predictedData?.data;
+  if (predictedData.isLoading) return <CommonLoading />;
   if (isLoading) return <div>Loading...</div>;
   if (error) console.error(error);
   const pitcher_stat = data?.pitcher_stat;
@@ -71,8 +77,7 @@ const Threeyear = () => {
       <ContentsContainer>
         <StatContainer>
           <PitcherTable {...pitcher_stat} />
-          <PitcherTable {...pitcher_stat} />
-          <PitcherTable {...pitcher_stat} />
+          <PitcherPredictTable {...predictedStat} />
         </StatContainer>
         <ButtonContainer>
           <PrevButton />
@@ -105,6 +110,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-Threeyear.PageLayout = BlackFullLayout;
+PredictedStat.PageLayout = BlackLayout;
 
-export default Threeyear;
+export default PredictedStat;
