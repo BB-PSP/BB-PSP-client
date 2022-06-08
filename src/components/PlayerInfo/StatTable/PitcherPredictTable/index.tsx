@@ -5,7 +5,7 @@ import { Season, StatTd, StatTh, StatTr, Table, Wrapper } from './styles';
 const PitcherPredictTable = (predictedStat: IPitcherPredictedStatProps) => {
   return (
     <Wrapper>
-      <Season>2021 stats</Season>
+      <Season>2022 stats</Season>
       <Table>
         <StatTr>
           <StatTh>경기수</StatTh>
