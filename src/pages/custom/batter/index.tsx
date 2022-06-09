@@ -37,7 +37,7 @@ const Container = styled.div`
     grid-template-columns: repeat(4, 1fr);
     column-gap: 1.04vw;
     row-gap: 3.7vh;
-    width: 70.94vw;
+    width: 74vw;
     height: 63.33vh;
     white-space: nowrap;
     padding-left: 2vw;
