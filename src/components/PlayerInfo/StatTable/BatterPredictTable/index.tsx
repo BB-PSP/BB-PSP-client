@@ -19,6 +19,7 @@ const BatterPredictTable = (predictedStat: IBatterPredictedStatProps) => {
           <StatTh>타점</StatTh>
           <StatTh>득점</StatTh>
           <StatTh>볼넷</StatTh>
+          <StatTh>OPS</StatTh>
         </StatTr>
         <StatTr>
           <StatTd>{predictedStat?.pg}</StatTd>
@@ -32,6 +33,7 @@ const BatterPredictTable = (predictedStat: IBatterPredictedStatProps) => {
           <StatTd>{predictedStat?.prbi}</StatTd>
           <StatTd>{predictedStat?.pr}</StatTd>
           <StatTd>{predictedStat?.pbb}</StatTd>
+          <StatTd>{predictedStat?.pops?.toFixed(3)}</StatTd>
         </StatTr>
       </Table>
     </Wrapper>

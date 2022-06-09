@@ -19,6 +19,7 @@ const BatterTable = (batterStat: IBatterStatProps) => {
           <StatTh>타점</StatTh>
           <StatTh>득점</StatTh>
           <StatTh>볼넷</StatTh>
+          <StatTh>OPS</StatTh>
         </StatTr>
         <StatTr>
           <StatTd>{batterStat?._G}</StatTd>
@@ -32,6 +33,7 @@ const BatterTable = (batterStat: IBatterStatProps) => {
           <StatTd>{batterStat?._RBI}</StatTd>
           <StatTd>{batterStat?._R}</StatTd>
           <StatTd>{batterStat?._BB}</StatTd>
+          <StatTd>{batterStat?._OPS?.toFixed(3)}</StatTd>
         </StatTr>
       </Table>
     </Wrapper>

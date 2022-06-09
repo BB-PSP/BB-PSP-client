@@ -76,6 +76,7 @@ export interface IBatterProps {
     _SLG: number;
     _SO: number;
     _TB: number;
+    _OPS: number;
   };
   player_info: {
     backNumber: string;
@@ -101,6 +102,7 @@ export interface IBatterStatProps {
   _R: number;
   _RBI: number;
   _SLG: number;
+  _OPS: number;
 }
 
 export interface IBatterPredictedStatProps {
@@ -115,6 +117,7 @@ export interface IBatterPredictedStatProps {
   pbb: number;
   pslg: number;
   pobp: number;
+  pops: number;
 }
 
 export interface IPitcherStatProps {
