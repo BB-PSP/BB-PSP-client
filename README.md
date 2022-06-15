@@ -1,3 +1,9 @@
+<div align="center">
+  
+![Group 239](https://user-images.githubusercontent.com/62709718/173835558-a5a2e36b-c68e-4cc0-bf48-c98d49e8ab71.png)
+  
+</div>
+
 # ⚾️ BB: PSP (Client)
 
 BB: PSP의 Client Repository 입니다.
@@ -6,15 +12,8 @@ BB: PSP의 Client Repository 입니다.
 
 머신러닝을 활용하여 KBO 선수들의 성적을 예측하고, 각 팀에 필요한 대체 선수들을 제안합니다.
 
-# 📚 프론트 기술 스택
-<div>
-  <img src="https://img.shields.io/badge/TypeScript-4.5.4-3178C6?style=flat&logo=typescript" />
-  <img src="https://img.shields.io/badge/React-17.0.2-61DAFB?style=flat&logo=react" />
-  <img src="https://img.shields.io/badge/Next.js-12.0.8-000000?style=flat&logo=Next.js" />
-  <img src="https://img.shields.io/badge/Eslint-8.6.0-4B32C3?style=flat&logo=eslint" />
-  <img src="https://img.shields.io/badge/Prettier-2.5.1-F7B93E?style=flat&logo=prettier" />
-  <img src="https://img.shields.io/badge/styled_components-5.3.3-DB7093?style=flat&logo=styled-components" />
-  <img src="https://img.shields.io/badge/Recoil-0.5.2-1877F2?style=flat&logo=Facebook" />
-  <img src="https://img.shields.io/badge/react_query-6.2.3-FF4B4B?style=flat&logo=react-query" />
-  <img src="https://img.shields.io/badge/framer_motion-6.2.3-0055FF?style=flat&logo=Framer" />
-</div>
+[최종보고서](https://shinwonse.notion.site/26b6e1597c6f43c394f78f14420f860c)
+
+# 📚 기술 스택
+
+![BBPSP_Architecture - Frame 3](https://user-images.githubusercontent.com/62709718/173835399-7fd2feab-4753-4de9-9083-a6bfda7f9184.jpg)
