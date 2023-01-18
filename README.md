@@ -1,38 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# BB-PSP (Baseball Player Stat Prediction)
 
-## Getting Started
+기록의 스포츠라고 불리는 야구는 일반인들도 여러 기록 사이트를 통해 자신들이 원하는 데이터를 찾아볼 수 있어 예전처럼 단순히 야구 자체만 보는 팬들보다는 데이터를 통해 야구를 더 깊게 이해하고 있는 팬들이 많아졌다. 또한 프로 구단에서도 선수의 이름값보다는 데이터를 이용한 구단 운영을 하는 것이 이제는 대세가 되었다. 이러한 경향 속에서 '예측'이라는 키워드는 팬들과 구단에게 꽤나 흥미를 일으키게 할 것이 분명해 보인다.
 
-First, run the development server:
+처음에 생각했던 '딥러닝을 활용한 프로야구 선수 성적 예측' 이라는 큰 주제에서 단순히 선수들의 성적을 예측해서 테이블로 보여주는 것을 아닌 의미 있는 결과를 낼 수 있는 주제가 있을까라는 고민을 가장 많이 하였다. 구단 입장에서는 정말 우리 팀에 필요한 선수가 누구이고 그 선수는 내년에 어떤 성적을 낼 것인지 알 수 있다면 선수 영입에 도움이 될 것이고, 어렵게만 느껴지는 야구 데이터를 쉽게 풀어내어 일반인들에게도 제공할 수 있다면 조금은 침체된 야구 흥행에 도움이 될 것이다.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+-> [최종 보고서](https://shinwonse.notion.site/7-26b6e1597c6f43c394f78f14420f860c)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 1. 개발 문서
+### a. Feature
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### b. Project Setting
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [CI/CD with Github Actions](https://shinwonse.notion.site/CI-CD-with-Github-Actions-58c531777e9845b19990890c3a8ad531)
