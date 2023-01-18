@@ -1,3 +1,6 @@
+## Notice
+현재 리마스터 작업이 진행중입니다. dev 브랜치에서 확인하실 수 있습니다.
+
 <div align="center">
   
 ![Group 239](https://user-images.githubusercontent.com/62709718/173835558-a5a2e36b-c68e-4cc0-bf48-c98d49e8ab71.png)
