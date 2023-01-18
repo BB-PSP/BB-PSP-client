@@ -6,7 +6,9 @@
 
 -> [최종 보고서](https://shinwonse.notion.site/7-26b6e1597c6f43c394f78f14420f860c)
 
-## 1. 개발 문서
+## 1. 서비스 배포 링크
+🔗 [BB-PSP](https://bb-psp-client.vercel.app/)
+## 2. 개발 문서
 ### a. Feature
 
 ### b. Project Setting
