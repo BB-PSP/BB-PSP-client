@@ -17,6 +17,7 @@
     "incremental": true,
     "baseUrl": "./src",
     "paths": {
+      "@constants/*": ["constants/*"],
       "@layout/*": ["components/layout/*"],
       "@button/*": ["components/button/*"],
       "@hooks/*": ["hooks/*"],

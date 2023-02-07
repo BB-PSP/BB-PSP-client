@@ -1,10 +1,8 @@
-import axios from 'axios';
+import axios from '@hooks/api/axios';
 import { useQuery } from 'react-query';
 
 const fetchTeam = async (year: number, team: string) => {
-  const { data } = await axios(
-    `https://bbpsp-backend-api.click/api/teams/${year}/${team}`,
-  );
+  const { data } = await axios(`/api/teams/${year}/${team}`);
   return data;
 };
 

@@ -1,11 +1,9 @@
-import axios from 'axios';
+import axios from '@hooks/api/axios';
 import { useQuery } from 'react-query';
 
 const fetchPitcher = async (year: number, name: string, birth: string) => {
   const { data } = await axios(
-    encodeURI(
-      `https://bbpsp-backend-api.click/api/pitchers/stat/${year}?name=${name}&birth=${birth}`,
-    ),
+    encodeURI(`/api/pitchers/stat/${year}?name=${name}&birth=${birth}`),
   );
   return data;
 };

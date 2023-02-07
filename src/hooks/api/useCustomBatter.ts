@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from '@hooks/api/axios';
 import { useQuery } from 'react-query';
 
 const fetchCustomBatter = async (
@@ -12,7 +12,7 @@ const fetchCustomBatter = async (
 ) => {
   const { data } = await axios(
     encodeURI(
-      `https://bbpsp-backend-api.click/api/batters/stat/range/${year}?age_range=${age_start},${age_end}&positions=${position_list}&teams=${team_list}&salary_range=${salary_start},${salary_end}`,
+      `/api/batters/stat/range/${year}?age_range=${age_start},${age_end}&positions=${position_list}&teams=${team_list}&salary_range=${salary_start},${salary_end}`,
     ),
   );
   return data;

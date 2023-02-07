@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from '@hooks/api/axios';
 import { useQuery } from 'react-query';
 
 const fetchBatterPrediction = async (
@@ -8,7 +8,7 @@ const fetchBatterPrediction = async (
 ) => {
   const { data } = await axios(
     encodeURI(
-      `https://bbpsp-backend-api.click/api/predictions/batters/one/${year}?name=${name}&birth=${birth}`,
+      `/api/predictions/batters/one/${year}?name=${name}&birth=${birth}`,
     ),
   );
   return data;

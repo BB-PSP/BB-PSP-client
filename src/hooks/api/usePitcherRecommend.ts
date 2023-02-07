@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from '@hooks/api/axios';
 import { useQuery } from 'react-query';
 
 const fetchPitcherRecommend = async (
@@ -8,7 +8,7 @@ const fetchPitcherRecommend = async (
 ) => {
   const { data } = await axios(
     encodeURI(
-      `https://bbpsp-backend-api.click/api/pitchers/stat/recommend/${year}?name=${name}&birth=${birth}`,
+      `/api/pitchers/stat/recommend/${year}?name=${name}&birth=${birth}`,
     ),
   );
   return data;
